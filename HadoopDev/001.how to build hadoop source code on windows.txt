@@ -1,0 +1,6 @@
+编译环境: hadoop 2.6.2 + win8 x64 + mvn3.3.9 + JDK8 x64 + vs2010/vs2015 community edition
+
+Window shell
+K:\HadoopDev\hadoop-2.6.2-src-buildX64>mvn package -Pdist,native-win -Dmaven.javadoc.skip=true -DskipTests -Dtar
+
+此方法适用于 2.6.2, 2.6.5, 2.7.3, 2.8.1, 但是不适用于 3.0.0 (上次试了3.0.0，但是在dependency上失败了，还没有深究失败原因)。

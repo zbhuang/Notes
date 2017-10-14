@@ -1,0 +1,24 @@
+两种方法，一种是创建WordCount.java，然后把hadoop的jar包直接拿来用，然后把source的jar引进来。
+另外一种是导入所有的hadoop源码，然后取出WordCount.java，直接在hadoop的源码里面搭建好WordCount的调试环境.
+这里记下第二种方法.
+
+K:\HadoopDev\hadoop-2.6.2-src-buildX64-read
+
+1.Make a copy of hadoop-2.6.2-src-buildX64 and rename it as HadoopDev\hadoop-2.6.2-src-buildX64-read.
+
+2.Import it into IntelliJ.
+note: write a HelloWorldApp.java to verify all hadoop's modules dependency are correct.
+I remember I excluded some of the test modules from Souces Root.
+
+3.Locate WordCount.java
+hadoop-2.6.2-src-buildX64-read\hadoop-mapreduce-project\hadoop-mapreduce-examples\src\main\java\org\apache\hadoop\examples\WordCount.java
+
+4.Run WordCount.java in IntelliJ
+
+Update hadoop-mapreduce-examples.iml to have RUNTIME support for dependent modules.
+
+[VM options]
+-Dlog4j.configuration=file:/K:/HadoopDev/hadoop-2.6.2-src-buildX64-read/log4j.properties -Dhadoop.home.dir="K:/HadoopDev/hadoop-2.6.2-src-buildX64/hadoop-dist/target/hadoop-2.6.2"
+
+[Program arguments]
+data/input/ data/output
