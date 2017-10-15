@@ -9,6 +9,11 @@ K:\HadoopDev\hadoop-2.6.2-src-buildX64-read
 2.Import it into IntelliJ.
 note: write a HelloWorldApp.java to verify all hadoop's modules dependency are correct.
 I remember I excluded some of the test modules from Souces Root.
+because of missing the following three java files
+ApplicationAttemptFinishDataPBImpl.java
+ApplicationAttemptStartDataPBImpl
+TestApplicationHistoryManagerOnTimelineStore.java
+The solution is to rename the above three java file to have shorter file name
 
 3.Locate WordCount.java
 hadoop-2.6.2-src-buildX64-read\hadoop-mapreduce-project\hadoop-mapreduce-examples\src\main\java\org\apache\hadoop\examples\WordCount.java
@@ -22,3 +27,20 @@ Update hadoop-mapreduce-examples.iml to have RUNTIME support for dependent modul
 
 [Program arguments]
 data/input/ data/output
+
+K:\HadoopDev\hadoop-2.7.3-src.read\hadoop-yarn-project\hadoop-yarn\hadoop-yarn-server\hadoop-yarn-server-applicationhistoryservice\src\main\java\org\apache\hadoop\yarn\server\applicationhistoryservice\records\impl\pb\
+ApplicationAttemptFinishDataPBImpl.java -> AppAtmptFinishDataPBImpl.java
+ApplicationAttemptStartDataPBImpl.java  -> AppAtmptStartDataPBImpl.java
+
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-yarn-project\hadoop-yarn\hadoop-yarn-server\hadoop-yarn-server-applicationhistoryservice\src\test\java\org\apache\hadoop\yarn\server\applicationhistoryservice\TestApplicationHistoryManagerOnTimelineStore.java
+
+reference
+1.Cannot initialize cluster exception while running job on Hadoop 2
+https://stackoverflow.com/questions/19642862/cannot-initialize-cluster-exception-while-running-job-on-hadoop-2
+Cannot initialize Cluster. Please check your configuration for mapreduce.framework.name and the correspond server addresses.
+
+I was having similar issue, but yarn was not the issue. After adding following jars into my classpath issue got resolved:
+
+hadoop-mapreduce-client-jobclient-2.2.0.2.0.6.0-76
+hadoop-mapreduce-client-common-2.2.0.2.0.6.0-76
+hadoop-mapreduce-client-shuffle-2.2.0.2.0.6.0-76

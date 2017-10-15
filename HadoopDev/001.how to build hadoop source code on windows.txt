@@ -4,3 +4,15 @@ Window shell
 K:\HadoopDev\hadoop-2.6.2-src-buildX64>mvn package -Pdist,native-win -Dmaven.javadoc.skip=true -DskipTests -Dtar
 
 此方法适用于 2.6.2, 2.6.5, 2.7.3, 2.8.1, 但是不适用于 3.0.0 (上次试了3.0.0，但是在dependency上失败了，还没有深究失败原因)。
+
+把以下路径加入系统环境变量-Path
+K:\HadoopDev\protoc-2.5.0-win32;K:\HadoopDev\zlib-1.2.8;K:\HadoopDev\zlib128-dll;
+而且以下路径必须添加进去
+K:\HadoopDev\hadoop-2.6.2-src-buildX64\hadoop-dist\target\hadoop-2.6.2\bin;
+否则执行WordCount会出以下错误
+UnsatisfiedLinkError: org.apache.hadoop.io.nativeio.NativeIO$Windows.access0(Ljava/lang/String;I)Z
+
+backup
+------
+HADOOP_HOME
+K:\HadoopDev\hadoop-2.6.2-src-buildX64\hadoop-dist\target\hadoop-2.6.2
