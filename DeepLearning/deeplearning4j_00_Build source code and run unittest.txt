@@ -1,0 +1,131 @@
+L:\VMachine\vm1610DL4J02
+
+1.Environment
+Ubuntu 16.10 x64, jdk8_151 x64, cmake, git, gcc/g++, maven 3.3.9
+
+2.Module dependency
+libnd4j
+   |
+ nd4j   datavec
+   |       |
+   ---------
+       |
+ deeplearning4j
+       |
+ dl4j-examples
+
+3.Build the source code
+Now the building process is simple, go and check deeplearning4j project.
+Update (see below) and run deeplearning4j/build-dl4j-stack.sh
+./build-dl4j-stack.sh -c cpu --scalav 2.11
+
+How to update build-dl4j-stack.sh (in Ubuntu 16.10)
+    if [ "$SCALAV" == "" ]; then
+        if [ "$CHIP" == "cpu" ]; then
+            checkexit bash buildmultiplescalaversions.sh clean install -Dmaven.javadoc.skip=true -pl '!./deeplearning4j-cuda/' $DL4J_OPTIONS $MVN_OPTS
+        else
+            checkexit bash buildmultiplescalaversions.sh clean install -Dmaven.javadoc.skip=true $DL4J_OPTIONS $MVN_OPTS
+        fi
+    else
+    	if [ "$CHIP" == "cpu" ]; then
+        	checkexit mvn clean install -Dmaven.javadoc.skip=true -pl '!./deeplearning4j-cuda/' -Dscala.binary.version="$SCALAV" -Dscala.version="$SCALA" $DL4J_OPTIONS $MVN_OPTS
+        else
+        	checkexit mvn clean install -Dmaven.javadoc.skip=true -Dscala.binary.version="$SCALAV" -Dscala.version="$SCALA" $DL4J_OPTIONS $MVN_OPTS
+    fi
+
+4.Load into IntelliJ
+
+4.1 dl4j-examples
+-----------------
+a) dl4j-examples
+org.deeplearning4j.examples.dataexamples.ImageDrawer
+org.deeplearning4j.examples.dataexamples.ImagePipelineExample
+
+b) nd4j-examples
+org.nd4j.examples.Nd4jEx*
+org.nd4j.examples.TestDeepWalk (migrated from deeplearning4j)
+#This test proves that setup for nd4j-examples module works, while that one for deeplearning4j module does not work.
+
+4.2 deeplearning4j
+------------------
+a) deeplearning4j-core
+org.deeplearning4j.util.ArrayUtilTest
+org.deeplearning4j.gradientcheck.GradientCheckTests
+java.lang.RuntimeException: org.nd4j.linalg.factory.Nd4jBackend$NoAvailableBackendException: Please ensure that you have an nd4j backend on your classpath. Please see: http://nd4j.org/getstarted.html
+org.deeplearning4j.datasets.iterator.DataSetIteratorTest
+java.lang.NoClassDefFoundError: Could not initialize class org.nd4j.linalg.factory.Nd4j
+#
+在IntelliJ Modules Dependencies里面添加了如下的 Maven 依赖包
+org.nd4j-native-api
+org.nd4j-native
+org.nd4j-native:linux-x86_64 <-- to fix "to have an nd4j backend on your classpath" issue
+org.bytedeco.javacpp-presets:mkl
+org.bytedeco.javacpp-presets:mkl:linux-x86_64 <-- to fix the issue of "java.lang.NoClassDefFoundError: org/bytedeco/javacpp/mkl_rt"
+org.bytedeco.javacpp-presets:openblas
+org.bytedeco.javacpp-presets:openblas:linux-x86_64 <-- to fix the issue of "java.lang.NoClassDefFoundError: org/bytedeco/javacpp/openblas"
+
+b) deeplearning4j-graph
+在IntelliJ Modules Dependencies里面添加了如下的 Maven 依赖包
+org.nd4j-native-api
+org.nd4j-native
+org.nd4j-native:linux-x86_64 <-- to fix "to have an nd4j backend on your classpath" issue
+org.bytedeco.javacpp-presets:mkl
+org.bytedeco.javacpp-presets:mkl:linux-x86_64 <-- to fix the issue of "java.lang.NoClassDefFoundError: org/bytedeco/javacpp/mkl_rt"
+org.bytedeco.javacpp-presets:openblas
+org.bytedeco.javacpp-presets:openblas:linux-x86_64 <-- to fix the issue of "java.lang.NoClassDefFoundError: org/bytedeco/javacpp/openblas"
+
+org.deeplearning4j.graph.models.deepwalk.TestDeepWalk
+
+c) deeplearning4j-modelimport
+
+d) deeplearning4j-nearestneighbors-parent
+
+e) deeplearning4j-nlp-parent -> deeplearning4j-nlp-uima
+Word2VecTests.testRunWord2Vec()
+copy file to 
+deeplearning4j-nlp-uima/src/main/resources/word2vecserialization/google_news_30.txt
+deeplearning4j-nlp-uima/src/main/resources/big/raw_sentences.txt
+
+f) deeplearning4j-nn
+
+g) deeplearning4j-scaleout
+
+h) deeplearning4j-zoo
+org.deeplearning4j.zoo.TestImageNet
+java.lang.OutOfMemoryError: Cannot allocate new FloatPointer(143667240): totalBytes = 548M, physicalBytes = 659M
+
+VM options: -ea -Xmx2048m
+
+java.lang.NullPointerException
+	at org.nd4j.linalg.cpu.nativecpu.ops.NativeOpExecutioner.exec(NativeOpExecutioner.java:1503)
+	at org.nd4j.linalg.convolution.Convolution.im2col(Convolution.java:203)
+	at org.deeplearning4j.nn.layers.convolution.ConvolutionLayer.preOutput(ConvolutionLayer.java:366)
+	at org.deeplearning4j.nn.layers.convolution.ConvolutionLayer.preOutput(ConvolutionLayer.java:267)
+	at org.deeplearning4j.nn.layers.convolution.ConvolutionLayer.activate(ConvolutionLayer.java:421)
+	at org.deeplearning4j.nn.graph.vertex.impl.LayerVertex.doForward(LayerVertex.java:103)
+	at org.deeplearning4j.nn.graph.ComputationGraph.feedForward(ComputationGraph.java:1485)
+	at org.deeplearning4j.nn.graph.ComputationGraph.silentOutput(ComputationGraph.java:1576)
+	at org.deeplearning4j.nn.graph.ComputationGraph.output(ComputationGraph.java:1565)
+	at org.deeplearning4j.zoo.TestImageNet.testImageNetLabels(TestImageNet.java:44)
+
+4.3 nd4j (how Aeron is used inside nd4j)
+--------
+nd4j/nd4j-serde/nd4j-aeron/src/main/java/org.nd4j.aeron/ipc/AeronNDArraySerde.java
+nd4j/nd4j-serde/nd4j-aeron/src/main/java/org.nd4j.aeron/ipc/AeronUtil.java
+nd4j/nd4j-serde/nd4j-aeron/src/main/java/org.nd4j.aeron/ipc/AeronConnectionInformation.java
+nd4j/nd4j-serde/nd4j-aeron/src/main/java/org.nd4j.aeron/ipc/AeronNDArrayPublisher.java
+nd4j/nd4j-serde/nd4j-aeron/src/main/java/org.nd4j.aeron/ipc/AeronNDArraySubscriber.java
+nd4j/nd4j-serde/nd4j-aeron/src/main/java/org.nd4j.aeron/ipc/LowLatencyMediaDriver.java
+nd4j/nd4j-serde/nd4j-aeron/src/main/java/org.nd4j.aeron/ipc/NDArrayCallback.java
+nd4j/nd4j-serde/nd4j-aeron/src/main/java/org.nd4j.aeron/ndarrayholder/InMemoryNDArrayHolder.java
+nd4j/nd4j-serde/nd4j-aeron/src/main/java/org.nd4j.aeron/util/BufferUtil.java
+
+Caused by: java.lang.RuntimeException: ND4J is probably missing dependencies. For more information, please refer to: http://nd4j.org/getstarted.html
+  at org.nd4j.nativeblas.NativeOpsHolder.<init>(NativeOpsHolder.java:51)
+  at org.nd4j.nativeblas.NativeOpsHolder.<clinit>(NativeOpsHolder.java:19)
+  ... 32 more
+Caused by: java.lang.UnsatisfiedLinkError: no jnind4jcpu in java.library.path
+
+Reference
+1. deeplearning4j
+https://github.com/deeplearning4j

@@ -1,0 +1,31 @@
+I built the source code v3.3.7 on windows successfully.
+
+Reference
+---------
+https://github.com/LMAX-Exchange/disruptor
+https://github.com/LMAX-Exchange/disruptor/wiki/Getting-Started
+https://github.com/LMAX-Exchange/disruptor/wiki/Getting-Started-(Dev)
+https://github.com/LMAX-Exchange/disruptor/wiki/Using-Disruptor-In-Your-Project
+https://github.com/LMAX-Exchange/disruptor/wiki/Blogs-And-Articles
+https://github.com/LMAX-Exchange/disruptor/wiki/Performance-Results
+
+Basic workflow
+--------------
+1. Check out the project locally to your machine
+> cd ${MY_PROJECTS_HOME}
+> git clone git://github.com/LMAX-Exchange/disruptor.git
+
+2. Build a distribution
+> cd ${MY_PROJECTS_HOME}/disruptor
+> ./gradlew
+As a result of the build you should find the following files:
+
+${MY_PROJECTS_HOME}/disruptor/build/libs/disruptor-{VERSION_NUMBER}-SNAPSHOT.jar
+${MY_PROJECTS_HOME}/disruptor/build/libs/disruptor-{VERSION_NUMBER}-SNAPSHOT-javadoc.jar
+${MY_PROJECTS_HOME}/disruptor/build/libs/disruptor-{VERSION_NUMBER}-SNAPSHOT-sources.jar
+
+3. Run the performance tests
+> cd ${MY_PROJECTS_HOME}/disruptor
+> ./gradlew perfJar
+> java -cp build/libs/disruptor-perf-3.3.0.jar [test name, e.g. com.lmax.disruptor.sequenced.OneToOneSequencedTh
+

@@ -1,0 +1,8 @@
+I built the source code v1.5.1 on windows and ubuntu 16.10.
+But when running the unittest, ubuntu works but not on windows.
+After investigation, it is because of the case-insensitive for folder name, agrona, on windows.
+So on windows, remove Gradle: agrona module from Libraries, and add a new library as agrona lib.
+
+reference
+1. Hacking on Aeron
+https://github.com/real-logic/aeron/wiki/Hacking-on-Aeron

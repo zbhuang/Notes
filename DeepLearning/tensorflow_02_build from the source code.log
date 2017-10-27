@@ -1,0 +1,18 @@
+
+Reference
+0. Installing TensorFlow from Sources
+https://www.tensorflow.org/install/install_sources
+
+1. ubuntu 14.04LTS下源码编译安装TensorFlow-No GPU
+http://blog.csdn.net/qq_16949707/article/details/54629409
+
+2. tensorflow之Window源码编译
+https://abaojin.github.io/2017/06/25/ai-tensorflow-build/
+
+3. 【深度学习】使用tensorflow实现AlexNet
+http://blog.csdn.net/accepthjp/article/details/69999309
+http://blog.csdn.net/accepthjp
+
+4. 图解tensorflow 源码
+https://github.com/yao62995/tensorflow
+http://www.cnblogs.com/yao62995/p/5773578.html
