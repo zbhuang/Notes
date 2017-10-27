@@ -1,0 +1,221 @@
+This unittest runs failed, I could not figure it out so far.
+
+C:\Javax64\jdk1.8.0_144\bin\java -Dspark.master=local[2] -Xms512m -Xmx1024m -ea "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.2.3\lib\idea_rt.jar=57358:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.2.3\bin" -Dfile.encoding=UTF-8 -classpath *.jar org.apache.spark.examples.mllib.SampledRDDs
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/10/18 09:44:03 INFO SparkContext: Running Spark version 2.2.0
+17/10/18 09:44:03 INFO SparkContext: Submitted application: SampledRDDs with {
+  input:	data/mllib/sample_binary_classification_data.txt
+}
+17/10/18 09:44:03 INFO SecurityManager: Changing view acls to: Zhibin
+17/10/18 09:44:03 INFO SecurityManager: Changing modify acls to: Zhibin
+17/10/18 09:44:03 INFO SecurityManager: Changing view acls groups to: 
+17/10/18 09:44:03 INFO SecurityManager: Changing modify acls groups to: 
+17/10/18 09:44:03 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(Zhibin); groups with view permissions: Set(); users  with modify permissions: Set(Zhibin); groups with modify permissions: Set()
+17/10/18 09:44:04 INFO Utils: Successfully started service 'sparkDriver' on port 57395.
+17/10/18 09:44:04 INFO SparkEnv: Registering MapOutputTracker
+17/10/18 09:44:04 INFO SparkEnv: Registering BlockManagerMaster
+17/10/18 09:44:04 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+17/10/18 09:44:04 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+17/10/18 09:44:04 INFO DiskBlockManager: Created local directory at C:\Users\Zhibin\AppData\Local\Temp\blockmgr-7a610286-9901-4b45-8641-2ba003cd80c6
+17/10/18 09:44:04 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+17/10/18 09:44:04 INFO SparkEnv: Registering OutputCommitCoordinator
+17/10/18 09:44:04 INFO log: Logging initialized @3184ms
+17/10/18 09:44:04 INFO Server: jetty-9.3.11.v20160721
+17/10/18 09:44:04 INFO Server: Started @3257ms
+17/10/18 09:44:04 INFO AbstractConnector: Started ServerConnector@35e478f{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+17/10/18 09:44:04 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@2160e52a{/jobs,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@4642b71d{/jobs/json,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@c68a5f8{/jobs/job,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@2e1792e7{/jobs/job/json,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@3eb631b8{/stages,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@6bff19ff{/stages/json,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@4e558728{/stages/stage,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@64e1dd11{/stages/stage/json,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@6999cd39{/stages/pool,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@7ed9ae94{/stages/pool/json,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@41477a6d{/storage,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@3122b117{/storage/json,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@29a23c3d{/storage/rdd,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@6fe46b62{/storage/rdd/json,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@61e45f87{/environment,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@3068b369{/environment/json,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@5491f68b{/executors,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@6ecd665{/executors/json,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@1ec7d8b3{/executors/threadDump,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@5bb3131b{/executors/threadDump/json,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@74fef3f7{/static,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@378bd86d{/,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@69b2f8e5{/api,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@7c2327fa{/jobs/job/kill,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@5f462e3b{/stages/stage/kill,null,AVAILABLE,@Spark}
+17/10/18 09:44:04 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://192.168.99.1:4040
+17/10/18 09:44:04 INFO Executor: Starting executor ID driver on host localhost
+17/10/18 09:44:04 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 57412.
+17/10/18 09:44:04 INFO NettyBlockTransferService: Server created on 192.168.99.1:57412
+17/10/18 09:44:04 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/10/18 09:44:04 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.99.1, 57412, None)
+17/10/18 09:44:04 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.99.1:57412 with 366.3 MB RAM, BlockManagerId(driver, 192.168.99.1, 57412, None)
+17/10/18 09:44:04 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.99.1, 57412, None)
+17/10/18 09:44:04 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.99.1, 57412, None)
+17/10/18 09:44:04 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@34dc85a{/metrics/json,null,AVAILABLE,@Spark}
+17/10/18 09:44:05 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 214.5 KB, free 366.1 MB)
+17/10/18 09:44:05 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 20.4 KB, free 366.1 MB)
+17/10/18 09:44:05 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.99.1:57412 (size: 20.4 KB, free: 366.3 MB)
+17/10/18 09:44:05 INFO SparkContext: Created broadcast 0 from textFile at MLUtils.scala:99
+17/10/18 09:44:05 INFO FileInputFormat: Total input paths to process : 1
+17/10/18 09:44:05 INFO SparkContext: Starting job: reduce at MLUtils.scala:92
+17/10/18 09:44:05 INFO DAGScheduler: Got job 0 (reduce at MLUtils.scala:92) with 2 output partitions
+17/10/18 09:44:05 INFO DAGScheduler: Final stage: ResultStage 0 (reduce at MLUtils.scala:92)
+17/10/18 09:44:05 INFO DAGScheduler: Parents of final stage: List()
+17/10/18 09:44:05 INFO DAGScheduler: Missing parents: List()
+17/10/18 09:44:05 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[5] at map at MLUtils.scala:90), which has no missing parents
+17/10/18 09:44:05 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 4.1 KB, free 366.1 MB)
+17/10/18 09:44:05 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.3 KB, free 366.1 MB)
+17/10/18 09:44:05 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 192.168.99.1:57412 (size: 2.3 KB, free: 366.3 MB)
+17/10/18 09:44:05 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1006
+17/10/18 09:44:05 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[5] at map at MLUtils.scala:90) (first 15 tasks are for partitions Vector(0, 1))
+17/10/18 09:44:05 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
+17/10/18 09:44:05 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 4898 bytes)
+17/10/18 09:44:05 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, executor driver, partition 1, PROCESS_LOCAL, 4898 bytes)
+17/10/18 09:44:05 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+17/10/18 09:44:05 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+17/10/18 09:44:05 ERROR Executor: Exception in task 1.0 in stage 0.0 (TID 1)
+java.lang.IllegalStateException: unread block data
+	at java.io.ObjectInputStream$BlockDataInputStream.setBlockDataMode(ObjectInputStream.java:2740)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1567)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2245)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:309)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+17/10/18 09:44:05 ERROR Executor: Exception in task 0.0 in stage 0.0 (TID 0)
+java.lang.IllegalStateException: unread block data
+	at java.io.ObjectInputStream$BlockDataInputStream.setBlockDataMode(ObjectInputStream.java:2740)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1567)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2245)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:309)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+17/10/18 09:44:05 WARN TaskSetManager: Lost task 0.0 in stage 0.0 (TID 0, localhost, executor driver): java.lang.IllegalStateException: unread block data
+	at java.io.ObjectInputStream$BlockDataInputStream.setBlockDataMode(ObjectInputStream.java:2740)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1567)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2245)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:309)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+17/10/18 09:44:05 ERROR TaskSetManager: Task 0 in stage 0.0 failed 1 times; aborting job
+17/10/18 09:44:05 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+17/10/18 09:44:05 INFO TaskSetManager: Lost task 1.0 in stage 0.0 (TID 1) on localhost, executor driver: java.lang.IllegalStateException (unread block data) [duplicate 1]
+17/10/18 09:44:05 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+17/10/18 09:44:05 INFO TaskSchedulerImpl: Cancelling stage 0
+17/10/18 09:44:05 INFO DAGScheduler: ResultStage 0 (reduce at MLUtils.scala:92) failed in 0.047 s due to Job aborted due to stage failure: Task 0 in stage 0.0 failed 1 times, most recent failure: Lost task 0.0 in stage 0.0 (TID 0, localhost, executor driver): java.lang.IllegalStateException: unread block data
+	at java.io.ObjectInputStream$BlockDataInputStream.setBlockDataMode(ObjectInputStream.java:2740)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1567)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2245)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:309)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Driver stacktrace:
+17/10/18 09:44:05 INFO DAGScheduler: Job 0 failed: reduce at MLUtils.scala:92, took 0.150052 s
+Exception in thread "main" org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 0.0 failed 1 times, most recent failure: Lost task 0.0 in stage 0.0 (TID 0, localhost, executor driver): java.lang.IllegalStateException: unread block data
+	at java.io.ObjectInputStream$BlockDataInputStream.setBlockDataMode(ObjectInputStream.java:2740)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1567)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2245)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:309)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1499)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1487)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1486)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1486)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:814)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:814)
+	at scala.Option.foreach(Option.scala:257)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:814)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1714)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1669)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1658)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:630)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2022)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2119)
+	at org.apache.spark.rdd.RDD$$anonfun$reduce$1.apply(RDD.scala:1026)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:362)
+	at org.apache.spark.rdd.RDD.reduce(RDD.scala:1008)
+	at org.apache.spark.mllib.util.MLUtils$.computeNumFeatures(MLUtils.scala:92)
+	at org.apache.spark.mllib.util.MLUtils$.loadLibSVMFile(MLUtils.scala:81)
+	at org.apache.spark.mllib.util.MLUtils$.loadLibSVMFile(MLUtils.scala:138)
+	at org.apache.spark.mllib.util.MLUtils$.loadLibSVMFile(MLUtils.scala:146)
+	at org.apache.spark.examples.mllib.SampledRDDs$.run(SampledRDDs.scala:67)
+	at org.apache.spark.examples.mllib.SampledRDDs$.main(SampledRDDs.scala:56)
+	at org.apache.spark.examples.mllib.SampledRDDs.main(SampledRDDs.scala)
+Caused by: java.lang.IllegalStateException: unread block data
+	at java.io.ObjectInputStream$BlockDataInputStream.setBlockDataMode(ObjectInputStream.java:2740)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1567)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2245)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2169)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2027)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:309)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+17/10/18 09:44:05 INFO SparkContext: Invoking stop() from shutdown hook
+17/10/18 09:44:05 INFO AbstractConnector: Stopped Spark@35e478f{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+17/10/18 09:44:05 INFO SparkUI: Stopped Spark web UI at http://192.168.99.1:4040
+17/10/18 09:44:05 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+17/10/18 09:44:05 INFO MemoryStore: MemoryStore cleared
+17/10/18 09:44:05 INFO BlockManager: BlockManager stopped
+17/10/18 09:44:05 INFO BlockManagerMaster: BlockManagerMaster stopped
+17/10/18 09:44:05 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+17/10/18 09:44:05 INFO SparkContext: Successfully stopped SparkContext
+17/10/18 09:44:05 INFO ShutdownHookManager: Shutdown hook called
+17/10/18 09:44:05 INFO ShutdownHookManager: Deleting directory C:\Users\Zhibin\AppData\Local\Temp\spark-60a0f0bf-7d8e-4c3b-94df-015a21c0124e
+
+Process finished with exit code 1

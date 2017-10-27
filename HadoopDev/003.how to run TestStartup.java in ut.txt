@@ -1,0 +1,336 @@
+Motivation
+I am interested to play with HDFS, and found one of the ut, TestStartup.java.
+I ran this unit test, and immediately got the following errors.
+
+First time
+ERROR hdfs.MiniDFSCluster (MiniDFSCluster.java:initMiniDFSCluster(820)) - IOE creating namenodes. Permissions dump:
+Second time (env variable issue)
+java.lang.UnsatisfiedLinkError: org.apache.hadoop.io.nativeio.NativeIO$Windows.access0(Ljava/lang/String;I)Z
+
+Here is my solution
+1. add some system environment
+HADOOP_HOME
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-dist\target\hadoop-2.7.3
+HADOOP_COMMON_HOME
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\target\hadoop-common-2.7.3
+HADOOP_CONF_DIR
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\target\hadoop-common-2.7.3\etc\hadoop
+HADOOP_HDFS_HOME
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\hadoop-hdfs-2.7.3
+Path
+%HADOOP_HOME%\bin;%HADOOP_COMMON_HOME%\bin;%HADOOP_COMMON_HOME%\sbin;%HADOOP_HDFS_HOME%\bin;%HADOOP_HDFS_HOME%\sbin;
+
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\target\hadoop-common-2.7.3\bin
+hadoop.cmd
+
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\target\hadoop-common-2.7.3\sbin
+start-all.cmd
+stop-all.cmd
+
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\hadoop-hdfs-2.7.3\bin
+hdfs.cmd
+
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\hadoop-hdfs-2.7.3\sbin
+hdfs-config.cmd
+start-dfs.cmd
+stop-dfs.cmd
+
+2. update some files
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\target\hadoop-common-2.7.3\etc\hadoop\core-site.xml
+<configuration>
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://localhost/</value>
+    <description>The name of the default file system. </description>
+  </property>
+</configuration>
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\src\main\resources\core-default.xml
+<property>
+  <name>fs.defaultFS</name>
+  <value>hdfs://localhost</value>
+  <description>The name of the default file system. </description>
+</property>
+
+<property>
+  <name>fs.default.name</name>
+  <value>hdfs://localhost/</value>
+</property>
+3. copy webapps
+from
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\webapps
+to
+K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\classes\webapps
+4. Run the UT in TestStartup.java
+or Launch NameNode.main() and DataNode.main()
+
+
+Reference
+---------
+1. Debugging Hadoop HDFS using IntelliJ IDEA on Linux
+https://www.codeproject.com/Articles/1067129/Debugging-Hadoop-HDFS-using-IntelliJ-IDEA-on-Linux?display=Print
+
+2. eclipse配置运行HDFS
+https://basebase.github.io/2017/01/23/eclipse%E9%85%8D%E7%BD%AE%E8%BF%90%E8%A1%8CHDFS/
+
+3. Error for the 1st try of running TestStartup.java
+2017-10-14 22:42:15,957 INFO  namenode.TestStartup (TestStartup.java:setUp(112)) - --hdfsdir is K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs
+2017-10-14 22:42:16,599 INFO  namenode.TestStartup (TestStartup.java:testImageChecksum(480)) - Test uncompressed image checksum
+2017-10-14 22:42:16,600 INFO  namenode.TestStartup (TestStartup.java:testImageChecksum(493)) - 
+===========================================
+Starting empty cluster
+2017-10-14 22:42:16,614 INFO  hdfs.MiniDFSCluster (MiniDFSCluster.java:<init>(450)) - starting cluster: numNameNodes=1, numDataNodes=0
+Formatting using clusterid: testClusterID
+2017-10-14 22:42:17,562 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(716)) - No KeyProvider found.
+2017-10-14 22:42:17,562 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(726)) - fsLock is fair:true
+2017-10-14 22:42:17,836 INFO  Configuration.deprecation (Configuration.java:warnOnceIfDeprecated(1173)) - hadoop.configured.node.mapping is deprecated. Instead, use net.topology.configured.node.mapping
+2017-10-14 22:42:17,851 INFO  blockmanagement.DatanodeManager (DatanodeManager.java:<init>(239)) - dfs.block.invalidate.limit=1000
+2017-10-14 22:42:17,851 INFO  blockmanagement.DatanodeManager (DatanodeManager.java:<init>(245)) - dfs.namenode.datanode.registration.ip-hostname-check=true
+2017-10-14 22:42:17,851 INFO  blockmanagement.BlockManager (InvalidateBlocks.java:printBlockDeletionTime(71)) - dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+2017-10-14 22:42:17,851 INFO  blockmanagement.BlockManager (InvalidateBlocks.java:printBlockDeletionTime(76)) - The block deletion will start around 2017 Oct 14 22:42:17
+2017-10-14 22:42:17,883 INFO  util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map BlocksMap
+2017-10-14 22:42:17,883 INFO  util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
+2017-10-14 22:42:17,883 INFO  util.GSet (LightWeightGSet.java:computeCapacity(356)) - 2.0% max memory 3.6 GB = 72.8 MB
+2017-10-14 22:42:17,883 INFO  util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^23 = 8388608 entries
+2017-10-14 22:42:17,976 INFO  blockmanagement.BlockManager (BlockManager.java:createBlockTokenSecretManager(367)) - dfs.block.access.token.enable=false
+2017-10-14 22:42:17,976 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(353)) - defaultReplication         = 0
+2017-10-14 22:42:17,976 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(354)) - maxReplication             = 512
+2017-10-14 22:42:17,976 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(355)) - minReplication             = 1
+2017-10-14 22:42:17,976 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(356)) - maxReplicationStreams      = 2
+2017-10-14 22:42:17,976 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(357)) - replicationRecheckInterval = 3000
+2017-10-14 22:42:17,976 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(358)) - encryptDataTransfer        = false
+2017-10-14 22:42:17,976 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(359)) - maxNumBlocksToLog          = 1000
+2017-10-14 22:42:18,008 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(746)) - fsOwner             = Zhibin (auth:SIMPLE)
+2017-10-14 22:42:18,008 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(747)) - supergroup          = supergroup
+2017-10-14 22:42:18,008 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(748)) - isPermissionEnabled = true
+2017-10-14 22:42:18,008 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(759)) - HA Enabled: false
+2017-10-14 22:42:18,023 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(796)) - Append Enabled: true
+2017-10-14 22:42:18,725 INFO  util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map INodeMap
+2017-10-14 22:42:18,725 INFO  util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
+2017-10-14 22:42:18,725 INFO  util.GSet (LightWeightGSet.java:computeCapacity(356)) - 1.0% max memory 3.6 GB = 36.4 MB
+2017-10-14 22:42:18,725 INFO  util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^22 = 4194304 entries
+2017-10-14 22:42:18,725 INFO  namenode.FSDirectory (FSDirectory.java:<init>(235)) - ACLs enabled? false
+2017-10-14 22:42:18,725 INFO  namenode.FSDirectory (FSDirectory.java:<init>(239)) - XAttrs enabled? true
+2017-10-14 22:42:18,725 INFO  namenode.FSDirectory (FSDirectory.java:<init>(247)) - Maximum size of an xattr: 16384
+2017-10-14 22:42:18,725 INFO  namenode.NameNode (FSDirectory.java:<init>(298)) - Caching file names occuring more than 10 times
+2017-10-14 22:42:18,756 INFO  util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map cachedBlocks
+2017-10-14 22:42:18,756 INFO  util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
+2017-10-14 22:42:18,756 INFO  util.GSet (LightWeightGSet.java:computeCapacity(356)) - 0.25% max memory 3.6 GB = 9.1 MB
+2017-10-14 22:42:18,756 INFO  util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^20 = 1048576 entries
+2017-10-14 22:42:18,772 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(5170)) - dfs.namenode.safemode.threshold-pct = 0.9990000128746033
+2017-10-14 22:42:18,772 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(5171)) - dfs.namenode.safemode.min.datanodes = 0
+2017-10-14 22:42:18,772 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(5172)) - dfs.namenode.safemode.extension     = 0
+2017-10-14 22:42:18,772 INFO  metrics.TopMetrics (TopMetrics.java:logConf(65)) - NNTop conf: dfs.namenode.top.window.num.buckets = 10
+2017-10-14 22:42:18,772 INFO  metrics.TopMetrics (TopMetrics.java:logConf(67)) - NNTop conf: dfs.namenode.top.num.users = 10
+2017-10-14 22:42:18,772 INFO  metrics.TopMetrics (TopMetrics.java:logConf(69)) - NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25
+2017-10-14 22:42:18,787 INFO  namenode.FSNamesystem (FSNamesystem.java:initRetryCache(905)) - Retry cache on namenode is enabled
+2017-10-14 22:42:18,787 INFO  namenode.FSNamesystem (FSNamesystem.java:initRetryCache(913)) - Retry cache will use 0.03 of total heap and retry cache entry expiry time is 600000 millis
+2017-10-14 22:42:18,803 INFO  util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map NameNodeRetryCache
+2017-10-14 22:42:18,803 INFO  util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
+2017-10-14 22:42:18,803 INFO  util.GSet (LightWeightGSet.java:computeCapacity(356)) - 0.029999999329447746% max memory 3.6 GB = 1.1 MB
+2017-10-14 22:42:18,803 INFO  util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^17 = 131072 entries
+2017-10-14 22:42:23,830 INFO  namenode.FSImage (FSImage.java:format(158)) - Allocated new BlockPoolId: BP-1925742280-192.168.232.1-1508035343733
+2017-10-14 22:42:23,908 INFO  common.Storage (NNStorage.java:format(568)) - Storage directory K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name1 has been successfully formatted.
+2017-10-14 22:42:23,971 INFO  common.Storage (NNStorage.java:format(568)) - Storage directory K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name2 has been successfully formatted.
+2017-10-14 22:42:24,049 INFO  namenode.FSImageFormatProtobuf (FSImageFormatProtobuf.java:save(413)) - Saving image file K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name1\current\fsimage.ckpt_0000000000000000000 using no compression
+2017-10-14 22:42:24,049 INFO  namenode.FSImageFormatProtobuf (FSImageFormatProtobuf.java:save(413)) - Saving image file K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name2\current\fsimage.ckpt_0000000000000000000 using no compression
+2017-10-14 22:42:24,377 INFO  namenode.FSImageFormatProtobuf (FSImageFormatProtobuf.java:save(416)) - Image file K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name1\current\fsimage.ckpt_0000000000000000000 of size 353 bytes saved in 0 seconds.
+2017-10-14 22:42:24,377 INFO  namenode.FSImageFormatProtobuf (FSImageFormatProtobuf.java:save(416)) - Image file K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name2\current\fsimage.ckpt_0000000000000000000 of size 353 bytes saved in 0 seconds.
+2017-10-14 22:42:24,471 INFO  namenode.NNStorageRetentionManager (NNStorageRetentionManager.java:getImageTxIdToRetain(203)) - Going to retain 1 images with txid >= 0
+2017-10-14 22:42:24,486 INFO  namenode.NameNode (NameNode.java:createNameNode(1418)) - createNameNode []
+2017-10-14 22:42:24,585 WARN  impl.MetricsConfig (MetricsConfig.java:loadFirst(125)) - Cannot locate configuration: tried hadoop-metrics2-namenode.properties,hadoop-metrics2.properties
+2017-10-14 22:42:24,834 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:startTimer(375)) - Scheduled snapshot period at 10 second(s).
+2017-10-14 22:42:24,834 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:start(192)) - NameNode metrics system started
+2017-10-14 22:42:24,834 INFO  namenode.NameNode (NameNode.java:setClientNamenodeAddress(398)) - fs.defaultFS is hdfs://127.0.0.1:0
+2017-10-14 22:42:24,959 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1710)) - Starting Web-server for hdfs at: http://lambda-pluralsight:0
+2017-10-14 22:42:24,974 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:stop(211)) - Stopping NameNode metrics system...
+2017-10-14 22:42:24,974 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:stop(217)) - NameNode metrics system stopped.
+2017-10-14 22:42:24,974 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:shutdown(605)) - NameNode metrics system shutdown complete.
+2017-10-14 22:42:25,021 ERROR hdfs.MiniDFSCluster (MiniDFSCluster.java:initMiniDFSCluster(820)) - IOE creating namenodes. Permissions dump:
+path 'K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\data': 
+	absolute:K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\data
+	permissions: ----
+path 'K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs': 
+	absolute:K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs
+	permissions: drwx
+path 'K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data': 
+	absolute:K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data
+	permissions: drwx
+path 'K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test': 
+	absolute:K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test
+	permissions: drwx
+path 'K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target': 
+	absolute:K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target
+	permissions: drwx
+path 'K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs': 
+	absolute:K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs
+	permissions: drwx
+path 'K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project': 
+	absolute:K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project
+	permissions: drwx
+path 'K:\HadoopDev\hadoop-2.7.3-src-buildX64-read': 
+	absolute:K:\HadoopDev\hadoop-2.7.3-src-buildX64-read
+	permissions: drwx
+path 'K:\HadoopDev': 
+	absolute:K:\HadoopDev
+	permissions: drwx
+path 'K:\': 
+	absolute:K:\
+	permissions: drwx
+
+java.io.FileNotFoundException: webapps/hdfs not found in CLASSPATH
+	at org.apache.hadoop.http.HttpServer2.getWebAppsPath(HttpServer2.java:788)
+	at org.apache.hadoop.http.HttpServer2.<init>(HttpServer2.java:334)
+	at org.apache.hadoop.http.HttpServer2.<init>(HttpServer2.java:114)
+	at org.apache.hadoop.http.HttpServer2$Builder.build(HttpServer2.java:290)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeHttpServer.start(NameNodeHttpServer.java:126)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.startHttpServer(NameNode.java:753)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:639)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:812)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:796)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1493)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.createNameNode(MiniDFSCluster.java:1115)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.createNameNodesAndSetConf(MiniDFSCluster.java:986)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.initMiniDFSCluster(MiniDFSCluster.java:815)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.<init>(MiniDFSCluster.java:475)
+	at org.apache.hadoop.hdfs.MiniDFSCluster$Builder.build(MiniDFSCluster.java:434)
+	at org.apache.hadoop.hdfs.server.namenode.TestStartup.testImageChecksum(TestStartup.java:499)
+	at org.apache.hadoop.hdfs.server.namenode.TestStartup.testImageChecksum(TestStartup.java:481)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+2017-10-14 22:42:25,037 INFO  hdfs.MiniDFSCluster (MiniDFSCluster.java:shutdown(1716)) - Shutting down the Mini HDFS Cluster
+
+4. Error for the 2nd try of running TestStartup.java
+C:\Javax64\jdk1.8.0_144\bin\java -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:62058,suspend=y,server=n -ea -DrunningWithNative=true -Dtest.build.dir=K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target/test-dir -Dhadoop.tmp.dir=K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target/test -Dtest.build.data=K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target/test/data -Dtest.build.webapps=K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target/test-classes/webapps -Dtest.cache.data=K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target/test-classes -Dhadoop.log.dir=K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target/log -Dtest.build.classes=K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target/test-classes -Djava.net.preferIPv4Stack=true -Djava.security.krb5.conf=K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs/src/test/resources/krb5.conf -Djava.security.egd=file:/dev/urandom -Xmx4096m -XX:MaxPermSize=768m -XX:+HeapDumpOnOutOfMemoryError -Didea.test.cyclic.buffer.size=1048576 -Dfile.encoding=UTF-8 -classpath ... com.intellij.rt.execution.junit.JUnitStarter -ideVersion5 -junit4 org.apache.hadoop.hdfs.server.namenode.TestStartup
+Connected to the target VM, address: '127.0.0.1:62058', transport: 'socket'
+2017-10-15 15:36:42,153 INFO  namenode.TestStartup (TestStartup.java:setUp(112)) - --hdfsdir is K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs
+2017-10-15 15:36:42,481 INFO  namenode.TestStartup (TestStartup.java:testImageChecksum(480)) - Test uncompressed image checksum
+2017-10-15 15:36:42,481 INFO  namenode.TestStartup (TestStartup.java:testImageChecksum(493)) - 
+===========================================
+Starting empty cluster
+2017-10-15 15:36:42,481 INFO  hdfs.MiniDFSCluster (MiniDFSCluster.java:<init>(450)) - starting cluster: numNameNodes=1, numDataNodes=0
+2017-10-15 15:36:42,778 WARN  util.NativeCodeLoader (NativeCodeLoader.java:<clinit>(62)) - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Formatting using clusterid: testClusterID
+2017-10-15 15:36:42,825 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(716)) - No KeyProvider found.
+2017-10-15 15:36:42,825 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(726)) - fsLock is fair:true
+2017-10-15 15:36:42,872 INFO  Configuration.deprecation (Configuration.java:warnOnceIfDeprecated(1173)) - hadoop.configured.node.mapping is deprecated. Instead, use net.topology.configured.node.mapping
+2017-10-15 15:36:42,872 INFO  blockmanagement.DatanodeManager (DatanodeManager.java:<init>(239)) - dfs.block.invalidate.limit=1000
+2017-10-15 15:36:42,872 INFO  blockmanagement.DatanodeManager (DatanodeManager.java:<init>(245)) - dfs.namenode.datanode.registration.ip-hostname-check=true
+2017-10-15 15:36:42,872 INFO  blockmanagement.BlockManager (InvalidateBlocks.java:printBlockDeletionTime(71)) - dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+2017-10-15 15:36:42,872 INFO  blockmanagement.BlockManager (InvalidateBlocks.java:printBlockDeletionTime(76)) - The block deletion will start around 2017 Oct 15 15:36:42
+2017-10-15 15:36:42,872 INFO  util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map BlocksMap
+2017-10-15 15:36:42,872 INFO  util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
+2017-10-15 15:36:42,872 INFO  util.GSet (LightWeightGSet.java:computeCapacity(356)) - 2.0% max memory 3.6 GB = 72.8 MB
+2017-10-15 15:36:42,872 INFO  util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^23 = 8388608 entries
+2017-10-15 15:36:42,887 INFO  blockmanagement.BlockManager (BlockManager.java:createBlockTokenSecretManager(367)) - dfs.block.access.token.enable=false
+2017-10-15 15:36:42,887 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(353)) - defaultReplication         = 0
+2017-10-15 15:36:42,887 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(354)) - maxReplication             = 512
+2017-10-15 15:36:42,887 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(355)) - minReplication             = 1
+2017-10-15 15:36:42,887 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(356)) - maxReplicationStreams      = 2
+2017-10-15 15:36:42,887 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(357)) - replicationRecheckInterval = 3000
+2017-10-15 15:36:42,887 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(358)) - encryptDataTransfer        = false
+2017-10-15 15:36:42,887 INFO  blockmanagement.BlockManager (BlockManager.java:<init>(359)) - maxNumBlocksToLog          = 1000
+2017-10-15 15:36:42,887 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(746)) - fsOwner             = Zhibin (auth:SIMPLE)
+2017-10-15 15:36:42,887 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(747)) - supergroup          = supergroup
+2017-10-15 15:36:42,887 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(748)) - isPermissionEnabled = true
+2017-10-15 15:36:42,887 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(759)) - HA Enabled: false
+2017-10-15 15:36:42,903 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(796)) - Append Enabled: true
+2017-10-15 15:36:43,388 INFO  util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map INodeMap
+2017-10-15 15:36:43,388 INFO  util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
+2017-10-15 15:36:43,388 INFO  util.GSet (LightWeightGSet.java:computeCapacity(356)) - 1.0% max memory 3.6 GB = 36.4 MB
+2017-10-15 15:36:43,388 INFO  util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^22 = 4194304 entries
+2017-10-15 15:36:43,419 INFO  namenode.FSDirectory (FSDirectory.java:<init>(235)) - ACLs enabled? false
+2017-10-15 15:36:43,419 INFO  namenode.FSDirectory (FSDirectory.java:<init>(239)) - XAttrs enabled? true
+2017-10-15 15:36:43,419 INFO  namenode.FSDirectory (FSDirectory.java:<init>(247)) - Maximum size of an xattr: 16384
+2017-10-15 15:36:43,419 INFO  namenode.NameNode (FSDirectory.java:<init>(298)) - Caching file names occuring more than 10 times
+2017-10-15 15:36:43,435 INFO  util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map cachedBlocks
+2017-10-15 15:36:43,435 INFO  util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
+2017-10-15 15:36:43,435 INFO  util.GSet (LightWeightGSet.java:computeCapacity(356)) - 0.25% max memory 3.6 GB = 9.1 MB
+2017-10-15 15:36:43,435 INFO  util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^20 = 1048576 entries
+2017-10-15 15:36:43,435 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(5170)) - dfs.namenode.safemode.threshold-pct = 0.9990000128746033
+2017-10-15 15:36:43,435 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(5171)) - dfs.namenode.safemode.min.datanodes = 0
+2017-10-15 15:36:43,435 INFO  namenode.FSNamesystem (FSNamesystem.java:<init>(5172)) - dfs.namenode.safemode.extension     = 0
+2017-10-15 15:36:43,435 INFO  metrics.TopMetrics (TopMetrics.java:logConf(65)) - NNTop conf: dfs.namenode.top.window.num.buckets = 10
+2017-10-15 15:36:43,435 INFO  metrics.TopMetrics (TopMetrics.java:logConf(67)) - NNTop conf: dfs.namenode.top.num.users = 10
+2017-10-15 15:36:43,435 INFO  metrics.TopMetrics (TopMetrics.java:logConf(69)) - NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25
+2017-10-15 15:36:43,435 INFO  namenode.FSNamesystem (FSNamesystem.java:initRetryCache(905)) - Retry cache on namenode is enabled
+2017-10-15 15:36:43,435 INFO  namenode.FSNamesystem (FSNamesystem.java:initRetryCache(913)) - Retry cache will use 0.03 of total heap and retry cache entry expiry time is 600000 millis
+2017-10-15 15:36:43,435 INFO  util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map NameNodeRetryCache
+2017-10-15 15:36:43,435 INFO  util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
+2017-10-15 15:36:43,435 INFO  util.GSet (LightWeightGSet.java:computeCapacity(356)) - 0.029999999329447746% max memory 3.6 GB = 1.1 MB
+2017-10-15 15:36:43,435 INFO  util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^17 = 131072 entries
+2017-10-15 15:36:48,295 INFO  namenode.FSImage (FSImage.java:format(158)) - Allocated new BlockPoolId: BP-1322936605-192.168.232.1-1508096208248
+2017-10-15 15:36:48,373 INFO  common.Storage (NNStorage.java:format(568)) - Storage directory K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name1 has been successfully formatted.
+2017-10-15 15:36:48,435 INFO  common.Storage (NNStorage.java:format(568)) - Storage directory K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name2 has been successfully formatted.
+2017-10-15 15:36:48,451 INFO  namenode.FSImageFormatProtobuf (FSImageFormatProtobuf.java:save(413)) - Saving image file K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name1\current\fsimage.ckpt_0000000000000000000 using no compression
+2017-10-15 15:36:48,451 INFO  namenode.FSImageFormatProtobuf (FSImageFormatProtobuf.java:save(413)) - Saving image file K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name2\current\fsimage.ckpt_0000000000000000000 using no compression
+2017-10-15 15:36:48,576 INFO  namenode.FSImageFormatProtobuf (FSImageFormatProtobuf.java:save(416)) - Image file K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name1\current\fsimage.ckpt_0000000000000000000 of size 353 bytes saved in 0 seconds.
+2017-10-15 15:36:48,576 INFO  namenode.FSImageFormatProtobuf (FSImageFormatProtobuf.java:save(416)) - Image file K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\test\data\dfs\name2\current\fsimage.ckpt_0000000000000000000 of size 353 bytes saved in 0 seconds.
+2017-10-15 15:36:48,808 INFO  namenode.NNStorageRetentionManager (NNStorageRetentionManager.java:getImageTxIdToRetain(203)) - Going to retain 1 images with txid >= 0
+2017-10-15 15:36:48,808 INFO  namenode.NameNode (NameNode.java:createNameNode(1418)) - createNameNode []
+2017-10-15 15:36:48,854 WARN  impl.MetricsConfig (MetricsConfig.java:loadFirst(125)) - Cannot locate configuration: tried hadoop-metrics2-namenode.properties,hadoop-metrics2.properties
+2017-10-15 15:36:48,901 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:startTimer(375)) - Scheduled snapshot period at 10 second(s).
+2017-10-15 15:36:48,901 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:start(192)) - NameNode metrics system started
+2017-10-15 15:36:48,901 INFO  namenode.NameNode (NameNode.java:setClientNamenodeAddress(398)) - fs.defaultFS is hdfs://127.0.0.1:0
+2017-10-15 15:36:48,933 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1710)) - Starting Web-server for hdfs at: http://lambda-pluralsight:0
+2017-10-15 15:36:48,933 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:stop(211)) - Stopping NameNode metrics system...
+2017-10-15 15:36:48,933 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:stop(217)) - NameNode metrics system stopped.
+2017-10-15 15:36:48,933 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:shutdown(605)) - NameNode metrics system shutdown complete.
+2017-10-15 15:39:09,244 INFO  hdfs.MiniDFSCluster (MiniDFSCluster.java:shutdown(1716)) - Shutting down the Mini HDFS Cluster
+
+java.lang.UnsatisfiedLinkError: org.apache.hadoop.io.nativeio.NativeIO$Windows.access0(Ljava/lang/String;I)Z
+
+	at org.apache.hadoop.io.nativeio.NativeIO$Windows.access0(Native Method)
+	at org.apache.hadoop.io.nativeio.NativeIO$Windows.access(NativeIO.java:609)
+	at org.apache.hadoop.fs.FileUtil.canRead(FileUtil.java:977)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.createPermissionsDiagnosisString(MiniDFSCluster.java:863)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.initMiniDFSCluster(MiniDFSCluster.java:821)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.<init>(MiniDFSCluster.java:475)
+	at org.apache.hadoop.hdfs.MiniDFSCluster$Builder.build(MiniDFSCluster.java:434)
+	at org.apache.hadoop.hdfs.server.namenode.TestStartup.testImageChecksum(TestStartup.java:499)
+	at org.apache.hadoop.hdfs.server.namenode.TestStartup.testImageChecksum(TestStartup.java:481)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)

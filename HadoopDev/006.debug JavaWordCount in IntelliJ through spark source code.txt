@@ -1,0 +1,235 @@
+
+1. Import spark 2.2.0 source code into IntelliJ
+Import as a mvn project.
+Search and find JavaWordCount.java, and try to run it to make the whole project compiled.
+
+2. Update spark-examples_2.11.iml to include RUNTIME support for dependency
+
+3. spark-streaming-flume-sink_2.11
+Need some special setup for this module in IntelliJ
+target can NOT be excluded completely
+treat target as Souces, especially target\scala-2.11\src_managed\main\compiled_avro\org\apache\spark
+
+Reference
+1. import Spark source code into intellj, build Error: not found: type SparkFlumeProtocol and EventBatch
+https://stackoverflow.com/questions/33311794/import-spark-source-code-into-intellj-build-error-not-found-type-sparkflumepr
+
+2.
+C:\Javax64\jdk1.8.0_144\bin\java -Dspark.master=local[2] -Xms512m -Xmx1024m -XX:MaxPermSize=300m -ea "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.2.3\lib\idea_rt.jar=54272:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.2.3\bin" -Dfile.encoding=UTF-8 -classpath ... org.apache.spark.examples.JavaWordCount inFiles outFiles
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/10/18 08:37:41 INFO SparkContext: Running Spark version 2.2.0
+17/10/18 08:37:42 INFO SparkContext: Submitted application: JavaWordCount
+17/10/18 08:37:42 INFO SecurityManager: Changing view acls to: Zhibin
+17/10/18 08:37:42 INFO SecurityManager: Changing modify acls to: Zhibin
+17/10/18 08:37:42 INFO SecurityManager: Changing view acls groups to: 
+17/10/18 08:37:42 INFO SecurityManager: Changing modify acls groups to: 
+17/10/18 08:37:42 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(Zhibin); groups with view permissions: Set(); users  with modify permissions: Set(Zhibin); groups with modify permissions: Set()
+17/10/18 08:37:42 INFO Utils: Successfully started service 'sparkDriver' on port 54315.
+17/10/18 08:37:42 INFO SparkEnv: Registering MapOutputTracker
+17/10/18 08:37:42 INFO SparkEnv: Registering BlockManagerMaster
+17/10/18 08:37:42 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+17/10/18 08:37:42 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+17/10/18 08:37:42 INFO DiskBlockManager: Created local directory at C:\Users\Zhibin\AppData\Local\Temp\blockmgr-5032ece7-1515-40df-825c-830f30df1df7
+17/10/18 08:37:42 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+17/10/18 08:37:42 INFO SparkEnv: Registering OutputCommitCoordinator
+17/10/18 08:37:42 INFO log: Logging initialized @1999ms
+17/10/18 08:37:42 INFO Server: jetty-9.3.11.v20160721
+17/10/18 08:37:42 INFO Server: Started @2056ms
+17/10/18 08:37:42 INFO AbstractConnector: Started ServerConnector@21d03963{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+17/10/18 08:37:42 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@1ec9bd38{/jobs,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@74f6c5d8{/jobs/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@34b9f960{/jobs/job,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@4bbf6d0e{/jobs/job/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@791d1f8b{/stages,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@14f232c4{/stages/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@24c22fe{/stages/stage,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@1890516e{/stages/stage/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@16c069df{/stages/pool,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@31edaa7d{/stages/pool/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@3336e6b6{/storage,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@205d38da{/storage/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@6dd7b5a3{/storage/rdd,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@2663e964{/storage/rdd/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@189cbd7c{/environment,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@42e25b0b{/environment/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@44be0077{/executors,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@72ef8d15{/executors/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@5e21e98f{/executors/threadDump,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@5f20155b{/executors/threadDump/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@239105a8{/static,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@3116c353{/,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@4e928fbf{/api,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@295cf707{/jobs/job/kill,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@5f77d0f9{/stages/stage/kill,null,AVAILABLE,@Spark}
+17/10/18 08:37:42 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://192.168.99.1:4040
+17/10/18 08:37:42 INFO Executor: Starting executor ID driver on host localhost
+17/10/18 08:37:42 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 54332.
+17/10/18 08:37:42 INFO NettyBlockTransferService: Server created on 192.168.99.1:54332
+17/10/18 08:37:42 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/10/18 08:37:42 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.99.1, 54332, None)
+17/10/18 08:37:42 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.99.1:54332 with 366.3 MB RAM, BlockManagerId(driver, 192.168.99.1, 54332, None)
+17/10/18 08:37:42 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.99.1, 54332, None)
+17/10/18 08:37:42 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.99.1, 54332, None)
+17/10/18 08:37:42 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@4ff4357f{/metrics/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:43 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/K:/HadoopDev/spark220mvn/spark-warehouse/').
+17/10/18 08:37:43 INFO SharedState: Warehouse path is 'file:/K:/HadoopDev/spark220mvn/spark-warehouse/'.
+17/10/18 08:37:43 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@55dfcc6{/SQL,null,AVAILABLE,@Spark}
+17/10/18 08:37:43 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@93cf163{/SQL/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:43 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@46268f08{/SQL/execution,null,AVAILABLE,@Spark}
+17/10/18 08:37:43 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@71454b9d{/SQL/execution/json,null,AVAILABLE,@Spark}
+17/10/18 08:37:43 INFO ContextHandler: Started o.e.j.s.ServletContextHandler@39fcbef6{/static/sql,null,AVAILABLE,@Spark}
+17/10/18 08:37:43 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+java.lang.AssertionError: assertion failed: unsafe symbol Unstable (child of package InterfaceStability) in runtime reflection universe
+	at scala.reflect.internal.Symbols$Symbol.<init>(Symbols.scala:184)
+	at scala.reflect.internal.Symbols$TypeSymbol.<init>(Symbols.scala:3009)
+	at scala.reflect.internal.Symbols$ClassSymbol.<init>(Symbols.scala:3201)
+	at scala.reflect.internal.Symbols$StubClassSymbol.<init>(Symbols.scala:3496)
+	at scala.reflect.internal.Symbols$Symbol.newStubSymbol(Symbols.scala:498)
+	at scala.reflect.internal.pickling.UnPickler$Scan.readExtSymbol$1(UnPickler.scala:258)
+	at scala.reflect.internal.pickling.UnPickler$Scan.readSymbol(UnPickler.scala:284)
+	at scala.reflect.internal.pickling.UnPickler$Scan.readSymbolRef(UnPickler.scala:649)
+	at scala.reflect.internal.pickling.UnPickler$Scan.readType(UnPickler.scala:417)
+	at scala.reflect.internal.pickling.UnPickler$Scan$$anonfun$readTypeRef$1.apply(UnPickler.scala:658)
+	at scala.reflect.internal.pickling.UnPickler$Scan$$anonfun$readTypeRef$1.apply(UnPickler.scala:658)
+	at scala.reflect.internal.pickling.UnPickler$Scan.at(UnPickler.scala:179)
+	at scala.reflect.internal.pickling.UnPickler$Scan.readTypeRef(UnPickler.scala:658)
+	at scala.reflect.internal.pickling.UnPickler$Scan.readAnnotationInfo(UnPickler.scala:492)
+	at scala.reflect.internal.pickling.UnPickler$Scan.readSymbolAnnotation(UnPickler.scala:515)
+	at scala.reflect.internal.pickling.UnPickler$Scan.run(UnPickler.scala:97)
+	at scala.reflect.internal.pickling.UnPickler.unpickle(UnPickler.scala:38)
+	at scala.reflect.runtime.JavaMirrors$JavaMirror.unpickleClass(JavaMirrors.scala:619)
+	at scala.reflect.runtime.SymbolLoaders$TopClassCompleter$$anonfun$complete$1.apply$mcV$sp(SymbolLoaders.scala:28)
+	at scala.reflect.runtime.SymbolLoaders$TopClassCompleter$$anonfun$complete$1.apply(SymbolLoaders.scala:25)
+	at scala.reflect.runtime.SymbolLoaders$TopClassCompleter$$anonfun$complete$1.apply(SymbolLoaders.scala:25)
+	at scala.reflect.internal.SymbolTable.slowButSafeEnteringPhaseNotLaterThan(SymbolTable.scala:263)
+	at scala.reflect.runtime.SymbolLoaders$TopClassCompleter.complete(SymbolLoaders.scala:25)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1514)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$10.scala$reflect$runtime$SynchronizedSymbols$SynchronizedSymbol$$super$info(SynchronizedSymbols.scala:189)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anonfun$info$1.apply(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anonfun$info$1.apply(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.Gil$class.gilSynchronized(Gil.scala:19)
+	at scala.reflect.runtime.JavaUniverse.gilSynchronized(JavaUniverse.scala:16)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$class.gilSynchronizedIfNotThreadsafe(SynchronizedSymbols.scala:123)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$10.gilSynchronizedIfNotThreadsafe(SynchronizedSymbols.scala:189)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$class.info(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$10.info(SynchronizedSymbols.scala:189)
+	at scala.reflect.internal.SymbolTable.openPackageModule(SymbolTable.scala:286)
+	at scala.reflect.internal.SymbolTable.openPackageModule(SymbolTable.scala:341)
+	at scala.reflect.runtime.SymbolLoaders$LazyPackageType$$anonfun$complete$2.apply$mcV$sp(SymbolLoaders.scala:74)
+	at scala.reflect.runtime.SymbolLoaders$LazyPackageType$$anonfun$complete$2.apply(SymbolLoaders.scala:71)
+	at scala.reflect.runtime.SymbolLoaders$LazyPackageType$$anonfun$complete$2.apply(SymbolLoaders.scala:71)
+	at scala.reflect.internal.SymbolTable.slowButSafeEnteringPhaseNotLaterThan(SymbolTable.scala:263)
+	at scala.reflect.runtime.SymbolLoaders$LazyPackageType.complete(SymbolLoaders.scala:71)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1514)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$1.scala$reflect$runtime$SynchronizedSymbols$SynchronizedSymbol$$super$info(SynchronizedSymbols.scala:174)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anonfun$info$1.apply(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anonfun$info$1.apply(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.Gil$class.gilSynchronized(Gil.scala:19)
+	at scala.reflect.runtime.JavaUniverse.gilSynchronized(JavaUniverse.scala:16)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$class.gilSynchronizedIfNotThreadsafe(SynchronizedSymbols.scala:123)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$1.gilSynchronizedIfNotThreadsafe(SynchronizedSymbols.scala:174)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$class.info(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$1.info(SynchronizedSymbols.scala:174)
+	at scala.reflect.internal.Types$TypeRef.thisInfo(Types.scala:2194)
+	at scala.reflect.internal.Types$TypeRef.baseClasses(Types.scala:2199)
+	at scala.reflect.internal.tpe.FindMembers$FindMemberBase.<init>(FindMembers.scala:17)
+	at scala.reflect.internal.tpe.FindMembers$FindMember.<init>(FindMembers.scala:219)
+	at scala.reflect.internal.Types$Type.scala$reflect$internal$Types$Type$$findMemberInternal$1(Types.scala:1014)
+	at scala.reflect.internal.Types$Type.findMember(Types.scala:1016)
+	at scala.reflect.internal.Types$Type.memberBasedOnName(Types.scala:631)
+	at scala.reflect.internal.Types$Type.member(Types.scala:600)
+	at scala.reflect.internal.Mirrors$RootsBase.getModuleOrClass(Mirrors.scala:48)
+	at scala.reflect.internal.Mirrors$RootsBase.getModuleOrClass(Mirrors.scala:45)
+	at scala.reflect.internal.Mirrors$RootsBase.getModuleOrClass(Mirrors.scala:66)
+	at scala.reflect.internal.Mirrors$RootsBase.staticModuleOrClass(Mirrors.scala:77)
+	at scala.reflect.internal.Mirrors$RootsBase.staticModule(Mirrors.scala:161)
+	at scala.reflect.internal.Mirrors$RootsBase.staticModule(Mirrors.scala:22)
+	at org.apache.spark.sql.catalyst.ScalaReflection$$typecreator42$1.apply(ScalaReflection.scala:636)
+	at scala.reflect.api.TypeTags$WeakTypeTagImpl.tpe$lzycompute(TypeTags.scala:232)
+	at scala.reflect.api.TypeTags$WeakTypeTagImpl.tpe(TypeTags.scala:232)
+	at org.apache.spark.sql.catalyst.ScalaReflection$class.localTypeOf(ScalaReflection.scala:804)
+	at org.apache.spark.sql.catalyst.ScalaReflection$.localTypeOf(ScalaReflection.scala:39)
+	at org.apache.spark.sql.catalyst.ScalaReflection$.optionOfProductType(ScalaReflection.scala:636)
+	at org.apache.spark.sql.catalyst.encoders.ExpressionEncoder$.apply(ExpressionEncoder.scala:51)
+	at org.apache.spark.sql.Encoders$.STRING(Encoders.scala:96)
+	at org.apache.spark.sql.SQLImplicits.newStringEncoder(SQLImplicits.scala:72)
+	at org.apache.spark.sql.DataFrameReader.textFile(DataFrameReader.scala:657)
+	at org.apache.spark.sql.DataFrameReader.textFile(DataFrameReader.scala:632)
+	at org.apache.spark.examples.JavaWordCount.main(JavaWordCount.java:45)
+Exception in thread "main" java.lang.RuntimeException: error reading Scala signature of org.apache.spark.sql.package: assertion failed: unsafe symbol Unstable (child of package InterfaceStability) in runtime reflection universe
+	at scala.reflect.internal.pickling.UnPickler.unpickle(UnPickler.scala:46)
+	at scala.reflect.runtime.JavaMirrors$JavaMirror.unpickleClass(JavaMirrors.scala:619)
+	at scala.reflect.runtime.SymbolLoaders$TopClassCompleter$$anonfun$complete$1.apply$mcV$sp(SymbolLoaders.scala:28)
+	at scala.reflect.runtime.SymbolLoaders$TopClassCompleter$$anonfun$complete$1.apply(SymbolLoaders.scala:25)
+	at scala.reflect.runtime.SymbolLoaders$TopClassCompleter$$anonfun$complete$1.apply(SymbolLoaders.scala:25)
+	at scala.reflect.internal.SymbolTable.slowButSafeEnteringPhaseNotLaterThan(SymbolTable.scala:263)
+	at scala.reflect.runtime.SymbolLoaders$TopClassCompleter.complete(SymbolLoaders.scala:25)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1514)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$10.scala$reflect$runtime$SynchronizedSymbols$SynchronizedSymbol$$super$info(SynchronizedSymbols.scala:189)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anonfun$info$1.apply(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anonfun$info$1.apply(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.Gil$class.gilSynchronized(Gil.scala:19)
+	at scala.reflect.runtime.JavaUniverse.gilSynchronized(JavaUniverse.scala:16)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$class.gilSynchronizedIfNotThreadsafe(SynchronizedSymbols.scala:123)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$10.gilSynchronizedIfNotThreadsafe(SynchronizedSymbols.scala:189)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$class.info(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$10.info(SynchronizedSymbols.scala:189)
+	at scala.reflect.internal.SymbolTable.openPackageModule(SymbolTable.scala:286)
+	at scala.reflect.internal.SymbolTable.openPackageModule(SymbolTable.scala:341)
+	at scala.reflect.runtime.SymbolLoaders$LazyPackageType$$anonfun$complete$2.apply$mcV$sp(SymbolLoaders.scala:74)
+	at scala.reflect.runtime.SymbolLoaders$LazyPackageType$$anonfun$complete$2.apply(SymbolLoaders.scala:71)
+	at scala.reflect.runtime.SymbolLoaders$LazyPackageType$$anonfun$complete$2.apply(SymbolLoaders.scala:71)
+	at scala.reflect.internal.SymbolTable.slowButSafeEnteringPhaseNotLaterThan(SymbolTable.scala:263)
+	at scala.reflect.runtime.SymbolLoaders$LazyPackageType.complete(SymbolLoaders.scala:71)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1514)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$1.scala$reflect$runtime$SynchronizedSymbols$SynchronizedSymbol$$super$info(SynchronizedSymbols.scala:174)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anonfun$info$1.apply(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anonfun$info$1.apply(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.Gil$class.gilSynchronized(Gil.scala:19)
+	at scala.reflect.runtime.JavaUniverse.gilSynchronized(JavaUniverse.scala:16)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$class.gilSynchronizedIfNotThreadsafe(SynchronizedSymbols.scala:123)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$1.gilSynchronizedIfNotThreadsafe(SynchronizedSymbols.scala:174)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$class.info(SynchronizedSymbols.scala:127)
+	at scala.reflect.runtime.SynchronizedSymbols$SynchronizedSymbol$$anon$1.info(SynchronizedSymbols.scala:174)
+	at scala.reflect.internal.Types$TypeRef.thisInfo(Types.scala:2194)
+	at scala.reflect.internal.Types$TypeRef.baseClasses(Types.scala:2199)
+	at scala.reflect.internal.tpe.FindMembers$FindMemberBase.<init>(FindMembers.scala:17)
+	at scala.reflect.internal.tpe.FindMembers$FindMember.<init>(FindMembers.scala:219)
+	at scala.reflect.internal.Types$Type.scala$reflect$internal$Types$Type$$findMemberInternal$1(Types.scala:1014)
+	at scala.reflect.internal.Types$Type.findMember(Types.scala:1016)
+	at scala.reflect.internal.Types$Type.memberBasedOnName(Types.scala:631)
+	at scala.reflect.internal.Types$Type.member(Types.scala:600)
+	at scala.reflect.internal.Mirrors$RootsBase.getModuleOrClass(Mirrors.scala:48)
+	at scala.reflect.internal.Mirrors$RootsBase.getModuleOrClass(Mirrors.scala:45)
+	at scala.reflect.internal.Mirrors$RootsBase.getModuleOrClass(Mirrors.scala:66)
+	at scala.reflect.internal.Mirrors$RootsBase.staticModuleOrClass(Mirrors.scala:77)
+	at scala.reflect.internal.Mirrors$RootsBase.staticModule(Mirrors.scala:161)
+	at scala.reflect.internal.Mirrors$RootsBase.staticModule(Mirrors.scala:22)
+	at org.apache.spark.sql.catalyst.ScalaReflection$$typecreator42$1.apply(ScalaReflection.scala:636)
+	at scala.reflect.api.TypeTags$WeakTypeTagImpl.tpe$lzycompute(TypeTags.scala:232)
+	at scala.reflect.api.TypeTags$WeakTypeTagImpl.tpe(TypeTags.scala:232)
+	at org.apache.spark.sql.catalyst.ScalaReflection$class.localTypeOf(ScalaReflection.scala:804)
+	at org.apache.spark.sql.catalyst.ScalaReflection$.localTypeOf(ScalaReflection.scala:39)
+	at org.apache.spark.sql.catalyst.ScalaReflection$.optionOfProductType(ScalaReflection.scala:636)
+	at org.apache.spark.sql.catalyst.encoders.ExpressionEncoder$.apply(ExpressionEncoder.scala:51)
+	at org.apache.spark.sql.Encoders$.STRING(Encoders.scala:96)
+	at org.apache.spark.sql.SQLImplicits.newStringEncoder(SQLImplicits.scala:72)
+	at org.apache.spark.sql.DataFrameReader.textFile(DataFrameReader.scala:657)
+	at org.apache.spark.sql.DataFrameReader.textFile(DataFrameReader.scala:632)
+	at org.apache.spark.examples.JavaWordCount.main(JavaWordCount.java:45)
+17/10/18 08:37:48 INFO SparkContext: Invoking stop() from shutdown hook
+17/10/18 08:37:48 INFO AbstractConnector: Stopped Spark@21d03963{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+17/10/18 08:37:48 INFO SparkUI: Stopped Spark web UI at http://192.168.99.1:4040
+17/10/18 08:37:48 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+17/10/18 08:37:48 INFO MemoryStore: MemoryStore cleared
+17/10/18 08:37:48 INFO BlockManager: BlockManager stopped
+17/10/18 08:37:48 INFO BlockManagerMaster: BlockManagerMaster stopped
+17/10/18 08:37:48 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+17/10/18 08:37:48 INFO SparkContext: Successfully stopped SparkContext
+17/10/18 08:37:48 INFO ShutdownHookManager: Shutdown hook called
+17/10/18 08:37:48 INFO ShutdownHookManager: Deleting directory C:\Users\Zhibin\AppData\Local\Temp\spark-b327acb6-15cd-47eb-818a-b7aa5363f3cd
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=300m; support was removed in 8.0
+
+Process finished with exit code 1
+

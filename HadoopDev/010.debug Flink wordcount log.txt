@@ -1,0 +1,635 @@
+C:\Javax64\jdk1.8.0_151\bin\java "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.2.3\lib\idea_rt.jar=65023:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.2.3\bin" -Dfile.encoding=UTF-8 -classpath *.jar org.apache.flink.examples.java.wordcount.WordCount
+Executing WordCount example with default input data set.
+Use --input to specify file input.
+Printing result to stdout. Use --output to specify output path.
+22:36:18,986 INFO  org.apache.flink.api.java.ExecutionEnvironment                - The job has 0 registered types and 0 default Kryo serializers
+22:36:19,220 INFO  org.apache.flink.runtime.minicluster.FlinkMiniCluster         - Disabled queryable state server
+22:36:19,255 INFO  org.apache.flink.runtime.minicluster.FlinkMiniCluster         - Starting FlinkMiniCluster.
+22:36:19,529 INFO  akka.event.slf4j.Slf4jLogger                                  - Slf4jLogger started
+22:36:19,892 INFO  org.apache.flink.runtime.blob.BlobServer                      - Created BLOB server storage directory C:\Users\Zhibin\AppData\Local\Temp\blobStore-d3d5fa50-c77d-48c2-90d6-ee66a1b8bc52
+22:36:19,898 INFO  org.apache.flink.runtime.blob.BlobServer                      - Started BLOB server at 0.0.0.0:65028 - max concurrent requests: 50 - max backlog: 1000
+22:36:19,915 INFO  org.apache.flink.runtime.metrics.MetricRegistry               - No metrics reporter configured, no metrics will be exposed/reported.
+22:36:19,926 INFO  org.apache.flink.runtime.jobmanager.MemoryArchivist           - Started memory archivist akka://flink/user/archive_1
+22:36:19,931 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Starting JobManager at akka://flink/user/jobmanager_1.
+22:36:19,931 INFO  org.apache.flink.runtime.highavailability.nonha.embedded.EmbeddedLeaderService  - Proposing leadership to contender org.apache.flink.runtime.jobmanager.JobManager@15c88be9 @ akka://flink/user/jobmanager_1
+22:36:19,939 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerConfiguration  - Messages have a max timeout of 10000 ms
+22:36:19,946 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerServices     - Temporary file directory 'C:\Users\Zhibin\AppData\Local\Temp': total 155 GB, usable 7 GB (4.52% usable)
+22:36:20,260 INFO  org.apache.flink.runtime.io.network.buffer.NetworkBufferPool  - Allocated 362 MB for network buffer pool (number of memory segments: 11607, bytes per segment: 32768).
+22:36:20,276 INFO  org.apache.flink.runtime.io.network.NetworkEnvironment        - Starting the network environment and its components.
+22:36:20,278 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerServices     - Limiting managed memory to 1143 MB, memory will be allocated lazily.
+22:36:20,283 INFO  org.apache.flink.runtime.io.disk.iomanager.IOManager          - I/O manager uses directory C:\Users\Zhibin\AppData\Local\Temp\flink-io-22a9892d-ce3b-4f27-990c-60aed00d9127 for spill files.
+22:36:20,284 INFO  org.apache.flink.runtime.metrics.MetricRegistry               - No metrics reporter configured, no metrics will be exposed/reported.
+22:36:20,349 INFO  org.apache.flink.runtime.filecache.FileCache                  - User file cache uses directory C:\Users\Zhibin\AppData\Local\Temp\flink-dist-cache-031d5243-314a-45c9-849d-2dcaf58e937f
+22:36:20,349 INFO  org.apache.flink.runtime.jobmanager.JobManager                - JobManager akka://flink/user/jobmanager_1 was granted leadership with leader session ID Some(ac14f5be-6aed-423f-8813-0841b6f3d840).
+22:36:20,352 INFO  org.apache.flink.runtime.highavailability.nonha.embedded.EmbeddedLeaderService  - Received confirmation of leadership for leader akka://flink/user/jobmanager_1 , session=ac14f5be-6aed-423f-8813-0841b6f3d840
+22:36:20,360 INFO  org.apache.flink.runtime.filecache.FileCache                  - User file cache uses directory C:\Users\Zhibin\AppData\Local\Temp\flink-dist-cache-685f2427-a7d3-458a-804a-c1f653ba3e97
+22:36:20,361 INFO  org.apache.flink.runtime.clusterframework.standalone.StandaloneResourceManager  - Trying to associate with JobManager leader akka://flink/user/jobmanager_1
+22:36:20,437 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Starting TaskManager actor at akka://flink/user/taskmanager_1#-1019933120.
+22:36:20,437 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - TaskManager data connection information: e50ec817224fcafb60cf3d055c977f17 @ lambda-pluralsight (dataPort=-1)
+22:36:20,438 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - TaskManager has 8 task slot(s).
+22:36:20,438 INFO  org.apache.flink.runtime.clusterframework.standalone.StandaloneResourceManager  - Resource Manager associating with leading JobManager Actor[akka://flink/user/jobmanager_1#1680056959] - leader session ac14f5be-6aed-423f-8813-0841b6f3d840
+22:36:20,439 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Memory usage stats: [HEAP: 372/955/3634 MB, NON HEAP: 23/24/-1 MB (used/committed/max)]
+22:36:20,445 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Trying to register at JobManager akka://flink/user/jobmanager_1 (attempt 1, timeout: 500 milliseconds)
+22:36:20,447 INFO  org.apache.flink.runtime.clusterframework.standalone.StandaloneResourceManager  - TaskManager e50ec817224fcafb60cf3d055c977f17 has started.
+22:36:20,450 INFO  org.apache.flink.runtime.instance.InstanceManager             - Registered TaskManager at lambda-pluralsight (akka://flink/user/taskmanager_1) as ab5c7d2afd1f04670ca1de14d42b3af7. Current number of registered hosts is 1. Current number of alive task slots is 8.
+22:36:20,452 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Successful registration at JobManager (akka://flink/user/jobmanager_1), starting network stack and library cache.
+22:36:20,455 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Determined BLOB server address to be localhost/127.0.0.1:65028. Starting BLOB cache.
+22:36:20,456 INFO  org.apache.flink.runtime.blob.BlobCache                       - Created BLOB cache storage directory C:\Users\Zhibin\AppData\Local\Temp\blobStore-ffcf92f2-ac6c-4b28-9405-3d6caf575704
+22:36:20,611 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - Received SubmitJobAndWait(JobGraph(jobId: 3cd5d9ba473ab3a067ee97bd9280fd03)) but there is no connection to a JobManager yet.
+22:36:20,611 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - Received job Flink Java Job at Wed Oct 18 22:36:18 EDT 2017 (3cd5d9ba473ab3a067ee97bd9280fd03).
+22:36:20,611 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - Disconnect from JobManager null.
+22:36:20,614 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - Connect to JobManager Actor[akka://flink/user/jobmanager_1#1680056959].
+22:36:20,614 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - Connected to JobManager at Actor[akka://flink/user/jobmanager_1#1680056959] with leader session id ac14f5be-6aed-423f-8813-0841b6f3d840.
+Connected to JobManager at Actor[akka://flink/user/jobmanager_1#1680056959] with leader session id ac14f5be-6aed-423f-8813-0841b6f3d840.
+22:36:20,614 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - Sending message to JobManager akka://flink/user/jobmanager_1 to submit job Flink Java Job at Wed Oct 18 22:36:18 EDT 2017 (3cd5d9ba473ab3a067ee97bd9280fd03) and wait for progress
+22:36:20,616 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - Upload jar files to job manager akka://flink/user/jobmanager_1.
+22:36:20,618 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - Submit job to the job manager akka://flink/user/jobmanager_1.
+22:36:20,620 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Submitting job 3cd5d9ba473ab3a067ee97bd9280fd03 (Flink Java Job at Wed Oct 18 22:36:18 EDT 2017).
+22:36:20,661 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Using restart strategy NoRestartStrategy for 3cd5d9ba473ab3a067ee97bd9280fd03.
+22:36:20,673 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Job recovers via failover strategy: full graph restart
+22:36:20,693 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Running initialization on master for job Flink Java Job at Wed Oct 18 22:36:18 EDT 2017 (3cd5d9ba473ab3a067ee97bd9280fd03).
+22:36:20,695 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Successfully ran initialization on master in 2 ms.
+22:36:20,710 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - Job 3cd5d9ba473ab3a067ee97bd9280fd03 was successfully submitted to the JobManager akka://flink/deadLetters.
+22:36:20,711 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Scheduling job 3cd5d9ba473ab3a067ee97bd9280fd03 (Flink Java Job at Wed Oct 18 22:36:18 EDT 2017).
+22:36:20,711 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Job Flink Java Job at Wed Oct 18 22:36:18 EDT 2017 (3cd5d9ba473ab3a067ee97bd9280fd03) switched from state CREATED to RUNNING.
+22:36:20,711 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70) switched from CREATED to SCHEDULED.
+22:36:20,712 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Job execution switched to status RUNNING.
+10/18/2017 22:36:20	Job execution switched to status RUNNING.
+22:36:20,712 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83)(1/1) switched to SCHEDULED 
+10/18/2017 22:36:20	CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83)(1/1) switched to SCHEDULED 
+22:36:20,716 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70) switched from SCHEDULED to DEPLOYING.
+22:36:20,716 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83)(1/1) switched to DEPLOYING 
+10/18/2017 22:36:20	CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83)(1/1) switched to DEPLOYING 
+22:36:20,716 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (attempt #0) to lambda-pluralsight
+22:36:20,755 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1)
+22:36:20,755 INFO  org.apache.flink.runtime.taskmanager.Task                     - CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70) switched from CREATED to DEPLOYING.
+22:36:20,755 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70) [DEPLOYING]
+22:36:20,758 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70) [DEPLOYING].
+22:36:20,759 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70) [DEPLOYING].
+22:36:20,763 INFO  org.apache.flink.runtime.taskmanager.Task                     - CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70) switched from DEPLOYING to RUNNING.
+22:36:20,764 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70) switched from DEPLOYING to RUNNING.
+22:36:20,764 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83)(1/1) switched to RUNNING 
+10/18/2017 22:36:20	CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83)(1/1) switched to RUNNING 
+22:36:20,775 WARN  org.apache.flink.metrics.MetricGroup                          - The operator name DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) exceeded the 80 characters length limit and was truncated.
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab) switched from CREATED to SCHEDULED.
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29) switched from CREATED to SCHEDULED.
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129) switched from CREATED to SCHEDULED.
+22:36:20,804 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(1/8) switched to SCHEDULED 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(1/8) switched to SCHEDULED 
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde) switched from CREATED to SCHEDULED.
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1) switched from CREATED to SCHEDULED.
+22:36:20,804 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(6/8) switched to SCHEDULED 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(6/8) switched to SCHEDULED 
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129) switched from SCHEDULED to DEPLOYING.
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1) switched from SCHEDULED to DEPLOYING.
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3) switched from CREATED to SCHEDULED.
+22:36:20,805 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Reduce (SUM(1), at main(WordCount.java:83) (8/8) (attempt #0) to lambda-pluralsight
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f) switched from CREATED to SCHEDULED.
+22:36:20,805 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f) switched from SCHEDULED to DEPLOYING.
+22:36:20,805 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Reduce (SUM(1), at main(WordCount.java:83) (3/8) (attempt #0) to lambda-pluralsight
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a) switched from CREATED to SCHEDULED.
+22:36:20,805 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3) switched from SCHEDULED to DEPLOYING.
+22:36:20,805 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a) switched from SCHEDULED to DEPLOYING.
+22:36:20,805 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Reduce (SUM(1), at main(WordCount.java:83) (4/8) (attempt #0) to lambda-pluralsight
+22:36:20,805 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Reduce (SUM(1), at main(WordCount.java:83) (2/8) (attempt #0) to lambda-pluralsight
+22:36:20,805 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Reduce (SUM(1), at main(WordCount.java:83) (5/8) (attempt #0) to lambda-pluralsight
+22:36:20,804 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(8/8) switched to SCHEDULED 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(8/8) switched to SCHEDULED 
+22:36:20,806 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(7/8) switched to SCHEDULED 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(7/8) switched to SCHEDULED 
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab) switched from SCHEDULED to DEPLOYING.
+22:36:20,806 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(5/8) switched to SCHEDULED 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(5/8) switched to SCHEDULED 
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde) switched from SCHEDULED to DEPLOYING.
+22:36:20,806 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Reduce (SUM(1), at main(WordCount.java:83) (7/8) (attempt #0) to lambda-pluralsight
+22:36:20,804 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29) switched from SCHEDULED to DEPLOYING.
+22:36:20,806 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(8/8) switched to DEPLOYING 
+22:36:20,806 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Reduce (SUM(1), at main(WordCount.java:83) (6/8) (attempt #0) to lambda-pluralsight
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(8/8) switched to DEPLOYING 
+22:36:20,806 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying Reduce (SUM(1), at main(WordCount.java:83) (1/8) (attempt #0) to lambda-pluralsight
+22:36:20,807 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(5/8) switched to DEPLOYING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(5/8) switched to DEPLOYING 
+22:36:20,807 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(4/8) switched to SCHEDULED 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(4/8) switched to SCHEDULED 
+22:36:20,807 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(3/8) switched to SCHEDULED 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(3/8) switched to SCHEDULED 
+22:36:20,808 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(3/8) switched to DEPLOYING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(3/8) switched to DEPLOYING 
+22:36:20,808 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(2/8) switched to SCHEDULED 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(2/8) switched to SCHEDULED 
+22:36:20,808 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(4/8) switched to DEPLOYING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(4/8) switched to DEPLOYING 
+22:36:20,808 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(2/8) switched to DEPLOYING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(2/8) switched to DEPLOYING 
+22:36:20,808 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(1/8) switched to DEPLOYING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(1/8) switched to DEPLOYING 
+22:36:20,809 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(7/8) switched to DEPLOYING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(7/8) switched to DEPLOYING 
+22:36:20,809 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(6/8) switched to DEPLOYING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(6/8) switched to DEPLOYING 
+22:36:20,809 INFO  org.apache.flink.runtime.taskmanager.Task                     - CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70) switched from RUNNING to FINISHED.
+22:36:20,809 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70).
+22:36:20,809 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70) [FINISHED]
+22:36:20,812 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Reduce (SUM(1), at main(WordCount.java:83) (2/8)
+22:36:20,813 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a) switched from CREATED to DEPLOYING.
+22:36:20,813 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a) [DEPLOYING]
+22:36:20,813 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a) [DEPLOYING].
+22:36:20,814 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a) [DEPLOYING].
+22:36:20,814 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Reduce (SUM(1), at main(WordCount.java:83) (1/8)
+22:36:20,814 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a) switched from DEPLOYING to RUNNING.
+22:36:20,814 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab) switched from CREATED to DEPLOYING.
+22:36:20,814 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab) [DEPLOYING]
+22:36:20,814 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab) [DEPLOYING].
+22:36:20,815 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Reduce (SUM(1), at main(WordCount.java:83) (3/8)
+22:36:20,815 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab) [DEPLOYING].
+22:36:20,815 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab) switched from DEPLOYING to RUNNING.
+22:36:20,815 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f) switched from CREATED to DEPLOYING.
+22:36:20,816 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f) [DEPLOYING]
+22:36:20,816 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f) [DEPLOYING].
+22:36:20,816 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f) [DEPLOYING].
+22:36:20,816 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f) switched from DEPLOYING to RUNNING.
+22:36:20,816 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Reduce (SUM(1), at main(WordCount.java:83) (6/8)
+22:36:20,817 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29) switched from CREATED to DEPLOYING.
+22:36:20,817 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29) [DEPLOYING]
+22:36:20,817 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29) [DEPLOYING].
+22:36:20,818 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29) [DEPLOYING].
+22:36:20,818 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29) switched from DEPLOYING to RUNNING.
+22:36:20,818 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Reduce (SUM(1), at main(WordCount.java:83) (4/8)
+22:36:20,818 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3) switched from CREATED to DEPLOYING.
+22:36:20,818 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3) [DEPLOYING]
+22:36:20,819 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3) [DEPLOYING].
+22:36:20,820 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3) [DEPLOYING].
+22:36:20,820 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3) switched from DEPLOYING to RUNNING.
+22:36:20,820 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Reduce (SUM(1), at main(WordCount.java:83) (5/8)
+22:36:20,820 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1) switched from CREATED to DEPLOYING.
+22:36:20,820 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1) [DEPLOYING]
+22:36:20,822 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1) [DEPLOYING].
+22:36:20,822 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Reduce (SUM(1), at main(WordCount.java:83) (7/8)
+22:36:20,822 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde) switched from CREATED to DEPLOYING.
+22:36:20,822 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde) [DEPLOYING]
+22:36:20,822 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde) [DEPLOYING].
+22:36:20,823 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1) [DEPLOYING].
+22:36:20,823 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1) switched from DEPLOYING to RUNNING.
+22:36:20,823 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task Reduce (SUM(1), at main(WordCount.java:83) (8/8)
+22:36:20,824 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (aae25b7be391ffcba31d1f1e9739ba70)
+22:36:20,825 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129) switched from CREATED to DEPLOYING.
+22:36:20,825 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129) [DEPLOYING]
+22:36:20,826 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129) [DEPLOYING].
+22:36:20,827 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129) [DEPLOYING].
+22:36:20,828 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129) switched from DEPLOYING to RUNNING.
+22:36:20,830 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde) [DEPLOYING].
+22:36:20,830 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab) switched from DEPLOYING to RUNNING.
+22:36:20,831 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f) switched from DEPLOYING to RUNNING.
+22:36:20,831 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29) switched from DEPLOYING to RUNNING.
+22:36:20,831 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde) switched from DEPLOYING to RUNNING.
+22:36:20,830 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a) switched from DEPLOYING to RUNNING.
+22:36:20,832 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3) switched from DEPLOYING to RUNNING.
+22:36:20,832 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(1/8) switched to RUNNING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(1/8) switched to RUNNING 
+22:36:20,833 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1) switched from DEPLOYING to RUNNING.
+22:36:20,833 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(3/8) switched to RUNNING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(3/8) switched to RUNNING 
+22:36:20,833 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(6/8) switched to RUNNING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(6/8) switched to RUNNING 
+22:36:20,833 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129) switched from DEPLOYING to RUNNING.
+22:36:20,833 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(2/8) switched to RUNNING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(2/8) switched to RUNNING 
+22:36:20,833 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde) switched from DEPLOYING to RUNNING.
+22:36:20,833 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(4/8) switched to RUNNING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(4/8) switched to RUNNING 
+22:36:20,833 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(5/8) switched to RUNNING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(5/8) switched to RUNNING 
+22:36:20,834 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(8/8) switched to RUNNING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(8/8) switched to RUNNING 
+22:36:20,834 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(7/8) switched to RUNNING 
+10/18/2017 22:36:20	Reduce (SUM(1), at main(WordCount.java:83)(7/8) switched to RUNNING 
+22:36:20,835 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83) (1/1) (aae25b7be391ffcba31d1f1e9739ba70) switched from RUNNING to FINISHED.
+22:36:20,836 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83)(1/1) switched to FINISHED 
+10/18/2017 22:36:20	CHAIN DataSource (at getDefaultTextLineDataSet(WordCountData.java:70) (org.apache.flink.api.java.io.CollectionInputFormat)) -> FlatMap (FlatMap at main(WordCount.java:80)) -> Combine(SUM(1), at main(WordCount.java:83)(1/1) switched to FINISHED 
+22:36:20,883 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7) switched from CREATED to SCHEDULED.
+22:36:20,883 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7) switched from SCHEDULED to DEPLOYING.
+22:36:20,883 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	DataSink (collect())(5/8) switched to SCHEDULED 
+10/18/2017 22:36:20	DataSink (collect())(5/8) switched to SCHEDULED 
+22:36:20,883 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e) switched from CREATED to SCHEDULED.
+22:36:20,884 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying DataSink (collect()) (5/8) (attempt #0) to lambda-pluralsight
+22:36:20,884 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	DataSink (collect())(5/8) switched to DEPLOYING 
+10/18/2017 22:36:20	DataSink (collect())(5/8) switched to DEPLOYING 
+22:36:20,884 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e) switched from SCHEDULED to DEPLOYING.
+22:36:20,884 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	DataSink (collect())(7/8) switched to SCHEDULED 
+10/18/2017 22:36:20	DataSink (collect())(7/8) switched to SCHEDULED 
+22:36:20,884 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying DataSink (collect()) (7/8) (attempt #0) to lambda-pluralsight
+22:36:20,884 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	DataSink (collect())(7/8) switched to DEPLOYING 
+10/18/2017 22:36:20	DataSink (collect())(7/8) switched to DEPLOYING 
+22:36:20,886 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task DataSink (collect()) (5/8)
+22:36:20,886 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7) switched from CREATED to DEPLOYING.
+22:36:20,887 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7) [DEPLOYING]
+22:36:20,887 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7) [DEPLOYING].
+22:36:20,888 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task DataSink (collect()) (7/8)
+22:36:20,889 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7) [DEPLOYING].
+22:36:20,889 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7) switched from DEPLOYING to RUNNING.
+22:36:20,889 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e) switched from CREATED to DEPLOYING.
+22:36:20,890 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e) [DEPLOYING]
+22:36:20,890 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e) [DEPLOYING].
+22:36:20,891 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e) [DEPLOYING].
+22:36:20,891 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e) switched from DEPLOYING to RUNNING.
+22:36:20,894 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7) switched from DEPLOYING to RUNNING.
+22:36:20,894 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e) switched from DEPLOYING to RUNNING.
+22:36:20,894 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	DataSink (collect())(5/8) switched to RUNNING 
+10/18/2017 22:36:20	DataSink (collect())(5/8) switched to RUNNING 
+22:36:20,895 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:20	DataSink (collect())(7/8) switched to RUNNING 
+10/18/2017 22:36:20	DataSink (collect())(7/8) switched to RUNNING 
+22:36:21,004 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338) switched from CREATED to SCHEDULED.
+22:36:21,004 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338) switched from SCHEDULED to DEPLOYING.
+22:36:21,004 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(8/8) switched to SCHEDULED 
+10/18/2017 22:36:21	DataSink (collect())(8/8) switched to SCHEDULED 
+22:36:21,004 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying DataSink (collect()) (8/8) (attempt #0) to lambda-pluralsight
+22:36:21,005 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(8/8) switched to DEPLOYING 
+10/18/2017 22:36:21	DataSink (collect())(8/8) switched to DEPLOYING 
+22:36:21,006 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task DataSink (collect()) (8/8)
+22:36:21,006 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338) switched from CREATED to DEPLOYING.
+22:36:21,006 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338) [DEPLOYING]
+22:36:21,006 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338) [DEPLOYING].
+22:36:21,007 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338) [DEPLOYING].
+22:36:21,007 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338) switched from DEPLOYING to RUNNING.
+22:36:21,008 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338) switched from DEPLOYING to RUNNING.
+22:36:21,008 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(8/8) switched to RUNNING 
+10/18/2017 22:36:21	DataSink (collect())(8/8) switched to RUNNING 
+22:36:21,012 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e) switched from CREATED to SCHEDULED.
+22:36:21,012 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e) switched from SCHEDULED to DEPLOYING.
+22:36:21,012 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(6/8) switched to SCHEDULED 
+10/18/2017 22:36:21	DataSink (collect())(6/8) switched to SCHEDULED 
+22:36:21,012 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying DataSink (collect()) (6/8) (attempt #0) to lambda-pluralsight
+22:36:21,012 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(6/8) switched to DEPLOYING 
+10/18/2017 22:36:21	DataSink (collect())(6/8) switched to DEPLOYING 
+22:36:21,013 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task DataSink (collect()) (6/8)
+22:36:21,014 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e) switched from CREATED to DEPLOYING.
+22:36:21,014 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e) [DEPLOYING]
+22:36:21,014 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e) [DEPLOYING].
+22:36:21,015 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e) [DEPLOYING].
+22:36:21,015 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e) switched from DEPLOYING to RUNNING.
+22:36:21,015 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e) switched from DEPLOYING to RUNNING.
+22:36:21,016 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(6/8) switched to RUNNING 
+10/18/2017 22:36:21	DataSink (collect())(6/8) switched to RUNNING 
+22:36:21,017 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec) switched from CREATED to SCHEDULED.
+22:36:21,018 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec) switched from SCHEDULED to DEPLOYING.
+22:36:21,018 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(3/8) switched to SCHEDULED 
+10/18/2017 22:36:21	DataSink (collect())(3/8) switched to SCHEDULED 
+22:36:21,018 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying DataSink (collect()) (3/8) (attempt #0) to lambda-pluralsight
+22:36:21,018 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(3/8) switched to DEPLOYING 
+10/18/2017 22:36:21	DataSink (collect())(3/8) switched to DEPLOYING 
+22:36:21,020 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task DataSink (collect()) (3/8)
+22:36:21,020 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec) switched from CREATED to DEPLOYING.
+22:36:21,020 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec) [DEPLOYING]
+22:36:21,020 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec) [DEPLOYING].
+22:36:21,021 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec) [DEPLOYING].
+22:36:21,021 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec) switched from DEPLOYING to RUNNING.
+22:36:21,021 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec) switched from DEPLOYING to RUNNING.
+22:36:21,022 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(3/8) switched to RUNNING 
+10/18/2017 22:36:21	DataSink (collect())(3/8) switched to RUNNING 
+22:36:21,024 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4) switched from CREATED to SCHEDULED.
+22:36:21,024 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4) switched from SCHEDULED to DEPLOYING.
+22:36:21,024 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(2/8) switched to SCHEDULED 
+10/18/2017 22:36:21	DataSink (collect())(2/8) switched to SCHEDULED 
+22:36:21,024 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying DataSink (collect()) (2/8) (attempt #0) to lambda-pluralsight
+22:36:21,024 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(2/8) switched to DEPLOYING 
+10/18/2017 22:36:21	DataSink (collect())(2/8) switched to DEPLOYING 
+22:36:21,025 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task DataSink (collect()) (2/8)
+22:36:21,025 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4) switched from CREATED to DEPLOYING.
+22:36:21,026 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4) [DEPLOYING]
+22:36:21,026 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4) [DEPLOYING].
+22:36:21,027 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4) [DEPLOYING].
+22:36:21,027 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4) switched from DEPLOYING to RUNNING.
+22:36:21,027 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4) switched from DEPLOYING to RUNNING.
+22:36:21,027 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(2/8) switched to RUNNING 
+10/18/2017 22:36:21	DataSink (collect())(2/8) switched to RUNNING 
+22:36:21,436 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2) switched from CREATED to SCHEDULED.
+22:36:21,436 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(1/8) switched to SCHEDULED 
+10/18/2017 22:36:21	DataSink (collect())(1/8) switched to SCHEDULED 
+22:36:21,436 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2) switched from SCHEDULED to DEPLOYING.
+22:36:21,436 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(1/8) switched to DEPLOYING 
+10/18/2017 22:36:21	DataSink (collect())(1/8) switched to DEPLOYING 
+22:36:21,436 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying DataSink (collect()) (1/8) (attempt #0) to lambda-pluralsight
+22:36:21,438 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task DataSink (collect()) (1/8)
+22:36:21,438 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2) switched from CREATED to DEPLOYING.
+22:36:21,438 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2) [DEPLOYING]
+22:36:21,439 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2) [DEPLOYING].
+22:36:21,439 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2) [DEPLOYING].
+22:36:21,439 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2) switched from DEPLOYING to RUNNING.
+22:36:21,439 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2) switched from DEPLOYING to RUNNING.
+22:36:21,440 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(1/8) switched to RUNNING 
+10/18/2017 22:36:21	DataSink (collect())(1/8) switched to RUNNING 
+22:36:21,442 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a) switched from RUNNING to FINISHED.
+22:36:21,442 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4) switched from RUNNING to FINISHED.
+22:36:21,442 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a).
+22:36:21,443 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4).
+22:36:21,443 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f) switched from CREATED to SCHEDULED.
+22:36:21,443 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(4/8) switched to SCHEDULED 
+22:36:21,443 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f) switched from SCHEDULED to DEPLOYING.
+10/18/2017 22:36:21	DataSink (collect())(4/8) switched to SCHEDULED 
+22:36:21,443 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(4/8) switched to DEPLOYING 
+10/18/2017 22:36:21	DataSink (collect())(4/8) switched to DEPLOYING 
+22:36:21,443 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Deploying DataSink (collect()) (4/8) (attempt #0) to lambda-pluralsight
+22:36:21,444 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f) switched from RUNNING to FINISHED.
+22:36:21,444 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f).
+22:36:21,444 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec) switched from RUNNING to FINISHED.
+22:36:21,444 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec).
+22:36:21,444 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Received task DataSink (collect()) (4/8)
+22:36:21,444 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f) switched from CREATED to DEPLOYING.
+22:36:21,444 INFO  org.apache.flink.runtime.taskmanager.Task                     - Creating FileSystem stream leak safety net for task DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f) [DEPLOYING]
+22:36:21,444 INFO  org.apache.flink.runtime.taskmanager.Task                     - Loading JAR files for task DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f) [DEPLOYING].
+22:36:21,445 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29) switched from RUNNING to FINISHED.
+22:36:21,445 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29).
+22:36:21,445 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e) switched from RUNNING to FINISHED.
+22:36:21,445 INFO  org.apache.flink.runtime.taskmanager.Task                     - Registering task at network: DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f) [DEPLOYING].
+22:36:21,445 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e).
+22:36:21,445 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f) switched from DEPLOYING to RUNNING.
+22:36:21,445 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f) switched from DEPLOYING to RUNNING.
+22:36:21,446 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(4/8) switched to RUNNING 
+10/18/2017 22:36:21	DataSink (collect())(4/8) switched to RUNNING 
+22:36:21,446 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129) switched from RUNNING to FINISHED.
+22:36:21,446 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129).
+22:36:21,446 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338) switched from RUNNING to FINISHED.
+22:36:21,446 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338).
+22:36:21,447 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1) switched from RUNNING to FINISHED.
+22:36:21,447 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7) switched from RUNNING to FINISHED.
+22:36:21,447 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1).
+22:36:21,447 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7).
+22:36:21,448 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde) switched from RUNNING to FINISHED.
+22:36:21,448 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec) [FINISHED]
+22:36:21,448 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde).
+22:36:21,448 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f) [FINISHED]
+22:36:21,448 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e) switched from RUNNING to FINISHED.
+22:36:21,448 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129) [FINISHED]
+22:36:21,448 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29) [FINISHED]
+22:36:21,448 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338) [FINISHED]
+22:36:21,448 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e).
+22:36:21,448 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task DataSink (collect()) (f9b063054d7bba9cc5a56e978e7b65ec)
+22:36:21,448 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e) [FINISHED]
+22:36:21,449 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3) switched from RUNNING to FINISHED.
+22:36:21,449 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f) switched from RUNNING to FINISHED.
+22:36:21,449 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4) [FINISHED]
+22:36:21,449 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a) [FINISHED]
+22:36:21,450 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f).
+22:36:21,449 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3).
+22:36:21,450 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Reduce (SUM(1), at main(WordCount.java:83) (c0d1d38f8a395a3f0b4a088af673221f)
+22:36:21,450 INFO  org.apache.flink.runtime.taskmanager.Task                     - Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab) switched from RUNNING to FINISHED.
+22:36:21,450 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f) [FINISHED]
+22:36:21,450 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde) [FINISHED]
+22:36:21,451 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Reduce (SUM(1), at main(WordCount.java:83) (56c47b8da9103ee5f416d68067e99129)
+22:36:21,450 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3) [FINISHED]
+22:36:21,451 INFO  org.apache.flink.runtime.taskmanager.Task                     - DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2) switched from RUNNING to FINISHED.
+22:36:21,451 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1) [FINISHED]
+22:36:21,451 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7) [FINISHED]
+22:36:21,450 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab).
+22:36:21,450 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e) [FINISHED]
+22:36:21,451 INFO  org.apache.flink.runtime.taskmanager.Task                     - Freeing task resources for DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2).
+22:36:21,451 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab) [FINISHED]
+22:36:21,451 INFO  org.apache.flink.runtime.taskmanager.Task                     - Ensuring all FileSystem streams are closed for task DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2) [FINISHED]
+22:36:21,451 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Reduce (SUM(1), at main(WordCount.java:83) (bfd15754af27d790b37e089373585f29)
+22:36:21,452 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task DataSink (collect()) (f265bedfb8a48cea59f290e5d6274338)
+22:36:21,452 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task DataSink (collect()) (f04aeb228f2f16dfd0234ecda021bd7e)
+22:36:21,452 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task DataSink (collect()) (723cd9b52712f7c91650e91b0cef62c4)
+22:36:21,453 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Reduce (SUM(1), at main(WordCount.java:83) (a0f8ab6520c5cca8b54b352409dc5d7a)
+22:36:21,453 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task DataSink (collect()) (2b4f79d43444a5c1a51613507cfd5c3f)
+22:36:21,454 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Reduce (SUM(1), at main(WordCount.java:83) (c6c425a95d17ae3579b11cf48dd72dde)
+22:36:21,454 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (3/8) (f9b063054d7bba9cc5a56e978e7b65ec) switched from RUNNING to FINISHED.
+22:36:21,454 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(3/8) switched to FINISHED 
+22:36:21,454 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (3/8) (c0d1d38f8a395a3f0b4a088af673221f) switched from RUNNING to FINISHED.
+10/18/2017 22:36:21	DataSink (collect())(3/8) switched to FINISHED 
+22:36:21,454 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Reduce (SUM(1), at main(WordCount.java:83) (fae6b0af7fe05a3d6a8201eade66c0b3)
+22:36:21,454 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(3/8) switched to FINISHED 
+10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(3/8) switched to FINISHED 
+22:36:21,454 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Reduce (SUM(1), at main(WordCount.java:83) (8179bc649b98d8feefe34f99e4c1d4a1)
+22:36:21,455 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task DataSink (collect()) (de218c6f3bf6e4c9ad678f338e574db7)
+22:36:21,455 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task DataSink (collect()) (2683ffffc52a2540012afaa5df50277e)
+22:36:21,455 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task Reduce (SUM(1), at main(WordCount.java:83) (e87d5911340007523b61e1848b2e26ab)
+22:36:21,456 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Un-registering task and sending final execution state FINISHED to JobManager for task DataSink (collect()) (73214e163b858e1ec2e2e65f829539a2)
+22:36:21,456 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (8/8) (56c47b8da9103ee5f416d68067e99129) switched from RUNNING to FINISHED.
+22:36:21,457 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (6/8) (bfd15754af27d790b37e089373585f29) switched from RUNNING to FINISHED.
+22:36:21,457 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (8/8) (f265bedfb8a48cea59f290e5d6274338) switched from RUNNING to FINISHED.
+22:36:21,457 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(8/8) switched to FINISHED 
+10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(8/8) switched to FINISHED 
+22:36:21,457 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(6/8) switched to FINISHED 
+10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(6/8) switched to FINISHED 
+22:36:21,457 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(8/8) switched to FINISHED 
+10/18/2017 22:36:21	DataSink (collect())(8/8) switched to FINISHED 
+22:36:21,457 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (6/8) (f04aeb228f2f16dfd0234ecda021bd7e) switched from RUNNING to FINISHED.
+22:36:21,457 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (2/8) (a0f8ab6520c5cca8b54b352409dc5d7a) switched from RUNNING to FINISHED.
+22:36:21,457 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (2/8) (723cd9b52712f7c91650e91b0cef62c4) switched from RUNNING to FINISHED.
+22:36:21,458 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(6/8) switched to FINISHED 
+10/18/2017 22:36:21	DataSink (collect())(6/8) switched to FINISHED 
+22:36:21,458 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (4/8) (2b4f79d43444a5c1a51613507cfd5c3f) switched from RUNNING to FINISHED.
+22:36:21,458 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (7/8) (c6c425a95d17ae3579b11cf48dd72dde) switched from RUNNING to FINISHED.
+22:36:21,458 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(2/8) switched to FINISHED 
+10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(2/8) switched to FINISHED 
+22:36:21,458 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (4/8) (fae6b0af7fe05a3d6a8201eade66c0b3) switched from RUNNING to FINISHED.
+22:36:21,458 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(2/8) switched to FINISHED 
+10/18/2017 22:36:21	DataSink (collect())(2/8) switched to FINISHED 
+22:36:21,458 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(4/8) switched to FINISHED 
+10/18/2017 22:36:21	DataSink (collect())(4/8) switched to FINISHED 
+22:36:21,458 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(7/8) switched to FINISHED 
+10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(7/8) switched to FINISHED 
+22:36:21,458 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (5/8) (8179bc649b98d8feefe34f99e4c1d4a1) switched from RUNNING to FINISHED.
+22:36:21,458 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(4/8) switched to FINISHED 
+10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(4/8) switched to FINISHED 
+22:36:21,458 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(5/8) switched to FINISHED 
+22:36:21,458 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (5/8) (de218c6f3bf6e4c9ad678f338e574db7) switched from RUNNING to FINISHED.
+10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(5/8) switched to FINISHED 
+22:36:21,459 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(5/8) switched to FINISHED 
+10/18/2017 22:36:21	DataSink (collect())(5/8) switched to FINISHED 
+22:36:21,458 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (7/8) (2683ffffc52a2540012afaa5df50277e) switched from RUNNING to FINISHED.
+22:36:21,459 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(7/8) switched to FINISHED 
+10/18/2017 22:36:21	DataSink (collect())(7/8) switched to FINISHED 
+22:36:21,459 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Reduce (SUM(1), at main(WordCount.java:83) (1/8) (e87d5911340007523b61e1848b2e26ab) switched from RUNNING to FINISHED.
+22:36:21,459 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - DataSink (collect()) (1/8) (73214e163b858e1ec2e2e65f829539a2) switched from RUNNING to FINISHED.
+22:36:21,459 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(1/8) switched to FINISHED 
+10/18/2017 22:36:21	Reduce (SUM(1), at main(WordCount.java:83)(1/8) switched to FINISHED 
+22:36:21,459 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	DataSink (collect())(1/8) switched to FINISHED 
+10/18/2017 22:36:21	DataSink (collect())(1/8) switched to FINISHED 
+22:36:21,460 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph        - Job Flink Java Job at Wed Oct 18 22:36:18 EDT 2017 (3cd5d9ba473ab3a067ee97bd9280fd03) switched from state RUNNING to FINISHED.
+22:36:21,460 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - 10/18/2017 22:36:21	Job execution switched to status FINISHED.
+10/18/2017 22:36:21	Job execution switched to status FINISHED.
+22:36:21,465 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - Terminate JobClientActor.
+22:36:21,465 INFO  org.apache.flink.runtime.client.JobClient                     - Job execution complete
+22:36:21,465 INFO  org.apache.flink.runtime.client.JobSubmissionClientActor      - Disconnect from JobManager Actor[akka://flink/user/jobmanager_1#1680056959].
+22:36:21,466 INFO  org.apache.flink.runtime.minicluster.FlinkMiniCluster         - Stopping FlinkMiniCluster.
+22:36:21,471 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Stopping TaskManager akka://flink/user/taskmanager_1#-1019933120.
+22:36:21,471 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Disassociating from JobManager
+22:36:21,473 INFO  org.apache.flink.runtime.blob.BlobCache                       - Shutting down BlobCache
+22:36:21,475 INFO  org.apache.flink.runtime.io.disk.iomanager.IOManager          - I/O manager removed spill file directory C:\Users\Zhibin\AppData\Local\Temp\flink-io-22a9892d-ce3b-4f27-990c-60aed00d9127
+22:36:21,475 INFO  org.apache.flink.runtime.jobmanager.JobManager                - Stopping JobManager akka://flink/user/jobmanager_1.
+22:36:21,475 INFO  org.apache.flink.runtime.io.network.NetworkEnvironment        - Shutting down the network environment and its components.
+22:36:21,478 INFO  org.apache.flink.runtime.blob.BlobServer                      - Stopped BLOB server at 0.0.0.0:65028
+22:36:21,491 INFO  org.apache.flink.runtime.taskmanager.TaskManager              - Task manager akka://flink/user/taskmanager_1 is completely shut down.
+(bourn,1)
+(coil,1)
+(come,1)
+(d,4)
+(dread,1)
+(is,3)
+(long,1)
+(make,2)
+(more,1)
+(must,1)
+(no,2)
+(oppressor,1)
+(pangs,1)
+(perchance,1)
+(sicklied,1)
+(something,1)
+(takes,1)
+(these,1)
+(us,3)
+(what,1)
+(with,3)
+(a,5)
+(contumely,1)
+(die,2)
+(flesh,1)
+(himself,1)
+(his,1)
+(hue,1)
+(in,3)
+(mind,1)
+(now,1)
+(or,2)
+(orisons,1)
+(rather,1)
+(regard,1)
+(resolution,1)
+(rub,1)
+(so,1)
+(sweat,1)
+(thought,1)
+(undiscover,1)
+(wish,1)
+(you,1)
+(against,1)
+(arms,1)
+(awry,1)
+(bodkin,1)
+(end,2)
+(heartache,1)
+(insolence,1)
+(love,1)
+(might,1)
+(moment,1)
+(mortal,1)
+(name,1)
+(not,2)
+(office,1)
+(pale,1)
+(puzzles,1)
+(s,5)
+(sea,1)
+(the,22)
+(those,1)
+(thousand,1)
+(thus,2)
+(troubles,1)
+(unworthy,1)
+(but,1)
+(devoutly,1)
+(dream,1)
+(enterprises,1)
+(fair,1)
+(fly,1)
+(for,2)
+(fortune,1)
+(grunt,1)
+(life,2)
+(may,1)
+(others,1)
+(remember,1)
+(respect,1)
+(spurns,1)
+(take,1)
+(to,15)
+(we,4)
+(weary,1)
+(when,2)
+(whips,1)
+(wrong,1)
+(after,1)
+(and,12)
+(arrows,1)
+(ay,1)
+(be,4)
+(cast,1)
+(country,1)
+(er,1)
+(great,1)
+(know,1)
+(merit,1)
+(my,1)
+(nobler,1)
+(of,15)
+(off,1)
+(pith,1)
+(say,1)
+(scorns,1)
+(shocks,1)
+(this,2)
+(thy,1)
+(traveller,1)
+(turn,1)
+(death,2)
+(delay,1)
+(does,1)
+(dreams,1)
+(ills,1)
+(quietus,1)
+(sleep,5)
+(slings,1)
+(suffer,1)
+(time,1)
+(under,1)
+(who,2)
+(whose,1)
+(action,1)
+(bare,1)
+(calamity,1)
+(despis,1)
+(he,1)
+(law,1)
+(makes,2)
+(nymph,1)
+(o,1)
+(ophelia,1)
+(opposing,1)
+(outrageous,1)
+(proud,1)
+(returns,1)
+(shuffled,1)
+(than,1)
+(them,1)
+(tis,2)
+(whether,1)
+(all,2)
+(bear,3)
+(by,2)
+(conscience,1)
+(consummation,1)
+(cowards,1)
+(currents,1)
+(fardels,1)
+(from,1)
+(give,1)
+(have,2)
+(heir,1)
+(lose,1)
+(man,1)
+(native,1)
+(natural,1)
+(patient,1)
+(pause,1)
+(question,1)
+(sins,1)
+(soft,1)
+(that,7)
+(their,1)
+(there,2)
+(will,1)
+(would,2)
+
+Process finished with exit code 0

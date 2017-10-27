@@ -1,0 +1,27 @@
+Same step as ubuntu.
+If you are using scala 2.11.8, then pay attention to step 3, which is not supported on windows.
+Step 3 basically is going through all modules' pom.xml file and update the jar file in each module's maven repository.
+for example, 
+\flink-scala\pom.xml
+<artifactId>flink-scala_2.10</artifactId> --> <artifactId>flink-scala_2.11</artifactId>
+<artifactId>flink-test-utils_2.10</artifactId> --> <artifactId>flink-test-utils_2.11</artifactId>
+<name>!scala-2.11</name>  --> <name>scala-2.11</name>
+
+1. download flink 1.3.2 source code
+
+2. tools/change-scala-version.sh 2.11
+This step can ONLY be done through cygwin (???)
+
+3. update flink132_scala2118/pom.xml
+<scala.version>2.11.8</scala.version>
+<scala.binary.version>2.11</scala.binary.version>
+<hadoop.version>2.6.5</hadoop.version>
+<java.version>1.8</java.version>
+
+log for step 3.
+zbhuang@ubuntu:~$ cd ApacheFlink/flink132
+zbhuang@ubuntu:~/ApacheFlink/flink132$ tools/change-scala-version.sh 2.11
+sed_i 's/\(artifactId>flink.*'_2\.10'\)<\/artifactId>/\1'_2\.11'<\/artifactId>/g' {}
+
+4. 
+K:\HadoopDev\flink132_s2118>mvn clean install -DskipTests -Dscala.version=2.11.8 -Dhadoop.version=2.6.5

@@ -1,0 +1,38 @@
+
+安装protobuf
+
+
+解压   tar -zxvf protobuf-2.5.0.tar.gz  到  /usr/soft
+$ cd  /usr/soft/protobuf-2.5.0  
+$ ./configure --prefix=/usr/soft/protobuf-2.5.0  
+$ make  
+$ make check  
+$ make clean  
+$ make install  
+
+把 /bin/protoc 添加到 /etc/profile 文件中
+
+输入  protoc --version 验证是否成功，出现 libprotoc 2.5.0证明成功！
+
+reference:
+1. Install protobuf 3 on Ubuntu
+https://gist.github.com/sofyanhadia/37787e5ed098c97919b8c593f0ec44d8
+
+# Make sure you grab the latest version
+curl -OL https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip
+
+# Unzip
+unzip protoc-3.2.0-linux-x86_64.zip -d protoc3
+
+# Move protoc to /usr/local/bin/
+sudo mv protoc3/bin/* /usr/local/bin/
+
+# Move protoc3/include to /usr/local/include/
+sudo mv protoc3/include/* /usr/local/include/
+
+# Optional: change owner
+sudo chwon [user] /usr/local/bin/protoc
+sudo chwon -R [user] /usr/local/include/google
+
+2. hadoop2.7.3编译和安装
+http://blog.csdn.net/jiangnankid/article/details/54233079

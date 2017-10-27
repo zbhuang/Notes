@@ -1,0 +1,18 @@
+1. Import the built project, K:\HadoopDev\flink132_s2118_read, into IntelliJ as maven project.
+
+2. Figure out a lot of dependent issues with library/module.
+
+2.1 Error:java: Compilation failed: internal java compiler error
+There is such a compilation error, could not figure out for quite some time.
+Finally, adding the hadoop-mapreduce-client-core library in solves this compilation error. (a little bit strange).
+
+3. Dependency among the flink modules.
+
+     flink-runtime
+      ^         ^
+      |         |
+      |  flink-optimizer
+      |         ^
+      |         |
+     flink-examples
+

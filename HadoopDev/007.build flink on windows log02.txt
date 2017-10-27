@@ -1,0 +1,471 @@
+  required: java.util.Collection<W>,org.apache.flink.streaming.api.windowing.assigners.MergingWindowAssigner.MergeCallback<W>
+  found: java.util.Collection,org.apache.flink.streaming.api.windowing.assigners.MergingWindowAssigner.MergeCallback
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowOperatorContractTest.java:[1384,74] unchecked conversion
+  required: java.util.Collection<W>
+  found:    java.util.Collection
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowOperatorContractTest.java:[1384,94] unchecked conversion
+  required: org.apache.flink.streaming.api.windowing.assigners.MergingWindowAssigner.MergeCallback<W>
+  found:    org.apache.flink.streaming.api.windowing.assigners.MergingWindowAssigner.MergeCallback
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-streaming-java/src/test/java/org/apache/flink/streaming/util/KeyedOneInputStreamOperatorTestHarness.java:[126,97] unchecked method invocation: method createKeyedStateBackend in interface org.apache.flink.runtime.state.StateBackend is applied to given types
+  required: org.apache.flink.runtime.execution.Environment,org.apache.flink.api.common.JobID,java.lang.String,org.apache.flink.api.common.typeutils.TypeSerializer<K>,int,org.apache.flink.runtime.state.KeyGroupRange,org.apache.flink.runtime.query.TaskKvStateRegistry
+  found: org.apache.flink.runtime.execution.Environment,org.apache.flink.api.common.JobID,java.lang.String,org.apache.flink.api.common.typeutils.TypeSerializer,int,org.apache.flink.runtime.state.KeyGroupRange,org.apache.flink.runtime.query.TaskKvStateRegistry
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-streaming-java/src/test/java/org/apache/flink/streaming/util/KeyedOneInputStreamOperatorTestHarness.java:[130,57] unchecked conversion
+  required: org.apache.flink.api.common.typeutils.TypeSerializer<K>
+  found:    org.apache.flink.api.common.typeutils.TypeSerializer
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-streaming-java/src/test/java/org/apache/flink/streaming/util/KeyedOneInputStreamOperatorTestHarness.java:[139,66] unchecked method invocation: method createKeyedStateBackend in class org.apache.flink.streaming.runtime.tasks.StreamTask is applied to given types
+  required: org.apache.flink.api.common.typeutils.TypeSerializer<K>,int,org.apache.flink.runtime.state.KeyGroupRange
+  found: org.apache.flink.api.common.typeutils.TypeSerializer,int,org.apache.flink.runtime.state.KeyGroupRange
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-streaming-java/src/test/java/org/apache/flink/streaming/util/KeyedOneInputStreamOperatorTestHarness.java:[139,70] unchecked conversion
+  required: org.apache.flink.api.common.typeutils.TypeSerializer<K>
+  found:    org.apache.flink.api.common.typeutils.TypeSerializer
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-streaming-java/src/test/java/org/apache/flink/streaming/util/KeyedOneInputStreamOperatorTestHarness.java:[149,34] snapshotLegacy(long,long) in org.apache.flink.streaming.util.AbstractStreamOperatorTestHarness has been deprecated
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-streaming-java/src/test/java/org/apache/flink/streaming/util/KeyedOneInputStreamOperatorTestHarness.java:[157,41] org.apache.flink.streaming.api.operators.StreamCheckpointedOperator in org.apache.flink.streaming.api.operators has been deprecated
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-streaming-java/src/test/java/org/apache/flink/streaming/util/KeyedOneInputStreamOperatorTestHarness.java: Some input files additionally use or override a deprecated API.
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/EventTimeSessionWindowsTest.java: Some input files additionally use unchecked or unsafe operations.
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (default) @ flink-streaming-java_2.10 ---
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ flink-streaming-java_2.10 ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:copy-resources (copy-packaged-licenses) @ flink-streaming-java_2.10 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\packaged_licenses
+[INFO]
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ flink-streaming-java_2.10 ---
+[INFO] Building jar: K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\flink-streaming-java_2.10-1.3.2.jar
+[INFO]
+[INFO] --- maven-site-plugin:3.5.1:attach-descriptor (attach-descriptor) @ flink-streaming-java_2.10 ---
+[INFO]
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ flink-streaming-java_2.10 ---
+[INFO] Building jar: K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\flink-streaming-java_2.10-1.3.2-tests.jar
+[INFO]
+[INFO] --- maven-shade-plugin:2.4.1:shade (shade-flink) @ flink-streaming-java_2.10 ---
+[INFO] Excluding org.apache.flink:flink-core:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-annotations:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-metrics-core:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.commons:commons-lang3:jar:3.3.2 from the shaded jar.
+[INFO] Excluding com.esotericsoftware.kryo:kryo:jar:2.24.0 from the shaded jar.
+[INFO] Excluding com.esotericsoftware.minlog:minlog:jar:1.2 from the shaded jar.
+[INFO] Excluding org.objenesis:objenesis:jar:2.1 from the shaded jar.
+[INFO] Excluding commons-collections:commons-collections:jar:3.2.2 from the shaded jar.
+[INFO] Excluding org.apache.commons:commons-compress:jar:1.4.1 from the shaded jar.
+[INFO] Excluding org.tukaani:xz:jar:1.0 from the shaded jar.
+[INFO] Excluding org.apache.avro:avro:jar:1.7.7 from the shaded jar.
+[INFO] Excluding org.codehaus.jackson:jackson-core-asl:jar:1.9.13 from the shaded jar.
+[INFO] Excluding org.codehaus.jackson:jackson-mapper-asl:jar:1.9.13 from the shaded jar.
+[INFO] Excluding com.thoughtworks.paranamer:paranamer:jar:2.3 from the shaded jar.
+[INFO] Excluding org.xerial.snappy:snappy-java:jar:1.0.5 from the shaded jar.
+[INFO] Including org.ow2.asm:asm-all:jar:5.0.4 in the shaded jar.
+[INFO] Excluding org.apache.flink:flink-runtime_2.10:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-java:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-shaded-hadoop2:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-common:jar:2.6.5 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-annotations:jar:2.6.5 from the shaded jar.
+[INFO] Excluding xmlenc:xmlenc:jar:0.52 from the shaded jar.
+[INFO] Excluding commons-httpclient:commons-httpclient:jar:3.1 from the shaded jar.
+[INFO] Excluding commons-codec:commons-codec:jar:1.4 from the shaded jar.
+[INFO] Excluding commons-io:commons-io:jar:2.4 from the shaded jar.
+[INFO] Excluding commons-net:commons-net:jar:3.1 from the shaded jar.
+[INFO] Excluding javax.servlet:servlet-api:jar:2.5 from the shaded jar.
+[INFO] Excluding org.mortbay.jetty:jetty-util:jar:6.1.26 from the shaded jar.
+[INFO] Excluding com.sun.jersey:jersey-core:jar:1.9 from the shaded jar.
+[INFO] Excluding commons-el:commons-el:jar:1.0 from the shaded jar.
+[INFO] Excluding commons-logging:commons-logging:jar:1.1.3 from the shaded jar.
+[INFO] Excluding net.java.dev.jets3t:jets3t:jar:0.9.0 from the shaded jar.
+[INFO] Excluding org.apache.httpcomponents:httpclient:jar:4.1.2 from the shaded jar.
+[INFO] Excluding org.apache.httpcomponents:httpcore:jar:4.1.2 from the shaded jar.
+[INFO] Excluding com.jamesmurty.utils:java-xmlbuilder:jar:0.4 from the shaded jar.
+[INFO] Excluding commons-lang:commons-lang:jar:2.6 from the shaded jar.
+[INFO] Excluding commons-configuration:commons-configuration:jar:1.7 from the shaded jar.
+[INFO] Excluding commons-digester:commons-digester:jar:1.8.1 from the shaded jar.
+[INFO] Excluding com.google.code.gson:gson:jar:2.2.4 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-auth:jar:2.6.5 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-kerberos-codec:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-i18n:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-asn1-api:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-util:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding com.jcraft:jsch:jar:0.1.42 from the shaded jar.
+[INFO] Excluding org.apache.curator:curator-client:jar:2.6.0 from the shaded jar.
+[INFO] Excluding org.htrace:htrace-core:jar:3.0.4 from the shaded jar.
+[INFO] Excluding commons-beanutils:commons-beanutils-bean-collections:jar:1.8.3 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-hdfs:jar:2.6.5 from the shaded jar.
+[INFO] Excluding commons-daemon:commons-daemon:jar:1.0.13 from the shaded jar.
+[INFO] Excluding xerces:xercesImpl:jar:2.9.1 from the shaded jar.
+[INFO] Excluding xml-apis:xml-apis:jar:1.3.04 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-yarn-client:jar:2.6.5 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-yarn-api:jar:2.6.5 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-yarn-common:jar:2.6.5 from the shaded jar.
+[INFO] Excluding javax.xml.bind:jaxb-api:jar:2.2.2 from the shaded jar.
+[INFO] Excluding javax.xml.stream:stax-api:jar:1.0-2 from the shaded jar.
+[INFO] Excluding javax.activation:activation:jar:1.1 from the shaded jar.
+[INFO] Excluding com.sun.jersey:jersey-client:jar:1.9 from the shaded jar.
+[INFO] Excluding org.codehaus.jackson:jackson-jaxrs:jar:1.9.13 from the shaded jar.
+[INFO] Excluding org.codehaus.jackson:jackson-xc:jar:1.9.13 from the shaded jar.
+[INFO] Excluding commons-cli:commons-cli:jar:1.3.1 from the shaded jar.
+[INFO] Excluding io.netty:netty-all:jar:4.0.27.Final from the shaded jar.
+[INFO] Excluding org.javassist:javassist:jar:3.18.2-GA from the shaded jar.
+[INFO] Excluding org.scala-lang:scala-library:jar:2.11.8 from the shaded jar.
+[INFO] Excluding com.data-artisans:flakka-actor_2.11:jar:2.3-custom from the shaded jar.
+[INFO] Excluding com.typesafe:config:jar:1.2.1 from the shaded jar.
+[INFO] Excluding com.data-artisans:flakka-remote_2.11:jar:2.3-custom from the shaded jar.
+[INFO] Excluding io.netty:netty:jar:3.8.0.Final from the shaded jar.
+[INFO] Excluding com.google.protobuf:protobuf-java:jar:2.5.0 from the shaded jar.
+[INFO] Excluding org.uncommons.maths:uncommons-maths:jar:1.2.2a from the shaded jar.
+[INFO] Excluding com.data-artisans:flakka-slf4j_2.11:jar:2.3-custom from the shaded jar.
+[INFO] Excluding org.clapper:grizzled-slf4j_2.11:jar:1.0.2 from the shaded jar.
+[INFO] Excluding com.github.scopt:scopt_2.11:jar:3.5.0 from the shaded jar.
+[INFO] Excluding com.fasterxml.jackson.core:jackson-core:jar:2.7.4 from the shaded jar.
+[INFO] Excluding com.fasterxml.jackson.core:jackson-databind:jar:2.7.4 from the shaded jar.
+[INFO] Excluding com.fasterxml.jackson.core:jackson-annotations:jar:2.7.4 from the shaded jar.
+[INFO] Excluding org.apache.zookeeper:zookeeper:jar:3.4.6 from the shaded jar.
+[INFO] Excluding jline:jline:jar:0.9.94 from the shaded jar.
+[INFO] Excluding com.twitter:chill_2.11:jar:0.7.4 from the shaded jar.
+[INFO] Excluding com.twitter:chill-java:jar:0.7.4 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-shaded-curator-recipes:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.curator:curator-recipes:jar:2.12.0 from the shaded jar.
+[INFO] Excluding org.apache.curator:curator-framework:jar:2.12.0 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-clients_2.10:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-optimizer_2.10:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.commons:commons-math3:jar:3.5 from the shaded jar.
+[INFO] Excluding org.apache.sling:org.apache.sling.commons.json:jar:2.0.6 from the shaded jar.
+[INFO] Including com.google.guava:guava:jar:18.0 in the shaded jar.
+[INFO] Including org.apache.flink:force-shading:jar:1.3.2 in the shaded jar.
+[INFO] Excluding org.slf4j:slf4j-api:jar:1.7.7 from the shaded jar.
+[INFO] Excluding com.google.code.findbugs:jsr305:jar:1.3.9 from the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\flink-streaming-java_2.10-1.3.2.jar with K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\flink-streaming-java_2.10-1.3.2-shaded.jar
+[INFO] Replacing original test artifact with shaded test artifact.
+[INFO] Replacing K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\flink-streaming-java_2.10-1.3.2-tests.jar with K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\flink-streaming-java_2.10-1.3.2-shaded-tests.jar
+[INFO] Dependency-reduced POM written at: K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\dependency-reduced-pom.xml
+[INFO] Dependency-reduced POM written at: K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\dependency-reduced-pom.xml
+[INFO] Dependency-reduced POM written at: K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\dependency-reduced-pom.xml
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18.1:test (integration-tests) @ flink-streaming-java_2.10 ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- japicmp-maven-plugin:0.7.0:cmp (default) @ flink-streaming-java_2.10 ---
+[INFO] Written file 'K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\japicmp\japicmp.diff'.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+[INFO] Written file 'K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\japicmp\japicmp.xml'.
+[INFO] Written file 'K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\japicmp\japicmp.html'.
+[INFO]
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ flink-streaming-java_2.10 ---
+[INFO] Installing K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\flink-streaming-java_2.10-1.3.2.jar to C:\Users\Zhibin\.m2\repository\org\apache\flink\flink-streaming-java_2.10\1.3.2\flink-streaming-java_2.10-1.3.2.jar
+[INFO] Installing K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\dependency-reduced-pom.xml to C:\Users\Zhibin\.m2\repository\org\apache\flink\flink-streaming-java_2.10\1.3.2\flink-streaming-java_2.10-1.3.2.pom
+[INFO] Installing K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\flink-streaming-java_2.10-1.3.2-tests.jar to C:\Users\Zhibin\.m2\repository\org\apache\flink\flink-streaming-java_2.10\1.3.2\flink-streaming-java_2.10-1.3.2-tests.jar
+[INFO] Installing K:\HadoopDev\flink132_h265_s2118\flink-streaming-java\target\flink-streaming-java_2.10-1.3.2-tests.jar to C:\Users\Zhibin\.m2\repository\org\apache\flink\flink-streaming-java_2.10\1.3.2\flink-streaming-java_2.10-1.3.2-tests.jar
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building flink-test-utils 1.3.2
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ flink-test-utils_2.10 ---
+[INFO] Deleting K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ flink-test-utils_2.10 ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven) @ flink-test-utils_2.10 ---
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ flink-test-utils_2.10 ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ flink-test-utils_2.10 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\src\main\resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ flink-test-utils_2.10 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target\classes
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-test-utils-parent/flink-test-utils/src/main/java/org/apache/flink/test/util/TestBaseUtils.
+java:[151,50] JOB_MANAGER_WEB_PORT_KEY in org.apache.flink.configuration.ConfigConstants has been deprecated
+[WARNING] /K:/HadoopDev/flink132_h265_s2118/flink-test-utils-parent/flink-test-utils/src/main/java/org/apache/flink/test/util/TestBaseUtils.
+java:[152,49] JOB_MANAGER_WEB_LOG_PATH_KEY in org.apache.flink.configuration.ConfigConstants has been deprecated
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ flink-test-utils_2.10 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\src\test\resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ flink-test-utils_2.10 ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ flink-test-utils_2.10 ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:copy-resources (copy-packaged-licenses) @ flink-test-utils_2.10 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\packaged_licenses
+[INFO]
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ flink-test-utils_2.10 ---
+[INFO] Building jar: K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target\flink-test-utils_2.10-1.3.2.jar
+[INFO]
+[INFO] --- maven-site-plugin:3.5.1:attach-descriptor (attach-descriptor) @ flink-test-utils_2.10 ---
+[INFO]
+[INFO] --- maven-shade-plugin:2.4.1:shade (shade-flink) @ flink-test-utils_2.10 ---
+[INFO] Excluding org.apache.flink:flink-test-utils-junit:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-runtime_2.10:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-core:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-annotations:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-metrics-core:jar:1.3.2 from the shaded jar.
+[INFO] Excluding com.esotericsoftware.kryo:kryo:jar:2.24.0 from the shaded jar.
+[INFO] Excluding com.esotericsoftware.minlog:minlog:jar:1.2 from the shaded jar.
+[INFO] Excluding commons-collections:commons-collections:jar:3.2.2 from the shaded jar.
+[INFO] Excluding org.apache.commons:commons-compress:jar:1.4.1 from the shaded jar.
+[INFO] Excluding org.tukaani:xz:jar:1.0 from the shaded jar.
+[INFO] Excluding org.apache.avro:avro:jar:1.7.7 from the shaded jar.
+[INFO] Excluding org.codehaus.jackson:jackson-core-asl:jar:1.9.13 from the shaded jar.
+[INFO] Excluding org.codehaus.jackson:jackson-mapper-asl:jar:1.9.13 from the shaded jar.
+[INFO] Excluding com.thoughtworks.paranamer:paranamer:jar:2.3 from the shaded jar.
+[INFO] Excluding org.xerial.snappy:snappy-java:jar:1.0.5 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-java:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-shaded-hadoop2:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-common:jar:2.6.5 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-annotations:jar:2.6.5 from the shaded jar.
+[INFO] Excluding xmlenc:xmlenc:jar:0.52 from the shaded jar.
+[INFO] Excluding commons-httpclient:commons-httpclient:jar:3.1 from the shaded jar.
+[INFO] Excluding commons-codec:commons-codec:jar:1.4 from the shaded jar.
+[INFO] Excluding commons-net:commons-net:jar:3.1 from the shaded jar.
+[INFO] Excluding javax.servlet:servlet-api:jar:2.5 from the shaded jar.
+[INFO] Excluding org.mortbay.jetty:jetty-util:jar:6.1.26 from the shaded jar.
+[INFO] Excluding com.sun.jersey:jersey-core:jar:1.9 from the shaded jar.
+[INFO] Excluding commons-el:commons-el:jar:1.0 from the shaded jar.
+[INFO] Excluding commons-logging:commons-logging:jar:1.1.3 from the shaded jar.
+[INFO] Excluding net.java.dev.jets3t:jets3t:jar:0.9.0 from the shaded jar.
+[INFO] Excluding org.apache.httpcomponents:httpclient:jar:4.1.2 from the shaded jar.
+[INFO] Excluding org.apache.httpcomponents:httpcore:jar:4.1.2 from the shaded jar.
+[INFO] Excluding com.jamesmurty.utils:java-xmlbuilder:jar:0.4 from the shaded jar.
+[INFO] Excluding commons-configuration:commons-configuration:jar:1.7 from the shaded jar.
+[INFO] Excluding commons-digester:commons-digester:jar:1.8.1 from the shaded jar.
+[INFO] Excluding com.google.code.gson:gson:jar:2.2.4 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-auth:jar:2.6.5 from the shaded jar.
+[INFO] Excluding com.jcraft:jsch:jar:0.1.42 from the shaded jar.
+[INFO] Excluding org.apache.curator:curator-client:jar:2.6.0 from the shaded jar.
+[INFO] Excluding org.htrace:htrace-core:jar:3.0.4 from the shaded jar.
+[INFO] Excluding commons-beanutils:commons-beanutils-bean-collections:jar:1.8.3 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-hdfs:jar:2.6.5 from the shaded jar.
+[INFO] Excluding commons-daemon:commons-daemon:jar:1.0.13 from the shaded jar.
+[INFO] Excluding xerces:xercesImpl:jar:2.9.1 from the shaded jar.
+[INFO] Excluding xml-apis:xml-apis:jar:1.3.04 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-yarn-client:jar:2.6.5 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-yarn-api:jar:2.6.5 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-yarn-common:jar:2.6.5 from the shaded jar.
+[INFO] Excluding javax.xml.bind:jaxb-api:jar:2.2.2 from the shaded jar.
+[INFO] Excluding javax.xml.stream:stax-api:jar:1.0-2 from the shaded jar.
+[INFO] Excluding javax.activation:activation:jar:1.1 from the shaded jar.
+[INFO] Excluding com.sun.jersey:jersey-client:jar:1.9 from the shaded jar.
+[INFO] Excluding org.codehaus.jackson:jackson-jaxrs:jar:1.9.13 from the shaded jar.
+[INFO] Excluding org.codehaus.jackson:jackson-xc:jar:1.9.13 from the shaded jar.
+[INFO] Excluding org.apache.commons:commons-lang3:jar:3.3.2 from the shaded jar.
+[INFO] Excluding commons-cli:commons-cli:jar:1.3.1 from the shaded jar.
+[INFO] Excluding io.netty:netty-all:jar:4.0.27.Final from the shaded jar.
+[INFO] Excluding org.javassist:javassist:jar:3.18.2-GA from the shaded jar.
+[INFO] Including com.google.guava:guava:jar:18.0 in the shaded jar.
+[INFO] Including org.ow2.asm:asm-all:jar:5.0.4 in the shaded jar.
+[INFO] Excluding org.scala-lang:scala-library:jar:2.11.8 from the shaded jar.
+[INFO] Excluding com.data-artisans:flakka-actor_2.11:jar:2.3-custom from the shaded jar.
+[INFO] Excluding com.typesafe:config:jar:1.2.1 from the shaded jar.
+[INFO] Excluding com.data-artisans:flakka-remote_2.11:jar:2.3-custom from the shaded jar.
+[INFO] Excluding io.netty:netty:jar:3.8.0.Final from the shaded jar.
+[INFO] Excluding com.google.protobuf:protobuf-java:jar:2.5.0 from the shaded jar.
+[INFO] Excluding org.uncommons.maths:uncommons-maths:jar:1.2.2a from the shaded jar.
+[INFO] Excluding com.data-artisans:flakka-slf4j_2.11:jar:2.3-custom from the shaded jar.
+[INFO] Excluding org.clapper:grizzled-slf4j_2.11:jar:1.0.2 from the shaded jar.
+[INFO] Excluding com.github.scopt:scopt_2.11:jar:3.5.0 from the shaded jar.
+[INFO] Excluding com.fasterxml.jackson.core:jackson-core:jar:2.7.4 from the shaded jar.
+[INFO] Excluding com.fasterxml.jackson.core:jackson-databind:jar:2.7.4 from the shaded jar.
+[INFO] Excluding com.fasterxml.jackson.core:jackson-annotations:jar:2.7.4 from the shaded jar.
+[INFO] Excluding org.apache.zookeeper:zookeeper:jar:3.4.6 from the shaded jar.
+[INFO] Excluding jline:jline:jar:0.9.94 from the shaded jar.
+[INFO] Excluding com.twitter:chill_2.11:jar:0.7.4 from the shaded jar.
+[INFO] Excluding com.twitter:chill-java:jar:0.7.4 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-shaded-curator-recipes:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.curator:curator-recipes:jar:2.12.0 from the shaded jar.
+[INFO] Excluding org.apache.curator:curator-framework:jar:2.12.0 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-clients_2.10:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-optimizer_2.10:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.flink:flink-streaming-java_2.10:jar:1.3.2 from the shaded jar.
+[INFO] Excluding org.apache.commons:commons-math3:jar:3.5 from the shaded jar.
+[INFO] Excluding org.apache.sling:org.apache.sling.commons.json:jar:2.0.6 from the shaded jar.
+[INFO] Excluding junit:junit:jar:4.12 from the shaded jar.
+[INFO] Excluding org.hamcrest:hamcrest-core:jar:1.3 from the shaded jar.
+[INFO] Excluding org.apache.curator:curator-test:jar:2.12.0 from the shaded jar.
+[INFO] Excluding org.apache.hadoop:hadoop-minikdc:jar:2.7.2 from the shaded jar.
+[INFO] Excluding commons-io:commons-io:jar:2.4 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-core-api:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding commons-lang:commons-lang:jar:2.6 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-core-constants:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-i18n:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-i18n:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-asn1-api:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-ldap-client-api:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-ldap-codec-core:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-ldap-extras-aci:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-ldap-extras-util:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-ldap-model:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-util:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.mina:mina-core:jar:2.0.7 from the shaded jar.
+[INFO] Excluding net.sf.ehcache:ehcache-core:jar:2.4.4 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptor-kerberos:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-core:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-admin:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-authn:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-authz:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-changelog:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-collective:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-event:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-exception:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-journal:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-normalization:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-operational:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-referral:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-schema:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-subtree:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-interceptors-trigger:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-ldap-extras-trigger:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-kerberos-codec:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-protocol-shared:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-protocol-kerberos:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-core-shared:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-ldif-partition:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-xdbm-partition:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-mavibot-partition:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.mavibot:mavibot:jar:1.0.0-M1 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-core-avl:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-all:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding commons-pool:commons-pool:jar:1.6 from the shaded jar.
+[INFO] Excluding antlr:antlr:jar:2.7.7 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-jdbm-partition:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.jdbm:apacheds-jdbm1:bundle:2.0.0-M2 from the shaded jar.
+[INFO] Excluding org.apache.directory.server:apacheds-protocol-ldap:jar:2.0.0-M15 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-asn1-ber:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-ldap-extras-codec-api:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-ldap-extras-codec:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding org.apache.directory.api:api-ldap-extras-sp:jar:1.0.0-M20 from the shaded jar.
+[INFO] Excluding bouncycastle:bcprov-jdk15:jar:140 from the shaded jar.
+[INFO] Including org.apache.flink:force-shading:jar:1.3.2 in the shaded jar.
+[INFO] Excluding org.slf4j:slf4j-api:jar:1.7.7 from the shaded jar.
+[INFO] Excluding com.google.code.findbugs:jsr305:jar:1.3.9 from the shaded jar.
+[INFO] Excluding org.objenesis:objenesis:jar:2.1 from the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target\flink-test-utils_2.10-1.3.2.jar with K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target\flink-test-utils_2.10-1.3.2-shaded.jar
+[INFO] Replacing original test artifact with shaded test artifact.
+[INFO] Replacing K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target\flink-test-utils_2.10-1.3.2-tests.jar with K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target\flink-test-utils_2.10-1.3.2-shaded-tests.jar
+[INFO] Dependency-reduced POM written at: K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target\dependency-reduced-pom.xml
+[INFO] Dependency-reduced POM written at: K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target\dependency-reduced-pom.xml
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18.1:test (integration-tests) @ flink-test-utils_2.10 ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ flink-test-utils_2.10 ---
+[INFO] Installing K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target\flink-test-utils_2.10-1.3.2.jar to C:\Users\Zhibin\.m2\repository\org\apache\flink\flink-test-utils_2.10\1.3.2\flink-test-utils_2.10-1.3.2.jar
+[INFO] Installing K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target\dependency-reduced-pom.xml to C:\Users\Zhibin\.m2\repository\org\apache\flink\flink-test-utils_2.10\1.3.2\flink-test-utils_2.10-1.3.2.pom
+[INFO] Installing K:\HadoopDev\flink132_h265_s2118\flink-test-utils-parent\flink-test-utils\target\flink-test-utils_2.10-1.3.2-tests.jar to
+C:\Users\Zhibin\.m2\repository\org\apache\flink\flink-test-utils_2.10\1.3.2\flink-test-utils_2.10-1.3.2-tests.jar
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building flink-scala 1.3.2
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.scalamacros:quasiquotes_2.11:jar:2.0.1 is missing, no dependency information available
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO]
+[INFO] force-shading ...................................... SUCCESS [  1.412 s]
+[INFO] flink .............................................. SUCCESS [  2.910 s]
+[INFO] flink-annotations .................................. SUCCESS [  0.872 s]
+[INFO] flink-shaded-hadoop ................................ SUCCESS [  0.242 s]
+[INFO] flink-shaded-hadoop2 ............................... SUCCESS [  8.948 s]
+[INFO] flink-shaded-hadoop2-uber .......................... SUCCESS [ 12.723 s]
+[INFO] flink-shaded-curator ............................... SUCCESS [  0.141 s]
+[INFO] flink-shaded-curator-recipes ....................... SUCCESS [  1.747 s]
+[INFO] flink-shaded-curator-test .......................... SUCCESS [  1.007 s]
+[INFO] flink-metrics ...................................... SUCCESS [  0.121 s]
+[INFO] flink-metrics-core ................................. SUCCESS [  1.101 s]
+[INFO] flink-test-utils-parent ............................ SUCCESS [  0.131 s]
+[INFO] flink-test-utils-junit ............................. SUCCESS [  0.628 s]
+[INFO] flink-core ......................................... SUCCESS [ 15.362 s]
+[INFO] flink-java ......................................... SUCCESS [  7.025 s]
+[INFO] flink-runtime ...................................... SUCCESS [ 55.355 s]
+[INFO] flink-optimizer .................................... SUCCESS [  4.929 s]
+[INFO] flink-clients ...................................... SUCCESS [  2.561 s]
+[INFO] flink-streaming-java ............................... SUCCESS [ 22.145 s]
+[INFO] flink-test-utils ................................... SUCCESS [  5.462 s]
+[INFO] flink-scala ........................................ FAILURE [  0.031 s]
+[INFO] flink-runtime-web .................................. SKIPPED
+[INFO] flink-examples ..................................... SKIPPED
+[INFO] flink-examples-batch ............................... SKIPPED
+[INFO] flink-connectors ................................... SKIPPED
+[INFO] flink-hadoop-compatibility ......................... SKIPPED
+[INFO] flink-avro ......................................... SKIPPED
+[INFO] flink-contrib ...................................... SKIPPED
+[INFO] flink-statebackend-rocksdb ......................... SKIPPED
+[INFO] flink-tests ........................................ SKIPPED
+[INFO] flink-streaming-scala .............................. SKIPPED
+[INFO] flink-libraries .................................... SKIPPED
+[INFO] flink-table ........................................ SKIPPED
+[INFO] flink-jdbc ......................................... SKIPPED
+[INFO] flink-hbase ........................................ SKIPPED
+[INFO] flink-hcatalog ..................................... SKIPPED
+[INFO] flink-metrics-jmx .................................. SKIPPED
+[INFO] flink-connector-kafka-base ......................... SKIPPED
+[INFO] flink-connector-kafka-0.8 .......................... SKIPPED
+[INFO] flink-connector-kafka-0.9 .......................... SKIPPED
+[INFO] flink-connector-kafka-0.10 ......................... SKIPPED
+[INFO] flink-connector-elasticsearch-base ................. SKIPPED
+[INFO] flink-connector-elasticsearch ...................... SKIPPED
+[INFO] flink-connector-elasticsearch2 ..................... SKIPPED
+[INFO] flink-connector-rabbitmq ........................... SKIPPED
+[INFO] flink-connector-twitter ............................ SKIPPED
+[INFO] flink-connector-nifi ............................... SKIPPED
+[INFO] flink-connector-cassandra .......................... SKIPPED
+[INFO] flink-connector-filesystem ......................... SKIPPED
+[INFO] flink-connector-elasticsearch5 ..................... SKIPPED
+[INFO] flink-examples-streaming ........................... SKIPPED
+[INFO] flink-examples-table ............................... SKIPPED
+[INFO] flink-gelly ........................................ SKIPPED
+[INFO] flink-gelly-scala .................................. SKIPPED
+[INFO] flink-gelly-examples ............................... SKIPPED
+[INFO] flink-python ....................................... SKIPPED
+[INFO] flink-ml ........................................... SKIPPED
+[INFO] flink-cep .......................................... SKIPPED
+[INFO] flink-cep-scala .................................... SKIPPED
+[INFO] flink-scala-shell .................................. SKIPPED
+[INFO] flink-quickstart ................................... SKIPPED
+[INFO] flink-quickstart-java .............................. SKIPPED
+[INFO] flink-quickstart-scala ............................. SKIPPED
+[INFO] flink-storm ........................................ SKIPPED
+[INFO] flink-storm-examples ............................... SKIPPED
+[INFO] flink-streaming-contrib ............................ SKIPPED
+[INFO] flink-tweet-inputformat ............................ SKIPPED
+[INFO] flink-connector-wikiedits .......................... SKIPPED
+[INFO] flink-mesos ........................................ SKIPPED
+[INFO] flink-yarn ......................................... SKIPPED
+[INFO] flink-metrics-dropwizard ........................... SKIPPED
+[INFO] flink-metrics-ganglia .............................. SKIPPED
+[INFO] flink-metrics-graphite ............................. SKIPPED
+[INFO] flink-metrics-statsd ............................... SKIPPED
+[INFO] flink-metrics-datadog .............................. SKIPPED
+[INFO] flink-dist ......................................... SKIPPED
+[INFO] flink-fs-tests ..................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:26 min
+[INFO] Finished at: 2017-10-18T10:39:56-04:00
+[INFO] Final Memory: 148M/1540M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project flink-scala_2.10: Could not resolve dependencies for project org.apache.flink:flink-scala_2.10:jar:1.3.2: Failure to find org.scalamacros:quasiquotes_2.11:jar:2.0.1 in https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :flink-scala_2.10
+
+K:\HadoopDev\flink132_h265_s2118>
