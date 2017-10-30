@@ -17,3 +17,11 @@ backup
 ------
 HADOOP_HOME
 K:\HadoopDev\hadoop-2.6.2-src-buildX64\hadoop-dist\target\hadoop-2.6.2
+
+reference
+1.
+Installing Hadoop-2.6.x on Windows 10
+http://www.ics.uci.edu/~shantas/Install_Hadoop-2.6.0_on_Windows10.pdf
+
+Installing Spark on Windows 10
+http://www.ics.uci.edu/~shantas/Install_Spark_on_Windows10.pdf

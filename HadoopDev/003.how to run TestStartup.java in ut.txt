@@ -36,7 +36,7 @@ start-dfs.cmd
 stop-dfs.cmd
 
 2. update some files
-K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\target\hadoop-common-2.7.3\etc\hadoop\core-site.xml
+2.1 K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\target\hadoop-common-2.7.3\etc\hadoop\core-site.xml
 <configuration>
   <property>
     <name>fs.defaultFS</name>
@@ -44,7 +44,7 @@ K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\
     <description>The name of the default file system. </description>
   </property>
 </configuration>
-K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\src\main\resources\core-default.xml
+2.2 K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\src\main\resources\core-default.xml
 <property>
   <name>fs.defaultFS</name>
   <value>hdfs://localhost</value>
@@ -55,7 +55,7 @@ K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-common-project\hadoop-common\
   <name>fs.default.name</name>
   <value>hdfs://localhost/</value>
 </property>
-3. copy webapps
+2.3 copy webapps
 from
 K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-hdfs-project\hadoop-hdfs\target\webapps
 to

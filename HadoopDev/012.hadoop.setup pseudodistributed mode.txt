@@ -1,0 +1,10 @@
+Current situation is 
+after modifying \hadoop-mapreduce-project\hadoop-mapreduce-examples\hadoop-mapreduce-examples.iml, I can run WordCount example.
+But after modifying some config xml() files to run TestStartup UT, I found I no longer can run WordCount example.
+Either it complains
+java.lang.UnsatisfiedLinkError: org.apache.hadoop.io.nativeio.NativeIO$Windows.access0(Ljava/lang/String;I)Z
+or it complains
+Exception in thread "main" java.net.ConnectException: Call From zbhuang_home/192.168.99.1 to localhost:8020 failed on connection exception: java.net.ConnectException: Connection refused: no further information; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+So maybe it is a good time to setup Pseudodistributed mode (then later I will focus on setting up env to run WordCount and NameNode/DataNode)
+
+

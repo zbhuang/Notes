@@ -20,7 +20,7 @@ hadoop-2.6.2-src-buildX64-read\hadoop-mapreduce-project\hadoop-mapreduce-example
 
 4.Run WordCount.java in IntelliJ
 
-Update hadoop-mapreduce-examples.iml to have RUNTIME support for dependent modules.
+Update \hadoop-mapreduce-project\hadoop-mapreduce-examples\hadoop-mapreduce-examples.iml to have RUNTIME support for dependent modules.
 
 [VM options]
 -Dlog4j.configuration=file:/K:/HadoopDev/hadoop-2.6.2-src-buildX64-read/log4j.properties -Dhadoop.home.dir="K:/HadoopDev/hadoop-2.6.2-src-buildX64/hadoop-dist/target/hadoop-2.6.2"
@@ -35,7 +35,25 @@ ApplicationAttemptStartDataPBImpl.java  -> AppAtmptStartDataPBImpl.java
 K:\HadoopDev\hadoop-2.7.3-src-buildX64-read\hadoop-yarn-project\hadoop-yarn\hadoop-yarn-server\hadoop-yarn-server-applicationhistoryservice\src\test\java\org\apache\hadoop\yarn\server\applicationhistoryservice\TestApplicationHistoryManagerOnTimelineStore.java
 
 reference
-1.Cannot initialize cluster exception while running job on Hadoop 2
+1. Unable to load native-hadoop library for your platform
+2017-10-28 16:50:33 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Exception in thread "main" java.io.IOException: Cannot initialize Cluster. Please check your configuration for mapreduce.framework.name and the correspond server addresses.
+	at org.apache.hadoop.mapreduce.Cluster.initialize(Cluster.java:120)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:82)
+	at org.apache.hadoop.mapreduce.Cluster.<init>(Cluster.java:75)
+	at org.apache.hadoop.mapreduce.Job$9.run(Job.java:1266)
+	at org.apache.hadoop.mapreduce.Job$9.run(Job.java:1262)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1628)
+	at org.apache.hadoop.mapreduce.Job.connect(Job.java:1262)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1290)
+	at org.apache.hadoop.mapreduce.Job.waitForCompletion(Job.java:1314)
+	at org.apache.hadoop.examples.WordCount.main(WordCount.java:87)
+
+# The solution is to set correct HADOOP_HOME
+
+2. Cannot initialize cluster exception while running job on Hadoop 2
 https://stackoverflow.com/questions/19642862/cannot-initialize-cluster-exception-while-running-job-on-hadoop-2
 Cannot initialize Cluster. Please check your configuration for mapreduce.framework.name and the correspond server addresses.
 
@@ -44,3 +62,12 @@ I was having similar issue, but yarn was not the issue. After adding following j
 hadoop-mapreduce-client-jobclient-2.2.0.2.0.6.0-76
 hadoop-mapreduce-client-common-2.2.0.2.0.6.0-76
 hadoop-mapreduce-client-shuffle-2.2.0.2.0.6.0-76
+
+3. 
+Exception in thread "main" java.net.ConnectException: Call From zbhuang_home/192.168.99.1 to localhost:8020 failed on connection exception: java.net.ConnectException: Connection refused: no further information; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+
+https://stackoverflow.com/questions/28661285/hadoop-cluster-setup-java-net-connectexception-connection-refused
+https://datashine.wordpress.com/2014/09/06/java-net-connectexception-connection-refused-for-more-details-see-httpwiki-apache-orghadoopconnectionrefused/
+
+4.
+java.lang.UnsatisfiedLinkError: org.apache.hadoop.io.nativeio.NativeIO$Windows.access0(Ljava/lang/String;I)Z

@@ -1,0 +1,121 @@
+Launch NameNode.main()
+
+C:\Javax64\jdk1.8.0_144\bin\java -Dlog4j.configuration=file:/K:/HadoopDev/hadoop-2.6.0x64-read/log4j.properties -Dhadoop.home.dir=K:/HadoopDev/hadoop-2.6.0x64-read/hadoop-dist/target/hadoop-2.6.0 "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.2.3\lib\idea_rt.jar=53398:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.2.3\bin" -Dfile.encoding=UTF-8 -classpath *.jar org.apache.hadoop.hdfs.server.namenode.NameNode
+2017-10-28 18:05:33 INFO  NameNode:633 - STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = zbhuang_home/192.168.99.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 2.6.0
+STARTUP_MSG:   classpath = *.jar
+STARTUP_MSG:   build = ${version-info.scm.uri} -r ${version-info.scm.commit}; compiled by 'Zhibin' on ${version-info.build.time}
+STARTUP_MSG:   java = 1.8.0_144
+************************************************************/
+2017-10-28 18:05:33 INFO  NameNode:1367 - createNameNode []
+2017-10-28 18:05:33 WARN  MetricsConfig:124 - Cannot locate configuration: tried hadoop-metrics2-namenode.properties,hadoop-metrics2.properties
+2017-10-28 18:05:33 INFO  MetricsSystemImpl:376 - Scheduled snapshot period at 10 second(s).
+2017-10-28 18:05:33 INFO  MetricsSystemImpl:191 - NameNode metrics system started
+2017-10-28 18:05:33 INFO  NameNode:349 - fs.defaultFS is hdfs://localhost/
+2017-10-28 18:05:33 INFO  DFSUtil:1694 - Starting Web-server for hdfs at: http://0.0.0.0:50070
+2017-10-28 18:05:33 INFO  log:67 - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2017-10-28 18:05:33 INFO  HttpRequestLog:80 - Http request log for http.requests.namenode is not defined
+2017-10-28 18:05:33 INFO  HttpServer2:699 - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2017-10-28 18:05:33 INFO  HttpServer2:677 - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hdfs
+2017-10-28 18:05:33 INFO  HttpServer2:684 - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2017-10-28 18:05:33 INFO  HttpServer2:86 - Added filter 'org.apache.hadoop.hdfs.web.AuthFilter' (class=org.apache.hadoop.hdfs.web.AuthFilter)
+2017-10-28 18:05:33 INFO  HttpServer2:603 - addJerseyResourcePackage: packageName=org.apache.hadoop.hdfs.server.namenode.web.resources;org.apache.hadoop.hdfs.web.resources, pathSpec=/webhdfs/v1/*
+2017-10-28 18:05:33 INFO  HttpServer2:887 - Jetty bound to port 50070
+2017-10-28 18:05:33 INFO  log:67 - jetty-6.1.26
+2017-10-28 18:05:33 INFO  log:67 - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2017-10-28 18:05:34 INFO  log:67 - Started HttpServer2$SelectChannelConnectorWithSafeStartup@0.0.0.0:50070
+2017-10-28 18:05:34 WARN  FSNamesystem:705 - Only one image storage directory (dfs.namenode.name.dir) configured. Beware of data loss due to lack of redundant storage directories!
+2017-10-28 18:05:34 WARN  FSNamesystem:710 - Only one namespace edits storage directory (dfs.namenode.edits.dir) configured. Beware of data loss due to lack of redundant storage directories!
+2017-10-28 18:05:34 INFO  FSNamesystem:774 - No KeyProvider found.
+2017-10-28 18:05:34 INFO  FSNamesystem:786 - fsLock is fair:true
+2017-10-28 18:05:34 INFO  DatanodeManager:232 - dfs.block.invalidate.limit=1000
+2017-10-28 18:05:34 INFO  DatanodeManager:238 - dfs.namenode.datanode.registration.ip-hostname-check=true
+2017-10-28 18:05:34 INFO  BlockManager:71 - dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+2017-10-28 18:05:34 INFO  BlockManager:76 - The block deletion will start around 2017 Oct 28 18:05:34
+2017-10-28 18:05:34 INFO  GSet:354 - Computing capacity for map BlocksMap
+2017-10-28 18:05:34 INFO  GSet:355 - VM type       = 64-bit
+2017-10-28 18:05:34 INFO  GSet:356 - 2.0% max memory 3.5 GB = 72.7 MB
+2017-10-28 18:05:34 INFO  GSet:361 - capacity      = 2^23 = 8388608 entries
+2017-10-28 18:05:34 INFO  BlockManager:364 - dfs.block.access.token.enable=false
+2017-10-28 18:05:34 INFO  BlockManager:349 - defaultReplication         = 3
+2017-10-28 18:05:34 INFO  BlockManager:350 - maxReplication             = 512
+2017-10-28 18:05:34 INFO  BlockManager:351 - minReplication             = 1
+2017-10-28 18:05:34 INFO  BlockManager:352 - maxReplicationStreams      = 2
+2017-10-28 18:05:34 INFO  BlockManager:353 - shouldCheckForEnoughRacks  = false
+2017-10-28 18:05:34 INFO  BlockManager:354 - replicationRecheckInterval = 3000
+2017-10-28 18:05:34 INFO  BlockManager:355 - encryptDataTransfer        = false
+2017-10-28 18:05:34 INFO  BlockManager:356 - maxNumBlocksToLog          = 1000
+2017-10-28 18:05:34 INFO  FSNamesystem:809 - fsOwner             = Zhibin (auth:SIMPLE)
+2017-10-28 18:05:34 INFO  FSNamesystem:810 - supergroup          = supergroup
+2017-10-28 18:05:34 INFO  FSNamesystem:811 - isPermissionEnabled = true
+2017-10-28 18:05:34 INFO  FSNamesystem:822 - HA Enabled: false
+2017-10-28 18:05:34 INFO  FSNamesystem:859 - Append Enabled: true
+2017-10-28 18:05:34 INFO  GSet:354 - Computing capacity for map INodeMap
+2017-10-28 18:05:34 INFO  GSet:355 - VM type       = 64-bit
+2017-10-28 18:05:34 INFO  GSet:356 - 1.0% max memory 3.5 GB = 36.3 MB
+2017-10-28 18:05:34 INFO  GSet:361 - capacity      = 2^22 = 4194304 entries
+2017-10-28 18:05:34 INFO  NameNode:234 - Caching file names occuring more than 10 times
+2017-10-28 18:05:34 INFO  GSet:354 - Computing capacity for map cachedBlocks
+2017-10-28 18:05:34 INFO  GSet:355 - VM type       = 64-bit
+2017-10-28 18:05:34 INFO  GSet:356 - 0.25% max memory 3.5 GB = 9.1 MB
+2017-10-28 18:05:34 INFO  GSet:361 - capacity      = 2^20 = 1048576 entries
+2017-10-28 18:05:34 INFO  FSNamesystem:5663 - dfs.namenode.safemode.threshold-pct = 0.9990000128746033
+2017-10-28 18:05:34 INFO  FSNamesystem:5664 - dfs.namenode.safemode.min.datanodes = 0
+2017-10-28 18:05:34 INFO  FSNamesystem:5665 - dfs.namenode.safemode.extension     = 30000
+2017-10-28 18:05:34 INFO  FSNamesystem:957 - Retry cache on namenode is enabled
+2017-10-28 18:05:34 INFO  FSNamesystem:965 - Retry cache will use 0.03 of total heap and retry cache entry expiry time is 600000 millis
+2017-10-28 18:05:34 INFO  GSet:354 - Computing capacity for map NameNodeRetryCache
+2017-10-28 18:05:34 INFO  GSet:355 - VM type       = 64-bit
+2017-10-28 18:05:34 INFO  GSet:356 - 0.029999999329447746% max memory 3.5 GB = 1.1 MB
+2017-10-28 18:05:34 INFO  GSet:361 - capacity      = 2^17 = 131072 entries
+2017-10-28 18:05:34 INFO  NNConf:62 - ACLs enabled? false
+2017-10-28 18:05:34 INFO  NNConf:66 - XAttrs enabled? true
+2017-10-28 18:05:34 INFO  NNConf:74 - Maximum size of an xattr: 16384
+2017-10-28 18:05:34 INFO  Storage:715 - Lock on \tmp\hadoop-Zhibin\dfs\name\in_use.lock acquired by nodename 46452@zbhuang_home
+2017-10-28 18:05:34 WARN  FSNamesystem:741 - Encountered exception loading fsimage
+org.apache.hadoop.hdfs.server.common.IncorrectVersionException: Unexpected version of storage directory K:\tmp\hadoop-Zhibin\dfs\name. Reported: -63. Expecting = -60.
+	at org.apache.hadoop.hdfs.server.common.StorageInfo.setLayoutVersion(StorageInfo.java:179)
+	at org.apache.hadoop.hdfs.server.common.StorageInfo.setFieldsFromProperties(StorageInfo.java:131)
+	at org.apache.hadoop.hdfs.server.namenode.NNStorage.setFieldsFromProperties(NNStorage.java:610)
+	at org.apache.hadoop.hdfs.server.namenode.NNStorage.readProperties(NNStorage.java:639)
+	at org.apache.hadoop.hdfs.server.namenode.FSImage.recoverStorageDirs(FSImage.java:325)
+	at org.apache.hadoop.hdfs.server.namenode.FSImage.recoverTransitionRead(FSImage.java:202)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFSImage(FSNamesystem.java:1021)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:739)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:536)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:595)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:762)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:746)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1438)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.main(NameNode.java:1504)
+2017-10-28 18:05:34 INFO  log:67 - Stopped HttpServer2$SelectChannelConnectorWithSafeStartup@0.0.0.0:50070
+2017-10-28 18:05:34 INFO  MetricsSystemImpl:210 - Stopping NameNode metrics system...
+2017-10-28 18:05:34 INFO  MetricsSystemImpl:216 - NameNode metrics system stopped.
+2017-10-28 18:05:34 INFO  MetricsSystemImpl:605 - NameNode metrics system shutdown complete.
+2017-10-28 18:05:34 FATAL NameNode:1509 - Failed to start namenode.
+org.apache.hadoop.hdfs.server.common.IncorrectVersionException: Unexpected version of storage directory K:\tmp\hadoop-Zhibin\dfs\name. Reported: -63. Expecting = -60.
+	at org.apache.hadoop.hdfs.server.common.StorageInfo.setLayoutVersion(StorageInfo.java:179)
+	at org.apache.hadoop.hdfs.server.common.StorageInfo.setFieldsFromProperties(StorageInfo.java:131)
+	at org.apache.hadoop.hdfs.server.namenode.NNStorage.setFieldsFromProperties(NNStorage.java:610)
+	at org.apache.hadoop.hdfs.server.namenode.NNStorage.readProperties(NNStorage.java:639)
+	at org.apache.hadoop.hdfs.server.namenode.FSImage.recoverStorageDirs(FSImage.java:325)
+	at org.apache.hadoop.hdfs.server.namenode.FSImage.recoverTransitionRead(FSImage.java:202)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFSImage(FSNamesystem.java:1021)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:739)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:536)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:595)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:762)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:746)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1438)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.main(NameNode.java:1504)
+2017-10-28 18:05:34 INFO  ExitUtil:124 - Exiting with status 1
+2017-10-28 18:05:34 INFO  NameNode:659 - SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at zbhuang_home/192.168.99.1
+************************************************************/
+
+Process finished with exit code 1
