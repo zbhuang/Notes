@@ -1,0 +1,13 @@
+- Lead a team to develop Exxx’s next generation data ingestion and job processing system with Hadoop, Spark, and JNI. With newly implemented system, the lead time for a new data source ingestion was reduced to less than 3 months from 12-18 months; the new system also makes the job processing throughput linear scalable to number of the Hadoop nodes.
+- Research on next generation Customer Keying and Linking system: explore the options for large scale entity storage, design filtering and matching algorithms for entity search and link, and propose the solution for data source projection.
+- Apply graph analytics to fraud detection: design a system to build graphs from large scale of customer’s trade data with Spark GraphX, MLLib and Cassandra, analyze the graph to generate relational attributes for fraud detection models.
+- Develop strategies to build dictionaries for different domains with Google Word2Vec models and different clustering algorithms.
+
+- Work in Innovation, Research & Development Team on various projects, for example, Big Data Processing with Spark, Hadoop, HDFS, and Elasticsearch; 
+- Real time streaming with Spark Streaming, Kafka, Nodejs;
+- Machine learning and text analytics;
+
+- Work closely with team at Chile and Ireland to develop, deliver and support batch/online big data platform solutions for credit bureau data exchange using Spark, Hadoop, Cassandra, Scala, Kafka, Zookeeper, Avro, Java, RESTful, Spring boot.
+- PCI compliance, sensitive data security/protection, developed/delivered a tokenization API solution using Protegrity platforms for Equifax BUs in US.
+- Master of ThoughtWorks GoCD server for automated CD and Testing pipelines in SDLC, continuous delivery strategy, blue/green (zero downtime) deployment.
+- Work with the team to stabilize the Equifax big data platform ecosystem (NoDB, Kafka, ElasticSearch, Zookeeper, Operational Scripts), promote the product into production for Equifax business units in US, Peru, Canada and Australia.
