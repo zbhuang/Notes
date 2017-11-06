@@ -2,3 +2,7 @@ http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS17.html
 https://www.youtube.com/watch?v=IzHoNwlCGnE&list=PLJV_el3uVTsPMxPbjeX7PicgWbY7F8wW9
 
 https://www.csie.ntu.edu.tw/~yvchen/f106-adl/syllabus.html
+
+Tensorflow and deep learning, without a PhD
+https://github.com/martin-gorner/tensorflow-mnist-tutorial
+https://github.com/martin-gorner/tensorflow-rnn-shakespeare
