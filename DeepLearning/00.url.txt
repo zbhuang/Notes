@@ -6,3 +6,6 @@ https://www.csie.ntu.edu.tw/~yvchen/f106-adl/syllabus.html
 Tensorflow and deep learning, without a PhD
 https://github.com/martin-gorner/tensorflow-mnist-tutorial
 https://github.com/martin-gorner/tensorflow-rnn-shakespeare
+
+Simple PyTorch Tutorials Zero to ALL
+https://github.com//hunkim/PyTorchZeroToAll
