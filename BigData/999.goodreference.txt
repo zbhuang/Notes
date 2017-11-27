@@ -19,3 +19,8 @@ https://www.gitbook.com/book/databricks/databricks-spark-knowledge-base/details
 https://jaceklaskowski.gitbooks.io/mastering-apache-spark/spark-architecture.html
 
 http://datastrophic.io/core-concepts-architecture-and-internals-of-apache-spark/
+
+牛肉圆粉不加葱
+http://www.jianshu.com/c/32446a6b960c
+https://github.com/lw-lin/CoolplaySpark
+https://github.com/JerryLead/SparkInternals
