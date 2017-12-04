@@ -24,3 +24,22 @@ http://datastrophic.io/core-concepts-architecture-and-internals-of-apache-spark/
 http://www.jianshu.com/c/32446a6b960c
 https://github.com/lw-lin/CoolplaySpark
 https://github.com/JerryLead/SparkInternals
+
+Data Algorithms_Recipes for Scaling Up with Hadoop and Spark
+https://github.com/anjijava16/HadoopRelatedBooks/blob/master/Data%20Algorithms%20Recipes%20for%20Scaling%20Up%20with%20Hadoop%20and%20Spark%20Ist%20edition%20Orielly%20Jul%202015.pdf
+
+Learning Spark Lightning Fast Big Data Analysis
+https://github.com/anjijava16/HadoopRelatedBooks/blob/master/Learning%20Spark%20Lightning-Fast%20Big%20Data%20Analysis%20Orielly%20Feb%202015.pdf
+
+https://github.com/anjijava16/HadoopRelatedBooks
+
+JavaPairRDD<String, Iterable<Tuple2<Integer, Integer>>> groups = pairs.groupByKey();
+List<Tuple2<String, Iterable<Tuple2<Integer, Integer>>>> output2 = groups.collect();
+for (Tuple2<String, Iterable<Tuple2<Integer, Integer>>> t : output2) {
+  Iterable<Tuple2<Integer, Integer>> list = t._2;
+  System.out.println(t._1);
+  for (Tuple2<Integer, Integer> t2 : list) {
+    System.out.println(t2._1 + "," + t2._2);
+  }
+  System.out.println("=====");
+}
