@@ -33,6 +33,7 @@ https://github.com/anjijava16/HadoopRelatedBooks/blob/master/Learning%20Spark%20
 
 https://github.com/anjijava16/HadoopRelatedBooks
 
+//debugging and print
 JavaPairRDD<String, Iterable<Tuple2<Integer, Integer>>> groups = pairs.groupByKey();
 List<Tuple2<String, Iterable<Tuple2<Integer, Integer>>>> output2 = groups.collect();
 for (Tuple2<String, Iterable<Tuple2<Integer, Integer>>> t : output2) {
