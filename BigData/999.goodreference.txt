@@ -3,6 +3,7 @@ Spark
 A Deeper Understanding of Spark Internals
 https://spark-summit.org/2014/a-deeper-understanding-of-spark-internals/
 
+https://stackoverflow.com/questions/25836316/how-dag-works-under-the-covers-in-rdd
 https://stackoverflow.com/questions/30691385/internal-work-of-spark
 
 Advanced Apache Spark Training - Sameer Farooqui (Databricks)
