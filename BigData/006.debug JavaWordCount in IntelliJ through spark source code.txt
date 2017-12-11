@@ -10,6 +10,18 @@ Need some special setup for this module in IntelliJ
 target can NOT be excluded completely
 treat target as Souces, especially target\scala-2.11\src_managed\main\compiled_avro\org\apache\spark
 
+4. config for JavaWordCount
+org.apache.spark.examples.JavaWordCount
+-Dlog4j.configuration=file:/home/zbhuang/BigDataDev/log4j.properties -Dspark.master=local[2]
+# Root logger option
+log4j.rootLogger=ERROR, stdout
+
+# Direct log messages to stdout
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+
 Reference
 1. import Spark source code into intellj, build Error: not found: type SparkFlumeProtocol and EventBatch
 https://stackoverflow.com/questions/33311794/import-spark-source-code-into-intellj-build-error-not-found-type-sparkflumepr
