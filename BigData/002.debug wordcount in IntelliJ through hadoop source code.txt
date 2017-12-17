@@ -24,7 +24,16 @@ Update \hadoop-mapreduce-project\hadoop-mapreduce-examples\hadoop-mapreduce-exam
 
 [VM options]
 -Dlog4j.configuration=file:/K:/HadoopDev/hadoop-2.6.2-src-buildX64-read/log4j.properties -Dhadoop.home.dir="K:/HadoopDev/hadoop-2.6.2-src-buildX64/hadoop-dist/target/hadoop-2.6.2"
+-------------------------------------------------------------------------------------------
+# Root logger option
+log4j.rootLogger=INFO, stdout
 
+# Direct log messages to stdout
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+-------------------------------------------------------------------------------------------
 [Program arguments]
 data/input/ data/output
 

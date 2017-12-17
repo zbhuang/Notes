@@ -1,0 +1,27 @@
+1. svn help
+
+2. svn stat -q
+The command "svn stat -q" will show you a list of locally-changed files (current directory plus all subdirectories).
+
+You can run the command "svn diff" without a file name argument, and it will show you all the file diffs 
+(current directory plus all subdirectories) in one large output.
+
+3. svn changelist
+svn changelist bug17435369 ./Libraries/MeasureStore/rpas/CalendarPositionMap.h ./Libraries/MeasureStore/rpas/CalendarPositionMap.cpp ./Java/rpasjni/com_rpas_RpasJni.cpp
+svn changelist --remove [file_name]
+
+4. svn commit
+Two ways
+4.1 "changelist" way to commit multiple files
+$ svn changelist [changelist_name] [file1] [file2] ...
+$ svn commit -m [comment_with_double_quote] --changelist [changelist_name]
+
+#
+[you cannot add, but you can remove]
+1) Changelists are created as a one-time list, that means you cannot add another file to an existing list.
+2) In the other hand, you are free to remove any file from an existing changelist using svn changelist mylist --remove. 
+For our previous example it could be: svn changelist mylist --remove B. 
+
+4.2 single file commit
+$ svn commit -m [comment_with_double_quote] [file1]
+
