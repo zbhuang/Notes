@@ -1,0 +1,33 @@
+1. eclipse_cpp.sh
+In ubuntu, if you are using eclipse. when launching it, the eclipse's menu will be gone.
+So here is the solution to make the menu show up.
+Create an eclipse_cpp.sh, and put the following content into this sh file (note, put your own eclipse path)
+
+[Desktop Entry] 
+Type=Application 
+Name=Eclipse 
+Icon=eclipse 
+Exec=env UBUNTU_MENUPROXY= /home/zbhuang/Downloads/eclipse_cpp/eclipse 
+Terminal=false 
+Categories=Development;IDE;Java;
+
+2. checking the data in c++ vector inside eclipse
+I find it is difficult to check the std::string content in the c++ vector for the debugging purpose.
+I have to use print statement.
+I thought it was eclipse's issue.
+Then in my home vm environment, I found it is not because of eclipse, it might because of gdb used in eclipse.
+Need to double check my observation.
+
+2.1 build helloworld demo
+
+make all 
+Building file: ../src/TestStrVector.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TestStrVector.d" -MT"src/TestStrVector.o" -o "src/TestStrVector.o" "../src/TestStrVector.cpp"
+Finished building: ../src/TestStrVector.cpp
+ 
+Building target: TestStrVector
+Invoking: GCC C++ Linker
+g++  -o "TestStrVector"  ./src/TestStrVector.o   
+Finished building target: TestStrVector
+
