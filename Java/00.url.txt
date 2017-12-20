@@ -1,3 +1,5 @@
 Understanding How Graal Works - a Java JIT Compiler Written in Java
 http://chrisseaton.com/rubytruffle/jokerconf17/
 
+[HotSpot VM] 请教G1算法的原理
+http://hllvm.group.iteye.com/group/topic/44381
