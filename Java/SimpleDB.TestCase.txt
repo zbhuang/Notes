@@ -1,0 +1,102 @@
+1.CreateMyDB.java
+package mydb;
+
+import simpledb.remote.SimpleDriver;
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class CreateMyDB {
+    public static void main(String[] args) {
+		Connection conn = null;
+		try {
+			Driver d = new SimpleDriver();
+			conn = d.connect("jdbc:simpledb://localhost", null);
+			Statement stmt = conn.createStatement();
+
+			String statement = "create table MYDB01(MId int, MName varchar(10), MajorId int, GradYear int)";
+			stmt.executeUpdate(statement);
+			System.out.println("Table MYDB01 created.");
+
+			statement = "insert into MYDB01(MId, MName, MajorId, GradYear) values ";
+			String[] myvals = {
+					"(1, 'test01', 10, 2004)",
+					"(2, 'test02', 20, 2004)",
+					"(3, 'test03', 30, 2005)"
+			};
+
+			for (int i=0; i<myvals.length; i++)
+				stmt.executeUpdate(statement + myvals[i]);
+			System.out.println("MYDB01 records inserted.");
+		}
+
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if (conn != null)
+					conn.close();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+2.CreateMyDBWithMajorIndex.java
+package mydb;
+
+import simpledb.remote.SimpleDriver;
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class CreateMyDBWithMajorIndex {
+    public static void main(String[] args) {
+		Connection conn = null;
+		try {
+			Driver d = new SimpleDriver();
+			conn = d.connect("jdbc:simpledb://localhost", null);
+			Statement stmt = conn.createStatement();
+
+			String statement = "create table MYDB02(MId int, MName varchar(10), MajorId int, GradYear int)";
+			stmt.executeUpdate(statement);
+			System.out.println("Table MYDB02 created.");
+
+			statement = "create index MAJORIDX on MYDB02(MajorId);";
+			stmt.executeUpdate(statement);
+			System.out.println("Table index is created for MajorId.");
+
+			statement = "insert into MYDB02(MId, MName, MajorId, GradYear) values ";
+			String[] myvals = {
+					"(1, 'test01', 10, 2004)",
+					"(2, 'test02', 20, 2004)",
+					"(3, 'test03', 30, 2005)"
+			};
+			
+			for (int i=0; i<myvals.length; i++)
+				stmt.executeUpdate(statement + myvals[i]);
+			System.out.println("MYDB02 records inserted.");
+		}
+
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if (conn != null)
+					conn.close();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
