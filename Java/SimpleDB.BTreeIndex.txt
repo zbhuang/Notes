@@ -1,0 +1,37 @@
+1. Switch from HashIndex to BTreeIndex
+\SimpleDB_2.10\src\simpledb\metadata\IndexInfo.java
+
+   public Index open() {
+      Schema sch = schema();
+      
+      // Create new HashIndex for hash indexing
+      //return new HashIndex(idxname, sch, tx);
+      return new BTreeIndex(idxname, sch, tx);
+   }
+
+   public int blocksAccessed() {
+      TableInfo idxti = new TableInfo("", schema());
+      int rpb = BLOCK_SIZE / idxti.recordLength();
+      int numblocks = si.recordsOutput() / rpb;
+      
+      // Call HashIndex.searchCost for hash indexing
+      //return HashIndex.searchCost(numblocks, rpb);
+      return BTreeIndex.searchCost(numblocks, rpb);
+   }
+
+2. Switch from BasicUpdatePlanner to IndexUpdatePlanner
+\SimpleDB_2.10\src\simpledb\server\SimpleDB.java
+
+   /**
+    * Creates a planner for SQL commands.
+    * To change how the planner works, modify this method.
+    * @return the system's planner for SQL commands
+    */
+   public static Planner planner() {
+      QueryPlanner  qplanner = new BasicQueryPlanner();
+      
+      //UpdatePlanner uplanner = new BasicUpdatePlanner();
+      UpdatePlanner uplanner = new IndexUpdatePlanner();
+      
+      return new Planner(qplanner, uplanner);
+   }
