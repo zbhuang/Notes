@@ -1,0 +1,174 @@
+build opendjk7u40
+-----------------
+0) os - ubuntu16.04.3
+
+1) jdk7.80 (not jdk8)
+update /etc/profile
+
+2) download apache ant and update /etc/profile
+
+3) install the following components
+sudo apt-get install ant
+sudo apt-get install gawk
+sudo apt-get install libfreetype6 libfreetype6-dev
+
+sudo apt-get install libcups2-dev
+sudo apt-get install libasound2-dev
+
+sudo apt-get install libx11-dev
+sudo apt-get install libxt-dev
+sudo apt-get install libxtst-dev
+sudo apt-get install libxrender-dev
+
+4) update openjdk7u40 code
+4.1) /home/zbhuang/OpenJDK/openjdk7u40_jdk7/hotspot/make/linux/Makefile
+a) comment out lines with "test_gamma"
+b) add "4%" to be SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 3% 4% (beause I am using ubuntu16.04.3)
+4.2) /home/zbhuang/OpenJDK/openjdk7u40_jdk7/jdk/src/share/classes/java/util/CurrencyData.properties
+change the date to be less than 10 years (200x -> 201x)
+
+verify the build
+----------------
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/openjdk7u40/build-debug/j2sdk-server-image$ export JAVA_HOME=`pwd`
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/openjdk7u40/build-debug/j2sdk-server-image$ echo $JAVA_HOME
+/home/zbhuang/OpenJDK/openjdk7u40/build-debug/j2sdk-server-image
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/openjdk7u40/build-debug/j2sdk-server-image$ cd /home/zbhuang/OpenJDK/openjdk7u40/build-debug/hotspot/outputdir/linux_amd64_compiler2/jvmg 
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/openjdk7u40/build-debug/hotspot/outputdir/linux_amd64_compiler2/jvmg$ ./test_gamma 
+Using java runtime at: /home/zbhuang/OpenJDK/openjdk7u40/build-debug/j2sdk-server-image/jre
+openjdk version "1.7.0-internal-debug"
+OpenJDK Runtime Environment (build 1.7.0-internal-debug-zbhuang_2017_12_31_18_25-b00)
+OpenJDK 64-Bit Server VM (build 24.0-b56-jvmg, mixed mode)
+
+ 1. A1 B5 C8 D6 E3 F7 G2 H4 
+ 2. A1 B6 C8 D3 E7 F4 G2 H5 
+ 3. A1 B7 C4 D6 E8 F2 G5 H3 
+...
+91. A8 B3 C1 D6 E2 F5 G7 H4 
+92. A8 B4 C1 D3 E6 F2 G7 H5 
+
+Use gdb to debug Hello
+----------------------
+update this file to point to the j2sdk built
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/openjdk7u40/build-debug/hotspot/outputdir/linux_amd64_compiler2/jvmg/jdkpath.sh
+
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/openjdk7u40/build-debug/hotspot/outputdir/linux_amd64_compiler2/jvmg$ touch Hello.java
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/openjdk7u40/build-debug/hotspot/outputdir/linux_amd64_compiler2/jvmg$ $JAVA_HOME/bin/javac Hello.java
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/openjdk7u40/build-debug/hotspot/outputdir/linux_amd64_compiler2/jvmg$ sh hotspot -gdb Hello
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Breakpoint 1 at 0x4046dc: file /home/zbhuang/OpenJDK/openjdk7u40/hotspot/src/share/tools/launcher/java.c, line 1266.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Using java runtime at: /home/zbhuang/OpenJDK/openjdk7u40/build-debug/j2sdk-server-image/jre
+[New Thread 0x7ffff7fda700 (LWP 30802)]
+[Switching to Thread 0x7ffff7fda700 (LWP 30802)]
+
+Thread 2 "gamma" hit Breakpoint 1, InitializeJVM (pvm=0x7ffff7fd9e48, penv=0x7ffff7fd9e50, ifn=0x7ffff7fd9ee0)
+    at /home/zbhuang/OpenJDK/openjdk7u40/hotspot/src/share/tools/launcher/java.c:1266
+1266	{
+(gdb) continue
+Continuing.
+[New Thread 0x7ffff4a2c700 (LWP 30803)]
+[New Thread 0x7ffff492b700 (LWP 30804)]
+[New Thread 0x7fffec8f8700 (LWP 30805)]
+[New Thread 0x7fffec7f7700 (LWP 30806)]
+[New Thread 0x7fffec6f6700 (LWP 30807)]
+[New Thread 0x7fffec5f5700 (LWP 30808)]
+[New Thread 0x7fffec4f4700 (LWP 30809)]
+[New Thread 0x7fffec3f3700 (LWP 30810)]
+[New Thread 0x7fffec2f2700 (LWP 30811)]
+[New Thread 0x7fffec1f1700 (LWP 30812)]
+Hello World
+[Thread 0x7fffec1f1700 (LWP 30812) exited]
+[Thread 0x7fffec5f5700 (LWP 30808) exited]
+[Thread 0x7fffec4f4700 (LWP 30809) exited]
+[Thread 0x7fffec6f6700 (LWP 30807) exited]
+[Thread 0x7fffec7f7700 (LWP 30806) exited]
+[Thread 0x7fffec8f8700 (LWP 30805) exited]
+[Thread 0x7ffff7fda700 (LWP 30802) exited]
+[Thread 0x7ffff7fdb740 (LWP 30798) exited]
+[Thread 0x7fffec2f2700 (LWP 30811) exited]
+[Thread 0x7ffff492b700 (LWP 30804) exited]
+[Thread 0x7ffff4a2c700 (LWP 30803) exited]
+[Inferior 1 (process 30798) exited normally]
+(gdb) quit
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/openjdk7u40/build-debug/hotspot/outputdir/linux_amd64_compiler2/jvmg$ 
+
+
+Reference
+---------
+1. OpenJDK7u40编译与调试实战
+http://vimerzhao.top/2017/05/28/OpenJDK7u40%E7%BC%96%E8%AF%91%E4%B8%8E%E8%B0%83%E8%AF%95%E5%AE%9E%E6%88%98/
+
+2. HotSpot gdb调试, No source file named ...
+http://hllvm.group.iteye.com/group/topic/39731
+
+3. 实战：在HotSpot内调试HelloWorld
+http://www.epubit.com.cn/book/onlinechapter/11776
+下面附上一些常用的GDB命令，包括断点、执行、查看代码、查看栈帧、查看数据等，如清单1-16所示。
+
+[断点]
+break InitializeJVM     ：在InitializeJVM函数入口处设置断点
+break java.c:JavaMain   ：在源文件java.c的InitializeJVM函数入口处设置断点
+break os_linux.cpp:4380 ：在源文件os_linux.cpp的第4380行处设置断点
+break *0x8048000        ：在地址为0x8048000的地址处设置断点
+delete 1                ：删除断点1
+delete                  ：删除所有断点
+
+[执行]
+step     ：执行1条语句，会进入函数
+step n   ：执行n条语句，会进入函数
+next     ：与step类似，但是不进入函数
+next n   ：与step n类似，但是不进入函数
+continue ：继续运行
+finish   ：运行至当前函数返回后退出
+
+[查看代码]
+list n             ：查看当前源文件中第n行的代码
+list InitializeJVM ：查看InitializeJVM函数开始位置的代码
+list               ：查看更多的行
+list -             ：查看上次查看的代码行数之前的代码
+默认，GDB打印10行。若需要调整，可使用：
+set listsize n     ：调整打印行数为n行
+
+[查看栈帧]
+frame n         ：从当前栈帧移动到#n栈帧
+up n            ：从当前栈帧向上移动n个栈帧
+down n          ：从当前栈帧向下移动n个栈帧
+select-frame    ：查看更多的行
+backstrace      ：查看整个调用栈
+backstrace n    ：与backstrace类似，只不过只查看4个栈帧
+backstrace full ：查看整个调用栈，另外还打印出局部变量和参数
+info args       ：查看函数参数
+info locals     ：查看局部变量
+
+[查看数据]
+print expr      ：查看expr的值，其中expr是源文件中的表达式
+print /f expr n ：以f指定的格式查看expr的值。其中f表示的格式可以为：
+x：十六进制整数
+d：有符号整数
+u：无符号整数
+o：八进制整数
+t：二进制整数
+c：字符常量
+f：浮点数
+s：字符串
+r：原始格式
+a：地址
+x 0xbfffd034   ：查看内存地址为0xbfffd34的值
+disassemble    ：查看汇编代码，反汇编当前函数
+info registers ：查看所有寄存器的值
+print $eax     ：以十进制形式查看寄存器%eax的值
+print /x $eax  ：以十六进制形式查看寄存器%eax的值
