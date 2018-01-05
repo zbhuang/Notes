@@ -1,0 +1,13 @@
+Debugin Hotspot VM in Netbeans - Ubuntu Linux 14
+http://mail.openjdk.java.net/pipermail/adoption-discuss/2016-February/001303.html
+
+https://neugens.wordpress.com/2015/02/26/debugging-the-jdk-with-gdb/
+
+Debugging Java code using NetBeans
+https://www.safaribooksonline.com/library/view/openjdk-cookbook/9781849698405/ch08s05.html
+
+Debugging OpenJDK 8 with NetBeans on Ubuntu
+https://marcin-chwedczuk.github.io/debugging-openjdk8-with-netbeans-on-ubuntu
+
+Debugging OpenJDK 
+http://www.kubrynski.com/2014/08/debugging-openjdk.html
