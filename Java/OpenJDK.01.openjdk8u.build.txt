@@ -101,3 +101,15 @@ zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slow
 Reference
 1. Debugging OpenJDK 8 with NetBeans on Ubuntu
 https://marcin-chwedczuk.github.io/debugging-openjdk8-with-netbeans-on-ubuntu
+One part, how to run/debug HelloWorld", is not clear.
+First, use javac to compile HelloWorld.java
+Then, run java on HelloWorld
+Third, put a breakpoint at jdk/src/share/native/java/io/io_util.c and debug
+
+2. Build OpenJDK on CentOS 5/6
+https://github.com/hgomez/obuildfactory/wiki/How-to-build-and-package-OpenJDK-8-on-Linux
+sudo yum install git-core mercurial zip bzip2 unzip tar 
+sudo yum install ccache make gcc gcc-c++ libstdc++-devel 
+sudo yum install alsa-lib-devel cups-devel libX11-devel libXext-devel libXt-devel libXrender-devel libXtst-devel libXi-devel libjpeg-devel giflib-devel freetype-devel
+sudo yum install curl rpm-build gpg
+sudo yum install java-1.7.0-openjdk-devel
