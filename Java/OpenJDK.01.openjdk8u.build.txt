@@ -38,11 +38,10 @@ openjdk version "1.8.0-internal-debug"
 OpenJDK Runtime Environment (build 1.8.0-internal-debug-zbhuang_2018_01_01_15_21-b00)
 OpenJDK 64-Bit Server VM (build 25.71-b00-debug, mixed mode)
 
-zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk$ cd ../hotspot/linux_amd64_compiler2/debug
-zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug$ $JAVA_HOME/bin/javac Hello.java
-zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug$ export ALT_JAVA_HOME=/home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk
-zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug$ sh hotspot -gdb Hello
-JDK=/home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk
+zbhuang@zbhuang-VirtualBox:~/OpenJDK$ /home/zbhuang/OpenJDK/jdk8u02/build/linux-x86_64-normal-server-slowdebug/jdk/bin/javac Hello.java 
+zbhuang@zbhuang-VirtualBox:~/OpenJDK$ /home/zbhuang/OpenJDK/jdk8u02/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java Hello
+Hello World!
+zbhuang@zbhuang-VirtualBox:~/OpenJDK$ gdb --args /home/zbhuang/OpenJDK/jdk8u02/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java Hello
 GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
 Copyright (C) 2016 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -56,47 +55,66 @@ For bug reporting instructions, please see:
 Find the GDB manual and other documentation resources online at:
 <http://www.gnu.org/software/gdb/documentation/>.
 For help, type "help".
-Type "apropos word" to search for commands related to "word".
-Function "JNI_CreateJavaVM" not defined.
-Breakpoint 1 (JNI_CreateJavaVM) pending.
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /home/zbhuang/OpenJDK/jdk8u02/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java...done.
+(gdb) break init.cpp:95
+No source file named init.cpp.
+Make breakpoint pending on future shared library load? (y or [n]) y
+Breakpoint 1 (init.cpp:95) pending.
+(gdb) run
+Starting program: /home/zbhuang/OpenJDK/jdk8u02/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java Hello
 [Thread debugging using libthread_db enabled]
 Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
-[New Thread 0x7ffff7fda700 (LWP 1646)]
-[Switching to Thread 0x7ffff7fda700 (LWP 1646)]
+[New Thread 0x7ffff7fda700 (LWP 18609)]
+[Switching to Thread 0x7ffff7fda700 (LWP 18609)]
 
-Thread 2 "java" hit Breakpoint 1, 0x00007ffff667939f in JNI_CreateJavaVM () from /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug/libjvm.so
-(gdb) continue
+Thread 2 "java" hit Breakpoint 1, init_globals () at /home/zbhuang/OpenJDK/jdk8u02/hotspot/src/share/vm/runtime/init.cpp:95
+95	jint init_globals() {
+(gdb) l
+90	  chunkpool_init();
+91	  perfMemory_init();
+92	}
+93	
+94	
+95	jint init_globals() {
+96	  HandleMark hm;
+97	  management_init();
+98	  bytecodes_init();
+99	  classLoader_init();
+(gdb) next
+96	  HandleMark hm;
+(gdb) c
 Continuing.
 
-Thread 2 "java" received signal SIGSEGV, Segmentation fault.
+Thread 2 "java" received signal SIGSEGV, Segmentation fault. <------- in which method this error is coming from ? (it cannot located)
 0x00007fffe10002b4 in ?? ()
-(gdb) continue
+(gdb) c
 Continuing.
-[New Thread 0x7ffff42f7700 (LWP 1647)]
-[New Thread 0x7ffff41f6700 (LWP 1648)]
-[New Thread 0x7fffd9d1b700 (LWP 1649)]
-[New Thread 0x7fffd9c1a700 (LWP 1650)]
-[New Thread 0x7fffd9b19700 (LWP 1651)]
-[New Thread 0x7fffd9059700 (LWP 1652)]
-[New Thread 0x7fffd8f58700 (LWP 1655)]
-[New Thread 0x7fffd8e57700 (LWP 1656)]
-[New Thread 0x7fffd8d56700 (LWP 1657)]
-[New Thread 0x7fffd8c55700 (LWP 1658)]
-Hello World
-[Thread 0x7fffd8c55700 (LWP 1658) exited]
-[Thread 0x7fffd9059700 (LWP 1652) exited]
-[Thread 0x7fffd9d1b700 (LWP 1649) exited]
-[Thread 0x7ffff7fda700 (LWP 1646) exited]
-[Thread 0x7fffd8d56700 (LWP 1657) exited]
-[Thread 0x7fffd9b19700 (LWP 1651) exited]
-[Thread 0x7fffd9c1a700 (LWP 1650) exited]
-[Thread 0x7ffff42f7700 (LWP 1647) exited]
-[Thread 0x7ffff7fdc700 (LWP 1642) exited]
-[Thread 0x7fffd8f58700 (LWP 1655) exited]
-[Thread 0x7ffff41f6700 (LWP 1648) exited]
-[Inferior 1 (process 1642) exited normally]
+[New Thread 0x7ffff4247700 (LWP 18616)]
+[New Thread 0x7ffff4146700 (LWP 18617)]
+[New Thread 0x7fffd77f7700 (LWP 18618)]
+[New Thread 0x7fffd76f6700 (LWP 18619)]
+[New Thread 0x7fffd75f5700 (LWP 18620)]
+[New Thread 0x7fffd6b35700 (LWP 18621)]
+[New Thread 0x7fffd6a34700 (LWP 18622)]
+[New Thread 0x7fffd6933700 (LWP 18623)]
+[New Thread 0x7fffd6832700 (LWP 18624)]
+[New Thread 0x7fffd6731700 (LWP 18625)]
+Hello World!
+[Thread 0x7fffd6731700 (LWP 18625) exited]
+[Thread 0x7fffd6b35700 (LWP 18621) exited]
+[Thread 0x7fffd76f6700 (LWP 18619) exited]
+[Thread 0x7ffff4247700 (LWP 18616) exited]
+[Thread 0x7ffff7fda700 (LWP 18609) exited]
+[Thread 0x7ffff7fdc700 (LWP 18605) exited]
+[Thread 0x7fffd6832700 (LWP 18624) exited]
+[Thread 0x7fffd6933700 (LWP 18623) exited]
+[Thread 0x7fffd6a34700 (LWP 18622) exited]
+[Thread 0x7fffd75f5700 (LWP 18620) exited]
+[Thread 0x7ffff4146700 (LWP 18617) exited]
+[Inferior 1 (process 18605) exited normally]
 (gdb) quit
-zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug$ 
+zbhuang@zbhuang-VirtualBox:~/OpenJDK$ 
 
 
 Reference
