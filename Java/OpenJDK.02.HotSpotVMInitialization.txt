@@ -1,0 +1,125 @@
+/src/solaris/bin/java_md_solinux.c
+/*
+ * Flowchart of launcher execs and options processing on unix
+ *
+ * The selection of the proper vm shared library to open depends on
+ * several classes of command line options, including vm "flavor"
+ * options (-client, -server) and the data model options, -d32  and
+ * -d64, as well as a version specification which may have come from
+ * the command line or from the manifest of an executable jar file.
+ * The vm selection options are not passed to the running
+ * virtual machine; they must be screened out by the launcher.
+ *
+ * The version specification (if any) is processed first by the
+ * platform independent routine SelectVersion.  This may result in
+ * the exec of the specified launcher version.
+ *
+ * Previously the launcher modified the LD_LIBRARY_PATH appropriately for the
+ * desired data model path, regardless if data models matched or not. The
+ * launcher subsequently exec'ed the desired executable, in order to make the
+ * LD_LIBRARY_PATH path available, for the runtime linker.
+ *
+ * Now, in most cases,the launcher will dlopen the target libjvm.so. All
+ * required libraries are loaded by the runtime linker, using the
+ * $RPATH/$ORIGIN baked into the shared libraries at compile time. Therefore,
+ * in most cases, the launcher will only exec, if the data models are
+ * mismatched, and will not set any environment variables, regardless of the
+ * data models.
+ *
+ * However, if the environment contains a LD_LIBRARY_PATH, this will cause the
+ * launcher to inspect the LD_LIBRARY_PATH. The launcher will check
+ *  a. if the LD_LIBRARY_PATH's first component is the the path to the desired
+ *     libjvm.so
+ *  b. if any other libjvm.so is found in any of the paths.
+ * If case b is true, then the launcher will set the LD_LIBRARY_PATH to the
+ * desired JRE and reexec, in order to propagate the environment.
+ *
+ *  Main
+ *  (incoming argv)
+ *  |
+ * \|/
+ * SelectVersion
+ * (selects the JRE version, note: not data model)
+ *  |
+ * \|/
+ * CreateExecutionEnvironment
+ * (determines desired data model)
+ *  |
+ *  |
+ * \|/
+ *  Have Desired Model ? --> NO --> Is Dual-Mode ? --> NO --> Exit(with error)
+ *  |                                          |
+ *  |                                          |
+ *  |                                         \|/
+ *  |                                         YES
+ *  |                                          |
+ *  |                                          |
+ *  |                                         \|/
+ *  |                                CheckJvmType
+ *  |                               (removes -client, -server etc.)
+ *  |                                          |
+ *  |                                          |
+ * \|/                                        \|/
+ * YES                             Find the desired executable/library
+ *  |                                          |
+ *  |                                          |
+ * \|/                                        \|/
+ * CheckJvmType                          RequiresSetenv
+ * (removes -client, -server, etc.)
+ *  |
+ *  |
+ * \|/
+ * TranslateDashJArgs...
+ * (Prepare to pass args to vm)
+ *  |
+ *  |
+ * \|/
+ * ParseArguments
+ * (removes -d32 and -d64 if any,
+ *  processes version options,
+ *  creates argument list for vm,
+ *  etc.)
+ *   |
+ *   |
+ *  \|/
+ * RequiresSetenv
+ * Is LD_LIBRARY_PATH
+ * and friends set ? --> NO --> Have Desired Model ? NO --> Re-exec --> Main
+ *  YES                              YES --> Continue
+ *   |
+ *   |
+ *  \|/
+ * Path is desired JRE ? YES --> Have Desired Model ? NO --> Re-exec --> Main
+ *  NO                               YES --> Continue
+ *   |
+ *   |
+ *  \|/
+ * Paths have well known
+ * jvm paths ?       --> NO --> Have Desired Model ? NO --> Re-exec --> Main
+ *  YES                              YES --> Continue
+ *   |
+ *   |
+ *  \|/
+ *  Does libjvm.so exit
+ *  in any of them ? --> NO --> Have Desired Model ? NO --> Re-exec --> Main
+ *   YES                             YES --> Continue
+ *   |
+ *   |
+ *  \|/
+ *  Set the LD_LIBRARY_PATH
+ *   |
+ *   |
+ *  \|/
+ * Re-exec
+ *   |
+ *   |
+ *  \|/
+ * Main
+ */
+
+Reference
+1. Flowchart of launcher execs and options processing on unix
+http://hg.openjdk.java.net/jdk8u/jdk8u/jdk/file/4fa603c72f2f/src/solaris/bin/java_md_solinux.c#l77
+2. HotSpot JVM 的启动过程做了什么？
+https://www.zhihu.com/question/32247563
+
