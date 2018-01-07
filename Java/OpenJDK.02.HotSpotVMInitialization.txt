@@ -39,3 +39,6 @@ jvm的整体启动流程:
 解析jvm参数
 启动虚拟机
 加载主类，并调用主类的main()方法
+
+5. JVM源码分析之JVM启动流程
+https://www.jianshu.com/p/b91258bc08ac
