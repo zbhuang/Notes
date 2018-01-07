@@ -27,12 +27,10 @@ sudo apt-get install libxrender-dev
 
 sudo apt-get install ccache
 
-4) build
-bash ./configure --with-debug-level=slowdebug
-make CONF=linux-x86_64-normal-server-slowdebug
-
+4) build (different from OpenJDK7)
 bash ./configure --with-debug-level=slowdebug --disable-zip-debug-info
 make
+Note: "--disable-zip-debug-info" is needed, otherwise, hotspot module can't be debugged in.
 
 5) verify the build
 zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk8u$ ./build/linux-x86_64-normal-server-slowdebug/jdk/bin/java -version
