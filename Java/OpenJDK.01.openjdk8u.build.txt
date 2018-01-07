@@ -31,6 +31,9 @@ sudo apt-get install ccache
 bash ./configure --with-debug-level=slowdebug
 make CONF=linux-x86_64-normal-server-slowdebug
 
+bash ./configure --with-debug-level=slowdebug --disable-zip-debug-info
+make
+
 5) verify the build
 zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk8u$ ./build/linux-x86_64-normal-server-slowdebug/jdk/bin/java -version
 openjdk version "1.8.0-internal-debug"
@@ -113,3 +116,9 @@ sudo yum install ccache make gcc gcc-c++ libstdc++-devel
 sudo yum install alsa-lib-devel cups-devel libX11-devel libXext-devel libXt-devel libXrender-devel libXtst-devel libXi-devel libjpeg-devel giflib-devel freetype-devel
 sudo yum install curl rpm-build gpg
 sudo yum install java-1.7.0-openjdk-devel
+
+3. CentOS上编译OpenJDK8源码 以及 在eclipse上调试HotSpot虚拟机源码
+http://blog.csdn.net/tjiyu/article/details/53725247
+
+4. WINDOWS7平台下编译OpenJDK8和Visual Studio 单步调试HotSpot JVM
+https://www.jianshu.com/p/e85f93cc74cb
