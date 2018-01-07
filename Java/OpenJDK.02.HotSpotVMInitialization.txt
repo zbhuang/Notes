@@ -1,3 +1,5 @@
+/home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk/lib/amd64/server/
+unzip libjvm.diz (to have libjvm.debuginfo)
 
 Reference
 
@@ -45,3 +47,16 @@ https://www.jianshu.com/p/b91258bc08ac
 
 6. Java虚拟机的启动与程序的运行
 http://blog.csdn.net/on_1y/article/details/38761549
+
+7. CentOS上编译OpenJDK8源码 以及 在eclipse上调试HotSpot虚拟机源码
+http://blog.csdn.net/tjiyu/article/details/53725247
+cd openjdk  
+bash ./configure --with-target-bits=64 --with-boot-jdk=/usr/java/jdk1.7.0_80/ --with-debug-level=slowdebug --enable-debug-symbols ZIP_DEBUGINFO_FILES=0  
+make all ZIP_DEBUGINFO_FILES=0  
+
+注意，如果不能进入断点
+  出现以下类似信息：
+  Missing separate debuginfo for /root/openjdk/build/linux-x86_64-normal-server-slowdebug/jdk/lib/amd64/server/libjvm.so
+  因为前面configure没指定"--enable-debug-symbols ZIP_DEBUGINFO_FILES=0"没生成调试的符号信息，或生成后被压缩为"libjvm.diz"了，所有无法找到；
+  可以去到"libjvm.so"所在目录，然后解压：unzip libjvm.diz                
+  解压出来：libjvm.debuginfo
