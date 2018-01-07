@@ -8,5 +8,5 @@ http://hg.openjdk.java.net/jdk8u/jdk8u/jdk/file/4fa603c72f2f/src/solaris/bin/jav
 https://www.zhihu.com/question/32247563
 
 3. JVM-系统初始化
-http://www.bijishequ.com/detail/248254?p=34-64
+http://blog.csdn.net/dviewer/article/details/77972338
 系统初始化入口是JNI_CreateJavaVM函数，位于/hotspot/src/share/vm/prims/jni.cpp中，hotspot代码中的prims模块里面定义的就是一些外部接口，供JDK或者其他应用程序调用。为了加深印象，我们先复习下JNI_CreateJavaVM函数是怎么来的。入口main函数中创建了运行JavaMain的主线程，在主线程中会调用InitializeJVM来对虚拟机进行初始化，InitializeJVM中通过InvocationFunctions结构体中的函数指针来调用CreateJavaVM，这个CreateJavaVM是通过dlsym(libjvm, "JNI_CreateJavaVM")获取到的。
