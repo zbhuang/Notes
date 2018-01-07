@@ -42,3 +42,6 @@ jvm的整体启动流程:
 
 5. JVM源码分析之JVM启动流程
 https://www.jianshu.com/p/b91258bc08ac
+
+6. Java虚拟机的启动与程序的运行
+http://blog.csdn.net/on_1y/article/details/38761549
