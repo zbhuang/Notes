@@ -1,0 +1,62 @@
+/home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk/lib/amd64/server/
+unzip libjvm.diz (to have libjvm.debuginfo)
+
+Reference
+
+1. Flowchart of launcher execs and options processing on unix
+http://hg.openjdk.java.net/jdk8u/jdk8u/jdk/file/4fa603c72f2f/src/solaris/bin/java_md_solinux.c#l77
+
+2. HotSpot JVM 的启动过程做了什么？
+https://www.zhihu.com/question/32247563
+
+3. JVM-系统初始化
+http://blog.csdn.net/dviewer/article/details/77972338
+系统初始化入口是JNI_CreateJavaVM函数，位于/hotspot/src/share/vm/prims/jni.cpp中，hotspot代码中的prims模块里面定义的就是一些外部接口，供JDK或者其他应用程序调用。为了加深印象，我们先复习下JNI_CreateJavaVM函数是怎么来的。入口main函数中创建了运行JavaMain的主线程，在主线程中会调用InitializeJVM来对虚拟机进行初始化，InitializeJVM中通过InvocationFunctions结构体中的函数指针来调用CreateJavaVM，这个CreateJavaVM是通过dlsym(libjvm, "JNI_CreateJavaVM")获取到的。
+
+4. JVM启动分析
+http://www.txazo.com/jvm/jvm-startup.html
+通过openjdk的源码来分析jvm的启动过程，针对linux系统。
+
+jvm的启动入口main():
+JLI_Launch()方法:
+InitLauncher()方法:
+JLI_SetTraceLauncher()方法:
+
+后续会调用JLI_IsTraceLauncher()和JLI_TraceLauncher()方法输出debug信息。
+LoadJavaVM()方法:
+JVMInit()方法:
+ContinueInNewThread()方法: <------------
+
+JavaMain()方法:
+InitializeJVM()方法调用前面挂载的CreateJavaVM()方法，也就是JNI_CreateJavaVM()方法。<----------------
+sun.launcher.LauncherHelper的checkAndLoadMain()方法检查并加载主类过程:
+
+jvm的启动模式:
+jar启动模式: java -jar main.jar
+class启动模式: java org.txazo.test.Main
+jvm的整体启动流程:
+
+准备工作，包括查找jre、jvm
+装载动态链接库
+解析jvm参数
+启动虚拟机
+加载主类，并调用主类的main()方法
+
+5. JVM源码分析之JVM启动流程
+https://www.jianshu.com/p/b91258bc08ac
+
+6. Java虚拟机的启动与程序的运行
+http://blog.csdn.net/on_1y/article/details/38761549
+
+7. CentOS上编译OpenJDK8源码 以及 在eclipse上调试HotSpot虚拟机源码
+http://blog.csdn.net/tjiyu/article/details/53725247
+cd openjdk  
+bash ./configure --with-target-bits=64 --with-boot-jdk=/usr/java/jdk1.7.0_80/ --with-debug-level=slowdebug --enable-debug-symbols ZIP_DEBUGINFO_FILES=0  
+make all ZIP_DEBUGINFO_FILES=0  
+
+注意，如果不能进入断点
+  出现以下类似信息：
+  Missing separate debuginfo for /root/openjdk/build/linux-x86_64-normal-server-slowdebug/jdk/lib/amd64/server/libjvm.so
+  因为前面configure没指定"--enable-debug-symbols ZIP_DEBUGINFO_FILES=0"没生成调试的符号信息，或生成后被压缩为"libjvm.diz"了，所有无法找到；
+  可以去到"libjvm.so"所在目录，然后解压：unzip libjvm.diz                
+  解压出来：libjvm.debuginfo
