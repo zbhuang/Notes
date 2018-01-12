@@ -1,0 +1,21 @@
+
+1. create a snapshot
+
+2. restore a snapshot
+
+https://askubuntu.com/questions/499103/how-to-reset-a-vm-to-a-previous-snapshot
+Take a snapshot
+From the Virtual Box GUI (Virtualbox Manager) we can easily take a snaphot from a running virtual machine by selecting Take Snapshot or pressing HOST+T:
+This will open a dialog to give in a sensible name and optionally a description of this snapshot:
+The snapshot will then be saved in the machine's directory (depending on the size of the machine this may take a while.
+
+On the command line the same can be achieved by
+VBoxManage snapshot <Name_of_VM> take <Name_of_Snapshot>
+
+Restore a snapshot
+From the Virtualbox Manager we can restore to any snapshot by selecting a machine, then pressing then Snapshots (1) button on top right:
+Select the appropriate snapshot from the list, then press enter image description here to restore this snapshot.
+The current state of the machine will then be lost. To also restore the current state we will first have to create a snapshot too.
+
+Restoring a snapshot from the command line is done with
+VBoxManage snapshot <Name_of_VM> restore <Name_of_Snapshot>
