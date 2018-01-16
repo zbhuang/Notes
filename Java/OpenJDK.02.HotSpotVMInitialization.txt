@@ -1,6 +1,160 @@
 /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk/lib/amd64/server/
 unzip libjvm.diz (to have libjvm.debuginfo)
 
+main.c
+int main() main.c
+  |
+  |-- JLI_Launch() /jdk/src/share/bin/main.c
+        |
+        |-- LoadJavaVM() /jdk/src/share/bin/java.c
+              |
+              |-- dlopen(/home/zbhuang/OpenJDK/jdk8u02/build/linux-x86_64-normal-server-slowdebug/jdk/lib/amd64/server/libjvm.so)
+              |
+              |-- ifn->CreateJavaVM = (CreateJavaVM_t)dlsym(libjvm, "JNI_CreateJavaVM");
+              |
+              |-- ifn->GetDefaultJavaVMInitArgs = (GetDefaultJavaVMInitArgs_t)dlsym(libjvm, "JNI_GetDefaultJavaVMInitArgs");
+              |
+              |-- ifn->GetCreatedJavaVMs = (GetCreatedJavaVMs_t)dlsym(libjvm, "JNI_GetCreatedJavaVMs");
+              |
+              |-- JVMInit() /jdk/src/solaris/bin/java_md_solinux.c
+                    |
+                    |-- ContinueInNewThread() /jdk/src/share/bin/java.c
+                          |
+                          |-- ContinueInNewThread0(JavaMain, threadStackSize, (void*)&args) /jdk/src/solaris/bin/java_md_solinux.c
+                                |
+                                |-- pthread_create()
+                                      |
+                                      |-- JavaMain() /jdk/src/share/bin/java.c
+                                            |
+                                            |-- InitializeJVM(&vm, &env, &ifn)
+                                            |     |
+                                            |     |-- ifn->CreateJavaVM(pvm, (void **)penv, &args);
+                                            |           |
+                                            |           |-- JNI_CreateJavaVM() /hotspot/src/share/vm/prims/jni.cpp
+                                            |                 |
+                                            |                 |-- Threads::create_vm() /hotspot/src/share/vm/runtime/thread.cpp
+                                            |                       |
+                                            |                       |-- os::init() /hotspot/src/os/linux/vm/os_linux.cpp
+                                            |                       |
+                                            |                       |-- os::init_2()
+                                            |                       |     |
+                                            |                       |     |-- SR_initialize()
+                                            |                       |     |
+                                            |                       |     |-- JavaThread::set_stack_size_at_create(round_to(threadStackSizeInBytes,vm_page_size()));
+                                            |                       |     |-- Linux::capture_initial_stack(JavaThread::stack_size_at_create());
+                                            |                       |     |-- Linux::libpthread_init();
+                                            |                       |     |
+                                            |                       |     |-- prio_init() //initialize thread priority policy
+                                            |                       |
+                                            |                       |-- ThreadLocalStorage::init();
+                                            |                       |
+                                            |                       |-- vm_init_globals()
+                                            |                       |
+                                            |                       |-- JavaThread* main_thread = new JavaThread();
+                                            |                       |     |
+                                            |                       |     |-- Thread::allocate()
+                                            |                       |
+                                            |                       |-- init_globals() /hotspot/src/share/vm/runtime/init.cpp
+                                            |                       |     |
+                                            |                       |     |-- management_init();
+                                            |                       |     |
+                                            |                       |     |-- bytecodes_init();
+                                            |                       |     |
+                                            |                       |     |-- classLoader_init();
+                                            |                       |     |
+                                            |                       |     |-- VM_Version_init() /hotspot/src/cpu/x86/vm/vm_version_x86.cpp
+                                            |                       |     |     |
+                                            |                       |     |     |-- VM_Version::initialize()
+                                            |                       |     |           |
+                                            |                       |     |           |-- VM_Version::get_processor_features()
+                                            |                       |     |                 |
+                                            |                       |     |                 |-- VM_Version::get_cpu_info_wrapper()
+                                            |                       |     |                       |
+                                            |                       |     |                       |-- Signal received: SIGSEGV (Segmentation fault)
+                                            |                       |     |
+                                            |                       |     |-- os_init_globals()
+                                            |                       |     |
+                                            |                       |     |-- stubRoutines_init1();
+                                            |                       |     |
+                                            |                       |     |-- universe_init() /hotspot/src/share/vm/memory/universe.cpp
+                                            |                       |     |     |
+                                            |                       |     |     |-- Universe::initialize_heap();
+                                            |                       |     |           |
+                                            |                       |     |           |-- Universe::heap()->initialize();
+                                            |                       |     |                 |
+                                            |                       |     |                 |-- ParallelScavengeHeap::initialize() /hotspot/src/share/vm/gc_implementation/parallelScavenge/parallelScavengeHeap.cpp
+                                            |                       |     |                       |
+                                            |                       |     |                       |-- GCTaskManager::create(ParallelGCThreads); gcTaskManager.hpp
+                                            |                       |     |                             |
+                                            |                       |     |                             |-- os::create_thread()
+                                            |                       |     |                             |        |
+                                            |                       |     |                             |        |-- OSThread* osthread = new OSThread(NULL, NULL);
+                                            |                       |     |                             |        |
+                                            |                       |     |                             |        |-- pthread_attr_t attr;
+                                            |                       |     |                             |        |-- pthread_attr_init(&attr);
+                                            |                       |     |                             |        |-- pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+                                            |                       |     |                             |        |-- pthread_attr_setstacksize(&attr, stack_size);
+                                            |                       |     |                             |        |-- int ret = pthread_create(&tid, &attr, (void* (*)(void*)) java_start, thread);
+                                            |                       |     |                             |              |
+                                            |                       |     |                             |              |-- void *java_start(Thread *thread) /hotspot/src/os/linux/vm/os_linux.cpp
+                                            |                       |     |                             |                    |
+                                            |                       |     |                             |                    |-- ThreadLocalStorage::set_thread(thread);
+                                            |                       |     |                             |
+                                            |                       |     |                             |-- os::start_thread
+                                            |                       |     |                                   |
+                                            |                       |     |                                   |-- pd_start_thread(thread); /hotspot/src/share/vm/runtime/os.cpp
+                                            |                       |     |                                         |
+                                            |                       |     |                                         |-- OSThread * osthread = thread->osthread();
+                                            |                       |     |                                         |-- Monitor* sync_with_child = osthread->startThread_lock();
+                                            |                       |     |                                         |-- sync_with_child->notify();
+                                            |                       |     |
+                                            |                       |     |-- invocationCounter_init();
+                                            |                       |     |
+                                            |                       |     |-- marksweep_init();
+                                            |                       |     |
+                                            |                       |     |-- universe2_init();
+                                            |                       |     |
+                                            |                       |     |-- jni_handles_init();
+                                            |                       |
+                                            |                       |-- VMThread::create();
+                                            |                       |-- Thread* vmthread = VMThread::vm_thread();
+                                            |                       |-- os::create_thread(vmthread, os::vm_thread)
+                                            |                       |-- os::start_thread(vmthread);
+                                            |                       |-- JvmtiExport::enter_start_phase();
+                                            |                       |
+                                            |                       |-- initialize_class(vmSymbols::java_lang_String(), CHECK_0);
+                                            |                       |     |
+                                            |                       |     |-- initialize_class(Symbol* class_name, TRAPS) thread.cpp
+                                            |                       |
+                                            |                       |-- initialize_class(vmSymbols::java_lang_System(), CHECK_0);
+                                            |                       |
+                                            |                       |-- initialize_class(vmSymbols::java_lang_Thread(), CHECK_0);
+                                            |                       |
+                                            |                       |-- initialize_class(vmSymbols::java_lang_Class(), CHECK_0);
+                                            |                       |
+                                            |                       |-- initialize_class(vmSymbols::java_lang_reflect_Method(), CHECK_0);
+                                            |                       |
+                                            |                       |-- initialize_class(vmSymbols::java_lang_ref_Finalizer(),  CHECK_0);
+                                            |                       |
+                                            |                       |-- initialize_class(vmSymbols::java_lang_Compiler(), CHECK_0);
+                                            |
+                                            |-- LoadMainClass()
+                                            |     |
+                                            |     |-- (*env)->GetStaticMethodID(env, cls, "checkAndLoadMain", "(ZILjava/lang/String;)Ljava/lang/Class;")
+                                            |           |
+                                            |           |-- jni_GetStaticMethodID() jni.cpp
+                                            |
+                                            |-- (*env)->GetStaticMethodID(env, mainClass, "main", "([Ljava/lang/String;)V");
+                                            |
+                                            |-- (*env)->CallStaticVoidMethod(env, mainClass, mainID, mainArgs);
+                                                  |
+                                                  |-- jni_invoke_static()
+                                                        |
+                                                        |-- JavaCalls::call(result, method, &java_args, CHECK);
+
+
+
+
 Reference
 
 1. Flowchart of launcher execs and options processing on unix
