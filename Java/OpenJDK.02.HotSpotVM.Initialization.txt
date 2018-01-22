@@ -75,6 +75,12 @@ int main() main.c
                                             |                       |     |-- os_init_globals()
                                             |                       |     |
                                             |                       |     |-- stubRoutines_init1();
+                                            |                       |     |     |
+                                            |                       |     |     |-- StubRoutines::initialize1(); /hotspot/src/share/vm/runtime/stubRoutines.cpp
+                                            |                       |     |           |
+                                            |                       |     |           |-- StubGenerator_generate() /hotspot/src/cpu/x86/vm/stubGenerator_x86_64.cpp
+                                            |                       |     |                 |
+                                            |                       |     |                 |-- generate_initial()
                                             |                       |     |
                                             |                       |     |-- universe_init() /hotspot/src/share/vm/memory/universe.cpp
                                             |                       |     |     |
@@ -214,3 +220,6 @@ make all ZIP_DEBUGINFO_FILES=0
   因为前面configure没指定"--enable-debug-symbols ZIP_DEBUGINFO_FILES=0"没生成调试的符号信息，或生成后被压缩为"libjvm.diz"了，所有无法找到；
   可以去到"libjvm.so"所在目录，然后解压：unzip libjvm.diz                
   解压出来：libjvm.debuginfo
+
+8. stubGenerator_x86_64.cpp
+http://hg.openjdk.java.net/jdk8u/jdk8u/hotspot/file/c1374141598c/src/cpu/x86/vm/stubGenerator_x86_64.cpp
