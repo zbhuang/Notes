@@ -1,0 +1,14 @@
+dev env
+1) install gdb
+2) import java project into eclipse/intellij
+3) import c++ project into eclipse
+4) launch java app from eclipse/intellij, hit a breakpoint (before calling c++ through jni)
+5) find the java pid - ps -ef | grep java
+6) attach eclipse(c++) to that java process
+7) resume the debug process from java side
+8) "signal SIGSEGV, Segmentation fault" shows up when it comes to c++ side through jni
+9) go to eclipse(c++) | Debugger console, type "handle SIGSEGV nostop noprint pass"
+Inside eclipse, it is calling gdb to debug the code.
+So this Debugger console actually is a gdb console, you can try any gdb command.
+
+https://neugens.wordpress.com/2015/02/26/debugging-the-jdk-with-gdb/
