@@ -151,12 +151,11 @@ public int binarySearch(int[] array, int target) {
     return -1;
 }
 
-5. Implementation of Array in jdk8
+5. 
+Implementation of Array in jdk8
+Implementation of HashMap in jdk8
 
-6. 
-HashMap
-
-2-Sum problem
+TwoSum problem
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
