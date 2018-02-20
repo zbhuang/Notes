@@ -130,3 +130,29 @@ public class Test {
         t.start();
     }
 }
+
+4. binary search
+public int binarySearch(int[] array, int target) {
+    if(array == null) {
+        return -1;
+    }
+    int start=0;
+    int end  = array.length;
+    while(end > start) {
+        int mid = start + (end-start)/2;
+        if(array[mid] == target) {
+            return mid;
+        } else if(array[mid] > target) {
+            end = mid - 1;
+        } else {
+            start = mid + 1;
+        }
+    }
+    return -1;
+}
+
+5. Implementation of Array in jdk8
+
+6. 
+HashMap
+2-Sum problem
