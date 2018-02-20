@@ -155,4 +155,53 @@ public int binarySearch(int[] array, int target) {
 
 6. 
 HashMap
+
 2-Sum problem
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class TwoSum {
+    public static void solver01(int[] array, int sum) {
+        if(array==null || array.length<2) {
+            return;
+        }
+
+        Arrays.sort(array);
+        int start=0, end=array.length-1;
+        while(start < end) {
+            if(array[start]+array[end] == sum) {
+                System.out.println("["+start+"]+["+end+"]="+sum);
+                start++;
+                end--;
+            } else if(array[start]+array[end] < sum) {
+                start++;
+            } else {
+                end--;
+            }
+        }
+    }
+    public static void solver02(int[] array, int sum) {
+        if(array==null || array.length<2) {
+            return;
+        }
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i=0; i<array.length; i++) {
+            if(map.containsKey(array[i])) {
+                System.out.println("[" + i + "] + [" + map.get(array[i]) + "]");
+            } else {
+                map.put(sum - array[i], i);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        //              0 1 2 3 4 5 6 7 8
+        int [] array = {1,2,3,4,5,6,7,8,9};
+        int target = 10;
+
+//        TwoSum.solver01(array, target);
+        TwoSum.solver02(array, target);
+    }
+}
