@@ -204,3 +204,6 @@ public class TwoSum {
         TwoSum.solver02(array, target);
     }
 }
+
+6. Java volatile keyword
+http://tutorials.jenkov.com/java-concurrency/volatile.html
