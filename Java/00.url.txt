@@ -18,3 +18,12 @@ Java反射：从JDK到JVM全链路详解
 http://flycash.agpalace.com/blog/wp-content/uploads/2017/08/Java%E5%8F%8D%E5%B0%84%EF%BC%9A%E4%BB%8EJDK%E5%88%B0JVM%E5%85%A8%E9%93%BE%E8%B7%AF%E8%AF%A6%E8%A7%A3.pdf
 
 http://flycash.agpalace.com/blog/
+
+JVM源码分析之YGC的来龙去脉
+https://www.jianshu.com/p/9af1a63a33c3
+JVM源码分析之跨代引用CardTable
+https://www.jianshu.com/p/5037459097ee
+JVM源码分析之System.gc()
+https://www.jianshu.com/p/be8740726cef
+堆外内存的回收机制分析
+https://www.jianshu.com/p/35cf0f348275
