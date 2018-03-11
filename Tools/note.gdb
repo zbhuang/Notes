@@ -30,3 +30,8 @@ To get back to the old view use print /r (/r is for raw).
 
 3) STL Support Tools
 http://sourceware.org/gdb/wiki/STLSupport
+
+4) Professional Assembly Language
+https://github.com/shihyu/Assembly/find/master
+https://github.com/shihyu/Assembly/tree/master/books
+
