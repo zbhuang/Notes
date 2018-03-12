@@ -27,3 +27,5 @@ JVM源码分析之System.gc()
 https://www.jianshu.com/p/be8740726cef
 堆外内存的回收机制分析
 https://www.jianshu.com/p/35cf0f348275
+
+Introduction to Compiler Construction in a Java World
