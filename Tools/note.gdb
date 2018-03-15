@@ -35,3 +35,5 @@ http://sourceware.org/gdb/wiki/STLSupport
 https://github.com/shihyu/Assembly/find/master
 https://github.com/shihyu/Assembly/tree/master/books
 
+5) stl views support for gdb
+https://github.com/mzlogin/config-files
