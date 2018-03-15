@@ -37,3 +37,6 @@ https://github.com/shihyu/Assembly/tree/master/books
 
 5) stl views support for gdb
 https://github.com/mzlogin/config-files
+
+6)
+http://blog.mrriddler.com/
