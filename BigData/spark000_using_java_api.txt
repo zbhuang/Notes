@@ -1,0 +1,7 @@
+
+Reference
+1. An overview of Apache Spark RDD & Java 8 Streams
+https://ingini.org/2015/05/04/apache-spark-java-8-streams-overview/
+
+2. Spark and Java – Yes, They Work Together
+http://www.jesse-anderson.com/2016/05/spark-and-java-yes-they-work-together/
