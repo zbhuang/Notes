@@ -1,0 +1,116 @@
+Fix for the WordCount.java from "Learning Spark" book.
+https://github.com/databricks/learning-spark/blob/master/src/main/java/com/oreilly/learningsparkexamples/java/WordCount.java
+
+Reference
+1. IDEA上Spark——Java、Scala的本地测试版与集群运行版
+http://blog.csdn.net/HaixWang/article/details/78608756
+public class WordCountLocal {
+
+    private static final String OUTPUTFILEPATH = "./dataout";
+
+    public static void main(String[] args) {
+        /* 第一步：创建SparkConf对象，设置Spark应用的配置信息
+         使用setMaster()可以设置Spark应用程序要连接的Spark集群的master节点的url
+         设置为local则代表在本地运行*/
+        SparkConf conf = new SparkConf().setAppName("WordCountLocal").setMaster("local");
+        
+        // 第二步： 创建SparkContext对象【详细注解见博客：“注释i”】
+        JavaSparkContext sc = new JavaSparkContext(conf);
+        
+        /* 第三步：要针对输入源（hdfs文件、本地文件，等等），创建一个初始的RDD，
+         [我们有两种方法创建RDD：1. 读取一个外部数据集（比如这里的本地文件）；2. 在驱动程序里
+         分发驱动器程序中的集合（如list、set等）]。
+         输入源中的数据会打乱，分配到RDD的每个partition中，从而形成一个初始的分布式的数据集
+         在Java中，创建的普通RDD，都叫做JavaRDD
+         RDD中，有元素这种概念，如果是hdfs或者本地文件创建的RDD，每一个元素就相当于是文件里的一行*/
+        // textFile()用于根据文件类型的输入源创建RDD
+        JavaRDD<String> lines = sc.textFile("./data/wordcount.txt");
+        
+        /* 第四步：对初始RDD进行transformation操作，也就是一些计算操作
+         注意，RDD支持两种类型的操作，一种是转化（transformation）操作，
+         一种是行动（action）操作。【详细注解见博客：“注释ii”】
+        */
+        // flatMap将RDD的一个元素给拆分成多个元素；FlatMapFunction的两个参数分别是输入和输出类型
+        JavaRDD<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
+            @Override
+            public Iterator<String> call(String line) throws Exception {
+                return Arrays.asList(line.split(" ")).iterator();
+            }
+        });
+
+        // 第五步：将每一个单词，映射为(单词, 1)的这种格式。为之后进行reduce操作做准备。
+        // mapToPair，就是将每个元素映射为一个(v1,v2)这样的Tuple2（scala里的Tuple类型）类型的元素
+        // mapToPair得与PairFunction配合使用，PairFunction中的第一个泛型参数代表输入类型
+        // 第二个和第三个泛型参数，代表的输出的Tuple2的第一个值和第二个值的类型
+        // JavaPairRDD的两个泛型参数，分别代表了tuple元素的第一个值和第二个值的类型
+
+//        JavaPairRDD<String, Integer> pairs = words.mapToPair(
+//                new PairFunction<String, String, Integer>() {
+//                    private static final long serialVersionUID = 1L;
+//                    @Override
+//                    public Tuple2<String, Integer> call(String word) throws Exception {
+//                        return new Tuple2<>(word, 1);
+//                    }});
+
+        // 注：mapToPair的lambda版本：【详见注释"iii"】
+        JavaPairRDD<String, Integer> pairs = words.mapToPair(
+                (PairFunction<String, String, Integer>) word -> new Tuple2<>(word, 1)
+        );
+
+        // 第六步：reduce操作（原理同MapReduce的reduce操作一样）
+        // 以单词作为key，统计每个单词出现的次数
+        // 最后返回的JavaPairRDD中的元素，也是tuple，但是第一个值就是每个key，第二个值就是key出现的次数
+//        JavaPairRDD<String, Integer> wordCounts = pairs.reduceByKey(
+//                new Function2<Integer, Integer, Integer>() {
+//                    private static final long serialVersionUID = 1L;
+//                    @Override
+//                    public Integer call(Integer v1, Integer v2) throws Exception {
+//                        return v1 + v2;
+//                    }});
+
+        JavaPairRDD<String, Integer> wordCounts = pairs.reduceByKey(
+                (Function2<Integer, Integer, Integer>) (x, y) -> (x + y)
+        );
+
+        // 第七步：触发程序执行
+        // 到这里为止，我们通过几个Spark算子操作，已经统计出了单词的次数
+        // 目前为止我们使用的flatMap、mapToPair、reduceByKey操作，都是transformation操作
+        // 现在我们需要一个action操作来触发程序执行（这里是foreach）
+        wordCounts.foreach(new VoidFunction<Tuple2<String, Integer>>() {
+            private static final long serialVersionUID = 1L;
+
+            @Override
+            public void call(Tuple2<String, Integer> wordCount) throws Exception {
+                System.out.println(wordCount._1 + " 出现了 " + wordCount._2 + " 次; ");
+            }
+        });
+
+        // 我们也可以通过将统计出来的结果存入文件（这也是一个action操作），来触发之前的transformation操作
+        try {
+            wordCounts.saveAsTextFile(OUTPUTFILEPATH);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        sc.close();
+    }
+}
+
+遇见的问题
+在单词分割时使用FlatMapFunction报错：call(String)’ in ‘Anonymous class derived from org.apache.spark.api.java.function.FlatMapFunction’ clashes with ‘call(T)’ in ‘org.apache.spark.api.java.function.FlatMapFunction’; attempting to use incompatible return type 
+【返回类型冲突】，解决办法：将Iterable《String>修改为terator《String>,并在line.split(” “)后再调用iterator()方法;
+
+打包jar到集群测试
+代码见【】项目中的WordCountCluster.java
+打包并上传集群。IDEA简便打包可参考简便打包
+编写spark-submit脚本 
+/usr/hdp/2.6.1.0-129/spark2/bin/spark-submit \ 
+–master yarn \ 
+–class per.wanghai.WordCountCluster \ 
+–executor-cores 6 \ 
+/usr/wh/spark_study/java/sparkJava-1.0-SNAPSHOT-jar-with-dependencies.jar
+添加执行权限然后执行chmod +x wordcount.sh 
+解释： 
+-这里我是将应用提交到YARN集群上运行（详细的参数通过spark-submit - -help查看） 
+-因为程序简单，- -driver-memory、- -executor-memory、- -num-executors参数就都用的默认值
+
