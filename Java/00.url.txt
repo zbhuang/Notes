@@ -29,3 +29,6 @@ https://www.jianshu.com/p/be8740726cef
 https://www.jianshu.com/p/35cf0f348275
 
 Introduction to Compiler Construction in a Java World
+
+《Java 8函数式编程》读书笔记
+http://ginobefunny.com/post/java8_lambda_notes/
