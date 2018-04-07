@@ -1,0 +1,44 @@
+export HADOOP_HOME=/USR/LIB/HADOOP
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+How to make HDFS ready to use ?
+Step1. edit /usr/lib/hadoop/etc/hadoop/core-site.xml and /usr/lib/hadoop/etc/hadoop/hdfs-site.xml
+
+/usr/lib/hadoop/etc/hadoop/core-site.xml
+<configuration>
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>file:/root/hadoop/tmp</value>
+  </property>
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://localhost:9000</value>
+  </property>
+</configuration>
+
+/usr/lib/hadoop/etc/hadoop/hdfs-site.xml
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:/root/hadoop/tmp/dfs/name</value>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:/root/hadoop/tmp/dfs/data</value>
+  </property>
+</configuration>
+
+Step2. run "hdfs namenode -format"
+
+Step3. Update /usr/lib/hadoop/etc/hadoop/hadoop-env.sh
+export JAVA_HOME=/usr/local/java/jdkxxx, then "start-dfs.sh"
+hdfs dfs -ls /
+hdfs dfs -mkdir xxx /
+hdfs dfs -cat /xxx
+hdfs dfs -put xxx /
+
+
