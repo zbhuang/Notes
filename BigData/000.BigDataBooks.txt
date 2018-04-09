@@ -13,5 +13,11 @@ Spark 技术内幕
 Big Data Analytics with Spark
 High Performance Spark Best Practices for Scaling and Optimizing Apache Spark
 
+Scala
+Scala for Java Developers A Practical Primer
+Scala for the Impatient, 2nd Edition
+Scala集合技术手册
+Functional Programming in Scala
+
 Flink
 Stream Processing with Apache Flink: Fundamentals, Implementation, and Operation of Streaming Applications
