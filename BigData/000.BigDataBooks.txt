@@ -1,0 +1,17 @@
+Hadoop
+MapReduce Design Patterns
+Hadoop技术内幕_深入解析MapReduce架构设计与实现原理
+Hadoop技术内幕_深入解析Hadoop Common和HDFS架构设计与实现原理
+Hadoop技术内幕_深入解析YARN架构设计与实现原理
+Hadoop - The Definitive Guide 4th Edition
+HADOOP 2.X HDFS源码剖析
+
+Spark
+Learning Spark Lightning Fast Big Data Analysis (Spark 快速大数据分析)
+Spark 技术内幕
+深入理解Spark_核心思想与源码分析/Spark内核设计的艺术-架构设计与实现
+Big Data Analytics with Spark
+High Performance Spark Best Practices for Scaling and Optimizing Apache Spark
+
+Flink
+Stream Processing with Apache Flink: Fundamentals, Implementation, and Operation of Streaming Applications
