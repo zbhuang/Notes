@@ -18,6 +18,7 @@ Scala for Java Developers A Practical Primer
 Scala for the Impatient, 2nd Edition
 Scala集合技术手册
 Functional Programming in Scala
+Programming.Scala.2nd.Edition / Scala程序设计.第2版
 
 Flink
 Stream Processing with Apache Flink: Fundamentals, Implementation, and Operation of Streaming Applications
