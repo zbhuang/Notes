@@ -9,3 +9,6 @@ https://github.com/martin-gorner/tensorflow-rnn-shakespeare
 
 Simple PyTorch Tutorials Zero to ALL
 https://github.com//hunkim/PyTorchZeroToAll
+
+https://github.com/rohanchikorde/Data-Science-books
+
