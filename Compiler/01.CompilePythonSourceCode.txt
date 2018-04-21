@@ -1,0 +1,41 @@
+1. I used visual studio 2015 to build python source code 3.6.5.
+2. ran into the following issue, "windows sdk version 10.0.15063 was not found".
+The fix is to open PCbuild\python.props and update line 79
+<DefaultWindowsSDKVersion Condition="$(_RegistryVersion) == '10.0.15063'">10.0.15063.0</DefaultWindowsSDKVersion>
+3. build only two projects, python and pythoncore.
+4. entry point for debugging is here,
+Programs\python.c, line 14
+return Py_Main(argc, argv);
+
+5. after going into interactive shell, entry point for parsing each method/function is here,
+Python\pythonrun.c, line 114
+ret = PyRun_InteractiveOneObjectEx(fp, filename, flags);
+
+    do {
+        ret = PyRun_InteractiveOneObjectEx(fp, filename, flags);
+        if (ret == -1 && PyErr_Occurred()) {
+            /* Prevent an endless loop after multiple consecutive MemoryErrors
+             * while still allowing an interactive command to fail with a
+             * MemoryError. */
+            if (PyErr_ExceptionMatches(PyExc_MemoryError)) {
+                if (++nomem_count > 16) {
+                    PyErr_Clear();
+                    err = -1;
+                    break;
+                }
+            } else {
+                nomem_count = 0;
+            }
+            PyErr_Print();
+            flush_io();
+        } else {
+            nomem_count = 0;
+        }
+        _PY_DEBUG_PRINT_TOTAL_REFS();
+    } while (ret != E_EOF);
+
+reference
+1. Fix python 3.6 build failure with VS 2015 and WinSDK!=10.0.15063
+https://github.com/isuruf/cpython/commit/9432a2c7f63b3bb55e8066e91eade81321154476
+2. VS2015±‡“Îpython 3.6.4‘¥¬Î
+https://blog.csdn.net/fitzzhang/article/details/79146107
