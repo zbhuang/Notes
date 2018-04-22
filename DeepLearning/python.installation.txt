@@ -1,0 +1,40 @@
+1. Install python 3.6.5 x64 on windows
+
+C:\Windows\system32>pip install keras
+Successfully installed keras-2.1.5 scipy-1.0.1
+
+C:\Windows\system32>pip install matplotlib
+
+C:\Windows\system32>pip install tensorflow
+Successfully installed absl-py-0.2.0 astor-0.6.2 bleach-1.5.0 gast-0.2.0 grpcio-1.11.0 html5lib-0.9999999 markdown-2.6.11 numpy-1.14.2 protobuf-3.5.2.post1 tensorboard-1.7.0 tensorflow-1.7.0 termcolor-1.1.0 werkzeug-0.14.1 wheel-0.31.0
+
+C:\Windows\system32>pip install ipython
+Successfully installed backcall-0.1.0 decorator-4.3.0 ipython-6.3.1 ipython-genutils-0.2.0 jedi-0.12.0 parso-0.2.0 pickleshare-0.7.4 prompt-toolkit-1.0.15 pygments-2.2.0 simplegeneric-0.8.1 traitlets-4.3.2 wcwidth-0.1.7
+
+C:\Windows\system32>pip install jupyter
+Successfully installed MarkupSafe-1.0 Send2Trash-1.5.0 entrypoints-0.2.3 ipykernel-4.8.2 ipywidgets-7.2.1 jinja2-2.10 jsonschema-2.6.0 jupyter-1.0.0 jupyter-client-5.2.3 jupyter-console-5.2.0 jupyter-core-4.4.0 mistune-0.8.3 nbconvert-5.3.1 nbformat-4.4.0 notebook-5.4.1 pandocfilters-1.4.2 pywinpty-0.5.1 pyzmq-17.0.0 qtconsole-4.3.1 terminado-0.8.1 testpath-0.3.1 tornado-5.0.2 widgetsnbextension-3.2.1
+
+C:\Windows\SysWOW64>pip install pandas
+Successfully installed pandas-0.22.0
+
+C:\Windows\SysWOW64>pip install sklearn
+Successfully installed scikit-learn-0.19.1 sklearn-0.0
+
+2. How to run jupyter notebook ?
+Open window command shell, and go to the target folder then type "jupyter notebook".
+It will automatically launch the service - 
+Note: if you do not go to the target folder where your ipynb files are located, 
+      then it might go to cmd.exe's folder, which is C:\Windows\System32
+
+K:\ebooks\00_DeepLearning\handson-ml-master>jupyter notebook
+[I 21:40:17.888 NotebookApp] Serving notebooks from local directory: K:\ebooks\00_DeepLearning\handson-ml-master
+[I 21:40:17.888 NotebookApp] 0 active kernels
+[I 21:40:17.888 NotebookApp] The Jupyter Notebook is running at:
+[I 21:40:17.888 NotebookApp] http://localhost:8888/?token=3864566abe3fc5b8bd44475f29d007d767a957adc963cbef
+[I 21:40:17.888 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 21:40:17.889 NotebookApp]
+
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=3864566abe3fc5b8bd44475f29d007d767a957adc963cbef
+[I 21:40:17.946 NotebookApp] Accepting one-time-token-authenticated connection from ::1      
