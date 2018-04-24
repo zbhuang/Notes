@@ -12,3 +12,4 @@ https://github.com//hunkim/PyTorchZeroToAll
 
 https://github.com/rohanchikorde/Data-Science-books
 
+https://github.com/PacktPublishing/Deep-Learning-with-Hadoop
