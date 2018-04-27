@@ -45,3 +45,5 @@ for (Tuple2<String, Iterable<Tuple2<Integer, Integer>>> t : output2) {
   }
   System.out.println("=====");
 }
+
+https://github.com/viveksinha/designing-data-intensive-applications
