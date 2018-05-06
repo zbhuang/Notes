@@ -1,0 +1,6 @@
+zbhuang@zbhuang-XPS-8500:~$ sudo add-apt-repository ppa:graphics-drivers
+zbhuang@zbhuang-XPS-8500:~$ sudo apt-get update
+zbhuang@zbhuang-XPS-8500:~$ sudo apt-get install nvidia-390
+zbhuang@zbhuang-XPS-8500:~$ lsmod | grep nvidia
+zbhuang@zbhuang-XPS-8500:~$ sudo apt-mark hold nvidia-390
+
