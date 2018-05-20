@@ -1,0 +1,21 @@
+http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS17.html
+https://www.youtube.com/watch?v=IzHoNwlCGnE&list=PLJV_el3uVTsPMxPbjeX7PicgWbY7F8wW9
+
+https://www.csie.ntu.edu.tw/~yvchen/f106-adl/syllabus.html
+
+Tensorflow and deep learning, without a PhD
+https://github.com/martin-gorner/tensorflow-mnist-tutorial
+https://github.com/martin-gorner/tensorflow-rnn-shakespeare
+
+Simple PyTorch Tutorials Zero to ALL
+https://github.com//hunkim/PyTorchZeroToAll
+
+https://github.com/rohanchikorde/Data-Science-books
+
+https://github.com/PacktPublishing/Deep-Learning-with-Hadoop
+
+李宏毅
+https://www.youtube.com/watch?v=xCGidAeyS4M
+
+周莫烦
+https://www.youtube.com/channel/UCdyjiB5H8Pu7aDTNVXTTpcg
