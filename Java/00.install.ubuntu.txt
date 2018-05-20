@@ -1,0 +1,18 @@
+1、复制jdk到安装目录
+(1)假设jdk安装文件在桌面，我们指定的安装目录是：/usr/local/java 。可是系统安装后在/usr/local下并没有java目录，这需要我们去创建一个java文件夹
+$cd /usr/local
+$sudo mkdir java
+(2)切换到桌面下，执行复制
+$sudo cp jdk-6u3*-linux-i586.bin /usr/local/java/ 
+
+3、配置环境变量
+(1)打开/etc/profile文件
+$sudo gedit /etc/profile
+(2)添加变量如下：
+#set java environment  
+export JAVA_HOME=/usr/local/java/jdk1.6.0_30
+export JRE_HOME=/usr/local/java/jdk1.6.0_30/jre
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH
+
+

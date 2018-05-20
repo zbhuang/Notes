@@ -20,6 +20,9 @@ Successfully installed pandas-0.22.0
 C:\Windows\SysWOW64>pip install sklearn
 Successfully installed scikit-learn-0.19.1 sklearn-0.0
 
+C:\Windows\SysWOW64>pip install pillow
+Successfully installed pillow-5.1.0
+
 2. How to run jupyter notebook ?
 Open window command shell, and go to the target folder then type "jupyter notebook".
 It will automatically launch the service - 

@@ -1,0 +1,31 @@
+goal - install ubuntu os which can co-exist with win8 in my pc environment.
+
+I know how to do it in virtual-box, but that does not fully use the GPU I have for my pc.
+If I can install a physical ubuntu, maybe it can use GPU in ubuntu env.
+
+1.Allocate a free disk
+   control panel -> system and security -> administrative tools -> computer management
+or right click my computer and select "Manage"
+Storage -> disk management
+
+2.Burn a Ubuntu ios image file to a dvd
+
+3.When restart the machine, push "F12" to show up boot menu (so that you can make boot start from cd/dvd).
+
+4.When create/manage the disk for ubuntu, make sure - the disk of size/space for biosgrub >= 1M (I gave 10M).
+Also "Device for boot loader installation" is "/dev/sda".
+Otherwise, you might run into the following failure during the installation phase.
+"Executing 'grub-install /dv/sda10' failed."
+
+5.After the installation, by default it will automatically go to Ubuntu OS, and log in.
+To go to win8, you need to keep pushing "F12" when the computer starts.
+From that boot menu, select windows entry.
+
+Reference
+1. The Ultimate Windows 7 and Ubuntu Linux Dual Boot Guide
+https://www.lifewire.com/ultimate-windows-7-ubuntu-linux-dual-boot-guide-2200653
+2. How to Open Disk Management
+https://www.lifewire.com/how-to-open-disk-management-2626080
+3. How to Install Ubuntu 16.10/16.04 Alongside With Windows 10 or 8 in Dual-Boot
+https://www.tecmint.com/install-ubuntu-16-04-alongside-with-windows-10-or-8-in-dual-boot/
+
