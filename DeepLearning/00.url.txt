@@ -19,3 +19,14 @@ https://www.youtube.com/watch?v=xCGidAeyS4M
 
 周莫烦
 https://www.youtube.com/channel/UCdyjiB5H8Pu7aDTNVXTTpcg
+https://github.com/MorvanZhou/Tensorflow-Tutorial
+
+Tensorflow学习笔记，来源于电子书：《Tensorflow实战Google深度学习框架》
+https://github.com/cookeem/TensorFlow_learning_notes
+《TensorFlow: 实战Google深度学习框架》学习笔记
+https://github.com/LucasLiulu/tensorflow_learn
+Example TensorFlow codes and Caicloud TensorFlow as a Service dev environment
+https://github.com/caicloud/tensorflow-tutorial
+
+https://medium.com/@youngladesh/absolute-beginners-guide-to-machine-learning-and-deep-learning-7fa032944047
+https://media.weibo.cn/article?id=2309404244271099169398

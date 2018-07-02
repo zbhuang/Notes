@@ -1,0 +1,77 @@
+    2  cd Downloads/
+    5  cd /usr/local
+    6  sudo mkdir java
+    7  cd java
+    8  sudo cp /home/zbhuang/Downloads/jdk-8u172-linux-x64.tar.gz .
+   12  sudo tar -xf jdk-8u172-linux-x64.tar.gz 
+   14  sudo rm jdk-8u172-linux-x64.tar.gz 
+   16  cd jdk1.8.0_172/
+   17  pwd
+   18  sudo gedit /etc/profile
+   20  sudo apt install git
+   23  mkdir DeepLearning4J
+   24  cd DeepLearning4J
+   26  git clone https://github.com/deeplearning4j/libnd4j.git libnd4j_master
+   27  git clone https://github.com/deeplearning4j/nd4j.git nd4j_master
+   30  sudo apt install gcc
+   31  gcc -v
+   33  sudo apt install g++
+   34  g++ -v
+   37  pwd
+   38  java -version
+   39  gedit /etc/profile
+   40  sudo gedit /etc/profile
+   41  cd ..
+   45  sudo apt install make
+   46  ./configure 
+   47  make
+   48  sudo make install
+   49  cmake -version
+   50  gedit log.build.libnd4j-1.0.0-beta.txt
+   51  cd .git
+   52  pwd
+   53  ll
+   54  gedit log.build.datavec-1.0.0-beta.txt
+   55  ./buildnativeoperations.sh 
+   56  export LIBND4J_HOME=`pwd`
+   57  echo $LIBND4J_HOME
+   58  cd ../nd4j-1.0.0-beta/
+   59  ll
+   60  mvn clean install -DskipTests -Dmaven.javadoc.skip=true
+   61  cp -r ../nd4j_master/.git .
+   62  cd .git
+   63  ll
+   64  cd ..
+   65  mvn install -DskipTests -Dmaven.javadoc.skip=true
+   66  mvn install -DskipTests -Dmaven.javadoc.skip=true -pl '!org.nd4j:nd4j-cuda-9.1,!org.nd4j:nd4j-cuda-9.1-platform,!org.nd4j:nd4j-tests'
+   67  find . -name *.jar
+   68  history
+   69  echo $LIBND4J_HOME
+   70  cd ..
+   71  ll
+   72  git clone https://github.com/deeplearning4j/DataVec.git datavec_master
+   73  ll
+   74  cd datavec-1.0.0-beta/
+   75  mvn install -DskipTests -Dmaven.javadoc.skip=true
+   76  cp -r ../datavec_master/.git .
+   77  mvn install -DskipTests -Dmaven.javadoc.skip=true
+   78  git clone https://github.com/deeplearning4j/deeplearning4j.git deeplearning4j_master
+   79  ll
+   80  mv -r deeplearning4j_master/ ..
+   81  mv deeplearning4j_master/ ..
+   82  ll
+   83  cd ..
+   84  ll
+   85  cd deeplearning4j_master/
+   86  ll
+   87  cd ..
+   88  ll
+   89  cd deeplearning4j-1.0.0-beta/
+   90  mvn install -DskipTests -Dmaven.javadoc.skip=true
+   91  cp -r ../deeplearning4j_master/.git .
+   92  mvn install -DskipTests -Dmaven.javadoc.skip=true
+   93  find . -name *.jar
+   94  ll
+   95  cd DeepLearning4J/
+   96  ll
+   97  history > log.build.00.cmdhistory.txt

@@ -1,0 +1,1968 @@
+
+zbhuang@zbhuang-VirtualBox:~/DeepLearning4J/datavec-1.0.0-beta$ cp -r ../datavec_master/.git .
+zbhuang@zbhuang-VirtualBox:~/DeepLearning4J/datavec-1.0.0-beta$ mvn install -DskipTests -Dmaven.javadoc.skip=true
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.datavec:datavec-spark-inference-server_2.11:jar:1.0.0-beta_spark_1
+[WARNING] The expression ${parent.version} is deprecated. Please use ${project.parent.version} instead.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.datavec:datavec-spark-inference-model:jar:1.0.0-beta
+[WARNING] The expression ${parent.version} is deprecated. Please use ${project.parent.version} instead.
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] DataVec
+[INFO] datavec-api
+[INFO] datavec-data
+[INFO] datavec-data-audio
+[INFO] datavec-data-image
+[INFO] datavec-data-codec
+[INFO] datavec-data-nlp
+[INFO] datavec-geo
+[INFO] datavec-hadoop
+[INFO] datavec-spark_2.11
+[INFO] DataVec Camel Component
+[INFO] datavec-arrow
+[INFO] datavec-local
+[INFO] datavec-spark-inference-parent
+[INFO] datavec-spark-inference-model
+[INFO] datavec-spark-inference-server
+[INFO] datavec-spark-inference-client
+[INFO] datavec-jdbc
+[INFO] datavec-excel
+[INFO] datavec-perf
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building DataVec 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-parent ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-parent ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-parent ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-parent ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-parent >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-parent ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-parent <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-parent ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-parent/1.0.0-beta/datavec-parent-1.0.0-beta.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-api 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-api ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-api ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-api ---
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.pom (891 B at 1.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.7/plexus-compiler-2.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.7/plexus-compiler-2.7.pom (5 KB at 86.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.pom (711 B at 12.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.pom (792 B at 14.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.7/plexus-compilers-2.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.7/plexus-compilers-2.7.pom (2 KB at 27.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.jar
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.jar
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.jar (26 KB at 241.3 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.jar (5 KB at 23.3 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.jar (20 KB at 90.2 KB/sec)
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 346 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/target/classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/src/main/java/org/datavec/api/conf/Configuration.java: Some input files use or override a deprecated API.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/src/main/java/org/datavec/api/conf/Configuration.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/src/main/java/org/datavec/api/util/ndarray/RecordConverter.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/src/main/java/org/datavec/api/util/ndarray/RecordConverter.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 34 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 55 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/target/test-classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/src/test/java/org/datavec/api/util/ClassPathResourceTest.java: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/src/test/java/org/datavec/api/util/ClassPathResourceTest.java uses or overrides a deprecated API.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/src/test/java/org/datavec/api/util/ClassPathResourceTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/src/test/java/org/datavec/api/transform/reduce/TestMultiOpReduce.java: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/src/test/java/org/datavec/api/transform/reduce/TestMultiOpReduce.java uses unchecked or unsafe operations.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/src/test/java/org/datavec/api/transform/reduce/TestMultiOpReduce.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-api ---
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar
+Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar (57 KB at 387.1 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar (181 KB at 905.1 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar (60 KB at 188.7 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar (203 KB at 628.0 KB/sec)
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/target/datavec-api-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-api ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-api >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-api ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-api <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-api ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/target/datavec-api-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-api ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/target/datavec-api-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-api/1.0.0-beta/datavec-api-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-api/1.0.0-beta/datavec-api-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-api/target/datavec-api-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-api/1.0.0-beta/datavec-api-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-data 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-data ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-data ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-data ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-data ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-data >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-data ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-data <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-data ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-data ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-data/1.0.0-beta/datavec-data-1.0.0-beta.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-data-audio 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacv/1.4.1/javacv-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacv/1.4.1/javacv-1.4.1.pom (12 KB at 122.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1.pom (6 KB at 99.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/ffmpeg/3.4.2-1.4.1/ffmpeg-3.4.2-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/ffmpeg/3.4.2-1.4.1/ffmpeg-3.4.2-1.4.1.pom (3 KB at 32.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/flycapture/2.11.3.121-1.4.1/flycapture-2.11.3.121-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/flycapture/2.11.3.121-1.4.1/flycapture-2.11.3.121-1.4.1.pom (3 KB at 35.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libdc1394/2.2.5-1.4.1/libdc1394-2.2.5-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libdc1394/2.2.5-1.4.1/libdc1394-2.2.5-1.4.1.pom (3 KB at 47.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libfreenect/0.5.3-1.4.1/libfreenect-0.5.3-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libfreenect/0.5.3-1.4.1/libfreenect-0.5.3-1.4.1.pom (2 KB at 37.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libfreenect2/0.2.0-1.4.1/libfreenect2-0.2.0-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libfreenect2/0.2.0-1.4.1/libfreenect2-0.2.0-1.4.1.pom (2 KB at 33.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/librealsense/1.12.1-1.4.1/librealsense-1.12.1-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/librealsense/1.12.1-1.4.1/librealsense-1.12.1-1.4.1.pom (2 KB at 45.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/videoinput/0.200-1.4.1/videoinput-0.200-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/videoinput/0.200-1.4.1/videoinput-0.200-1.4.1.pom (3 KB at 66.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/artoolkitplus/2.3.1-1.4.1/artoolkitplus-2.3.1-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/artoolkitplus/2.3.1-1.4.1/artoolkitplus-2.3.1-1.4.1.pom (2 KB at 29.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/flandmark/1.07-1.4.1/flandmark-1.07-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/flandmark/1.07-1.4.1/flandmark-1.07-1.4.1.pom (5 KB at 65.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/wendykierp/JTransforms/3.1/JTransforms-3.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/github/wendykierp/JTransforms/3.1/JTransforms-3.1.pom (7 KB at 86.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/3.5/commons-math3-3.5.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/3.5/commons-math3-3.5.pom (28 KB at 327.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/pl/edu/icm/JLargeArrays/1.5/JLargeArrays-1.5.pom
+Downloaded: https://repo.maven.apache.org/maven2/pl/edu/icm/JLargeArrays/1.5/JLargeArrays-1.5.pom (6 KB at 117.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacv/1.4.1/javacv-1.4.1.jar
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/ffmpeg/3.4.2-1.4.1/ffmpeg-3.4.2-1.4.1.jar
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/flycapture/2.11.3.121-1.4.1/flycapture-2.11.3.121-1.4.1.jar
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1.jar
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libdc1394/2.2.5-1.4.1/libdc1394-2.2.5-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/flycapture/2.11.3.121-1.4.1/flycapture-2.11.3.121-1.4.1.jar (132 KB at 309.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libfreenect/0.5.3-1.4.1/libfreenect-0.5.3-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacv/1.4.1/javacv-1.4.1.jar (385 KB at 699.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libfreenect2/0.2.0-1.4.1/libfreenect2-0.2.0-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libfreenect/0.5.3-1.4.1/libfreenect-0.5.3-1.4.1.jar (22 KB at 38.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/librealsense/1.12.1-1.4.1/librealsense-1.12.1-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/ffmpeg/3.4.2-1.4.1/ffmpeg-3.4.2-1.4.1.jar (237 KB at 408.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/videoinput/0.200-1.4.1/videoinput-0.200-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libfreenect2/0.2.0-1.4.1/libfreenect2-0.2.0-1.4.1.jar (24 KB at 32.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/artoolkitplus/2.3.1-1.4.1/artoolkitplus-2.3.1-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/libdc1394/2.2.5-1.4.1/libdc1394-2.2.5-1.4.1.jar (31 KB at 39.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/flandmark/1.07-1.4.1/flandmark-1.07-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/videoinput/0.200-1.4.1/videoinput-0.200-1.4.1.jar (17 KB at 20.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/wendykierp/JTransforms/3.1/JTransforms-3.1-with-dependencies.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/librealsense/1.12.1-1.4.1/librealsense-1.12.1-1.4.1.jar (49 KB at 54.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/pl/edu/icm/JLargeArrays/1.5/JLargeArrays-1.5.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/flandmark/1.07-1.4.1/flandmark-1.07-1.4.1.jar (12 KB at 12.1 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/artoolkitplus/2.3.1-1.4.1/artoolkitplus-2.3.1-1.4.1.jar (24 KB at 24.6 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/pl/edu/icm/JLargeArrays/1.5/JLargeArrays-1.5.jar (228 KB at 153.0 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1.jar (1437 KB at 945.5 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/com/github/wendykierp/JTransforms/3.1/JTransforms-3.1-with-dependencies.jar (1467 KB at 700.7 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-data-audio ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-data-audio ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-data-audio ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-data-audio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-audio/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-data-audio ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 33 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-audio/target/classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-audio/src/main/java/org/datavec/audio/fingerprint/MapRankDouble.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-audio/src/main/java/org/datavec/audio/fingerprint/MapRankDouble.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-data-audio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-audio/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-data-audio ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-audio/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-data-audio ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-data-audio ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-audio/target/datavec-data-audio-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-data-audio ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-data-audio >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-data-audio ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-data-audio <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-data-audio ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-audio/target/datavec-data-audio-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-data-audio ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-audio/target/datavec-data-audio-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-data-audio/1.0.0-beta/datavec-data-audio-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-audio/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-data-audio/1.0.0-beta/datavec-data-audio-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-audio/target/datavec-data-audio-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-data-audio/1.0.0-beta/datavec-data-audio-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-data-image 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/com/github/jai-imageio/jai-imageio-core/1.3.0/jai-imageio-core-1.3.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/github/jai-imageio/jai-imageio-core/1.3.0/jai-imageio-core-1.3.0.pom (10 KB at 181.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-jpeg/3.1.1/imageio-jpeg-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-jpeg/3.1.1/imageio-jpeg-3.1.1.pom (2 KB at 25.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio/3.1.1/imageio-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio/3.1.1/imageio-3.1.1.pom (5 KB at 69.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/twelvemonkeys/3.1.1/twelvemonkeys-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/twelvemonkeys/3.1.1/twelvemonkeys-3.1.1.pom (9 KB at 173.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-core/3.1.1/imageio-core-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-core/3.1.1/imageio-core-3.1.1.pom (1004 B at 15.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-lang/3.1.1/common-lang-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-lang/3.1.1/common-lang-3.1.1.pom (647 B at 12.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common/3.1.1/common-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common/3.1.1/common-3.1.1.pom (2 KB at 40.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-io/3.1.1/common-io-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-io/3.1.1/common-io-3.1.1.pom (2 KB at 15.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-image/3.1.1/common-image-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-image/3.1.1/common-image-3.1.1.pom (2 KB at 20.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-metadata/3.1.1/imageio-metadata-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-metadata/3.1.1/imageio-metadata-3.1.1.pom (983 B at 15.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-tiff/3.1.1/imageio-tiff-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-tiff/3.1.1/imageio-tiff-3.1.1.pom (2 KB at 19.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-psd/3.1.1/imageio-psd-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-psd/3.1.1/imageio-psd-3.1.1.pom (2 KB at 25.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-bmp/3.1.1/imageio-bmp-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-bmp/3.1.1/imageio-bmp-3.1.1.pom (1012 B at 11.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/android/android/4.1.1.4/android-4.1.1.4.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/android/android/4.1.1.4/android-4.1.1.4.pom (3 KB at 58.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv-platform/3.4.1-1.4.1/opencv-platform-3.4.1-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv-platform/3.4.1-1.4.1/opencv-platform-3.4.1-1.4.1.pom (5 KB at 104.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica-platform/1.75.3-1.4.1/leptonica-platform-1.75.3-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica-platform/1.75.3-1.4.1/leptonica-platform-1.75.3-1.4.1.pom (5 KB at 81.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1.pom (3 KB at 39.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5-platform/1.10.1-1.4.1/hdf5-platform-1.10.1-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5-platform/1.10.1-1.4.1/hdf5-platform-1.10.1-1.4.1.pom (4 KB at 48.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1.pom (3 KB at 55.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/jai-imageio/jai-imageio-core/1.3.0/jai-imageio-core-1.3.0.jar
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-core/3.1.1/imageio-core-3.1.1.jar
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-metadata/3.1.1/imageio-metadata-3.1.1.jar
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-jpeg/3.1.1/imageio-jpeg-3.1.1.jar
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-lang/3.1.1/common-lang-3.1.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-jpeg/3.1.1/imageio-jpeg-3.1.1.jar (58 KB at 196.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-io/3.1.1/common-io-3.1.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-core/3.1.1/imageio-core-3.1.1.jar (57 KB at 187.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-image/3.1.1/common-image-3.1.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-metadata/3.1.1/imageio-metadata-3.1.1.jar (66 KB at 208.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-tiff/3.1.1/imageio-tiff-3.1.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-image/3.1.1/common-image-3.1.1.jar (81 KB at 150.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-psd/3.1.1/imageio-psd-3.1.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-io/3.1.1/common-io-3.1.1.jar (87 KB at 159.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-bmp/3.1.1/imageio-bmp-3.1.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-tiff/3.1.1/imageio-tiff-3.1.1.jar (61 KB at 112.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/android/android/4.1.1.4/android-4.1.1.4.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/common/common-lang/3.1.1/common-lang-3.1.1.jar (115 KB at 204.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv-platform/3.4.1-1.4.1/opencv-platform-3.4.1-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/github/jai-imageio/jai-imageio-core/1.3.0/jai-imageio-core-1.3.0.jar (588 KB at 984.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-android-arm.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv-platform/3.4.1-1.4.1/opencv-platform-3.4.1-1.4.1.jar (3 KB at 3.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-android-arm64.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-psd/3.1.1/imageio-psd-3.1.1.jar (67 KB at 84.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-android-x86.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/twelvemonkeys/imageio/imageio-bmp/3.1.1/imageio-bmp-3.1.1.jar (52 KB at 64.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-android-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/google/android/android/4.1.1.4/android-4.1.1.4.jar (12645 KB at 449.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-ios-arm64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-android-arm.jar (19009 KB at 575.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-ios-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-android-x86_64.jar (23778 KB at 463.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-linux-x86.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-android-x86.jar (23952 KB at 455.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-linux-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-ios-arm64.jar (17899 KB at 303.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-linux-armhf.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-ios-x86_64.jar (19627 KB at 285.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-linux-ppc64le.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-android-arm64.jar (21928 KB at 317.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-macosx-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-linux-x86.jar (16733 KB at 201.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-windows-x86.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-linux-x86_64.jar (16965 KB at 175.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-windows-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-linux-ppc64le.jar (18843 KB at 185.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica-platform/1.75.3-1.4.1/leptonica-platform-1.75.3-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica-platform/1.75.3-1.4.1/leptonica-platform-1.75.3-1.4.1.jar (3 KB at 0.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1.jar (143 KB at 1.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-android-arm.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-linux-armhf.jar (16922 KB at 164.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-android-arm64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-android-arm64.jar (2099 KB at 19.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-android-x86.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-android-arm.jar (1992 KB at 18.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-android-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-android-x86.jar (2260 KB at 19.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-linux-x86.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-android-x86_64.jar (2370 KB at 20.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-linux-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-macosx-x86_64.jar (17938 KB at 153.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-linux-armhf.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-linux-x86.jar (1937 KB at 16.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-linux-ppc64le.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-linux-armhf.jar (1881 KB at 15.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-macosx-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-linux-x86_64.jar (2239 KB at 18.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-windows-x86.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-windows-x86.jar (17500 KB at 141.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-windows-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-linux-ppc64le.jar (2074 KB at 16.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5-platform/1.10.1-1.4.1/hdf5-platform-1.10.1-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5-platform/1.10.1-1.4.1/hdf5-platform-1.10.1-1.4.1.jar (3 KB at 0.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1.jar (169 KB at 1.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-linux-x86.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-macosx-x86_64.jar (2264 KB at 17.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-linux-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-windows-x86.jar (2613 KB at 20.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-linux-ppc64le.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-linux-x86.jar (2025 KB at 15.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-macosx-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.75.3-1.4.1/leptonica-1.75.3-1.4.1-windows-x86_64.jar (2606 KB at 19.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-windows-x86.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-linux-x86_64.jar (2182 KB at 16.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-windows-x86_64.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-linux-ppc64le.jar (2331 KB at 17.3 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-macosx-x86_64.jar (2045 KB at 15.1 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/opencv/3.4.1-1.4.1/opencv-3.4.1-1.4.1-windows-x86_64.jar (20405 KB at 147.0 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-windows-x86.jar (12882 KB at 88.7 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/bytedeco/javacpp-presets/hdf5/1.10.1-1.4.1/hdf5-1.10.1-1.4.1-windows-x86_64.jar (13749 KB at 91.4 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-data-image ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-data-image ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-data-image ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-data-image ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-data-image ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 45 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-image/target/classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-image/src/main/java/org/datavec/image/transform/EqualizeHistTransform.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-image/src/main/java/org/datavec/image/transform/EqualizeHistTransform.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-data-image ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 15 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-data-image ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-image/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-data-image ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-data-image ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-image/target/datavec-data-image-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-data-image ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-data-image >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-data-image ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-data-image <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-data-image ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-image/target/datavec-data-image-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-data-image ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-image/target/datavec-data-image-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-data-image/1.0.0-beta/datavec-data-image-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-image/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-data-image/1.0.0-beta/datavec-data-image-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-image/target/datavec-data-image-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-data-image/1.0.0-beta/datavec-data-image-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-data-codec 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/org/jcodec/jcodec/0.1.5/jcodec-0.1.5.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/jcodec/jcodec/0.1.5/jcodec-0.1.5.pom (3 KB at 54.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jcodec/jcodec/0.1.5/jcodec-0.1.5.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/jcodec/jcodec/0.1.5/jcodec-0.1.5.jar (892 KB at 2268.2 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-data-codec ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-data-codec ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-data-codec ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-data-codec ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-codec/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-data-codec ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-codec/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-data-codec ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-data-codec ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-codec/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-data-codec ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-data-codec ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-codec/target/datavec-data-codec-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-data-codec ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-data-codec >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-data-codec ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-data-codec <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-data-codec ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-codec/target/datavec-data-codec-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-data-codec ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-codec/target/datavec-data-codec-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-data-codec/1.0.0-beta/datavec-data-codec-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-codec/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-data-codec/1.0.0-beta/datavec-data-codec-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-codec/target/datavec-data-codec-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-data-codec/1.0.0-beta/datavec-data-codec-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-data-nlp 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-snowball/2.0.0/cleartk-snowball-2.0.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-snowball/2.0.0/cleartk-snowball-2.0.0.pom (3 KB at 24.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/cleartk/cleartk/2.0.0/cleartk-2.0.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/cleartk/cleartk/2.0.0/cleartk-2.0.0.pom (19 KB at 350.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-snowball/3.0.3/lucene-snowball-3.0.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-snowball/3.0.3/lucene-snowball-3.0.3.pom (2 KB at 13.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-contrib/3.0.3/lucene-contrib-3.0.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-contrib/3.0.3/lucene-contrib-3.0.3.pom (2 KB at 37.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-parent/3.0.3/lucene-parent-3.0.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-parent/3.0.3/lucene-parent-3.0.3.pom (4 KB at 43.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-util/2.0.0/cleartk-util-2.0.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-util/2.0.0/cleartk-util-2.0.0.pom (3 KB at 34.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/uima/uimaj-core/2.5.0/uimaj-core-2.5.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/uima/uimaj-core/2.5.0/uimaj-core-2.5.0.pom (8 KB at 176.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/uima/uimaj-parent/2.5.0/uimaj-parent-2.5.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/uima/uimaj-parent/2.5.0/uimaj-parent-2.5.0.pom (5 KB at 70.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/uima/parent-pom/8/parent-pom-8.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/uima/parent-pom/8/parent-pom-8.pom (109 KB at 1271.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/uima/uimafit-core/2.0.0/uimafit-core-2.0.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/uima/uimafit-core/2.0.0/uimafit-core-2.0.0.pom (6 KB at 127.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/uima/uimafit-parent/2.0.0/uimafit-parent-2.0.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/uima/uimafit-parent/2.0.0/uimafit-parent-2.0.0.pom (11 KB at 161.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/uima/parent-pom/6/parent-pom-6.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/uima/parent-pom/6/parent-pom-6.pom (101 KB at 1170.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/uima/uimaj-core/2.4.2/uimaj-core-2.4.2.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/uima/uimaj-core/2.4.2/uimaj-core-2.4.2.pom (8 KB at 138.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/uima/uimaj-parent/2.4.2/uimaj-parent-2.4.2.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/uima/uimaj-parent/2.4.2/uimaj-parent-2.4.2.pom (8 KB at 126.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-core/3.1.2.RELEASE/spring-core-3.1.2.RELEASE.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-core/3.1.2.RELEASE/spring-core-3.1.2.RELEASE.pom (3 KB at 50.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-parent/3.1.2.RELEASE/spring-parent-3.1.2.RELEASE.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-parent/3.1.2.RELEASE/spring-parent-3.1.2.RELEASE.pom (9 KB at 174.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.2.RELEASE/spring-asm-3.1.2.RELEASE.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.2.RELEASE/spring-asm-3.1.2.RELEASE.pom (3 KB at 52.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-context/3.1.2.RELEASE/spring-context-3.1.2.RELEASE.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-context/3.1.2.RELEASE/spring-context-3.1.2.RELEASE.pom (9 KB at 187.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-aop/3.1.2.RELEASE/spring-aop-3.1.2.RELEASE.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-aop/3.1.2.RELEASE/spring-aop-3.1.2.RELEASE.pom (3 KB at 50.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-beans/3.1.2.RELEASE/spring-beans-3.1.2.RELEASE.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-beans/3.1.2.RELEASE/spring-beans-3.1.2.RELEASE.pom (3 KB at 50.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-expression/3.1.2.RELEASE/spring-expression-3.1.2.RELEASE.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-expression/3.1.2.RELEASE/spring-expression-3.1.2.RELEASE.pom (2 KB at 42.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-type-system/2.0.0/cleartk-type-system-2.0.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-type-system/2.0.0/cleartk-type-system-2.0.0.pom (3 KB at 36.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-opennlp-tools/2.0.0/cleartk-opennlp-tools-2.0.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-opennlp-tools/2.0.0/cleartk-opennlp-tools-2.0.0.pom (3 KB at 27.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-maxent/3.0.3/opennlp-maxent-3.0.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-maxent/3.0.3/opennlp-maxent-3.0.3.pom (3 KB at 52.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp/1.5.3/opennlp-1.5.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp/1.5.3/opennlp-1.5.3.pom (7 KB at 123.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-tools/1.5.3/opennlp-tools-1.5.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-tools/1.5.3/opennlp-tools-1.5.3.pom (6 KB at 148.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/net/sf/jwordnet/jwnl/1.3.3/jwnl-1.3.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/net/sf/jwordnet/jwnl/1.3.3/jwnl-1.3.3.pom (2 KB at 20.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-uima/1.5.3/opennlp-uima-1.5.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-uima/1.5.3/opennlp-uima-1.5.3.pom (3 KB at 33.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-snowball/2.0.0/cleartk-snowball-2.0.0.jar
+Downloading: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-util/2.0.0/cleartk-util-2.0.0.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/uima/uimaj-core/2.5.0/uimaj-core-2.5.0.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-snowball/3.0.3/lucene-snowball-3.0.3.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/uima/uimafit-core/2.0.0/uimafit-core-2.0.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-util/2.0.0/cleartk-util-2.0.0.jar (79 KB at 569.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-snowball/2.0.0/cleartk-snowball-2.0.0.jar (6 KB at 17.3 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-snowball/3.0.3/lucene-snowball-3.0.3.jar (113 KB at 380.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-core/3.1.2.RELEASE/spring-core-3.1.2.RELEASE.jar
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.2.RELEASE/spring-asm-3.1.2.RELEASE.jar
+Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar (44 KB at 125.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-context/3.1.2.RELEASE/spring-context-3.1.2.RELEASE.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/uima/uimafit-core/2.0.0/uimafit-core-2.0.0.jar (161 KB at 405.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-aop/3.1.2.RELEASE/spring-aop-3.1.2.RELEASE.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.2.RELEASE/spring-asm-3.1.2.RELEASE.jar (52 KB at 100.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-expression/3.1.2.RELEASE/spring-expression-3.1.2.RELEASE.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-core/3.1.2.RELEASE/spring-core-3.1.2.RELEASE.jar (440 KB at 383.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-beans/3.1.2.RELEASE/spring-beans-3.1.2.RELEASE.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-expression/3.1.2.RELEASE/spring-expression-3.1.2.RELEASE.jar (172 KB at 138.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-type-system/2.0.0/cleartk-type-system-2.0.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-aop/3.1.2.RELEASE/spring-aop-3.1.2.RELEASE.jar (325 KB at 246.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-opennlp-tools/2.0.0/cleartk-opennlp-tools-2.0.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-context/3.1.2.RELEASE/spring-context-3.1.2.RELEASE.jar (813 KB at 602.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-maxent/3.0.3/opennlp-maxent-3.0.3.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-maxent/3.0.3/opennlp-maxent-3.0.3.jar (128 KB at 75.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-tools/1.5.3/opennlp-tools-1.5.3.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-type-system/2.0.0/cleartk-type-system-2.0.0.jar (143 KB at 82.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/net/sf/jwordnet/jwnl/1.3.3/jwnl-1.3.3.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/uima/uimaj-core/2.5.0/uimaj-core-2.5.0.jar (1389 KB at 764.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-uima/1.5.3/opennlp-uima-1.5.3.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-beans/3.1.2.RELEASE/spring-beans-3.1.2.RELEASE.jar (579 KB at 315.0 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/net/sf/jwordnet/jwnl/1.3.3/jwnl-1.3.3.jar (167 KB at 81.0 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-uima/1.5.3/opennlp-uima-1.5.3.jar (90 KB at 42.6 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/opennlp/opennlp-tools/1.5.3/opennlp-tools-1.5.3.jar (803 KB at 368.1 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/cleartk/cleartk-opennlp-tools/2.0.0/cleartk-opennlp-tools-2.0.0.jar (41617 KB at 2061.5 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-data-nlp ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-data-nlp ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-data-nlp ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-data-nlp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-data-nlp ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 29 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/target/classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/src/main/java/org/datavec/nlp/annotator/PoStagger.java: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/src/main/java/org/datavec/nlp/annotator/PoStagger.java uses or overrides a deprecated API.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/src/main/java/org/datavec/nlp/annotator/PoStagger.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/src/main/java/org/datavec/nlp/vectorizer/TextVectorizer.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/src/main/java/org/datavec/nlp/vectorizer/TextVectorizer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-data-nlp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-data-nlp ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-data-nlp ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-data-nlp ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/target/datavec-data-nlp-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-data-nlp ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-data-nlp >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-data-nlp ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-data-nlp <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-data-nlp ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/target/datavec-data-nlp-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-data-nlp ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/target/datavec-data-nlp-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-data-nlp/1.0.0-beta/datavec-data-nlp-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-data-nlp/1.0.0-beta/datavec-data-nlp-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-data/datavec-data-nlp/target/datavec-data-nlp-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-data-nlp/1.0.0-beta/datavec-data-nlp-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-geo 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/com/maxmind/geoip2/geoip2/2.8.1/geoip2-2.8.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/maxmind/geoip2/geoip2/2.8.1/geoip2-2.8.1.pom (9 KB at 160.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/maxmind/db/maxmind-db/1.2.2/maxmind-db-1.2.2.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/maxmind/db/maxmind-db/1.2.2/maxmind-db-1.2.2.pom (6 KB at 80.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.pom (7 KB at 120.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.3/httpcomponents-client-4.5.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.3/httpcomponents-client-4.5.3.pom (16 KB at 300.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.pom (5 KB at 108.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.6/httpcomponents-core-4.4.6.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.6/httpcomponents-core-4.4.6.pom (14 KB at 279.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.7/jackson-databind-2.8.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.7/jackson-databind-2.8.7.pom (6 KB at 126.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.8/jackson-parent-2.8.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.8/jackson-parent-2.8.pom (8 KB at 189.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/27/oss-parent-27.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/27/oss-parent-27.pom (20 KB at 416.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.pom (2 KB at 48.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.7/jackson-core-2.8.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.7/jackson-core-2.8.7.pom (6 KB at 120.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/maxmind/geoip2/geoip2/2.8.1/geoip2-2.8.1.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar
+Downloading: https://repo.maven.apache.org/maven2/com/maxmind/db/maxmind-db/1.2.2/maxmind-db-1.2.2.jar
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.7/jackson-databind-2.8.7.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/maxmind/geoip2/geoip2/2.8.1/geoip2-2.8.1.jar (43 KB at 237.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/maxmind/db/maxmind-db/1.2.2/maxmind-db-1.2.2.jar (22 KB at 85.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.7/jackson-core-2.8.7.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.jar (55 KB at 91.3 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar (317 KB at 367.3 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar (731 KB at 847.2 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.7/jackson-core-2.8.7.jar (276 KB at 310.1 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.7/jackson-databind-2.8.7.jar (1209 KB at 1118.9 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-geo ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-geo ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-geo ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-geo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-geo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/target/classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/src/main/java/org/datavec/api/transform/transform/geo/CoordinatesDistanceTransform.java: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/src/main/java/org/datavec/api/transform/transform/geo/CoordinatesDistanceTransform.java uses unchecked or unsafe operations.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/src/main/java/org/datavec/api/transform/transform/geo/CoordinatesDistanceTransform.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-geo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-geo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-geo ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-geo ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/target/datavec-geo-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-geo ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-geo >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-geo ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-geo <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-geo ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/target/datavec-geo-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-geo ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/target/datavec-geo-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-geo/1.0.0-beta/datavec-geo-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-geo/1.0.0-beta/datavec-geo-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-geo/target/datavec-geo-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-geo/1.0.0-beta/datavec-geo-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-hadoop 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.pom (6 KB at 86.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.pom (2 KB at 54.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom
+Downloaded: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom (157 B at 2.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.pom (7 KB at 130.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.8.3/jackson-mapper-asl-1.8.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.8.3/jackson-mapper-asl-1.8.3.pom (2 KB at 13.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/tomcat/jasper-compiler/5.5.23/jasper-compiler-5.5.23.pom
+Downloaded: https://repo.maven.apache.org/maven2/tomcat/jasper-compiler/5.5.23/jasper-compiler-5.5.23.pom (919 B at 14.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/tomcat/tomcat-parent/5.5.23/tomcat-parent-5.5.23.pom
+Downloaded: https://repo.maven.apache.org/maven2/tomcat/tomcat-parent/5.5.23/tomcat-parent-5.5.23.pom (898 B at 14.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/tomcat/jasper-runtime/5.5.23/jasper-runtime-5.5.23.pom
+Downloaded: https://repo.maven.apache.org/maven2/tomcat/jasper-runtime/5.5.23/jasper-runtime-5.5.23.pom (934 B at 21.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.4/servlet-api-2.4.pom
+Downloaded: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.4/servlet-api-2.4.pom (156 B at 4.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-el/commons-el/1.0/commons-el-1.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/commons-el/commons-el/1.0/commons-el-1.0.pom (4 KB at 92.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.pom (157 B at 4.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/net/java/dev/jets3t/jets3t/0.6.1/jets3t-0.6.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/net/java/dev/jets3t/jets3t/0.6.1/jets3t-0.6.1.pom (2 KB at 31.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.8.8/jackson-mapper-asl-1.8.8.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.8.8/jackson-mapper-asl-1.8.8.pom (2 KB at 18.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.42/jsch-0.1.42.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.42/jsch-0.1.42.pom (967 B at 14.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.pom (3 KB at 49.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.6.1/slf4j-parent-1.6.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.6.1/slf4j-parent-1.6.1.pom (10 KB at 168.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.pom (2 KB at 34.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.jar
+Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar
+Downloading: https://repo.maven.apache.org/maven2/tomcat/jasper-compiler/5.5.23/jasper-compiler-5.5.23.jar
+Downloading: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar
+Downloading: https://repo.maven.apache.org/maven2/tomcat/jasper-runtime/5.5.23/jasper-runtime-5.5.23.jar
+Downloaded: https://repo.maven.apache.org/maven2/tomcat/jasper-runtime/5.5.23/jasper-runtime-5.5.23.jar (76 KB at 283.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar (103 KB at 194.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-el/commons-el/1.0/commons-el-1.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar (99 KB at 163.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/net/java/dev/jets3t/jets3t/0.6.1/jets3t-0.6.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/tomcat/jasper-compiler/5.5.23/jasper-compiler-5.5.23.jar (399 KB at 589.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar (528 KB at 510.9 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/commons-el/commons-el/1.0/commons-el-1.0.jar (110 KB at 106.9 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/net/java/dev/jets3t/jets3t/0.6.1/jets3t-0.6.1.jar (315 KB at 306.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-core-asl/1.8.8/jackson-core-asl-1.8.8.jar
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.8.8/jackson-mapper-asl-1.8.8.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/avro/avro/1.7.4/avro-1.7.4.jar
+Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.jar (273 KB at 195.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/avro/avro/1.7.4/avro-1.7.4.jar (297 KB at 198.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/xerial/snappy/snappy-java/1.0.4.1/snappy-java-1.0.4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar (29 KB at 17.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.42/jsch-0.1.42.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-core-asl/1.8.8/jackson-core-asl-1.8.8.jar (223 KB at 115.0 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.42/jsch-0.1.42.jar (182 KB at 76.9 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/xerial/snappy/snappy-java/1.0.4.1/snappy-java-1.0.4.1.jar (973 KB at 388.9 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.8.8/jackson-mapper-asl-1.8.8.jar (653 KB at 258.2 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.jar (1610 KB at 608.8 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-hadoop ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-hadoop ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-hadoop ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-hadoop ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-hadoop/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-hadoop ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-hadoop/target/classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-hadoop/src/main/java/org/datavec/hadoop/records/reader/mapfile/MapFileReader.java: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-hadoop/src/main/java/org/datavec/hadoop/records/reader/mapfile/MapFileReader.java uses unchecked or unsafe operations.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-hadoop/src/main/java/org/datavec/hadoop/records/reader/mapfile/MapFileReader.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-hadoop ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-hadoop ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-hadoop/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-hadoop ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-hadoop ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-hadoop/target/datavec-hadoop-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-hadoop ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-hadoop >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-hadoop ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-hadoop <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-hadoop ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-hadoop/target/datavec-hadoop-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-hadoop ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-hadoop/target/datavec-hadoop-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-hadoop/1.0.0-beta/datavec-hadoop-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-hadoop/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-hadoop/1.0.0-beta/datavec-hadoop-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-hadoop/target/datavec-hadoop-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-hadoop/1.0.0-beta/datavec-hadoop-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-spark_2.11 1.0.0-beta_spark_1
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/org/apache/spark/spark-sql_2.11/1.6.3/spark-sql_2.11-1.6.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/spark/spark-sql_2.11/1.6.3/spark-sql_2.11-1.6.3.pom (8 KB at 108.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/14.0.1/guava-14.0.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/14.0.1/guava-14.0.1.pom (6 KB at 92.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/14.0.1/guava-parent-14.0.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/14.0.1/guava-parent-14.0.1.pom (3 KB at 38.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom (3 KB at 61.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-log4j12/1.7.10/slf4j-log4j12-1.7.10.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-log4j12/1.7.10/slf4j-log4j12-1.7.10.pom (2 KB at 25.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.pom (3 KB at 72.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.7/slf4j-parent-1.7.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.7/slf4j-parent-1.7.7.pom (12 KB at 219.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.8.7/jackson-module-scala_2.11-2.8.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.8.7/jackson-module-scala_2.11-2.8.7.pom (4 KB at 81.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.pom (2 KB at 29.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.pom (2 KB at 28.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.7/jackson-annotations-2.8.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.7/jackson-annotations-2.8.7.pom (2 KB at 32.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-paranamer/2.8.7/jackson-module-paranamer-2.8.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-paranamer/2.8.7/jackson-module-paranamer-2.8.7.pom (4 KB at 65.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-modules-base/2.8.7/jackson-modules-base-2.8.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-modules-base/2.8.7/jackson-modules-base-2.8.7.pom (3 KB at 51.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.8.7/jackson-bom-2.8.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.8.7/jackson-bom-2.8.7.pom (10 KB at 142.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.pom (6 KB at 107.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/paranamer/paranamer-parent/2.8/paranamer-parent-2.8.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/paranamer/paranamer-parent/2.8/paranamer-parent-2.8.pom (12 KB at 239.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/spark/spark-catalyst_2.11/1.6.3/spark-catalyst_2.11-1.6.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/spark/spark-catalyst_2.11/1.6.3/spark-catalyst_2.11-1.6.3.pom (6 KB at 120.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/scala-lang/scala-reflect/2.11.7/scala-reflect-2.11.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/scala-lang/scala-reflect/2.11.7/scala-reflect-2.11.7.pom (2 KB at 34.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/janino/janino/2.7.8/janino-2.7.8.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/janino/janino/2.7.8/janino-2.7.8.pom (925 B at 15.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/janino/janino-parent/2.7.8/janino-parent-2.7.8.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/janino/janino-parent/2.7.8/janino-parent-2.7.8.pom (9 KB at 181.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/janino/commons-compiler/2.7.8/commons-compiler-2.7.8.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/janino/commons-compiler/2.7.8/commons-compiler-2.7.8.pom (666 B at 16.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-column/1.7.0/parquet-column-1.7.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-column/1.7.0/parquet-column-1.7.0.pom (5 KB at 99.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet/1.7.0/parquet-1.7.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet/1.7.0/parquet-1.7.0.pom (16 KB at 388.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-common/1.7.0/parquet-common-1.7.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-common/1.7.0/parquet-common-1.7.0.pom (2 KB at 40.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-encoding/1.7.0/parquet-encoding-1.7.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-encoding/1.7.0/parquet-encoding-1.7.0.pom (3 KB at 77.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-generator/1.7.0/parquet-generator-1.7.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-generator/1.7.0/parquet-generator-1.7.0.pom (2 KB at 40.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.5/commons-codec-1.5.pom
+Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.5/commons-codec-1.5.pom (10 KB at 226.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/20/commons-parent-20.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/20/commons-parent-20.pom (33 KB at 639.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-hadoop/1.7.0/parquet-hadoop-1.7.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-hadoop/1.7.0/parquet-hadoop-1.7.0.pom (4 KB at 70.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-format/2.3.0-incubating/parquet-format-2.3.0-incubating.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-format/2.3.0-incubating/parquet-format-2.3.0-incubating.pom (7 KB at 105.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-jackson/1.7.0/parquet-jackson-1.7.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-jackson/1.7.0/parquet-jackson-1.7.0.pom (4 KB at 76.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.9.11/jackson-mapper-asl-1.9.11.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.9.11/jackson-mapper-asl-1.9.11.pom (2 KB at 19.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.11/jackson-core-asl-1.9.11.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.11/jackson-core-asl-1.9.11.pom (1017 B at 20.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/spark/spark-sql_2.11/1.6.3/spark-sql_2.11-1.6.3.jar
+Downloading: https://repo.maven.apache.org/maven2/org/scala-lang/scala-reflect/2.11.7/scala-reflect-2.11.7.jar
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/janino/janino/2.7.8/janino-2.7.8.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/spark/spark-catalyst_2.11/1.6.3/spark-catalyst_2.11-1.6.3.jar
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/janino/commons-compiler/2.7.8/commons-compiler-2.7.8.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/janino/commons-compiler/2.7.8/commons-compiler-2.7.8.jar (30 KB at 190.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-column/1.7.0/parquet-column-1.7.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/janino/janino/2.7.8/janino-2.7.8.jar (599 KB at 686.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-common/1.7.0/parquet-common-1.7.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-common/1.7.0/parquet-common-1.7.0.jar (22 KB at 19.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-encoding/1.7.0/parquet-encoding-1.7.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-encoding/1.7.0/parquet-encoding-1.7.0.jar (279 KB at 173.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-generator/1.7.0/parquet-generator-1.7.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-generator/1.7.0/parquet-generator-1.7.0.jar (21 KB at 11.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-hadoop/1.7.0/parquet-hadoop-1.7.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-hadoop/1.7.0/parquet-hadoop-1.7.0.jar (205 KB at 84.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-format/2.3.0-incubating/parquet-format-2.3.0-incubating.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-column/1.7.0/parquet-column-1.7.0.jar (896 KB at 349.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-jackson/1.7.0/parquet-jackson-1.7.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-format/2.3.0-incubating/parquet-format-2.3.0-incubating.jar (379 KB at 129.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.9.11/jackson-mapper-asl-1.9.11.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.9.11/jackson-mapper-asl-1.9.11.jar (763 KB at 206.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.11/jackson-core-asl-1.9.11.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.11/jackson-core-asl-1.9.11.jar (227 KB at 55.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/14.0.1/guava-14.0.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/parquet/parquet-jackson/1.7.0/parquet-jackson-1.7.0.jar (1024 KB at 175.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/14.0.1/guava-14.0.1.jar (2138 KB at 350.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-log4j12/1.7.10/slf4j-log4j12-1.7.10.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.jar (32 KB at 5.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.8.7/jackson-module-scala_2.11-2.8.7.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-log4j12/1.7.10/slf4j-log4j12-1.7.10.jar (9 KB at 1.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-paranamer/2.8.7/jackson-module-paranamer-2.8.7.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-paranamer/2.8.7/jackson-module-paranamer-2.8.7.jar (42 KB at 6.5 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.8.7/jackson-module-scala_2.11-2.8.7.jar (500 KB at 65.4 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/spark/spark-sql_2.11/1.6.3/spark-sql_2.11-1.6.3.jar (3985 KB at 486.4 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/spark/spark-catalyst_2.11/1.6.3/spark-catalyst_2.11-1.6.3.jar (5201 KB at 614.6 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/scala-lang/scala-reflect/2.11.7/scala-reflect-2.11.7.jar (4470 KB at 522.0 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-spark_2.11 ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-source (add-source) @ datavec-spark_2.11 ---
+[INFO] Source directory: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/src/main/spark-1 added.
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-spark_2.11 ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-spark_2.11 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-spark_2.11 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-spark_2.11 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 123 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/target/classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/src/main/java/org/datavec/spark/transform/Normalization.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/src/main/java/org/datavec/spark/transform/Normalization.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-spark_2.11 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 15 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-spark_2.11 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 21 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/target/test-classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/src/test/java/org/datavec/spark/TestKryoSerialization.java: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/src/test/java/org/datavec/spark/TestKryoSerialization.java uses unchecked or unsafe operations.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/src/test/java/org/datavec/spark/TestKryoSerialization.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-spark_2.11 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-spark_2.11 ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/target/datavec-spark_2.11-1.0.0-beta_spark_1.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-spark_2.11 ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-spark_2.11 >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-spark_2.11 ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-source (add-source) @ datavec-spark_2.11 ---
+[INFO] Source directory: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/src/main/spark-1 added.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-spark_2.11 <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-spark_2.11 ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/target/datavec-spark_2.11-1.0.0-beta_spark_1-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-spark_2.11 ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/target/datavec-spark_2.11-1.0.0-beta_spark_1.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-spark_2.11/1.0.0-beta_spark_1/datavec-spark_2.11-1.0.0-beta_spark_1.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-spark_2.11/1.0.0-beta_spark_1/datavec-spark_2.11-1.0.0-beta_spark_1.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark/target/datavec-spark_2.11-1.0.0-beta_spark_1-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-spark_2.11/1.0.0-beta_spark_1/datavec-spark_2.11-1.0.0-beta_spark_1-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building DataVec Camel Component 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/org/apache/camel/camel-package-maven-plugin/2.16.3/camel-package-maven-plugin-2.16.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/camel/camel-package-maven-plugin/2.16.3/camel-package-maven-plugin-2.16.3.pom (3 KB at 40.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/camel/maven-plugins/2.16.3/maven-plugins-2.16.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/camel/maven-plugins/2.16.3/maven-plugins-2.16.3.pom (3 KB at 47.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/camel/tooling/2.16.3/tooling-2.16.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/camel/tooling/2.16.3/tooling-2.16.3.pom (3 KB at 44.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/camel/camel-package-maven-plugin/2.16.3/camel-package-maven-plugin-2.16.3.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/camel/camel-package-maven-plugin/2.16.3/camel-package-maven-plugin-2.16.3.jar (73 KB at 661.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.0.1/maven-resources-plugin-3.0.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.0.1/maven-resources-plugin-3.0.1.pom (7 KB at 79.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.0.1/maven-resources-plugin-3.0.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.0.1/maven-resources-plugin-3.0.1.jar (31 KB at 530.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/camel/camel-csv/2.16.3/camel-csv-2.16.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/camel/camel-csv/2.16.3/camel-csv-2.16.3.pom (3 KB at 33.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.pom (3 KB at 50.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.6.6/slf4j-parent-1.6.6.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.6.6/slf4j-parent-1.6.6.pom (13 KB at 271.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-csv/1.1/commons-csv-1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-csv/1.1/commons-csv-1.1.pom (14 KB at 177.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/camel/camel-test/2.16.3/camel-test-2.16.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/camel/camel-test/2.16.3/camel-test-2.16.3.pom (2 KB at 40.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/camel/camel-csv/2.16.3/camel-csv-2.16.3.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-csv/1.1/commons-csv-1.1.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/camel/camel-test/2.16.3/camel-test-2.16.3.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-csv/1.1/commons-csv-1.1.jar (37 KB at 404.8 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/camel/camel-csv/2.16.3/camel-csv-2.16.3.jar (33 KB at 320.9 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/camel/camel-test/2.16.3/camel-test-2.16.3.jar (45 KB at 448.0 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-camel ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-camel ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-camel ---
+[INFO] 
+[INFO] --- camel-package-maven-plugin:2.16.3:prepare-components (prepare) @ datavec-camel ---
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-48/plexus-container-default-1.0-alpha-48.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-48/plexus-container-default-1.0-alpha-48.pom (5 KB at 65.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-48/plexus-containers-1.0-alpha-48.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-48/plexus-containers-1.0-alpha-48.pom (2 KB at 43.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.pom (657 B at 13.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-13/plexus-classworlds-1.2-alpha-13.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-13/plexus-classworlds-1.2-alpha-13.pom (4 KB at 62.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.pom (5 KB at 95.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.pom (2 KB at 32.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom (9 KB at 178.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.pom (2 KB at 20.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.pom (3 KB at 43.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.pom (2 KB at 22.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.pom (2 KB at 26.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.pom (723 B at 17.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.pom (601 B at 12.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.pom (3 KB at 65.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.pom (5 KB at 88.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.0/doxia-sitetools-1.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.0/doxia-sitetools-1.0.pom (10 KB at 167.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.pom (4 KB at 68.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.pom (3 KB at 40.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.0/doxia-modules-1.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.0/doxia-modules-1.0.pom (3 KB at 57.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.pom (3 KB at 39.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.pom (3 KB at 52.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.pom (2 KB at 31.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.pom (6 KB at 119.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/11/maven-shared-components-11.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/11/maven-shared-components-11.pom (9 KB at 169.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.pom (9 KB at 130.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.jar
+Downloading: https://repo.maven.apache.org/maven2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.jar
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-13/plexus-classworlds-1.2-alpha-13.jar
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-48/plexus-container-default-1.0-alpha-48.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/3.4/xbean-reflect-3.4.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-13/plexus-classworlds-1.2-alpha-13.jar (42 KB at 206.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.jar
+Downloaded: https://repo.maven.apache.org/maven2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.jar (113 KB at 550.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/3.4/xbean-reflect-3.4.jar (131 KB at 607.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.jar (262 KB at 1038.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.jar (21 KB at 75.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.jar (103 KB at 349.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.jar (30 KB at 106.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.jar (50 KB at 135.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.jar (77 KB at 206.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.jar (21 KB at 53.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar (77 KB at 195.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.jar (10 KB at 20.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.jar (54 KB at 110.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.jar (46 KB at 93.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.jar (48 KB at 94.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-48/plexus-container-default-1.0-alpha-48.jar (264 KB at 479.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.jar (19 KB at 32.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.jar (46 KB at 82.2 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.jar (28 KB at 48.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.jar (22 KB at 37.6 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.jar (41 KB at 64.4 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.jar (26 KB at 39.8 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar (89 KB at 138.2 KB/sec)
+[INFO] Generated /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/target/generated/camel/components/META-INF/services/org/apache/camel/component.properties containing 1 Camel component: datavec
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ datavec-camel ---
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.pom (6 KB at 118.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.jar
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.jar (50 KB at 583.8 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.jar (76 KB at 824.9 KB/sec)
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/target/generated/camel/dataformats
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/target/generated/camel/languages
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-camel ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/target/classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/src/main/java/org/datavec/camel/component/DataVecEndpoint.java: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/src/main/java/org/datavec/camel/component/DataVecEndpoint.java uses or overrides a deprecated API.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/src/main/java/org/datavec/camel/component/DataVecEndpoint.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/src/main/java/org/datavec/camel/component/DataVecProducer.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/src/main/java/org/datavec/camel/component/DataVecProducer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ datavec-camel ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-camel ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/target/test-classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/src/test/java/org/datavec/camel/component/ListStringInputMarshaller.java: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/src/test/java/org/datavec/camel/component/ListStringInputMarshaller.java uses unchecked or unsafe operations.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/src/test/java/org/datavec/camel/component/ListStringInputMarshaller.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-camel ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-camel ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/target/datavec-camel-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-camel ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-camel >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-camel ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-camel <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-camel ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/target/datavec-camel-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-camel ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/target/datavec-camel-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-camel/1.0.0-beta/datavec-camel-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-camel/1.0.0-beta/datavec-camel-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/target/generated/camel/components/META-INF/services/org/apache/camel/component.properties to /home/zbhuang/.m2/repository/org/datavec/datavec-camel/1.0.0-beta/datavec-camel-1.0.0-beta-camelComponent.properties
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-camel/target/datavec-camel-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-camel/1.0.0-beta/datavec-camel-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-arrow 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.pom (4 KB at 83.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.25/slf4j-parent-1.7.25.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.25/slf4j-parent-1.7.25.pom (14 KB at 258.7 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-arrow ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-arrow ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-arrow ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-arrow ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-arrow/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-arrow ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-arrow/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-arrow ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-arrow/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-arrow ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-arrow/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-arrow ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-arrow ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-arrow/target/datavec-arrow-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-arrow ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-arrow >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-arrow ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-arrow <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-arrow ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-arrow/target/datavec-arrow-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-arrow ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-arrow/target/datavec-arrow-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-arrow/1.0.0-beta/datavec-arrow-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-arrow/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-arrow/1.0.0-beta/datavec-arrow-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-arrow/target/datavec-arrow-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-arrow/1.0.0-beta/datavec-arrow-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-local 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/com/codepoetics/protonpack/1.15/protonpack-1.15.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/codepoetics/protonpack/1.15/protonpack-1.15.pom (2 KB at 31.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/tech/tablesaw/tablesaw-core/0.11.4/tablesaw-core-0.11.4.pom
+Downloaded: https://repo.maven.apache.org/maven2/tech/tablesaw/tablesaw-core/0.11.4/tablesaw-core-0.11.4.pom (5 KB at 90.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/tech/tablesaw/tablesaw-parent/0.11.4/tablesaw-parent-0.11.4.pom
+Downloaded: https://repo.maven.apache.org/maven2/tech/tablesaw/tablesaw-parent/0.11.4/tablesaw-parent-0.11.4.pom (8 KB at 132.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/23.0/guava-23.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/23.0/guava-23.0.pom (6 KB at 121.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/23.0/guava-parent-23.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/23.0/guava-parent-23.0.pom (10 KB at 159.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.pom (2 KB at 35.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.0.18/error_prone_parent-2.0.18.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.0.18/error_prone_parent-2.0.18.pom (5 KB at 114.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.pom (3 KB at 61.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.pom (3 KB at 55.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-parent/1.14/animal-sniffer-parent-1.14.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-parent/1.14/animal-sniffer-parent-1.14.pom (5 KB at 102.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom (24 KB at 432.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.pom (2 KB at 29.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.2/gson-parent-2.8.2.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.2/gson-parent-2.8.2.pom (4 KB at 87.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.pom (27 KB at 497.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom (67 KB at 961.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/opencsv/opencsv/4.1/opencsv-4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/opencsv/opencsv/4.1/opencsv-4.1.pom (17 KB at 263.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.1/commons-text-1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.1/commons-text-1.1.pom (15 KB at 374.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.9.3/commons-beanutils-1.9.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.9.3/commons-beanutils-1.9.3.pom (15 KB at 259.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.pom (8 KB at 153.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/it/unimi/dsi/fastutil/8.1.1/fastutil-8.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/it/unimi/dsi/fastutil/8.1.1/fastutil-8.1.1.pom (2 KB at 33.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/roaringbitmap/RoaringBitmap/0.6.51/RoaringBitmap-0.6.51.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/roaringbitmap/RoaringBitmap/0.6.51/RoaringBitmap-0.6.51.pom (10 KB at 236.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/codepoetics/protonpack/1.15/protonpack-1.15.jar
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/23.0/guava-23.0.jar
+Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.jar
+Downloading: https://repo.maven.apache.org/maven2/tech/tablesaw/tablesaw-core/0.11.4/tablesaw-core-0.11.4.jar
+Downloading: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar (9 KB at 36.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.jar (12 KB at 50.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/codepoetics/protonpack/1.15/protonpack-1.15.jar (61 KB at 241.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/opencsv/opencsv/4.1/opencsv-4.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar (4 KB at 6.1 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.1/commons-text-1.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/opencsv/opencsv/4.1/opencsv-4.1.jar (104 KB at 174.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.9.3/commons-beanutils-1.9.3.jar
+Downloaded: https://repo.maven.apache.org/maven2/tech/tablesaw/tablesaw-core/0.11.4/tablesaw-core-0.11.4.jar (422 KB at 644.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar (228 KB at 348.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/roaringbitmap/RoaringBitmap/0.6.51/RoaringBitmap-0.6.51.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.1/commons-text-1.1.jar (127 KB at 126.1 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.9.3/commons-beanutils-1.9.3.jar (241 KB at 202.0 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/roaringbitmap/RoaringBitmap/0.6.51/RoaringBitmap-0.6.51.jar (250 KB at 203.0 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.jar (384 KB at 306.8 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/23.0/guava-23.0.jar (2554 KB at 1534.5 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-local ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-local ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-local ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-local ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-local/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-local ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 45 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-local/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-local ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 15 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-local ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-local/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-local ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-local ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-local/target/datavec-local-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-local ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-local >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-local ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-local <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-local ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-local/target/datavec-local-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-local ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-local/target/datavec-local-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-local/1.0.0-beta/datavec-local-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-local/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-local/1.0.0-beta/datavec-local-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-local/target/datavec-local-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-local/1.0.0-beta/datavec-local-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-spark-inference-parent 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-spark-inference-parent ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-spark-inference-parent ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-spark-inference-parent ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-spark-inference-parent ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-spark-inference-parent >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-spark-inference-parent ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-spark-inference-parent <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-spark-inference-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-spark-inference-parent ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-spark-inference-parent/1.0.0-beta/datavec-spark-inference-parent-1.0.0-beta.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-spark-inference-model 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-spark-inference-model ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-spark-inference-model ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-spark-inference-model ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-spark-inference-model ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-model/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-spark-inference-model ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-model/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-spark-inference-model ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-spark-inference-model ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-model/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-spark-inference-model ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-spark-inference-model ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-model/target/datavec-spark-inference-model-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-spark-inference-model ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-spark-inference-model >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-spark-inference-model ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-spark-inference-model <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-spark-inference-model ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-model/target/datavec-spark-inference-model-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-spark-inference-model ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-model/target/datavec-spark-inference-model-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-spark-inference-model/1.0.0-beta/datavec-spark-inference-model-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-model/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-spark-inference-model/1.0.0-beta/datavec-spark-inference-model-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-model/target/datavec-spark-inference-model-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-spark-inference-model/1.0.0-beta/datavec-spark-inference-model-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-spark-inference-server 1.0.0-beta_spark_1
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.pom (6 KB at 104.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/16.0.1/guava-parent-16.0.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/16.0.1/guava-parent-16.0.1.pom (8 KB at 159.2 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-spark-inference-server_2.11 ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-spark-inference-server_2.11 ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-spark-inference-server_2.11 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-spark-inference-server_2.11 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-server/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-spark-inference-server_2.11 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-server/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-spark-inference-server_2.11 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-spark-inference-server_2.11 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-server/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-spark-inference-server_2.11 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-spark-inference-server_2.11 ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-server/target/datavec-spark-inference-server_2.11-1.0.0-beta_spark_1.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-spark-inference-server_2.11 ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-spark-inference-server_2.11 >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-spark-inference-server_2.11 ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-spark-inference-server_2.11 <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-spark-inference-server_2.11 ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-server/target/datavec-spark-inference-server_2.11-1.0.0-beta_spark_1-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-spark-inference-server_2.11 ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-server/target/datavec-spark-inference-server_2.11-1.0.0-beta_spark_1.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-spark-inference-server_2.11/1.0.0-beta_spark_1/datavec-spark-inference-server_2.11-1.0.0-beta_spark_1.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-server/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-spark-inference-server_2.11/1.0.0-beta_spark_1/datavec-spark-inference-server_2.11-1.0.0-beta_spark_1.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-server/target/datavec-spark-inference-server_2.11-1.0.0-beta_spark_1-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-spark-inference-server_2.11/1.0.0-beta_spark_1/datavec-spark-inference-server_2.11-1.0.0-beta_spark_1-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-spark-inference-client 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-spark-inference-client ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-spark-inference-client ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-spark-inference-client ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-spark-inference-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-client/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-spark-inference-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-client/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-spark-inference-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-spark-inference-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-client/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-spark-inference-client ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-spark-inference-client ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-client/target/datavec-spark-inference-client-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-spark-inference-client ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-spark-inference-client >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-spark-inference-client ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-spark-inference-client <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-spark-inference-client ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-client/target/datavec-spark-inference-client-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-spark-inference-client ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-client/target/datavec-spark-inference-client-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-spark-inference-client/1.0.0-beta/datavec-spark-inference-client-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-client/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-spark-inference-client/1.0.0-beta/datavec-spark-inference-client-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-spark-inference-parent/datavec-spark-inference-client/target/datavec-spark-inference-client-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-spark-inference-client/1.0.0-beta/datavec-spark-inference-client-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-jdbc 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/com/zaxxer/HikariCP-java7/2.4.12/HikariCP-java7-2.4.12.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/zaxxer/HikariCP-java7/2.4.12/HikariCP-java7-2.4.12.pom (18 KB at 286.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.pom (3 KB at 41.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.21/slf4j-parent-1.7.21.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.21/slf4j-parent-1.7.21.pom (14 KB at 258.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.pom (3 KB at 40.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/derby/derby-project/10.13.1.1/derby-project-10.13.1.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/derby/derby-project/10.13.1.1/derby-project-10.13.1.1.pom (6 KB at 135.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/zaxxer/HikariCP-java7/2.4.12/HikariCP-java7-2.4.12.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/zaxxer/HikariCP-java7/2.4.12/HikariCP-java7-2.4.12.jar (132 KB at 1203.3 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar (3156 KB at 2720.0 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-jdbc ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-jdbc ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-jdbc ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-jdbc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-jdbc/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-jdbc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-jdbc/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-jdbc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-jdbc/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-jdbc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-jdbc/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-jdbc ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-jdbc ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-jdbc/target/datavec-jdbc-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-jdbc ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-jdbc >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-jdbc ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-jdbc <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-jdbc ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-jdbc/target/datavec-jdbc-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-jdbc ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-jdbc/target/datavec-jdbc-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-jdbc/1.0.0-beta/datavec-jdbc-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-jdbc/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-jdbc/1.0.0-beta/datavec-jdbc-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-jdbc/target/datavec-jdbc-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-jdbc/1.0.0-beta/datavec-jdbc-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-excel 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/org/apache/poi/poi/3.17/poi-3.17.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/poi/poi/3.17/poi-3.17.pom (4 KB at 51.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.pom (21 KB at 483.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/38/commons-parent-38.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/38/commons-parent-38.pom (61 KB at 893.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.pom (3 KB at 47.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.pom (3 KB at 52.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.pom (4 KB at 56.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.pom (4 KB at 95.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/apache/poi/poi/3.17/poi-3.17.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.jar
+Downloading: https://repo.maven.apache.org/maven2/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar (734 KB at 522.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.jar
+Downloaded: https://repo.maven.apache.org/maven2/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.jar (97 KB at 53.0 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar (1445 KB at 566.2 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/poi/poi/3.17/poi-3.17.jar (2638 KB at 768.4 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar (2667 KB at 551.1 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.jar (5786 KB at 1110.1 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-excel ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-excel ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-excel ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-excel ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-excel/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-excel ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-excel/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-excel ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-excel ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-excel/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-excel ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-excel ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-excel/target/datavec-excel-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-excel ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-excel >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-excel ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-excel <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-excel ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-excel/target/datavec-excel-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-excel ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-excel/target/datavec-excel-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-excel/1.0.0-beta/datavec-excel-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-excel/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-excel/1.0.0-beta/datavec-excel-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-excel/target/datavec-excel-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-excel/1.0.0-beta/datavec-excel-1.0.0-beta-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building datavec-perf 1.0.0-beta
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/com/github/oshi/oshi-core/3.4.2/oshi-core-3.4.2.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/github/oshi/oshi-core/3.4.2/oshi-core-3.4.2.pom (2 KB at 30.5 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/oshi/oshi-parent/3.4.2/oshi-parent-3.4.2.pom
+Downloaded: https://repo.maven.apache.org/maven2/com/github/oshi/oshi-parent/3.4.2/oshi-parent-3.4.2.pom (29 KB at 417.7 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/4.3.0/jna-platform-4.3.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/4.3.0/jna-platform-4.3.0.pom (2 KB at 46.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/4.3.0/jna-4.3.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/4.3.0/jna-4.3.0.pom (2 KB at 40.6 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/threeten/threetenbp/1.3.3/threetenbp-1.3.3.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/threeten/threetenbp/1.3.3/threetenbp-1.3.3.pom (27 KB at 537.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.24/slf4j-api-1.7.24.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.24/slf4j-api-1.7.24.pom (4 KB at 96.0 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.24/slf4j-parent-1.7.24.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.24/slf4j-parent-1.7.24.pom (14 KB at 263.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/com/github/oshi/oshi-core/3.4.2/oshi-core-3.4.2.jar
+Downloading: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/4.3.0/jna-4.3.0.jar
+Downloading: https://repo.maven.apache.org/maven2/org/threeten/threetenbp/1.3.3/threetenbp-1.3.3.jar
+Downloading: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/4.3.0/jna-platform-4.3.0.jar
+Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.24/slf4j-api-1.7.24.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.24/slf4j-api-1.7.24.jar (41 KB at 117.7 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/com/github/oshi/oshi-core/3.4.2/oshi-core-3.4.2.jar (337 KB at 610.1 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/threeten/threetenbp/1.3.3/threetenbp-1.3.3.jar (500 KB at 679.5 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/4.3.0/jna-4.3.0.jar (924 KB at 649.8 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/4.3.0/jna-platform-4.3.0.jar (2228 KB at 1481.0 KB/sec)
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-perf ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.2:revision (default) @ datavec-perf ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.12:add-resource (add-resource) @ datavec-perf ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ datavec-perf ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-perf/src/main/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ datavec-perf ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-perf/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ datavec-perf ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ datavec-perf ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-perf/target/test-classes
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-perf/src/test/java/org/datavec/datavec/timing/IOTimingTest.java: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-perf/src/test/java/org/datavec/datavec/timing/IOTimingTest.java uses or overrides a deprecated API.
+[INFO] /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-perf/src/test/java/org/datavec/datavec/timing/IOTimingTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ datavec-perf ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ datavec-perf ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-perf/target/datavec-perf-1.0.0-beta.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.4:jar (attach-javadocs) @ datavec-perf ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ datavec-perf >>>
+[INFO] 
+[INFO] --- lint-maven-plugin:0.0.11:check (pom-lint) @ datavec-perf ---
+[INFO] Writing summary report
+[INFO] [LINT] Completed with no violations
+[INFO] Writing xml report
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ datavec-perf <<<
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ datavec-perf ---
+[INFO] Building jar: /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-perf/target/datavec-perf-1.0.0-beta-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ datavec-perf ---
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-perf/target/datavec-perf-1.0.0-beta.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-perf/1.0.0-beta/datavec-perf-1.0.0-beta.jar
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-perf/pom.xml to /home/zbhuang/.m2/repository/org/datavec/datavec-perf/1.0.0-beta/datavec-perf-1.0.0-beta.pom
+[INFO] Installing /home/zbhuang/DeepLearning4J/datavec-1.0.0-beta/datavec-perf/target/datavec-perf-1.0.0-beta-sources.jar to /home/zbhuang/.m2/repository/org/datavec/datavec-perf/1.0.0-beta/datavec-perf-1.0.0-beta-sources.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] DataVec ............................................ SUCCESS [  5.225 s]
+[INFO] datavec-api ........................................ SUCCESS [ 25.314 s]
+[INFO] datavec-data ....................................... SUCCESS [  0.645 s]
+[INFO] datavec-data-audio ................................. SUCCESS [  7.202 s]
+[INFO] datavec-data-image ................................. SUCCESS [02:40 min]
+[INFO] datavec-data-codec ................................. SUCCESS [  3.504 s]
+[INFO] datavec-data-nlp ................................... SUCCESS [ 25.523 s]
+[INFO] datavec-geo ........................................ SUCCESS [  4.568 s]
+[INFO] datavec-hadoop ..................................... SUCCESS [  7.054 s]
+[INFO] datavec-spark_2.11 ................................. SUCCESS [ 18.242 s]
+[INFO] DataVec Camel Component ............................ SUCCESS [  6.130 s]
+[INFO] datavec-arrow ...................................... SUCCESS [  3.432 s]
+[INFO] datavec-local ...................................... SUCCESS [  7.158 s]
+[INFO] datavec-spark-inference-parent ..................... SUCCESS [  0.290 s]
+[INFO] datavec-spark-inference-model ...................... SUCCESS [  3.032 s]
+[INFO] datavec-spark-inference-server ..................... SUCCESS [  4.651 s]
+[INFO] datavec-spark-inference-client ..................... SUCCESS [  2.788 s]
+[INFO] datavec-jdbc ....................................... SUCCESS [  3.564 s]
+[INFO] datavec-excel ...................................... SUCCESS [  7.740 s]
+[INFO] datavec-perf ....................................... SUCCESS [  4.074 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 05:02 min
+[INFO] Finished at: 2018-07-01T22:50:28-04:00
+[INFO] Final Memory: 152M/383M
+[INFO] ------------------------------------------------------------------------
+zbhuang@zbhuang-VirtualBox:~/DeepLearning4J/datavec-1.0.0-beta$ find . -name *.jar
+./datavec-excel/target/datavec-excel-1.0.0-beta-sources.jar
+./datavec-excel/target/datavec-excel-1.0.0-beta.jar
+./datavec-data/datavec-data-nlp/target/datavec-data-nlp-1.0.0-beta.jar
+./datavec-data/datavec-data-nlp/target/datavec-data-nlp-1.0.0-beta-sources.jar
+./datavec-data/datavec-data-codec/target/datavec-data-codec-1.0.0-beta.jar
+./datavec-data/datavec-data-codec/target/datavec-data-codec-1.0.0-beta-sources.jar
+./datavec-data/datavec-data-image/target/datavec-data-image-1.0.0-beta-sources.jar
+./datavec-data/datavec-data-image/target/datavec-data-image-1.0.0-beta.jar
+./datavec-data/datavec-data-audio/target/datavec-data-audio-1.0.0-beta-sources.jar
+./datavec-data/datavec-data-audio/target/datavec-data-audio-1.0.0-beta.jar
+./datavec-arrow/target/datavec-arrow-1.0.0-beta-sources.jar
+./datavec-arrow/target/datavec-arrow-1.0.0-beta.jar
+./datavec-jdbc/target/datavec-jdbc-1.0.0-beta.jar
+./datavec-jdbc/target/datavec-jdbc-1.0.0-beta-sources.jar
+./datavec-spark/target/datavec-spark_2.11-1.0.0-beta_spark_1.jar
+./datavec-spark/target/datavec-spark_2.11-1.0.0-beta_spark_1-sources.jar
+./datavec-api/target/datavec-api-1.0.0-beta.jar
+./datavec-api/target/datavec-api-1.0.0-beta-sources.jar
+./datavec-hadoop/target/datavec-hadoop-1.0.0-beta.jar
+./datavec-hadoop/target/datavec-hadoop-1.0.0-beta-sources.jar
+./datavec-perf/target/datavec-perf-1.0.0-beta-sources.jar
+./datavec-perf/target/datavec-perf-1.0.0-beta.jar
+./datavec-camel/target/datavec-camel-1.0.0-beta.jar
+./datavec-camel/target/datavec-camel-1.0.0-beta-sources.jar
+./datavec-spark-inference-parent/datavec-spark-inference-server/target/datavec-spark-inference-server_2.11-1.0.0-beta_spark_1.jar
+./datavec-spark-inference-parent/datavec-spark-inference-server/target/datavec-spark-inference-server_2.11-1.0.0-beta_spark_1-sources.jar
+./datavec-spark-inference-parent/datavec-spark-inference-model/target/datavec-spark-inference-model-1.0.0-beta.jar
+./datavec-spark-inference-parent/datavec-spark-inference-model/target/datavec-spark-inference-model-1.0.0-beta-sources.jar
+./datavec-spark-inference-parent/datavec-spark-inference-client/target/datavec-spark-inference-client-1.0.0-beta.jar
+./datavec-spark-inference-parent/datavec-spark-inference-client/target/datavec-spark-inference-client-1.0.0-beta-sources.jar
+./datavec-local/target/datavec-local-1.0.0-beta-sources.jar
+./datavec-local/target/datavec-local-1.0.0-beta.jar
+./datavec-geo/target/datavec-geo-1.0.0-beta-sources.jar
+./datavec-geo/target/datavec-geo-1.0.0-beta.jar
+zbhuang@zbhuang-VirtualBox:~/DeepLearning4J/datavec-1.0.0-beta$ 
+
