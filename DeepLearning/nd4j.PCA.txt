@@ -1,0 +1,205 @@
+0. Motivation
+Use Landsay's PCA tutorial to verify the correctness of nd4j's PCA implementation.
+
+1. Use dl4j-example's nd4j-examples unittest, add one more unittest and found the result is NOT correct.
+
+2. Use jblas to prove the correctness of PCA calculation workflow.
+TestEigen.java
+    @Test
+    public void testPCATutorial() {
+        DoubleMatrix mt = new DoubleMatrix(new double[][]{
+                {2.5, 0.5, 2.2, 1.9, 3.1, 2.3, 2.0, 1.0, 1.5, 1.1},
+                {2.4, 0.7, 2.9, 2.2, 3.0, 2.7, 1.6, 1.1, 1.6, 0.9}
+//                {0.69, -1.31, 0.39, 0.09, 1.29, 0.49,  0.19, -0.81, -0.31, -0.71},
+//                {0.49, -1.21, 0.99, 0.29, 1.09, 0.79, -0.31, -0.81, -0.31, -1.01}
+        });
+        System.out.println("row=" + mt.rows);
+        System.out.println("col=" + mt.columns);
+        System.out.println("matrix=" + mt);
+
+        DoubleMatrix rowMeans = mt.rowMeans();
+        System.out.println("Means=" + rowMeans);
+
+        DoubleMatrix difMatrix = mt.subColumnVector(rowMeans);
+        System.out.println("Dif=" + difMatrix);
+
+        DoubleMatrix covariance = difMatrix.mmul(difMatrix.transpose()).div(difMatrix.columns - 1);
+        System.out.println("Cov=" + covariance);
+
+        ComplexDoubleMatrix eigenValues = Eigen.eigenvalues(covariance);
+        System.out.println("eigenVal=" + eigenValues);
+
+        ComplexDoubleMatrix[] eigVector = Eigen.eigenvectors(covariance);
+        System.out.println("eigenVec=" + Arrays.toString(eigVector));
+    }
+    /*
+row=2
+col=10
+matrix=[2.500000, 0.500000, 2.200000, 1.900000, 3.100000, 2.300000, 2.000000, 1.000000, 1.500000, 1.100000; 2.400000, 0.700000, 2.900000, 2.200000, 3.000000, 2.700000, 1.600000, 1.100000, 1.600000, 0.900000]
+Means=[1.810000; 1.910000]
+Dif=[0.690000, -1.310000, 0.390000, 0.090000, 1.290000, 0.490000, 0.190000, -0.810000, -0.310000, -0.710000; 0.490000, -1.210000, 0.990000, 0.290000, 1.090000, 0.790000, -0.310000, -0.810000, -0.310000, -1.010000]
+Cov=[0.616556, 0.615444; 0.615444, 0.716556]
+eigenVal=[0.04908339893832747 + 0.0i; 1.2840277121727839 + 0.0i]
+eigenVec=[[-0.735178655544408 + 0.0i, -0.6778733985280117 + 0.0i; 0.6778733985280117 + 0.0i, -0.735178655544408 + 0.0i], [0.04908339893832747 + 0.0i, 0.0 + 0.0i; 0.0 + 0.0i, 1.2840277121727839 + 0.0i]]
+     */
+
+3. Back to nd4j, I found two issues.
+One is div by n-1 (instead of n)
+The second one is mean matrix should be non-zero matrix, but in current nd4j's unittest the mean matrix is zero.
+
+To further investigate, I manually compile nd4j source code, and run its unittest, TestPCA.java.
+In this way, I can debug into PCA.java and modify the source code.
+
+To setup the debug env in IntelliJ, I made the following setup changes.
+1) change all nd4j's modules to have "Language level" to be "8-Lambdas, type annotations etc." (before it was 7)
+2) create two extra libraries in "Libraries". 
+One is to wrap nd4j-native-1.0.0-beta-linux-x86_64 as /home/zbhuang/DeepLearning4J/nd4j-1.0.0-beta/nd4j-backends/nd4j-backend-impls/nd4j-native/nd4j-native-1.0.0-beta-linux-x86_64.jar
+The other is to wrap nd4j_shade_jackson-1.0.0-beta as /home/zbhuang/DeepLearning4J/nd4j-1.0.0-beta/nd4j-shade/jackson/target/jackson-1.0.0-beta.jar
+Add nd4j_shade_jackson-1.0.0-beta       to nd4j-common's dependent module.
+Add nd4j-native-1.0.0-beta-linux-x86_64 to ndj4-tests dependent module.
+After this setup, I can debug TestPCA.java in nd4j project.
+
+Here is the unit-test I add into nd4j-tests, called TestPCA.java
+
+    @Test
+    public void testPCATutorial() {
+        double d[] = new double[] {
+                2.5, 0.5, 2.2, 1.9, 3.1, 2.3, 2.0, 1.0, 1.5, 1.1,
+                2.4, 0.7, 2.9, 2.2, 3.0, 2.7, 1.6, 1.1, 1.6, 0.9
+        };
+        INDArray array = Nd4j.create(d, new int[] {10, 2});
+        System.out.println("array=" + array);
+
+        PCA myPCA = new PCA(array);
+        INDArray means = myPCA.getMean();
+        System.out.println("\nmeans=" + means);
+
+        INDArray cov   = myPCA.getCovarianceMatrix();
+        System.out.println("\ncov=" + cov);
+
+        INDArray eigenValues = myPCA.getEigenvalues();
+        System.out.println("\neigenValues=" + eigenValues);
+
+        INDArray eigenVectors= myPCA.getEigenvectors();
+        System.out.println("\neigenVectors=" + eigenVectors);
+    }
+
+I modify the method, covarianceMatrix, in PCA.java to be like this -
+    public static INDArray[] covarianceMatrix(INDArray in) {
+        int dlength = in.rows();
+        int vlength = in.columns();
+
+        INDArray sum = Nd4j.create(vlength);
+        INDArray product = Nd4j.create(vlength, vlength);
+
+        for (int i = 0; i < vlength; i++) {
+//            sum.getColumn(i).assign(in.getColumn(i).sumNumber().doubleValue() / dlength); //It seems to me assign() method is broken. so sum matrix is all zero.
+//            Number avgNum = in.getColumn(i).sumNumber().doubleValue() / dlength;
+            Number avgNum= in.getColumn(i).meanNumber();
+            sum.putScalar(i, avgNum.doubleValue());
+        }
+
+        for (int i = 0; i < dlength; i++) {
+            INDArray dx1 = in.getRow(i).sub(sum);
+            product.addi(dx1.reshape(vlength, 1).mmul(dx1.reshape(1, vlength)));
+        }
+        product.divi(dlength-1);//** second, div by n-1, not n
+        return new INDArray[] {product, sum};
+    }
+
+Here is the result I got from the nd4j unit-test
+-------------------------------------------------
+/*
+array=
+[[    2.5000,    2.4000], 
+ [    0.5000,    0.7000], 
+ [    2.2000,    2.9000], 
+ [    1.9000,    2.2000], 
+ [    3.1000,    3.0000], 
+ [    2.3000,    2.7000], 
+ [    2.0000,    1.6000], 
+ [    1.0000,    1.1000], 
+ [    1.5000,    1.6000], 
+ [    1.1000,    0.9000]]
+
+means=
+[[    1.8100,    1.9100]]
+
+cov=
+[[    0.6166,    0.6154], 
+ [    0.6154,    0.7166]]
+
+eigenValues=
+[[    0.7788,   20.3735]]
+
+eigenVectors=
+[[   -0.6779,   -0.7352], 
+ [   -0.7352,    0.6779]]
+*/
+    
+Here is the result I got from jblas
+-----------------------------------
+Cov=[0.616556, 0.615444; 0.615444, 0.716556]
+eigenVal=[0.04908339893832747 + 0.0i; 1.2840277121727839 + 0.0i]
+eigenVec=[[-0.735178655544408 + 0.0i, -0.6778733985280117 + 0.0i; 0.6778733985280117 + 0.0i, -0.735178655544408 + 0.0i], [0.04908339893832747 + 0.0i, 0.0 + 0.0i; 0.0 + 0.0i, 1.2840277121727839 + 0.0i]]
+
+Here is the result I got by using eigen lib
+-------------------------------------------
+cov=
+0.616556 0.615444
+0.615444 0.716556
+
+eigenVal=
+0.0490834
+1.28403
+
+eigenVec=
+-0.735179 -0.677873
+ 0.677873 -0.735179
+
+After verify the fix, I have to rebuild nd4j-api jar file
+cd libnd4j-1.0.0-beta/
+export LIBND4J_HOME=`pwd`
+cd ../nd4j-1.0.0-beta/
+mvn clean install -DskipTests -Dmaven.javadoc.skip=true -pl org.nd4j:nd4j-api-parent,org.nd4j:nd4j-api
+
+Note:
+One weird thing is *** the way to create a matrix in nd4j is DIFFERENT from the one in dl4j ***
+*** check how the matrix is created in nd4j vs in dl4j  ***
+*** dl4j has more making-sense way to create the matrix ***
+I added one unittest into dl4j-example's nd4j-examples unittests.
+
+public class Nd4jExX0_PCATutorial {
+
+    public static void main(String[] args) {
+
+        double d[] = new double[]{
+                2.5, 2.4,
+                0.5, 0.7,
+                2.2, 2.9,
+                1.9, 2.2,
+                3.1, 3.0,
+                2.3, 2.7,
+                2.0, 1.6,
+                1.0, 1.1,
+                1.5, 1.6,
+                1.1, 0.9
+        };
+        INDArray array = Nd4j.create(d, new int[] {10, 2}); //here the matrix is created 10 rows x 2 columns
+        System.out.println("array=\n" + array);
+
+        PCA myPCA = new PCA(array);
+        INDArray means = myPCA.getMean();
+        System.out.println("\nmeans=\n" + means);
+
+        INDArray cov   = myPCA.getCovarianceMatrix();
+        System.out.println("\ncov=\n" + cov);
+
+        INDArray eigenValues = myPCA.getEigenvalues();
+        System.out.println("\neigenValues=\n" + eigenValues);
+
+        INDArray eigenVectors= myPCA.getEigenvectors();
+        System.out.println("\neigenVectors=\n" + eigenVectors);
+
+    }
+}
