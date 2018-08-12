@@ -1,0 +1,16 @@
+Quick note about my cpp env setup
+
+I am playing with this project, OGC: Ordinary Garbage Collector (https://github.com/jserv/ogc)
+
+1.Cygwin x64 installed on windows
+gcc -v
+gcc version 5.3.0 (GCC)
+
+gdb -v
+GNU gdb (GDB) (Cygwin 7.10.1-1) 7.10.1
+
+2.Cygwin/bin is added into the sys env, Path
+
+3.Eclipse CPP
+eclipse-cpp-photon-R-win32-x86_64.zip
+Debug Configurations -> Debugger -> GDB debugger: X:\cygwin64\bin\gdb.exe

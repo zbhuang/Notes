@@ -1,0 +1,11 @@
+Recently, I developped some tools related to StrId.
+The motivation behind is - given two big text files which contains 300k Ids, find the difference of those Ids.
+The first step is Id Sorting, then check the Id diff (by using two pointers pointing to each of the Id sets).
+Now I might get the clue how Set and its set_difference() implementation.
+Why Set's internal data structure is (Red-Black) tree, and why its elements are sorted.
+
+Here I am implementing the sorting by using tree, I am doing a simple way, which is external sorting.
+After I finished it, I found it is slow. Then I found a good implementation in java from github, externalsortinginjava, which runs faster.
+
+Reference:
+https://github.com/lemire/externalsortinginjava
