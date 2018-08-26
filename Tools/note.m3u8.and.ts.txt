@@ -1,0 +1,18 @@
+m3u8 is a file which lists out what ts files are used.
+m3u8 is a streaming way to play the audio file, and the way to download is like this -
+1) open chrome, F12 >> Network >> XHR
+2) right click ld.m3u8 and copy link address
+3) launch m3u8\m3u8x.exe and download m3u8 and ts files and merge into one ts file
+   a) past link address to "(URL/path) m3u8" and "Quality URL"
+   b) check "One ... One" checkbox and click "Download" button
+4) launch "Join/Convert" to convert ts file to mp3 file
+   a) click "Join/Convert" to launch "Join/Convert" dialog
+   b) click plus icon to select ts file
+   c) put target mp3 filename in the Name text field
+   c) select "MP3" from "Video format" options
+   d) click "Join/Convert" button
+
+reference
+1) How to download m3u8 and ts video movie streams
+https://gist.github.com/primaryobjects/7423d7982656a31e72542f60d30f9d30
+https://sourceforge.net/projects/m3u8x/
