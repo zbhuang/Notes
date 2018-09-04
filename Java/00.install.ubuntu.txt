@@ -3,7 +3,9 @@
 $cd /usr/local
 $sudo mkdir java
 (2)切换到桌面下，执行复制
-$sudo cp jdk-6u3*-linux-i586.bin /usr/local/java/ 
+$sudo cp jdk-xxx-linux-x64.tar.gz /usr/local/java/ 
+sudo gunzip jdk-*.gz
+sudo tar -xf jdk-7u67-linux-i586
 
 3、配置环境变量
 (1)打开/etc/profile文件

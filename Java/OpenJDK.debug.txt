@@ -1,3 +1,50 @@
+NetBeans IDE 8.2
+netbeans-8.2-cpp-linux-x64.sh
+
+1. Build the openjdk inside NetBean IDE
+1) Choose Project
+  File->New Project->C/C++ Project with Existing Sources
+2) Select Mode
+  Select Configuration Mode->Custom
+3) Pre-Build Action
+  Predefined Command->Arguments:--with-debug-level=slowdebug --disable-zip-debug-info --with-target-bits=64
+4) Continue clicking "Next" to the end, then click "Finish"
+
+2. Compile HelloWorld.java in shell
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/helloworldapp$ pwd
+/home/zbhuang/OpenJDK/helloworldapp
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/helloworldapp$ /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk/bin/javac Hello.java 
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/helloworldapp$ /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java Hello 
+hello world!
+
+3. Run HelloWorld inside NetBean IDE
+Project Property -> Run -> Run Command: "${OUTPUT_PATH}" -cp "/home/zbhuang/OpenJDK/helloworldapp/" Hello
+
+4. Project Property
+1) Increate heap size
+/home/zbhuang/OpenJDK/netbeans-8.2/etc/netbeans.conf
+add "-J-Xmx6g"
+netbeans_default_options="-J-client -J-Xss2m -J-Xms32m -J-Xmx6g ...
+2) Debug command: (empty)
+3) Gdb Init File: /home/zbhuang/.gdbinit
+Go and create /home/zbhuang/.gdbinit
+handle SIGSEGV nostop noprint pass
+handle SIGUSR1 nostop noprint pass
+handle SIGUSR2 nostop noprint pass
+
+5. Set some breakpoints and debug in
+Happy debugging !
+
+Reference
+1.Debugging OpenJDK 8 with NetBeans on Ubuntu
+https://marcin-chwedczuk.github.io/debugging-openjdk8-with-netbeans-on-ubuntu
+
+2. Using Netbeans to Hack OpenJDK9 in Ubuntu
+http://marcelinorc.com/2016/02/17/using-netbeans-to-hack-openjdk9-in-ubuntu/
+
+3. Debugging OpenJDK 
+http://www.kubrynski.com/2014/08/debugging-openjdk.html
+
 Debugin Hotspot VM in Netbeans - Ubuntu Linux 14
 http://mail.openjdk.java.net/pipermail/adoption-discuss/2016-February/001303.html
 
@@ -5,9 +52,3 @@ https://neugens.wordpress.com/2015/02/26/debugging-the-jdk-with-gdb/
 
 Debugging Java code using NetBeans
 https://www.safaribooksonline.com/library/view/openjdk-cookbook/9781849698405/ch08s05.html
-
-Debugging OpenJDK 8 with NetBeans on Ubuntu
-https://marcin-chwedczuk.github.io/debugging-openjdk8-with-netbeans-on-ubuntu
-
-Debugging OpenJDK 
-http://www.kubrynski.com/2014/08/debugging-openjdk.html

@@ -1,11 +1,27 @@
+get openjdkX source code
+sudo apt install mercurial
+
 hg clone http://hg.openjdk.java.net/jdk8u/jdk8u jdk8u
 cd jdk8u && sh ./get_source.sh
 
-http://hg.openjdk.java.net/jdk8u/jdk8u60/
+hg clone http://hg.openjdk.java.net/jdk9/jdk9/
+hg clone http://hg.openjdk.java.net/jdk/jdk10/
+hg clone http://hg.openjdk.java.net/jdk/jdk11/
+hg clone http://hg.openjdk.java.net/jdk-updates/jdk9u jdk9u
+hg clone http://hg.openjdk.java.net/jdk-updates/jdk10u/ jdk10u
+hg clone http://hg.openjdk.java.net/jdk/jdk/ jdk-master
 
-build opendjk8u (JDK 8 Updates Master - 20180101)
+build openjdk8u (JDK 8 Updates Master - 20180902)
 -------------------------------------------------
 0) os - ubuntu16.04.3
+In VM VirtualBox Manager
+->General->Advanced->Shared Clipboard:Bidirectional
+                 ->Drag'n'Drop:Bidirectional
+->Shared Folders
+
+In vm
+Devices -> Insert Guest Additions CD Image...
+sudo mount -t vboxsf share /home/zbhuang/share
 
 1) jdk8.151
 update /etc/profile
@@ -13,7 +29,8 @@ update /etc/profile
 2) download apache ant and update /etc/profile
 
 3) install the following components
-sudo apt-get install ant
+sudo apt-get install ant (this install is very expensive, that is why install it by yourself)
+
 sudo apt-get install gawk
 sudo apt-get install libfreetype6 libfreetype6-dev
 
@@ -28,7 +45,7 @@ sudo apt-get install libxrender-dev
 sudo apt-get install ccache
 
 4) build (different from OpenJDK7)
-bash ./configure --with-debug-level=slowdebug --disable-zip-debug-info
+bash ./configure --with-debug-level=slowdebug --disable-zip-debug-info --with-target-bits=64
 make
 Note: "--disable-zip-debug-info" is needed, otherwise, hotspot module can't be debugged in.
 
@@ -40,8 +57,8 @@ OpenJDK 64-Bit Server VM (build 25.71-b00-debug, mixed mode)
 
 zbhuang@zbhuang-VirtualBox:~/OpenJDK$ /home/zbhuang/OpenJDK/jdk8u02/build/linux-x86_64-normal-server-slowdebug/jdk/bin/javac Hello.java 
 zbhuang@zbhuang-VirtualBox:~/OpenJDK$ /home/zbhuang/OpenJDK/jdk8u02/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java Hello
-Hello World!
-zbhuang@zbhuang-VirtualBox:~/OpenJDK$ gdb --args /home/zbhuang/OpenJDK/jdk8u02/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java Hello
+hello world!
+zbhuang@zbhuang-VirtualBox:~/OpenJDK$ gdb --args /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java Hello 
 GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
 Copyright (C) 2016 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -56,19 +73,19 @@ Find the GDB manual and other documentation resources online at:
 <http://www.gnu.org/software/gdb/documentation/>.
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
-Reading symbols from /home/zbhuang/OpenJDK/jdk8u02/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java...done.
+Reading symbols from /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java...done.
 (gdb) break init.cpp:95
 No source file named init.cpp.
 Make breakpoint pending on future shared library load? (y or [n]) y
 Breakpoint 1 (init.cpp:95) pending.
 (gdb) run
-Starting program: /home/zbhuang/OpenJDK/jdk8u02/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java Hello
+Starting program: /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java Hello
 [Thread debugging using libthread_db enabled]
 Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
-[New Thread 0x7ffff7fda700 (LWP 18609)]
-[Switching to Thread 0x7ffff7fda700 (LWP 18609)]
+[New Thread 0x7ffff7fdb700 (LWP 26764)]
+[Switching to Thread 0x7ffff7fdb700 (LWP 26764)]
 
-Thread 2 "java" hit Breakpoint 1, init_globals () at /home/zbhuang/OpenJDK/jdk8u02/hotspot/src/share/vm/runtime/init.cpp:95
+Thread 2 "java" hit Breakpoint 1, init_globals () at /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/init.cpp:95
 95	jint init_globals() {
 (gdb) l
 90	  chunkpool_init();
@@ -81,41 +98,59 @@ Thread 2 "java" hit Breakpoint 1, init_globals () at /home/zbhuang/OpenJDK/jdk8u
 97	  management_init();
 98	  bytecodes_init();
 99	  classLoader_init();
-(gdb) next
-96	  HandleMark hm;
 (gdb) c
 Continuing.
 
-Thread 2 "java" received signal SIGSEGV, Segmentation fault. <------- in which method this error is coming from ? (it cannot located)
+Thread 2 "java" received signal SIGSEGV, Segmentation fault.
 0x00007fffe10002b4 in ?? ()
+(gdb) handle SIGSEGV noprint nostop pass
+Signal        Stop	Print	Pass to program	Description
+SIGSEGV       No	No	Yes		Segmentation fault
 (gdb) c
 Continuing.
-[New Thread 0x7ffff4247700 (LWP 18616)]
-[New Thread 0x7ffff4146700 (LWP 18617)]
-[New Thread 0x7fffd77f7700 (LWP 18618)]
-[New Thread 0x7fffd76f6700 (LWP 18619)]
-[New Thread 0x7fffd75f5700 (LWP 18620)]
-[New Thread 0x7fffd6b35700 (LWP 18621)]
-[New Thread 0x7fffd6a34700 (LWP 18622)]
-[New Thread 0x7fffd6933700 (LWP 18623)]
-[New Thread 0x7fffd6832700 (LWP 18624)]
-[New Thread 0x7fffd6731700 (LWP 18625)]
-Hello World!
-[Thread 0x7fffd6731700 (LWP 18625) exited]
-[Thread 0x7fffd6b35700 (LWP 18621) exited]
-[Thread 0x7fffd76f6700 (LWP 18619) exited]
-[Thread 0x7ffff4247700 (LWP 18616) exited]
-[Thread 0x7ffff7fda700 (LWP 18609) exited]
-[Thread 0x7ffff7fdc700 (LWP 18605) exited]
-[Thread 0x7fffd6832700 (LWP 18624) exited]
-[Thread 0x7fffd6933700 (LWP 18623) exited]
-[Thread 0x7fffd6a34700 (LWP 18622) exited]
-[Thread 0x7fffd75f5700 (LWP 18620) exited]
-[Thread 0x7ffff4146700 (LWP 18617) exited]
-[Inferior 1 (process 18605) exited normally]
+[New Thread 0x7ffff423e700 (LWP 26767)]
+[New Thread 0x7ffff413d700 (LWP 26768)]
+[New Thread 0x7fffe0d65700 (LWP 26769)]
+[New Thread 0x7fffe0c64700 (LWP 26770)]
+[New Thread 0x7fffd2ff7700 (LWP 26771)]
+[New Thread 0x7fffd2ef6700 (LWP 26772)]
+[New Thread 0x7fffd2df5700 (LWP 26773)]
+[New Thread 0x7fffd2335700 (LWP 26774)]
+[New Thread 0x7fffd2234700 (LWP 26775)]
+[New Thread 0x7fffd2133700 (LWP 26776)]
+[New Thread 0x7fffd2032700 (LWP 26777)]
+[New Thread 0x7fffd1f31700 (LWP 26778)]
+[New Thread 0x7fffd1e30700 (LWP 26779)]
+hello world!
+[Thread 0x7fffd1e30700 (LWP 26779) exited]
+[Thread 0x7fffd2335700 (LWP 26774) exited]
+[Thread 0x7fffd2ff7700 (LWP 26771) exited]
+[Thread 0x7fffd1f31700 (LWP 26778) exited]
+[Thread 0x7fffd2032700 (LWP 26777) exited]
+[Thread 0x7fffd2133700 (LWP 26776) exited]
+[Thread 0x7fffd2234700 (LWP 26775) exited]
+[Thread 0x7fffd2df5700 (LWP 26773) exited]
+[Thread 0x7fffd2ef6700 (LWP 26772) exited]
+[Thread 0x7fffe0c64700 (LWP 26770) exited]
+[Thread 0x7fffe0d65700 (LWP 26769) exited]
+[Thread 0x7ffff413d700 (LWP 26768) exited]
+[Thread 0x7ffff423e700 (LWP 26767) exited]
+[Thread 0x7ffff7fdb700 (LWP 26764) exited]
+[Inferior 1 (process 26760) exited normally]
 (gdb) quit
-zbhuang@zbhuang-VirtualBox:~/OpenJDK$ 
+zbhuang@zbhuang-VirtualBox:~/OpenJDK$
 
+build jdk9
+----------
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk9$ 
+sudo apt-get install libelf-dev
+bash ./configure --with-debug-level=slowdebug --with-target-bits=64 --with-native-debug-symbols=external
+make
+
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk9/build/linux-x86_64-normal-server-slowdebug/jdk/bin$ ./java -version
+openjdk version "9-internal"
+OpenJDK Runtime Environment (slowdebug build 9-internal+0-adhoc.zbhuang.jdk9)
+OpenJDK 64-Bit Server VM (slowdebug build 9-internal+0-adhoc.zbhuang.jdk9, mixed mode)
 
 Reference
 1. Debugging OpenJDK 8 with NetBeans on Ubuntu
@@ -138,3 +173,8 @@ http://blog.csdn.net/tjiyu/article/details/53725247
 
 4. WINDOWS7平台下编译OpenJDK8和Visual Studio 单步调试HotSpot JVM
 https://www.jianshu.com/p/e85f93cc74cb
+
+5. Debugging native code with Hotspot and GDB
+java -XX:OnError="gdb - %p" MyApplication
+https://neugens.wordpress.com/2015/02/26/debugging-the-jdk-with-gdb/
+https://rkennke.wordpress.com/2008/02/29/debugging-native-code-with-hotspot-and-gdb/

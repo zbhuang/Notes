@@ -1,0 +1,347 @@
+bash ./configure --with-debug-level=slowdebug --with-target-bits=64 --with-native-debug-symbols=external
+
+sudo apt install mercurial
+sudo apt-get install gawk 
+sudo apt-get install libfreetype6 libfreetype6-dev
+sudo apt-get install libcups2-dev libasound2-dev
+sudo apt-get install libx11-dev libxt-dev libxtst-dev libxrender-dev
+sudo apt-get install libfontconfig1-dev
+
+*** One extra step needs to be done here ***
+Boot JDK I used is jdk 10.0.2 (for linux), and I installed it under /usr/local/java/jdk-10.0.2
+My first try of the building failed with warning saying - "/usr/local/java/jdk-10.0.2/jre/lib": no such file or directory
+So I have to install jre 10.0.2 under jdk-10.0.2 as jre sub-folde
+
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk10u$ make
+Building target 'default (exploded-image)' in configuration 'linux-x86_64-normal-server-slowdebug'
+Compiling 8 files for BUILD_TOOLS_LANGTOOLS
+Creating support/modules_libs/java.base/libjsig.so from 1 file(s)
+Creating hotspot/variant-server/tools/adlc/adlc from 13 file(s)
+Compiling 2 files for BUILD_JVMTI_TOOLS
+Parsing 1 properties into enum-like class for jdk.compiler
+Compiling 16 properties into resource bundles for jdk.compiler
+Compiling 13 properties into resource bundles for jdk.javadoc
+Compiling 12 properties into resource bundles for jdk.jdeps
+Compiling 7 properties into resource bundles for jdk.jshell
+Compiling 118 files for BUILD_java.compiler.interim
+Compiling 386 files for BUILD_jdk.compiler.interim
+Creating support/modules_libs/java.base/server/libjvm.so from 726 file(s)
+Creating hotspot/variant-server/libjvm/gtest/libjvm.so from 78 file(s)
+Creating hotspot/variant-server/libjvm/gtest/gtestLauncher from 1 file(s)
+Compiling 298 files for BUILD_jdk.javadoc.interim
+Compiling 160 files for BUILD_TOOLS_JDK
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Compiling 2 files for COMPILE_DEPEND
+Compiling 141 files for BUILD_IDLJ
+Compiling 6 files for BUILD_TOOLS_CORBA
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /home/zbhuang/OpenJDK/jdk10u/src/java.corba/share/classes/com/sun/tools/corba/se/idl/Arguments.java uses or overrides a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Compiling 216 files for BUILD_jdk.rmic.interim
+Compiling 951 files for BUILD_VM_COMPILER_MATCH_PROCESSOR
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /home/zbhuang/OpenJDK/jdk10u/build/linux-x86_64-normal-server-slowdebug/buildtools/gensrc/jdk.rmic.interim/module-info.java uses or overrides a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Compiling 9 files for BUILD_VM_COMPILER_NODEINFO_PROCESSOR
+Compiling 23 files for BUILD_VM_COMPILER_OPTIONS_PROCESSOR
+Compiling 329 files for BUILD_VM_COMPILER_REPLACEMENTS_VERIFIER
+Compiling 8 files for BUILD_VM_COMPILER_SERVICEPROVIDER_PROCESSOR
+Creating buildtools/jdk.vm.compiler.match.processor.jar
+Creating buildtools/jdk.vm.compiler.nodeinfo.processor.jar
+Creating buildtools/jdk.vm.compiler.options.processor.jar
+Creating buildtools/jdk.vm.compiler.replacements.verifier.jar
+Creating buildtools/jdk.vm.compiler.serviceprovider.processor.jar
+Compiling 11 properties into resource bundles for jdk.jartool
+Compiling 11 properties into resource bundles for jdk.management.agent
+Compiling 3 properties into resource bundles for jdk.jdi
+Compiling 4 properties into resource bundles for jdk.jlink
+Compiling 3 properties into resource bundles for jdk.jlink
+Compiling 1 properties into resource bundles for jdk.jlink
+Compiling 224 properties into resource bundles for jdk.localedata
+Compiling 11 properties into resource bundles for java.logging
+Compiling 2 files for BUILD_BREAKITERATOR_BASE
+Compiling 2 files for BUILD_BREAKITERATOR_LD
+Compiling 11 properties into resource bundles for java.base
+Compiling 6 properties into resource bundles for java.base
+Compiling 2914 files for java.base
+Compiling 89 properties into resource bundles for java.desktop
+Compiling 34 files for java.logging
+Compiling 18 files for java.datatransfer
+Compiling 118 files for java.compiler
+Compiling 30 files for java.security.sasl
+Compiling 123 files for java.rmi
+Compiling 10 files for jdk.unsupported
+Compiling 10 files for java.instrument
+Compiling 331 files for java.management
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+Compiling 15 files for java.scripting
+Compiling 1828 files for java.xml
+Compiling 6 files for java.xml.ws.annotation
+Compiling 44 files for jdk.httpserver
+Compiling 21 files for java.smartcardio
+Compiling 182 files for jdk.internal.vm.ci
+Compiling 24 files for jdk.management
+Compiling 59 files for jdk.internal.jvmstat
+Compiling 118 files for jdk.charsets
+Compiling 390 files for jdk.compiler
+Compiling 8 files for jdk.crypto.ec
+Compiling 68 files for jdk.dynalink
+Compiling 3 files for jdk.internal.ed
+Compiling 128 files for jdk.incubator.httpclient
+Compiling 46 files for jdk.internal.le
+Compiling 46 files for jdk.internal.opt
+Compiling 33 files for jdk.jartool
+Compiling 131 files for jdk.jdeps
+Compiling 1 files for jdk.jdwp.agent
+Compiling 11 files for jdk.jstatd
+Compiling 1616 files for jdk.localedata
+Compiling 7 files for jdk.net
+Compiling 1 files for jdk.pack
+Compiling 131 files for BUILD_NASGEN
+Compiling 33 files for jdk.sctp
+Compiling 94 files for jdk.xml.dom
+Compiling 14 files for jdk.zipfs
+Compiling 593 files for jdk.scripting.nashorn
+Compiling 25 files for java.activation
+Compiling 193 files for java.naming
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Compiling 4 files for java.transaction
+Compiling 14 files for java.prefs
+Compiling 78 files for java.sql
+Compiling 283 files for java.xml.crypto
+Compiling 15 files for jdk.attach
+Compiling 67 files for jdk.crypto.cryptoki
+Compiling 299 files for jdk.javadoc
+Compiling 38 files for jdk.jcmd
+Compiling 251 files for jdk.jdi
+Compiling 76 files for jdk.jlink
+Compiling 94 files for jdk.jshell
+Compiling 16 files for jdk.naming.dns
+Running nasgen
+Compiling 7 files for jdk.naming.rmi
+Compiling 14 files for java.management.rmi
+Compiling 211 files for java.security.jgss
+Compiling 2815 files for java.desktop
+Compiling 51 files for java.sql.rowset
+Compiling 31 files for jdk.management.agent
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+Compiling 11 files for jdk.scripting.nashorn.shell
+Compiling 30 files for jdk.security.auth
+Compiling 16 files for jdk.security.jgss
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+Compiling 65 files for COMPILE_CREATE_SYMBOLS
+Creating ct.sym classes
+Compiling 1529 files for jdk.internal.vm.compiler
+Creating support/symbols/ct.sym
+Compiling 104 files for jdk.aot
+Compiling 2 files for jdk.internal.vm.compiler.management
+Compiling 1483 files for java.corba
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use or override a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Compiling 1 files for java.se
+Compiling 18 files for jdk.accessibility
+Compiling 3 files for jdk.editpad
+Compiling 760 files for java.xml.bind
+Compiling 978 files for jdk.hotspot.agent
+Compiling 64 files for jdk.jconsole
+Compiling 5 files for jdk.jsobject
+Compiling 216 files for jdk.rmic
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /home/zbhuang/OpenJDK/jdk10u/src/java.xml.bind/share/classes/module-info.java uses or overrides a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /home/zbhuang/OpenJDK/jdk10u/src/jdk.rmic/share/classes/module-info.java uses or overrides a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Compiling 791 files for jdk.xml.bind
+Compiling 1241 files for java.xml.ws
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /home/zbhuang/OpenJDK/jdk10u/src/jdk.xml.bind/share/classes/module-info.java uses or overrides a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+/home/zbhuang/OpenJDK/jdk10u/src/java.xml.ws/share/classes/com/sun/xml/internal/messaging/saaj/packaging/mime/internet/MimeBodyPart.java:1097: warning: auxiliary class hdr in /home/zbhuang/OpenJDK/jdk10u/src/java.xml.ws/share/classes/com/sun/xml/internal/messaging/saaj/packaging/mime/internet/InternetHeaders.java should not be accessed from outside its own source file
+    public FinalArrayList<hdr> getAllHeaders() {
+                          ^
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /home/zbhuang/OpenJDK/jdk10u/src/java.xml.ws/share/classes/module-info.java uses or overrides a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+1 warning
+Compiling 1 files for java.se.ee
+Compiling 236 files for jdk.xml.ws
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /home/zbhuang/OpenJDK/jdk10u/src/jdk.xml.ws/share/classes/module-info.java uses or overrides a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Creating support/modules_libs/java.base/libverify.so from 2 file(s)
+Creating support/native/java.base/libfdlibm.a from 57 file(s)
+Creating support/modules_libs/java.base/libjava.so from 58 file(s)
+Creating support/modules_libs/java.base/libzip.so from 5 file(s)
+Creating support/modules_libs/java.base/libjimage.so from 6 file(s)
+Creating support/modules_libs/java.base/jli/libjli.so from 8 file(s)
+Creating support/modules_libs/java.base/libnet.so from 21 file(s)
+Creating support/modules_libs/java.base/libnio.so from 24 file(s)
+Creating support/modules_cmds/java.desktop/appletviewer from 1 file(s)
+Creating support/modules_cmds/java.corba/idlj from 1 file(s)
+Creating support/modules_cmds/java.corba/orbd from 1 file(s)
+Creating support/native/java.base/java_objs/java from 1 file(s)
+Creating support/modules_cmds/java.corba/servertool from 1 file(s)
+Creating support/modules_cmds/java.base/keytool from 1 file(s)
+Creating support/modules_cmds/java.corba/tnameserv from 1 file(s)
+Creating support/modules_libs/java.base/jexec from 1 file(s)
+Creating support/modules_libs/java.desktop/libmlib_image.so from 50 file(s)
+Creating support/modules_libs/java.desktop/libawt.so from 73 file(s)
+Creating support/modules_libs/java.desktop/libawt_xawt.so from 57 file(s)
+Creating support/modules_libs/java.desktop/liblcms.so from 27 file(s)
+Creating support/modules_libs/java.desktop/libjavajpeg.so from 46 file(s)
+Creating support/modules_libs/java.instrument/libinstrument.so from 12 file(s)
+Creating support/modules_libs/java.desktop/libawt_headless.so from 26 file(s)
+Creating support/native/java.desktop/libfontmanager/libfontmanager.so from 42 file(s)
+Creating support/modules_libs/java.desktop/libjawt.so from 1 file(s)
+Creating support/modules_libs/java.desktop/libsplashscreen.so from 67 file(s)
+Creating support/modules_libs/java.desktop/libjsound.so from 2 file(s)
+Creating support/modules_libs/java.desktop/libjsoundalsa.so from 17 file(s)
+Creating support/modules_libs/java.management/libmanagement.so from 9 file(s)
+Creating support/modules_libs/java.prefs/libprefs.so from 1 file(s)
+Creating support/modules_libs/java.rmi/librmi.so from 1 file(s)
+Creating support/modules_cmds/java.rmi/rmid from 1 file(s)
+Creating support/modules_cmds/java.rmi/rmiregistry from 1 file(s)
+Creating support/modules_cmds/java.scripting/jrunscript from 1 file(s)
+Creating support/modules_libs/java.security.jgss/libj2gss.so from 3 file(s)
+Creating support/modules_libs/java.smartcardio/libj2pcsc.so from 2 file(s)
+Creating support/modules_libs/jdk.attach/libattach.so from 1 file(s)
+Creating support/modules_cmds/jdk.aot/jaotc from 1 file(s)
+Creating support/modules_cmds/jdk.compiler/javac from 1 file(s)
+Creating support/modules_cmds/jdk.compiler/serialver from 1 file(s)
+Creating support/modules_libs/jdk.crypto.cryptoki/libj2pkcs11.so from 14 file(s)
+Creating support/modules_libs/jdk.crypto.ec/libsunec.so from 28 file(s)
+Creating support/modules_libs/jdk.hotspot.agent/libsaproc.so from 7 file(s)
+Creating support/modules_cmds/jdk.hotspot.agent/jhsdb from 1 file(s)
+Creating support/modules_cmds/jdk.jartool/jar from 1 file(s)
+Creating support/modules_cmds/jdk.jartool/jarsigner from 1 file(s)
+Creating support/modules_cmds/jdk.javadoc/javadoc from 1 file(s)
+Creating support/modules_cmds/jdk.jconsole/jconsole from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jinfo from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jmap from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jps from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jstack from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jstat from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jcmd from 1 file(s)
+Creating support/modules_cmds/jdk.jdeps/javap from 1 file(s)
+Creating support/modules_cmds/jdk.jdeps/jdeps from 1 file(s)
+Creating support/modules_cmds/jdk.jdeps/jdeprscan from 1 file(s)
+Creating support/modules_cmds/jdk.jdi/jdb from 1 file(s)
+Creating support/modules_libs/jdk.jdwp.agent/libdt_socket.so from 2 file(s)
+Creating support/modules_libs/jdk.jdwp.agent/libjdwp.so from 42 file(s)
+Creating support/modules_cmds/jdk.jlink/jimage from 1 file(s)
+Creating support/modules_cmds/jdk.jlink/jlink from 1 file(s)
+Creating support/modules_cmds/jdk.jlink/jmod from 1 file(s)
+Creating support/modules_cmds/jdk.jshell/jshell from 1 file(s)
+Creating support/modules_cmds/jdk.jstatd/jstatd from 1 file(s)
+Creating support/modules_libs/jdk.management/libmanagement_ext.so from 8 file(s)
+Creating support/modules_libs/jdk.management.agent/libmanagement_agent.so from 1 file(s)
+Creating support/modules_libs/jdk.net/libextnet.so from 1 file(s)
+Creating support/modules_libs/jdk.pack/libunpack.so from 7 file(s)
+Creating support/modules_cmds/jdk.pack/pack200 from 1 file(s)
+Creating support/modules_cmds/jdk.pack/unpack200 from 7 file(s)
+Creating support/modules_cmds/jdk.rmic/rmic from 1 file(s)
+Creating support/modules_cmds/jdk.scripting.nashorn.shell/jjs from 1 file(s)
+Creating support/modules_libs/jdk.sctp/libsctp.so from 3 file(s)
+Creating support/modules_libs/jdk.security.auth/libjaas_unix.so from 1 file(s)
+Creating support/modules_cmds/jdk.xml.bind/schemagen from 1 file(s)
+Creating support/modules_cmds/jdk.xml.bind/xjc from 1 file(s)
+Creating support/modules_cmds/jdk.xml.ws/wsgen from 1 file(s)
+Creating support/modules_cmds/jdk.xml.ws/wsimport from 1 file(s)
+Compiling 4 files for BUILD_JIGSAW_TOOLS
+Stopping sjavac server
+Finished building target 'default (exploded-image)' in configuration 'linux-x86_64-normal-server-slowdebug'
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk10u$ /home/zbhuang/OpenJDK/jdk10u/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java -version
+openjdk version "10.0.2-internal" 2018-07-17
+OpenJDK Runtime Environment (slowdebug build 10.0.2-internal+0-adhoc.zbhuang.jdk10u)
+OpenJDK 64-Bit Server VM (slowdebug build 10.0.2-internal+0-adhoc.zbhuang.jdk10u, mixed mode)
+
+Failed at first try
+-------------------
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk10$ make
+Building target 'default (exploded-image)' in configuration 'linux-x86_64-normal-server-slowdebug'
+Compiling 8 files for BUILD_TOOLS_LANGTOOLS
+Creating hotspot/variant-server/tools/adlc/adlc from 13 file(s)
+Compiling 2 files for BUILD_JVMTI_TOOLS
+Creating support/modules_libs/java.base/libjsig.so from 1 file(s)
+warning: [path] bad path element "/usr/local/java/jdk-10.0.2/jre/lib": no such file or directory
+error: warnings found and -Werror specified
+1 error
+1 warning
+ToolsLangtools.gmk:37: recipe for target '/home/zbhuang/OpenJDK/jdk10/build/linux-x86_64-normal-server-slowdebug/buildtools/langtools_tools_classes/_the.BUILD_TOOLS_LANGTOOLS_batch' failed
+make/Main.gmk:73: recipe for target 'buildtools-langtools' failed
+make[3]: *** [/home/zbhuang/OpenJDK/jdk10/build/linux-x86_64-normal-server-slowdebug/buildtools/langtools_tools_classes/_the.BUILD_TOOLS_LANGTOOLS_batch] Error 1
+make[2]: *** [buildtools-langtools] Error 1
+make[2]: *** Waiting for unfinished jobs....
+
+ERROR: Build failed for target 'default (exploded-image)' in configuration 'linux-x86_64-normal-server-slowdebug' (exit code 2) 
+
+=== Output from failing command(s) repeated here ===
+* For target buildtools_langtools_tools_classes__the.BUILD_TOOLS_LANGTOOLS_batch:
+warning: [path] bad path element "/usr/local/java/jdk-10.0.2/jre/lib": no such file or directory
+error: warnings found and -Werror specified
+1 error
+1 warning
+
+* All command lines available in /home/zbhuang/OpenJDK/jdk10/build/linux-x86_64-normal-server-slowdebug/make-support/failure-logs.
+=== End of repeated output ===
+
+=== Make failed targets repeated here ===
+ToolsLangtools.gmk:37: recipe for target '/home/zbhuang/OpenJDK/jdk10/build/linux-x86_64-normal-server-slowdebug/buildtools/langtools_tools_classes/_the.BUILD_TOOLS_LANGTOOLS_batch' failed
+make/Main.gmk:73: recipe for target 'buildtools-langtools' failed
+=== End of repeated output ===
+
+Hint: Try searching the build log for the name of the first failed target.
+Hint: See doc/building.html#troubleshooting for assistance.
+
+/home/zbhuang/OpenJDK/jdk10/make/Init.gmk:291: recipe for target 'main' failed
+make[1]: *** [main] Error 1
+/home/zbhuang/OpenJDK/jdk10/make/Init.gmk:186: recipe for target 'default' failed
+make: *** [default] Error 2

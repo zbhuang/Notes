@@ -1,0 +1,525 @@
+bash ./configure --with-debug-level=slowdebug --with-target-bits=64 --with-native-debug-symbols=external
+
+sudo apt install mercurial
+sudo apt-get install gawk 
+sudo apt-get install libfreetype6 libfreetype6-dev
+sudo apt-get install libcups2-dev libasound2-dev
+sudo apt-get install libx11-dev libxt-dev libxtst-dev libxrender-dev
+sudo apt-get install libfontconfig1-dev
+
+*** One extra step needs to be done here ***
+Boot JDK I used is jdk 10.0.2 (for linux), and I installed it under /usr/local/java/jdk-10.0.2
+My first try of the building failed with warning saying - "/usr/local/java/jdk-10.0.2/jre/lib": no such file or directory
+So I have to install jre 10.0.2 under jdk-10.0.2 as jre sub-folde
+
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk-master$ pwd
+/home/zbhuang/OpenJDK/jdk-master
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk-master$ bash ./configure --with-debug-level=slowdebug --with-target-bits=64 --with-native-debug-symbols=external
+Runnable configure script is not present
+Generating runnable configure script at /home/zbhuang/OpenJDK/jdk-master/build/.configure-support/generated-configure.sh
+Using autoconf at /usr/bin/autoconf [autoconf (GNU Autoconf) 2.69]
+configure: Configuration created at Mon Sep  3 14:15:18 EDT 2018.
+checking for basename... /usr/bin/basename
+checking for bash... /bin/bash
+checking for cat... /bin/cat
+checking for chmod... /bin/chmod
+checking for cmp... /usr/bin/cmp
+checking for comm... /usr/bin/comm
+checking for cp... /bin/cp
+checking for cut... /usr/bin/cut
+checking for date... /bin/date
+checking for gdiff... no
+checking for diff... /usr/bin/diff
+checking for dirname... /usr/bin/dirname
+checking for echo... /bin/echo
+checking for expr... /usr/bin/expr
+checking for file... /usr/bin/file
+checking for find... /usr/bin/find
+checking for head... /usr/bin/head
+checking for gunzip... /bin/gunzip
+checking for pigz... no
+checking for gzip... /bin/gzip
+checking for ln... /bin/ln
+checking for ls... /bin/ls
+checking for mkdir... /bin/mkdir
+checking for mktemp... /bin/mktemp
+checking for mv... /bin/mv
+checking for nawk... /usr/bin/nawk
+checking for printf... /usr/bin/printf
+checking for greadlink... no
+checking for readlink... /bin/readlink
+checking for rm... /bin/rm
+checking for rmdir... /bin/rmdir
+checking for sh... /bin/sh
+checking for sort... /usr/bin/sort
+checking for tail... /usr/bin/tail
+checking for gtar... no
+checking for tar... /bin/tar
+checking for tee... /usr/bin/tee
+checking for touch... /usr/bin/touch
+checking for tr... /usr/bin/tr
+checking for uname... /bin/uname
+checking for uniq... /usr/bin/uniq
+checking for wc... /usr/bin/wc
+checking for which... /usr/bin/which
+checking for xargs... /usr/bin/xargs
+checking for gawk... gawk
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for a sed that does not truncate output... /bin/sed
+checking for cygpath... no
+checking for df... /bin/df
+checking for cpio... /bin/cpio
+checking for nice... /usr/bin/nice
+checking for pandoc... no
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking target system type... x86_64-unknown-linux-gnu
+checking openjdk-build os-cpu... linux-x86_64
+checking openjdk-target os-cpu... linux-x86_64
+configure: --with-target-bits are set to build platform address size; argument has no meaning
+checking compilation type... native
+checking for top-level directory... /home/zbhuang/OpenJDK/jdk-master
+checking if custom source is suppressed (openjdk-only)... no
+checking which variant of the JDK to build... normal
+checking which debug level to use... slowdebug
+checking which variants of the JVM to build... server
+checking for sysroot... 
+checking for toolchain path... 
+checking for extra path... 
+checking where to store configuration... in default location
+checking what configuration name to use... linux-x86_64-normal-server-slowdebug
+checking for apt-get... apt-get
+checking for gmake... no
+checking for make... /usr/bin/make
+configure: Testing potential make at /usr/bin/make, found using make in PATH
+configure: Using GNU make at /usr/bin/make (version: GNU Make 4.1)
+checking if make --output-sync is supported... yes
+checking for output-sync value... none
+checking if find supports -delete... yes
+checking what type of tar was found... gnu
+checking that grep (/bin/grep) -Fx handles empty lines in the pattern list correctly... yes
+checking for unzip... /usr/bin/unzip
+checking for zip... /usr/bin/zip
+checking for ldd... /usr/bin/ldd
+checking for greadelf... no
+checking for readelf... /usr/bin/readelf
+checking for dot... no
+checking for hg... /usr/bin/hg
+checking for stat... /usr/bin/stat
+checking for time... /usr/bin/time
+checking for flock... /usr/bin/flock
+checking for dtrace... no
+checking for gpatch... no
+checking for patch... /usr/bin/patch
+checking bash version... 4.3.48
+checking if bash supports pipefail... yes
+checking if bash supports errexit (-e)... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for default LOG value... 
+checking headless only... no
+checking for graphviz dot... no, cannot generate full docs
+checking for pandoc... no, cannot generate full docs
+checking full docs... no, missing dependencies
+checking for cacerts file... default
+checking if packaged modules are kept... yes (default)
+checking for version string... 12-internal+0-adhoc.zbhuang.jdk-master
+configure: Found potential Boot JDK using JAVA_HOME
+checking for Boot JDK... /usr/local/java/jdk-10.0.2
+checking Boot JDK version... java version "10.0.2" 2018-07-17 Java(TM) SE Runtime Environment 18.3 (build 10.0.2+13) Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.2+13, mixed mode) 
+checking for java in Boot JDK... ok
+checking for javac in Boot JDK... ok
+checking for javadoc in Boot JDK... ok
+checking for jar in Boot JDK... ok
+checking for jarsigner in Boot JDK... ok
+checking if Boot JDK is 32 or 64 bits... 64
+checking for local Boot JDK Class Data Sharing (CDS)... yes, created
+checking for Build JDK... yes, will use output dir
+configure: Using default toolchain gcc (GNU Compiler Collection)
+checking for gcc... /usr/bin/gcc
+checking resolved symbolic links for CC... /usr/bin/gcc-5
+configure: Using gcc C compiler version 5.4.0 [gcc (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609]
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /usr/bin/gcc accepts -g... yes
+checking for /usr/bin/gcc option to accept ISO C89... none needed
+checking for g++... /usr/bin/g++
+checking resolved symbolic links for CXX... /usr/bin/g++-5
+configure: Using gcc C++ compiler version 5.4.0 [g++ (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609]
+checking whether we are using the GNU C++ compiler... yes
+checking whether /usr/bin/g++ accepts -g... yes
+checking how to run the C preprocessor... /usr/bin/gcc -E
+checking how to run the C++ preprocessor... /usr/bin/g++ -E
+configure: Using gcc linker version 2.26.1 [GNU ld (GNU Binutils for Ubuntu) 2.26.1]
+checking for ar... ar
+configure: Rewriting AR to "/usr/bin/ar"
+checking for strip... strip
+configure: Rewriting STRIP to "/usr/bin/strip"
+checking for nm... nm
+configure: Rewriting NM to "/usr/bin/nm"
+checking for gobjcopy... no
+checking for objcopy... objcopy
+configure: Rewriting OBJCOPY to "/usr/bin/objcopy"
+checking for gobjdump... no
+checking for objdump... objdump
+configure: Rewriting OBJDUMP to "/usr/bin/objdump"
+checking for c++filt... c++filt
+configure: Rewriting CXXFILT to "/usr/bin/c++filt"
+checking for jtreg... no
+checking for jtreg test harness... no, not found
+checking for jib... no
+checking if @file is supported by gcc... yes
+checking if the C compiler supports "-m64"... yes
+checking if the C++ compiler supports "-m64"... yes
+checking if both compilers support "-m64"... yes
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking stdio.h usability... yes
+checking stdio.h presence... yes
+checking for stdio.h... yes
+checking size of int *... 8
+checking for target address size... 64 bits
+checking whether byte ordering is bigendian... no
+checking if native warnings are errors... true (default)
+checking if the C++ compiler supports "-std=gnu++98 -Werror"... yes
+checking for library containing clock_gettime... none required
+checking what type of native debug symbols to use... external
+checking for dtrace tool... not found, cannot build dtrace
+checking sys/sdt.h usability... no
+checking sys/sdt.h presence... no
+checking for sys/sdt.h... no
+checking if dtrace should be built... no, missing dependencies
+checking if Hotspot gtest unit tests should be built... yes
+checking if static link of stdc++ is possible... yes
+checking how to link with libstdc++... static
+checking for X... libraries , headers 
+checking for gethostbyname... yes
+checking for connect... yes
+checking for remove... yes
+checking for shmat... yes
+checking for IceConnectionNumber in -lICE... yes
+checking for X11/extensions/shape.h... yes
+checking for X11/extensions/Xrender.h... yes
+checking for X11/extensions/XTest.h... yes
+checking for X11/Intrinsic.h... yes
+checking if XlinearGradient is defined in Xrender.h... yes
+checking cups/cups.h usability... yes
+checking cups/cups.h presence... yes
+checking for cups/cups.h... yes
+checking cups/ppd.h usability... yes
+checking cups/ppd.h presence... yes
+checking for cups/ppd.h... yes
+checking fontconfig/fontconfig.h usability... yes
+checking fontconfig/fontconfig.h presence... yes
+checking for fontconfig/fontconfig.h... yes
+checking for FREETYPE... yes
+checking for freetype... yes (using pkg-config)
+Using freetype: system
+checking for ALSA... yes
+checking for which libjpeg to use... bundled
+checking for which giflib to use... bundled
+checking for PNG... yes
+checking for which libpng to use... bundled
+checking for compress in -lz... yes
+checking for which zlib to use... system
+checking for system zlib functionality... ok
+checking for which lcms to use... bundled
+checking for cos in -lm... yes
+checking for dlopen in -ldl... yes
+checking if zgc should be built... no
+checking if jvmci module jdk.internal.vm.ci should be built... yes
+checking if graal module jdk.internal.vm.compiler should be built... yes
+checking if aot should be enabled... yes
+checking if cds should be enabled... yes
+checking if elliptic curve crypto implementation is present... yes
+checking if jtreg failure handler should be built... no, missing jtreg
+checking if the CDS classlist generation should be enabled... yes
+checking if any translations should be excluded... no
+checking if man pages should be built... yes
+checking for number of cores... 4
+checking for memory size... 7978 MB
+checking for appropriate number of jobs to run in parallel... 4
+checking flags for boot jdk java command ...  -Duser.language=en -Duser.country=US  -XX:+UnlockDiagnosticVMOptions -XX:-VerifySharedSpaces -XX:SharedArchiveFile=/home/zbhuang/OpenJDK/jdk-master/build/linux-x86_64-normal-server-slowdebug/configure-support/classes.jsa -Xshare:auto 
+checking flags for boot jdk java command for big workloads...  -Xms64M -Xmx1600M -XX:ThreadStackSize=1536
+checking flags for bootcycle boot jdk java command for big workloads... -Xms64M -Xmx1600M -XX:ThreadStackSize=1536
+checking flags for boot jdk java command for small workloads...  -XX:+UseSerialGC -Xms32M -Xmx512M -XX:TieredStopAtLevel=1
+checking whether to use sjavac... no
+checking whether to use javac server... yes
+checking If precompiled header is enabled... yes
+checking that precompiled headers work... yes
+checking is ccache enabled... no
+checking if build directory is on local disk... yes
+checking JVM features for JVM variant 'server'... "aot cds cmsgc compiler1 compiler2 epsilongc g1gc graal jfr jni-check jvmci jvmti management nmt parallelgc serialgc services vm-structs"
+configure: creating /home/zbhuang/OpenJDK/jdk-master/build/linux-x86_64-normal-server-slowdebug/configure-support/config.status
+config.status: creating /home/zbhuang/OpenJDK/jdk-master/build/linux-x86_64-normal-server-slowdebug/spec.gmk
+config.status: creating /home/zbhuang/OpenJDK/jdk-master/build/linux-x86_64-normal-server-slowdebug/bootcycle-spec.gmk
+config.status: creating /home/zbhuang/OpenJDK/jdk-master/build/linux-x86_64-normal-server-slowdebug/buildjdk-spec.gmk
+config.status: creating /home/zbhuang/OpenJDK/jdk-master/build/linux-x86_64-normal-server-slowdebug/compare.sh
+config.status: creating /home/zbhuang/OpenJDK/jdk-master/build/linux-x86_64-normal-server-slowdebug/Makefile
+
+====================================================
+A new configuration has been successfully created in
+/home/zbhuang/OpenJDK/jdk-master/build/linux-x86_64-normal-server-slowdebug
+using configure arguments '--with-debug-level=slowdebug --with-target-bits=64 --with-native-debug-symbols=external'.
+
+Configuration summary:
+* Debug level:    slowdebug
+* HS debug level: debug
+* JVM variants:   server
+* JVM features:   server: 'aot cds cmsgc compiler1 compiler2 epsilongc g1gc graal jfr jni-check jvmci jvmti management nmt parallelgc serialgc services vm-structs' 
+* OpenJDK target: OS: linux, CPU architecture: x86, address length: 64
+* Version string: 12-internal+0-adhoc.zbhuang.jdk-master (12-internal)
+
+Tools summary:
+* Boot JDK:       java version "10.0.2" 2018-07-17 Java(TM) SE Runtime Environment 18.3 (build 10.0.2+13) Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.2+13, mixed mode)  (at /usr/local/java/jdk-10.0.2)
+* Toolchain:      gcc (GNU Compiler Collection)
+* C Compiler:     Version 5.4.0 (at /usr/bin/gcc)
+* C++ Compiler:   Version 5.4.0 (at /usr/bin/g++)
+
+Build performance summary:
+* Cores to use:   4
+* Memory limit:   7978 MB
+
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk-master$ make
+Building target 'default (exploded-image)' in configuration 'linux-x86_64-normal-server-slowdebug'
+Compiling 8 files for BUILD_TOOLS_LANGTOOLS
+Creating hotspot/variant-server/tools/adlc/adlc from 13 file(s)
+Compiling 2 files for BUILD_JVMTI_TOOLS
+Compiling 1 files for BUILD_JFR_TOOLS
+Parsing 2 properties into enum-like class for jdk.compiler
+Compiling 13 properties into resource bundles for jdk.javadoc
+Compiling 12 properties into resource bundles for jdk.jdeps
+Compiling 19 properties into resource bundles for jdk.compiler
+Compiling 7 properties into resource bundles for jdk.jshell
+Compiling 117 files for BUILD_java.compiler.interim
+Compiling 395 files for BUILD_jdk.compiler.interim
+Creating support/modules_libs/java.base/server/libjvm.so from 859 file(s)
+Creating hotspot/variant-server/libjvm/gtest/libjvm.so from 94 file(s)
+Creating hotspot/variant-server/libjvm/gtest/gtestLauncher from 1 file(s)
+Compiling 303 files for BUILD_jdk.javadoc.interim
+Compiling 162 files for BUILD_TOOLS_JDK
+Compiling 188 files for BUILD_jdk.rmic.interim
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Compiling 3 files for BUILD_VM_COMPILER_MATCH_PROCESSOR
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Compiling 2 files for COMPILE_DEPEND
+Compiling 5 files for BUILD_VM_COMPILER_NODEINFO_PROCESSOR
+Compiling 3 files for BUILD_VM_COMPILER_OPTIONS_PROCESSOR
+Compiling 14 files for BUILD_VM_COMPILER_REPLACEMENTS_PROCESSOR
+Compiling 3 files for BUILD_VM_COMPILER_SERVICEPROVIDER_PROCESSOR
+Creating buildtools/jdk.vm.compiler.match.processor.jar
+Creating buildtools/jdk.vm.compiler.nodeinfo.processor.jar
+Creating buildtools/jdk.vm.compiler.options.processor.jar
+Creating buildtools/jdk.vm.compiler.replacements.verifier.jar
+Creating buildtools/jdk.vm.compiler.serviceprovider.processor.jar
+Compiling 2 files for BUILD_BREAKITERATOR_BASE
+Compiling 2 files for BUILD_BREAKITERATOR_LD
+Compiling 11 properties into resource bundles for java.logging
+Compiling 11 properties into resource bundles for jdk.jartool
+Compiling 11 properties into resource bundles for jdk.management.agent
+Compiling 3 properties into resource bundles for jdk.jdi
+Compiling 4 properties into resource bundles for jdk.jlink
+Compiling 3 properties into resource bundles for jdk.jlink
+Compiling 1 properties into resource bundles for jdk.jlink
+Compiling 224 properties into resource bundles for jdk.localedata
+Compiling 11 properties into resource bundles for java.base
+Compiling 6 properties into resource bundles for java.base
+Compiling 2986 files for java.base
+Compiling 89 properties into resource bundles for java.desktop
+Compiling 117 files for java.compiler
+Compiling 18 files for java.datatransfer
+Compiling 1831 files for java.xml
+Compiling 10 files for java.instrument
+Compiling 34 files for java.logging
+Compiling 330 files for java.management
+Compiling 30 files for java.security.sasl
+Compiling 140 files for java.net.http
+Compiling 123 files for java.rmi
+Compiling 15 files for java.scripting
+Compiling 5 files for java.transaction.xa
+Compiling 21 files for java.smartcardio
+Compiling 182 files for jdk.internal.vm.ci
+Compiling 24 files for jdk.management
+Compiling 9 files for jdk.unsupported
+Compiling 61 files for jdk.internal.jvmstat
+Compiling 119 files for jdk.charsets
+Compiling 399 files for jdk.compiler
+Compiling 15 files for jdk.crypto.ec
+Compiling 68 files for jdk.dynalink
+Compiling 3 files for jdk.internal.ed
+Compiling 44 files for jdk.httpserver
+Compiling 55 files for jdk.internal.le
+Compiling 51 files for jdk.internal.opt
+Compiling 33 files for jdk.jartool
+Compiling 1 files for jdk.jdwp.agent
+Compiling 163 files for jdk.jfr
+Compiling 11 files for jdk.jstatd
+Compiling 1703 files for jdk.localedata
+Compiling 9 files for jdk.net
+Compiling 1 files for jdk.pack
+Compiling 593 files for jdk.scripting.nashorn
+Compiling 33 files for jdk.sctp
+Compiling 131 files for BUILD_NASGEN
+Compiling 94 files for jdk.xml.dom
+Compiling 14 files for jdk.zipfs
+Compiling 14 files for java.prefs
+Compiling 193 files for java.naming
+Note: Some input files use or override a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+Running nasgen
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+Compiling 75 files for java.sql
+Compiling 269 files for java.xml.crypto
+Compiling 15 files for jdk.attach
+Compiling 67 files for jdk.crypto.cryptoki
+Compiling 304 files for jdk.javadoc
+Compiling 38 files for jdk.jcmd
+Compiling 133 files for jdk.jdeps
+Compiling 251 files for jdk.jdi
+Compiling 14 files for jdk.management.jfr
+Compiling 16 files for jdk.naming.dns
+Compiling 7 files for jdk.naming.rmi
+Compiling 188 files for jdk.rmic
+Compiling 11 files for jdk.scripting.nashorn.shell
+Note: Some input files use or override a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Compiling 14 files for java.management.rmi
+Compiling 2788 files for java.desktop
+Compiling 216 files for java.security.jgss
+Compiling 53 files for java.sql.rowset
+Compiling 31 files for jdk.management.agent
+Compiling 75 files for jdk.jlink
+Compiling 94 files for jdk.jshell
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+Compiling 30 files for jdk.security.auth
+Compiling 16 files for jdk.security.jgss
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+Compiling 67 files for COMPILE_CREATE_SYMBOLS
+Compiling 1595 files for jdk.internal.vm.compiler
+Creating ct.sym classes
+Creating support/symbols/ct.sym
+Compiling 108 files for jdk.aot
+Compiling 5 files for jdk.internal.vm.compiler.management
+Compiling 1 files for java.se
+Compiling 18 files for jdk.accessibility
+Compiling 3 files for jdk.editpad
+Compiling 997 files for jdk.hotspot.agent
+Compiling 64 files for jdk.jconsole
+Compiling 5 files for jdk.jsobject
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Compiling 8 files for jdk.unsupported.desktop
+Creating support/modules_libs/java.base/libverify.so from 2 file(s)
+Creating support/modules_libs/java.base/libjava.so from 58 file(s)
+Creating support/native/java.base/libfdlibm.a from 57 file(s)
+Creating support/modules_libs/java.base/libjimage.so from 6 file(s)
+Creating support/modules_libs/java.base/libzip.so from 5 file(s)
+Creating support/modules_libs/java.base/jli/libjli.so from 8 file(s)
+Creating support/modules_libs/java.base/libnet.so from 21 file(s)
+Creating support/modules_libs/java.base/libnio.so from 22 file(s)
+Creating support/modules_libs/java.base/libjsig.so from 1 file(s)
+Creating support/modules_libs/java.management/libmanagement.so from 9 file(s)
+Creating support/modules_libs/java.instrument/libinstrument.so from 12 file(s)
+Creating support/native/java.base/java_objs/java from 1 file(s)
+Creating support/modules_cmds/java.base/keytool from 1 file(s)
+Creating support/modules_libs/java.base/jexec from 1 file(s)
+Creating support/modules_libs/java.desktop/libmlib_image.so from 50 file(s)
+Creating support/modules_libs/java.desktop/libawt.so from 73 file(s)
+Creating support/modules_libs/java.desktop/libawt_xawt.so from 57 file(s)
+Creating support/modules_libs/java.desktop/liblcms.so from 27 file(s)
+Creating support/modules_libs/java.desktop/libjavajpeg.so from 46 file(s)
+Creating support/modules_libs/java.desktop/libawt_headless.so from 26 file(s)
+Creating support/modules_libs/java.desktop/libfontmanager.so from 45 file(s)
+Creating support/modules_libs/java.desktop/libjawt.so from 1 file(s)
+Creating support/modules_libs/java.desktop/libsplashscreen.so from 67 file(s)
+Creating support/modules_libs/java.desktop/libjsound.so from 18 file(s)
+Creating support/modules_libs/java.prefs/libprefs.so from 1 file(s)
+Creating support/modules_libs/java.rmi/librmi.so from 1 file(s)
+Creating support/modules_cmds/java.rmi/rmid from 1 file(s)
+Creating support/modules_cmds/java.rmi/rmiregistry from 1 file(s)
+Creating support/modules_cmds/java.scripting/jrunscript from 1 file(s)
+Creating support/modules_libs/java.security.jgss/libj2gss.so from 3 file(s)
+Creating support/modules_libs/java.smartcardio/libj2pcsc.so from 2 file(s)
+Creating support/modules_cmds/jdk.aot/jaotc from 1 file(s)
+Creating support/modules_libs/jdk.attach/libattach.so from 1 file(s)
+Creating support/modules_cmds/jdk.compiler/javac from 1 file(s)
+Creating support/modules_cmds/jdk.compiler/serialver from 1 file(s)
+Creating support/modules_libs/jdk.crypto.cryptoki/libj2pkcs11.so from 14 file(s)
+Creating support/modules_libs/jdk.crypto.ec/libsunec.so from 28 file(s)
+Creating support/modules_libs/jdk.hotspot.agent/libsaproc.so from 7 file(s)
+Creating support/modules_cmds/jdk.hotspot.agent/jhsdb from 1 file(s)
+Creating support/modules_cmds/jdk.jartool/jar from 1 file(s)
+Creating support/modules_cmds/jdk.jartool/jarsigner from 1 file(s)
+Creating support/modules_cmds/jdk.javadoc/javadoc from 1 file(s)
+Creating support/modules_cmds/jdk.jconsole/jconsole from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jinfo from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jmap from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jps from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jstack from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jstat from 1 file(s)
+Creating support/modules_cmds/jdk.jcmd/jcmd from 1 file(s)
+Creating support/modules_cmds/jdk.jdeps/javap from 1 file(s)
+Creating support/modules_cmds/jdk.jdeps/jdeps from 1 file(s)
+Creating support/modules_cmds/jdk.jdeps/jdeprscan from 1 file(s)
+Creating support/modules_cmds/jdk.jdi/jdb from 1 file(s)
+Creating support/modules_libs/jdk.jdwp.agent/libdt_socket.so from 2 file(s)
+Creating support/modules_libs/jdk.jdwp.agent/libjdwp.so from 42 file(s)
+Creating support/modules_cmds/jdk.jlink/jimage from 1 file(s)
+Creating support/modules_cmds/jdk.jlink/jlink from 1 file(s)
+Creating support/modules_cmds/jdk.jlink/jmod from 1 file(s)
+Creating support/modules_cmds/jdk.jshell/jshell from 1 file(s)
+Creating support/modules_cmds/jdk.jstatd/jstatd from 1 file(s)
+Creating support/modules_libs/jdk.management/libmanagement_ext.so from 8 file(s)
+Creating support/modules_libs/jdk.management.agent/libmanagement_agent.so from 1 file(s)
+Creating support/modules_libs/jdk.net/libextnet.so from 1 file(s)
+Creating support/modules_libs/jdk.pack/libunpack.so from 7 file(s)
+Creating support/modules_cmds/jdk.pack/pack200 from 1 file(s)
+Creating support/modules_cmds/jdk.pack/unpack200 from 7 file(s)
+Creating support/modules_cmds/jdk.rmic/rmic from 1 file(s)
+Creating support/modules_cmds/jdk.scripting.nashorn.shell/jjs from 1 file(s)
+Creating support/modules_libs/jdk.sctp/libsctp.so from 3 file(s)
+Creating support/modules_libs/jdk.security.auth/libjaas.so from 1 file(s)
+Compiling 4 files for BUILD_JIGSAW_TOOLS
+Stopping sjavac server
+Finished building target 'default (exploded-image)' in configuration 'linux-x86_64-normal-server-slowdebug'
+
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk-master$ /home/zbhuang/OpenJDK/jdk-master/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java -version
+openjdk version "12-internal" 2019-03-19
+OpenJDK Runtime Environment (slowdebug build 12-internal+0-adhoc.zbhuang.jdk-master)
+OpenJDK 64-Bit Server VM (slowdebug build 12-internal+0-adhoc.zbhuang.jdk-master, mixed mode)
+
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk-master$ 

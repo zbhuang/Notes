@@ -1,0 +1,2396 @@
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk8u$ bash ./configure --with-debug-level=slowdebug --disable-zip-debug-info --with-target-bits=64
+Running generated-configure.sh
+configure: Configuration created at Sun Sep  2 16:10:05 EDT 2018.
+configure: configure script generated at timestamp 1532008852.
+checking for basename... /usr/bin/basename
+checking for bash... /bin/bash
+checking for cat... /bin/cat
+checking for chmod... /bin/chmod
+checking for cmp... /usr/bin/cmp
+checking for comm... /usr/bin/comm
+checking for cp... /bin/cp
+checking for cut... /usr/bin/cut
+checking for date... /bin/date
+checking for gdiff... no
+checking for diff... /usr/bin/diff
+checking for dirname... /usr/bin/dirname
+checking for echo... /bin/echo
+checking for expr... /usr/bin/expr
+checking for file... /usr/bin/file
+checking for find... /usr/bin/find
+checking for head... /usr/bin/head
+checking for ln... /bin/ln
+checking for ls... /bin/ls
+checking for mkdir... /bin/mkdir
+checking for mktemp... /bin/mktemp
+checking for mv... /bin/mv
+checking for nawk... /usr/bin/nawk
+checking for printf... /usr/bin/printf
+checking for rm... /bin/rm
+checking for sh... /bin/sh
+checking for sort... /usr/bin/sort
+checking for tail... /usr/bin/tail
+checking for tar... /bin/tar
+checking for tee... /usr/bin/tee
+checking for touch... /usr/bin/touch
+checking for tr... /usr/bin/tr
+checking for uname... /bin/uname
+checking for uniq... /usr/bin/uniq
+checking for wc... /usr/bin/wc
+checking for which... /usr/bin/which
+checking for xargs... /usr/bin/xargs
+checking for gawk... gawk
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for a sed that does not truncate output... /bin/sed
+checking for cygpath... no
+checking for greadlink... no
+checking for readlink... /bin/readlink
+checking for df... /bin/df
+checking for SetFile... no
+checking for cpio... /bin/cpio
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking target system type... x86_64-unknown-linux-gnu
+checking openjdk-build os-cpu... linux-x86_64
+checking openjdk-target os-cpu... linux-x86_64
+configure: --with-target-bits are set to build platform address size; argument has no meaning
+checking compilation type... native
+checking for top-level directory... /home/zbhuang/OpenJDK/jdk8u
+checking for presence of closed sources... no
+checking if closed source is suppressed (openjdk-only)... no
+checking which variant of the JDK to build... normal
+checking which interpreter of the JVM to build... template
+checking which variants of the JVM to build... server
+checking which debug level to use... slowdebug
+checking for sysroot... 
+checking for toolchain path... 
+checking for extra path... 
+checking where to store configuration... in default location
+checking what configuration name to use... linux-x86_64-normal-server-slowdebug
+checking for apt-get... apt-get
+checking for gmake... no
+checking for make... /usr/bin/make
+configure: Testing potential make at /usr/bin/make, found using make in PATH
+configure: Using GNU make 3.81 (or later) at /usr/bin/make (version: GNU Make 4.1)
+checking if find supports -delete... yes
+checking for unzip... /usr/bin/unzip
+checking for zip... /usr/bin/zip
+checking for ldd... /usr/bin/ldd
+checking for readelf... /usr/bin/readelf
+checking for hg... /usr/bin/hg
+checking for stat... /usr/bin/stat
+checking for time... /usr/bin/time
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for 7z... no
+checking for unzip... unzip
+checking for wget... wget
+checking headful support... include support for both headful and headless
+configure: Found potential Boot JDK using JAVA_HOME
+checking for Boot JDK... /usr/local/java/jdk1.8.0_181
+checking Boot JDK version... java version "1.8.0_181" Java(TM) SE Runtime Environment (build 1.8.0_181-b13) Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode) 
+checking for java in Boot JDK... ok
+checking for javac in Boot JDK... ok
+checking for javah in Boot JDK... ok
+checking for javap in Boot JDK... ok
+checking for jar in Boot JDK... ok
+checking for rmic in Boot JDK... ok
+checking for native2ascii in Boot JDK... ok
+checking if Boot JDK is 32 or 64 bits... 64
+checking flags for boot jdk java command ...  
+checking flags for boot jdk java command for big workloads...  -Xms64M -Xmx1600M -XX:ThreadStackSize=1536
+checking flags for boot jdk java command for small workloads...  -XX:+UseSerialGC -Xms32M -Xmx512M
+configure: Using default toolchain gcc (GNU Compiler Collection)
+checking for gcc... /usr/bin/gcc
+checking resolved symbolic links for CC... /usr/bin/gcc-5
+checking if CC is disguised ccache... no, keeping CC
+configure: Using gcc C compiler version 5.4.0 [gcc (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609]
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /usr/bin/gcc accepts -g... yes
+checking for /usr/bin/gcc option to accept ISO C89... none needed
+checking for g++... /usr/bin/g++
+checking resolved symbolic links for CXX... /usr/bin/g++-5
+checking if CXX is disguised ccache... no, keeping CXX
+configure: Using gcc C++ compiler version 5.4.0 [g++ (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609]
+checking whether we are using the GNU C++ compiler... yes
+checking whether /usr/bin/g++ accepts -g... yes
+checking how to run the C preprocessor... /usr/bin/gcc -E
+checking how to run the C++ preprocessor... /usr/bin/g++ -E
+checking for ar... ar
+configure: Rewriting AR to "/usr/bin/ar"
+checking for strip... strip
+configure: Rewriting STRIP to "/usr/bin/strip"
+checking for otool... no
+checking for nm... nm
+configure: Rewriting NM to "/usr/bin/nm"
+checking for gobjcopy... no
+checking for objcopy... objcopy
+configure: Rewriting OBJCOPY to "/usr/bin/objcopy"
+checking for gobjdump... no
+checking for objdump... objdump
+configure: Rewriting OBJDUMP to "/usr/bin/objdump"
+checking for broken SuSE 'ld' which only understands anonymous version tags in executables... no
+checking for jtreg... no
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking stdio.h usability... yes
+checking stdio.h presence... yes
+checking for stdio.h... yes
+checking size of int *... 8
+checking for target address size... 64 bits
+checking whether byte ordering is bigendian... no
+checking if the C++ compiler supports "-std=gnu++98 -Werror"... yes
+checking if the C compiler supports "-m64"... yes
+checking if the C++ compiler supports "-m64"... yes
+checking if both compilers support "-m64"... yes
+checking if the C compiler supports "-m64"... yes
+checking if the C++ compiler supports "-m64"... yes
+checking if both compilers support "-m64"... yes
+checking if we should generate debug symbols... true
+checking if we should zip debug-info files... no
+checking what type of native debug symbols to use (this will override previous settings)... not specified
+configure: --with-native-debug-symbols not specified. Using values from --disable-debug-symbols and --disable-zip-debug-info
+checking what is not needed on Linux?... pulse
+checking for X... libraries , headers 
+checking for gethostbyname... yes
+checking for connect... yes
+checking for remove... yes
+checking for shmat... yes
+checking for IceConnectionNumber in -lICE... yes
+checking for X11/extensions/shape.h... yes
+checking for X11/extensions/Xrender.h... yes
+checking for X11/extensions/XTest.h... yes
+checking for X11/Intrinsic.h... yes
+checking cups/cups.h usability... yes
+checking cups/cups.h presence... yes
+checking for cups/cups.h... yes
+checking cups/ppd.h usability... yes
+checking cups/ppd.h presence... yes
+checking for cups/ppd.h... yes
+checking for FREETYPE... yes
+checking for freetype... yes (using pkg-config)
+checking if we can compile and link with freetype... yes
+checking if we should bundle freetype... no
+checking for ALSA... yes
+checking for main in -ljpeg... no
+configure: Will use jpeg decoder bundled with the OpenJDK source
+checking for which giflib to use... bundled
+checking for compress in -lz... yes
+checking for which zlib to use... bundled
+checking for cos in -lm... yes
+checking for dlopen in -ldl... yes
+checking if dynamic link of stdc++ is possible... yes
+checking if static link of stdc++ is possible... yes
+checking how to link with libstdc++... static
+checking if elliptic curve crypto implementation is present... yes
+checking for number of cores... 4
+checking for memory size... 7978 MB
+checking for appropriate number of jobs to run in parallel... 4
+checking whether to use sjavac... no
+checking that precompiled headers work... yes
+checking is ccache enabled... no
+checking if build directory is on local disk... yes
+configure: creating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/config.status
+config.status: creating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/spec.gmk
+config.status: creating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot-spec.gmk
+config.status: creating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/bootcycle-spec.gmk
+config.status: creating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/compare.sh
+config.status: creating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/spec.sh
+config.status: creating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/Makefile
+config.status: creating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/config.h
+config.status: /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/config.h is unchanged
+
+====================================================
+A new configuration has been successfully created in
+/home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug
+using configure arguments '--with-debug-level=slowdebug --disable-zip-debug-info --with-target-bits=64'.
+
+Configuration summary:
+* Debug level:    slowdebug
+* JDK variant:    normal
+* JVM variants:   server
+* OpenJDK target: OS: linux, CPU architecture: x86, address length: 64
+
+Tools summary:
+* Boot JDK:       java version "1.8.0_181" Java(TM) SE Runtime Environment (build 1.8.0_181-b13) Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)  (at /usr/local/java/jdk1.8.0_181)
+* Toolchain:      gcc (GNU Compiler Collection)
+* C Compiler:     Version 5.4.0 (at /usr/bin/gcc)
+* C++ Compiler:   Version 5.4.0 (at /usr/bin/g++)
+
+Build performance summary:
+* Cores to use:   4
+* Memory limit:   7978 MB
+
+WARNING: The result of this configuration has overridden an older
+configuration. You *should* run 'make clean' to make sure you get a
+proper build. Failure to do so might result in strange build problems.
+
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk8u$ make
+Building OpenJDK for target 'default' in configuration 'linux-x86_64-normal-server-slowdebug'
+
+## Starting langtools
+Compiling 2 files for BUILD_TOOLS
+Compiling 32 properties into resource bundles
+Compiling 782 files for BUILD_BOOTSTRAP_LANGTOOLS
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Creating langtools/dist/bootstrap/lib/javac.jar
+Updating langtools/dist/lib/src.zip
+Compiling 785 files for BUILD_FULL_JAVAC
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Creating langtools/dist/lib/classes.jar
+## Finished langtools (build time 00:00:29)
+
+## Starting hotspot
+make[2]: warning: -jN forced in submake: disabling jobserver mode.
+Warning: The jvmg target has been replaced with debug
+Warning: Please update your usage
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+Creating Makefile ...
+Creating directory list ../shared_dirs.lst
+Creating flags.make ...
+Creating flags_vm.make ...
+Creating vm.make ...
+Creating adlc.make ...
+Creating jvmti.make ...
+Creating trace.make ...
+Creating sa.make ...
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+Creating Makefile ...
+Creating flags.make ...
+Creating flags_vm.make ...
+Creating vm.make ...
+Creating adlc.make ...
+Creating jvmti.make ...
+Creating trace.make ...
+Creating sa.make ...
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+Creating Makefile ...
+Creating flags.make ...
+Creating flags_vm.make ...
+Creating vm.make ...
+Creating adlc.make ...
+Creating jvmti.make ...
+Creating trace.make ...
+Creating sa.make ...
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+Creating Makefile ...
+Creating flags.make ...
+Creating flags_vm.make ...
+Creating vm.make ...
+Creating adlc.make ...
+Creating jvmti.make ...
+Creating trace.make ...
+Creating sa.make ...
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/archDesc.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/adlparse.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/arena.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/dfa.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/dict2.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/filebuff.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/forms.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/formsopt.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/formssel.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/main.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/opcodes.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/output_c.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/adlc/output_h.cpp
+Making adlc
+warning: [options] bootstrap class path not set in conjunction with -source 1.6
+warning: [options] bootstrap class path not set in conjunction with -source 1.6
+1 warning
+1 warning
+Generating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug/../generated/jvmtifiles/jvmtiEnv.hpp
+Generating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug/../generated/jvmtifiles/jvmtiEnter.cpp
+Generating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug/../generated/jvmtifiles/jvmtiEnterTrace.cpp
+Generating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug/../generated/jvmtifiles/jvmtiEnvRecommended.cpp
+Generating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug/../generated/jvmtifiles/bytecodeInterpreterWithChecks.cpp
+Generating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug/../generated/jvmtifiles/jvmti.h
+Generating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug/../generated/tracefiles/traceEventClasses.hpp
+Generating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug/../generated/tracefiles/traceEventIds.hpp
+Generating /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug/../generated/tracefiles/traceTypes.hpp
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+Making /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/hotspot/linux_amd64_compiler2/debug/../generated/sa-jdi.jar
+warning: [options] bootstrap class path not set in conjunction with -source 1.6
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+1 warning
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+Generating precompiled header precompiled.hpp.gch
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/compiler/abstractCompiler.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/accessFlags.cpp
+Compiling ../generated/adfiles/ad_x86_64.cpp
+Compiling ../generated/adfiles/ad_x86_64_clone.cpp
+Compiling ../generated/adfiles/ad_x86_64_expand.cpp
+Compiling ../generated/adfiles/ad_x86_64_format.cpp
+Compiling ../generated/adfiles/ad_x86_64_gen.cpp
+Compiling ../generated/adfiles/ad_x86_64_misc.cpp
+Compiling ../generated/adfiles/ad_x86_64_peephole.cpp
+Compiling ../generated/adfiles/ad_x86_64_pipeline.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/adaptiveFreeList.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/adaptiveSizePolicy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/addnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/adjoiningGenerations.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/adjoiningVirtualSpaces.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/advancedThresholdPolicy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/ageTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_interface/allocTracer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/allocation.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/allocationStats.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/altHashing.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/annotations.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/arguments.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/array.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/arrayKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/arrayOop.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/asPSOldGen.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/asPSYoungGen.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parNew/asParNewGeneration.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/asm/assembler.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os_cpu/linux_x86/vm/assembler_linux_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/assembler_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/atomic.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/attachListener.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/attachListener_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/barrierSet.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/basicLock.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/bcEscapeAnalyzer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/biasedLocking.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/binaryTreeDictionary.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/bitMap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/block.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/blockOffsetTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/bufferingOopClosure.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/buildOopMap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/bytecode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/bytecodeAssembler.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/bytecodeHistogram.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/bytecodeInfo.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/bytecodeInterpreter.cpp
+Compiling ../generated/jvmtifiles/bytecodeInterpreterWithChecks.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/bytecodeInterpreter_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/bytecodeStream.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/bytecodeTracer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/bytecodes.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/bytecodes_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_CFGPrinter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_Canonicalizer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/c1_CodeStubs_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_Compilation.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_Compiler.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_Defs.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/c1_FpuStackSim_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_FrameMap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/c1_FrameMap_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_GraphBuilder.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_IR.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_Instruction.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_InstructionPrinter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_LIR.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_LIRAssembler.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/c1_LIRAssembler_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_LIRGenerator.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/c1_LIRGenerator_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_LinearScan.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/c1_LinearScan_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/c1_MacroAssembler_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_Optimizer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_RangeCheckElimination.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_Runtime1.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/c1_Runtime1_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_ValueMap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_ValueSet.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_ValueStack.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_ValueType.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/c1/c1_globals.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/c2_globals.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/c2_init_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/c2compiler.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/cSpaceCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/callGenerator.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/callnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/cardTableExtension.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/cardTableModRefBS.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/cardTableRS.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/cfgnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/chaitin.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/chunkedList.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciArray.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciArrayKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciBaseObject.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciCallSite.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciConstant.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciConstantPoolCache.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciEnv.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciField.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciExceptionHandler.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciFlags.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciInstance.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciInstanceKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciMemberName.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciMetadata.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciMethod.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciMethodBlocks.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciMethodData.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciMethodHandle.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciNullObject.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciObjArray.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciObjArrayKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciObject.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciObjectFactory.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciReplay.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciSignature.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciStreams.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciSymbol.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciType.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciTypeArray.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciTypeArrayKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciTypeFlow.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/ci/ciUtilities.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/classFileError.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/classFileParser.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/classFileStream.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/classLoader.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/classLoaderData.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/classLoaderStats.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/classLoadingService.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/classes.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsAdaptiveSizePolicy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsCollectorPolicy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsGCAdaptivePolicyCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsLockVerifier.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/coalesce.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/codeBlob.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/asm/codeBuffer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/codeCache.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_interface/collectedHeap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/collectionSetChooser.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/collectorCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/collectorPolicy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/compactibleFreeListSpace.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/compilationPolicy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/compile.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/compiler/compileBroker.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/compiler/compileLog.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/compiledIC.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/compiledICHolder.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/compiledIC_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/compiler/compilerOracle.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/compressedStream.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/concurrentG1Refine.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/concurrentG1RefineThread.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/concurrentGCThread.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/concurrentMark.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/concurrentMarkSweepGeneration.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/concurrentMarkSweepThread.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/concurrentMarkThread.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/connode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/constMethod.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/constantPool.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/constantTag.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/copy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/cpCache.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/cppInterpreter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/cppInterpreter_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/debug.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/debugInfo.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/debugInfoRec.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/debug_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/decoder.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/decoder_elf.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/decoder_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/defNewGeneration.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/defaultMethods.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/deoptimization.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/depChecker_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/dependencies.cpp
+Compiling ../generated/adfiles/dfa_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/diagnosticArgument.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/diagnosticCommand.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/diagnosticFramework.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/libadt/dict.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/dictionary.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/dirtyCardQueue.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/compiler/disassembler.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/divnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/doCall.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/domgraph.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/dtraceAttacher.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/dtraceJSDT.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/dtraceJSDT_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/elfFile.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/elfFuncDescTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/elfStringTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/elfSymbolTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/errorReporter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/escape.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/events.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/evmCompat.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/exceptionHandlerTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/exceptions.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/fieldDescriptor.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/fieldType.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/filemap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/forte.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/fprofiler.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/frame.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/frame_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/freeBlockDictionary.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/freeChunk.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/freeList.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1AllocRegion.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1Allocator.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1Allocator_ext.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1BiasedArray.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1BlockOffsetTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1CardCounts.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1CodeCacheRemSet.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1CollectedHeap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1CollectedHeap_ext.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1CollectorPolicy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1ErgoVerbose.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1GCPhaseTimes.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1HRPrinter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1HotCardCache.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1Log.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1MMUTracker.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1MarkSweep.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1MarkSweep_ext.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/g1MemoryPool.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1MonitoringSupport.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1OopClosures.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1PageBasedVirtualSpace.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1ParScanThreadState.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1RegionToSpaceMapper.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1RemSet.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1RemSetSummary.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1RootProcessor.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1SATBCardTableModRefBS.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1StringDedup.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1StringDedupQueue.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1StringDedupStat.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1StringDedupTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1StringDedupThread.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/g1_globals.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gSpaceCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gcAdaptivePolicyCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_interface/gcCause.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gcId.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/gcLocker.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/gcNotifier.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gcPolicyCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gcStats.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskManager.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gcTimer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gcTrace.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gcTraceSend.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gcTraceTime.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gcUtil.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/gcm.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/genCollectedHeap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/genMarkSweep.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/genRemSet.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/generateOopMap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/generateOptoStub.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/generation.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/generationCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/generationSizer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/generationSpec.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/globalDefinitions.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/globals.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/graphKit.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/growableArray.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/guardedMemory.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/hSpaceCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/handles.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/hashtable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/heap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/heapDumper.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/heapInspection.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/heapRegion.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/heapRegionManager.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/heapRegionRemSet.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/heapRegionSet.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/heapRegionType.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/histogram.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/icBuffer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/icBuffer_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/icache.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/icache_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/idealGraphPrinter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/idealKit.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/ifg.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/ifnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/immutableSpace.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/indexSet.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/init.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/instanceClassLoaderKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/instanceKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/instanceMirrorKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/instanceOop.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/instanceRefKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/intHisto.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/interfaceSupport.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/interp_masm_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/interp_masm_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/interpreter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/interpreterRT_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/interpreter_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/invocationCounter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/iterator.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/java.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/javaAssertions.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/javaCalls.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/javaClasses.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jni.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jniCheck.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jniFastGetField.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/jniFastGetField_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/jniHandles.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/jniPeriodicChecker.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvm.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/jvm_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiClassFileReconstituter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiCodeBlobEvents.cpp
+Compiling ../generated/jvmtifiles/jvmtiEnter.cpp
+Compiling ../generated/jvmtifiles/jvmtiEnterTrace.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiEnv.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiEnvBase.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiEnvThreadState.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiEventController.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiExport.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiExtensions.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiGetLoadedClasses.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiImpl.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiManageCapabilities.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiRawMonitor.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiRedefineClasses.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiTagMap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiThreadState.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiTrace.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/jvmtiUtil.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/klass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/klassVtable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/lcm.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/library_call.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/linkResolver.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/linkedlist.cpp
+Assembling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os_cpu/linux_x86/vm/linux_x86_64.s
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/live.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/loaderConstraints.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/location.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/locknode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/loopPredicate.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/loopTransform.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/loopUnswitch.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/loopnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/loopopts.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/lowMemoryDetector.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/machnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/macro.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/macroAssembler_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/mallocSiteTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/mallocTracker.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/management.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/markOop.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/markSweep.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/matcher.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/mathexactnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/memBaseline.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/memRegion.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/memReporter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/memTracker.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/memnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/memoryManager.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/memoryPool.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/memoryService.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/memprofiler.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/metachunk.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/metadata.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/metadataOnStackMark.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/metaspace.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/metaspaceCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/metaspaceShared.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/metaspaceShared_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/metaspaceTracer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/method.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/methodComparator.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/methodCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/methodData.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/methodHandles.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/methodHandles_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/compiler/methodLiveness.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/monitorChunk.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/mulnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/multnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/mutableNUMASpace.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/mutableSpace.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/mutex.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/mutexLocker.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/mutex_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/nativeCallStack.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/nativeInst_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/nativeLookup.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/nmethod.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/nmtCommon.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/nmtDCmd.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/node.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/numberSeq.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/objArrayKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/objArrayOop.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/objectCountEventSender.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/objectMonitor.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/objectStartArray.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/oop.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/oopFactory.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/compiler/oopMap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/oopMapCache.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/oopRecorder.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/oopsHierarchy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/opcodes.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/orderAccess.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/os.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/osContainer_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/osThread.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/osThread_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/os_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os_cpu/linux_x86/vm/os_linux_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/posix/vm/os_posix.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/ostream.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/output.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parNew/parCardTableModRefBS.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/parGCAllocBuffer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/parMarkBitMap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parNew/parNewGeneration.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/parallelScavengeHeap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/park.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/parse1.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/parse2.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/parse3.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/parseHelper.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/wbtestmethods/parserTests.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/pcDesc.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/pcTasks.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/perf.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/perfData.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/perfMemory.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/perfMemory_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/phase.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/phaseX.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/placeholders.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/libadt/port.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/postaloc.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/preserveException.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/privilegedStack.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/promotionInfo.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psAdaptiveSizePolicy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psCompactionManager.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psGCAdaptivePolicyCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psGenerationCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psMarkSweep.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psMarkSweepDecorator.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/psMemoryPool.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psOldGen.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psParallelCompact.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionLAB.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psTasks.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psVirtualspace.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psYoungGen.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/ptrQueue.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/quickSort.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/referencePolicy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/referenceProcessor.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/reflection.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/reflectionUtils.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/reg_split.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/regalloc.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/asm/register.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/register_definitions_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/register_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/regmask.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/relocInfo.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/relocInfo_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/relocator.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/replacednodes.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/resolutionErrors.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/resourceArea.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/rewriter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/rframe.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/rootnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/rtmLocking.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/runtimeService.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/runtime.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/runtime_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/safepoint.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/satbQueue.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/scopeDesc.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/serviceThread.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/libadt/set.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/sharedHeap.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/sharedPathsMiscInfo.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/sharedRuntime.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/sharedRuntimeTrans.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/sharedRuntimeTrig.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/sharedRuntime_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/signature.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/simpleThresholdPolicy.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/sizes.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/space.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/spaceCounters.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/spaceDecorator.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/sparsePRT.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/specialized_oop_closures.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/split_if.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/stackMapFrame.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/stackMapTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/stackValue.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/stackValueCollection.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/statSampler.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/stringUtils.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/stringopts.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/stubCodeGenerator.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/stubGenerator_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/stubRoutines.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/stubRoutines_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/stubRoutines_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/stubRoutines_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/stubs.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/subnode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/superword.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/survRateGroup.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/suspendibleThreadSet.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/sweeper.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/symbol.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/symbolTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/synchronizer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/systemDictionary.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/task.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/taskqueue.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/templateInterpreter.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/templateInterpreter_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/templateInterpreter_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/interpreter/templateTable.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/templateTable_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/tenuredGeneration.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/thread.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/threadCritical_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os_cpu/linux_x86/vm/threadLS_linux_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/threadLocalAllocBuffer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/threadLocalStorage.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/threadService.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/thread_ext.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os_cpu/linux_x86/vm/thread_linux_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/ticks.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/timer.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/type.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/typeArrayKlass.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/oops/typeArrayOop.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/unhandledOops.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/memory/universe.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/unsafe.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/utf8.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/opto/vectornode.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/libadt/vectset.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/verificationType.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/verifier.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/vframe.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/vframeArray.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/vframe_hp.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/services/virtualMemoryTracker.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/virtualspace.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/vmCMSOperations.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/vmError.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os/linux/vm/vmError_linux.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/shared/vmGCOperations.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/vmPSOperations.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/vmStructs.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/classfile/vmSymbols.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/vmThread.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/vm_operations.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/gc_implementation/g1/vm_operations_g1.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/os_cpu/linux_x86/vm/vm_version_linux_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/vm_version_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/vmreg.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/vmreg_x86.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/code/vtableStubs.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/cpu/x86/vm/vtableStubs_x86_64.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/whitebox.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/prims/whitebox_ext.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/workgroup.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/xmlstream.cpp
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/utilities/yieldingWorkgroup.cpp
+Making signal interposition lib...
+cc1: warning: command line option ¡®-std=gnu++98¡¯ is valid for C++/ObjC++ but not for C
+Making SA debugger back-end...
+cc1: warning: command line option ¡®-std=gnu++98¡¯ is valid for C++/ObjC++ but not for C
+**NOTICE** Dtrace support disabled: /usr/include/sys/sdt.h not found
+cc1: warning: command line option ¡®-std=gnu++98¡¯ is valid for C++/ObjC++ but not for C
+cc1: warning: command line option ¡®-std=gnu++98¡¯ is valid for C++/ObjC++ but not for C
+cc1: warning: command line option ¡®-std=gnu++98¡¯ is valid for C++/ObjC++ but not for C
+cc1: warning: command line option ¡®-std=gnu++98¡¯ is valid for C++/ObjC++ but not for C
+Compiling /home/zbhuang/OpenJDK/jdk8u/hotspot/src/share/vm/runtime/vm_version.cpp
+cc1: warning: command line option ¡®-std=gnu++98¡¯ is valid for C++/ObjC++ but not for C
+cc1: warning: command line option ¡®-std=gnu++98¡¯ is valid for C++/ObjC++ but not for C
+Linking vm...
+All done.
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+warning: [options] bootstrap class path not set in conjunction with -source 1.6
+1 warning
+Generating linux_amd64_docs/jvmti.html
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+INFO: ALT_OBJCOPY=/usr/bin/objcopy
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+INFO: STRIP_POLICY=min_strip
+INFO: ZIP_DEBUGINFO_FILES=0
+## Finished hotspot (build time 00:02:31)
+
+## Starting corba
+Compiling 6 files for BUILD_LOGUTIL
+Creating corba/btjars/logutil.jar
+Compiling 141 files for BUILD_IDLJ
+Note: /home/zbhuang/OpenJDK/jdk8u/corba/src/share/classes/com/sun/tools/corba/se/idl/som/idlemit/MetaPragma.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Creating corba/btjars/idlj.jar
+Compiling 1 files for BUILD_STRIPPROP
+Updating corba/dist/lib/src.zip
+Compiling 1497 files for BUILD_BOOTSTRAP_CORBA
+Compiling 1497 files for BUILD_CORBA
+Creating corba/btjars/stripproperties.jar
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Creating corba/btjars/btcorba.jar
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Creating corba/dist/lib/classes.jar
+Creating bin.zip
+## Finished corba (build time 00:00:18)
+
+## Starting jaxp
+Compiling 1881 files for BUILD_JAXP
+Updating jaxp/dist/lib/src.zip
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Creating jaxp/dist/lib/classes.jar
+## Finished jaxp (build time 00:00:12)
+
+## Starting jaxws
+Compiling 24 files for BUILD_JAF
+Compiling 2969 files for BUILD_JAXWS
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Updating jaxws/dist/lib/src.zip
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Creating jaxws/dist/lib/classes.jar
+## Finished jaxws (build time 00:00:19)
+
+## Starting jdk
+Importing CORBA classes.jar
+Importing CORBA src.zip
+Importing CORBA bin.zip
+Importing JAXP src.zip
+Importing JAXP classes.jar
+Importing JAXWS src.zip
+Importing JAXWS classes.jar
+Importing LANGTOOLS src.zip
+Importing LANGTOOLS classes.jar
+Compiling 163 files for BUILD_TOOLS
+Generating charsetmapping classes
+Generating buffer classes
+Generating exceptions classes
+Generating icon classes
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Compiling 521 properties into resource bundles
+Copying and cleaning 53 properties
+Creating sun/util/LocaleDataMetaInfo.java from 423 found resources.
+Generating sun/misc/Version.java
+Generating sun/misc/Version.java compact2
+Generating sun/misc/Version.java compact1
+Generating sun/misc/Version.java compact3
+Aliases: Table size 1024 (10 bits), shift 0, max chain depth 3
+Classes: Table size 32 (5 bits), shift 1, max chain depth 3
+Cache: Table size 32 (5 bits), shift 1, max chain depth 3
+Generating X11 wrapper (64-bit version)
+Generating beaninfo
+Generating Nimbus source files
+[Error] encoded value was less than 0: encode(-8.326673E-17, 5.0, 11.0, 16.0)
+[Error] encoded value was less than 0: encode(-0.05882353, 1.0, 24.0, 25.0)
+[Error] encoded value was greater than 3: encode(15.029411, 1.0, 14.0, 15.0)
+[Error] encoded value was less than 0: encode(-0.05882353, 1.0, 24.0, 25.0)
+[Error] encoded value was greater than 3: encode(15.029411, 1.0, 14.0, 15.0)
+[Error] encoded value was less than 0: encode(-0.05882353, 1.0, 24.0, 25.0)
+[Error] encoded value was less than 0: encode(-0.05882353, 1.0, 24.0, 25.0)
+[Error] encoded value was greater than 3: encode(15.029411, 1.0, 14.0, 15.0)
+[Error] encoded value was less than 0: encode(-0.05882353, 1.0, 24.0, 25.0)
+[Error] encoded value was greater than 3: encode(15.029411, 1.0, 14.0, 15.0)
+[Error] encoded value was less than 0: encode(-0.05882353, 1.0, 24.0, 25.0)
+[Error] encoded value was less than 0: encode(-0.05882353, 1.0, 24.0, 25.0)
+[Error] encoded value was greater than 3: encode(15.029411, 1.0, 14.0, 15.0)
+[Error] encoded value was less than 0: encode(-0.05882353, 1.0, 24.0, 25.0)
+[Error] encoded value was greater than 3: encode(15.029411, 1.0, 14.0, 15.0)
+[Error] encoded value was less than 0: encode(-0.05882353, 1.0, 24.0, 25.0)
+[Error] Encountered Infinity: encode(-0.00877193, 0.0, 7.0, 7.0)
+Verifying /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk/gensrc_x11wrappers/sizes.64.verification.tmp to /home/zbhuang/OpenJDK/jdk8u/build/linux-x86_64-normal-server-slowdebug/jdk/gensrc_x11wrappers/sizes.64
+Generating HTML DTD file
+Compiling 4 files for BUILD_BREAKITERATOR
+[Parsed DTD html32 in 377ms]
+Compiling 9478 files for BUILD_JDK
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Compiling 224 files for BUILD_SECURITY
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/lang/fdlibm/src/e_pow.c: In function ¡®__j__ieee754_pow¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/lang/fdlibm/src/e_pow.c:149:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                     if((j<<(52-k))==ly) yisint = 2-(j&1);
+                                   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/lang/fdlibm/src/e_sqrt.c: In function ¡®__j__ieee754_sqrt¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/lang/fdlibm/src/e_sqrt.c:174:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                 if(((t1&sign)==sign)&&(s1&sign)==0) s0 += 1;
+                              ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/lang/fdlibm/src/s_ceil.c: In function ¡®jceil¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/lang/fdlibm/src/s_ceil.c:81:29: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                         if(j<i1) i0+=1; /* got a carry */
+                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/lang/fdlibm/src/s_floor.c: In function ¡®jfloor¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/lang/fdlibm/src/s_floor.c:82:29: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                         if(j<i1) i0 +=1 ;       /* got a carry */
+                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/lang/fdlibm/src/s_log1p.c: In function ¡®jlog1p¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/lang/fdlibm/src/s_log1p.c:132:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                 if(x==-1.0 && (hx==0xbff00000)) /* log1p(-1)=-inf */
+                                  ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/misc/URLClassPath.c: In function ¡®Java_sun_misc_URLClassPath_knownToNotExist0¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/misc/URLClassPath.c:58:5: warning: implicit declaration of function ¡®VerifyFixClassname¡¯ [-Wimplicit-function-declaration]
+     VerifyFixClassname(clname);
+     ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/misc/URLClassPath.c:60:10: warning: implicit declaration of function ¡®VerifyClassname¡¯ [-Wimplicit-function-declaration]
+     if (!VerifyClassname(clname, JNI_TRUE)) {  /* expects slashed name */
+          ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/misc/URLClassPath.c:68:9: warning: implicit declaration of function ¡®free¡¯ [-Wimplicit-function-declaration]
+         free(clname);
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/misc/URLClassPath.c:68:9: warning: incompatible implicit declaration of built-in function ¡®free¡¯
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/misc/URLClassPath.c:68:9: note: include ¡®<stdlib.h>¡¯ or provide a declaration of ¡®free¡¯
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/misc/URLClassPath.c: In function ¡®Java_sun_misc_URLClassPath_getLookupCacheForClassLoader¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/misc/URLClassPath.c:104:9: warning: incompatible implicit declaration of built-in function ¡®free¡¯
+         free(resname);
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/misc/URLClassPath.c:104:9: note: include ¡®<stdlib.h>¡¯ or provide a declaration of ¡®free¡¯
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/jdk_util.c:29:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/jdk_util.c: In function ¡®JDK_GetVersionInfo0¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/jdk_util.c:80:29: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+     assert(jdk_build_number >= 0 && jdk_build_number <= 255);
+                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/jni_util.c: In function ¡®JNU_ThrowByNameWithMessageAndLastError¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/jni_util.c:160:16: warning: implicit declaration of function ¡®getLastErrorString¡¯ [-Wimplicit-function-declaration]
+     size_t n = getLastErrorString(buf, sizeof(buf));
+                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/utils.cpp: In function ¡®int assert_failed(const char*)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/utils.cpp:84:28: warning: format not a string literal and no format arguments [-Wformat-security]
+   fprintf(stdout, 1+message);
+                            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/jni.cpp: In function ¡®_jobject* Java_com_sun_java_util_jar_pack_NativeUnpack_getUnusedInput(JNIEnv*, jobject)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/jni.cpp:295:12: warning: converting ¡®false¡¯ to pointer type ¡®jobject {aka _jobject*}¡¯ [-Wconversion-null]
+     return false;
+            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/jni.cpp: In function ¡®jlong Java_com_sun_java_util_jar_pack_NativeUnpack_finish(JNIEnv*, jobject)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/jni.cpp:313:3: warning: converting to non-pointer type ¡®long int¡¯ from NULL [-Wconversion-null]
+   CHECK_EXCEPTION_RETURN_VALUE(uPtr, NULL);
+   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/jni.cpp:313:3: warning: converting to non-pointer type ¡®long int¡¯ from NULL [-Wconversion-null]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp: In member function ¡®void unpacker::read_file_header()¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp:736:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (archive_size < header_size_1) {
+                      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp: In member function ¡®void cpool::init(unpacker*, int*)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp:988:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0 ; i < maxentries ; i++)
+                      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp: In member function ¡®char* entry::string()¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp:3719:44: warning: format not a string literal and no format arguments [-Wformat-security]
+       sprintf((char*)buf.ptr, TAG_NAME[tag]);
+                                            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp: In function ¡®void print_cp_entry(int)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp:3736:76: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+   sprintf(buf, ((uint)e.tag < CONSTANT_Limit)? TAG_NAME[e.tag]: "%d", e.tag);
+                                                                            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/bin/java.c: In function ¡®parse_size¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/bin/java.c:732:3: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+   int args_read = sscanf(s, jlong_format_specifier(), &n);
+   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/bin/java_md_solinux.c: In function ¡®GetJREPath¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/bin/java_md_solinux.c:821:41: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if ((JLI_StrLen(path) + 4  + 1) > pathsize) {
+                                         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/bin/java_md_solinux.c: In function ¡®ContinueInNewThread0¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/bin/java_md_solinux.c:1045:14: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+       rslt = (int)tmp;
+              ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/bin/parse_manifest.c: In function ¡®compute_cen¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/bin/parse_manifest.c:236:7: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+     p = buffer;
+       ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/bin/parse_manifest.c:279:11: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+         p = buffer;
+           ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/bin/splashscreen_stubs.c: In function ¡®DoSplashLoadMemory¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/bin/splashscreen_stubs.c:64:5: warning: return makes integer from pointer without a cast [-Wint-conversion]
+     INVOKE(SplashLoadMemory, NULL)(pdata, size);
+     ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/bin/splashscreen_stubs.c: In function ¡®DoSplashLoadFile¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/bin/splashscreen_stubs.c:68:5: warning: return makes integer from pointer without a cast [-Wint-conversion]
+     INVOKE(SplashLoadFile, NULL)(filename);
+     ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c:127:0: warning: "CHECK_NULL" redefined
+ #define CHECK_NULL(X) { if ((X) == NULL) fprintf (stderr,"JNI errror at line %d\n", __LINE__); }
+ ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c:27:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/jni_util.h:293:0: note: this is the location of the previous definition
+ #define CHECK_NULL(x)                           \
+ ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/net/net_util.c:28:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/net/net_util.c: In function ¡®NET_SockaddrToInetAddress¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/jni_util.h:318:17: warning: comparison between pointer and integer
+         if ((x) == NULL) {                      \
+                 ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/java/net/net_util.c:233:13: note: in expansion of macro ¡®CHECK_NULL_RETURN¡¯
+             CHECK_NULL_RETURN(ret, NULL);
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/java/net/net_util_md.c: In function ¡®ThrowUnknownHostExceptionWithGaiError¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/java/net/net_util_md.c:439:9: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+         sprintf(buf, format, hostname, error_string);
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/nio/ch/IOUtil.c: In function ¡®Java_sun_nio_ch_IOUtil_fdLimit¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/nio/ch/IOUtil.c:134:22: warning: comparison of unsigned expression < 0 is always false [-Wtype-limits]
+     if (rlp.rlim_max < 0 || rlp.rlim_max > java_lang_Integer_MAX_VALUE) {
+                      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c: In function ¡®findFunction¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c:42:9: warning: implicit declaration of function ¡®throwNullPointerException¡¯ [-Wimplicit-function-declaration]
+         throwNullPointerException(env, errorMessage);
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c: In function ¡®Java_sun_security_pkcs11_Secmod_nssLoadLibrary¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c:82:9: warning: implicit declaration of function ¡®throwIOException¡¯ [-Wimplicit-function-declaration]
+         throwIOException(env, dlerror());
+         ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/security/ec/impl/mpi.c:42:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/security/ec/impl/mpi.c: In function ¡®s_mp_fixup_reciprocal¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/security/ec/impl/mpi-priv.h:118:29: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define MP_MIN(a,b)   (((a) < (b)) ? (a) : (b))
+                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/security/ec/impl/mpi.c:2194:18: note: in expansion of macro ¡®MP_MIN¡¯
+     int      j = MP_MIN(k, MP_DIGIT_BIT);
+                  ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/security/ec/impl/mpi-priv.h:118:42: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+ #define MP_MIN(a,b)   (((a) < (b)) ? (a) : (b))
+                                          ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/security/ec/impl/mpi.c:2194:18: note: in expansion of macro ¡®MP_MIN¡¯
+     int      j = MP_MIN(k, MP_DIGIT_BIT);
+                  ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/security/ec/impl/mpi.c:2196:11: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (j < MP_DIGIT_BIT) {
+           ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/security/ec/impl/mpi.c: In function ¡®s_mp_lshd¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/security/ec/impl/mpi.c:2981:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(ix = 0; ix < p; ix++)
+                  ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c: In function ¡®jvmtiErrorText¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®181¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:191:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INTERNAL)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®182¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:192:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_VM_DEAD)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®183¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:193:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_NO_JNI_ENV)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®184¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:194:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_JNI_EXCEPTION)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®185¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:195:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_JVMTI_INTERNAL)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®186¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:196:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_JDWP_INTERNAL)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®187¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:197:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_NOT_CURRENT_FRAME)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®188¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:198:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_OUT_OF_MEMORY)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®189¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:199:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INVALID_TAG)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®190¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:200:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_ALREADY_INVOKING)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®191¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:201:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INVALID_INDEX)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®192¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:202:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INVALID_LENGTH)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®193¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:203:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INVALID_STRING)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®194¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:204:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INVALID_CLASS_LOADER)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®195¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:205:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INVALID_ARRAY)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®196¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:206:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_TRANSPORT_LOAD)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®197¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:207:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_TRANSPORT_INIT)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®198¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:208:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_NATIVE_METHOD)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®199¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:209:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INVALID_COUNT)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®200¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:210:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INVALID_FRAMEID)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®201¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:211:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_NULL_POINTER)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®202¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:212:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_ILLEGAL_ARGUMENT)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®203¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:213:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INVALID_THREAD)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®204¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:214:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INVALID_EVENT_TYPE)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®205¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:215:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_INVALID_OBJECT)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:137:32: warning: case value ¡®206¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+ #define CASE_RETURN_TEXT(name) case name: return #name;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/error_messages.c:216:9: note: in expansion of macro ¡®CASE_RETURN_TEXT¡¯
+         CASE_RETURN_TEXT(AGENT_ERROR_NO_MORE_FRAMES)
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/eventFilter.c: In function ¡®eventFilterRestricted_passesFilter¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/eventFilter.c:522:48: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+                            desiredNamePattern) == 1) {
+                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/log_messages.c: In function ¡®get_time_stamp¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/log_messages.c:69:33: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+     (void)snprintf(tbuf, ltbuf, format, (int)(millisecs));
+                                 ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/log_messages.c:69:33: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c: In function ¡®map2jdwpError¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2253:9: warning: case value ¡®181¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INTERNAL:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2204:9: warning: case value ¡®182¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_VM_DEAD:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2205:9: warning: case value ¡®183¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_NO_JNI_ENV:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2207:9: warning: case value ¡®184¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_JNI_EXCEPTION:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2254:9: warning: case value ¡®185¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_JVMTI_INTERNAL:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2255:9: warning: case value ¡®186¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_JDWP_INTERNAL:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2225:9: warning: case value ¡®187¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_NOT_CURRENT_FRAME:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2199:9: warning: case value ¡®188¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_OUT_OF_MEMORY:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2227:9: warning: case value ¡®189¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INVALID_TAG:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2229:9: warning: case value ¡®190¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_ALREADY_INVOKING:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2231:9: warning: case value ¡®191¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INVALID_INDEX:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2233:9: warning: case value ¡®192¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INVALID_LENGTH:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2235:9: warning: case value ¡®193¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INVALID_STRING:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2237:9: warning: case value ¡®194¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INVALID_CLASS_LOADER:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2239:9: warning: case value ¡®195¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INVALID_ARRAY:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2241:9: warning: case value ¡®196¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_TRANSPORT_LOAD:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2243:9: warning: case value ¡®197¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_TRANSPORT_INIT:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2245:9: warning: case value ¡®198¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_NATIVE_METHOD:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2247:9: warning: case value ¡®199¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INVALID_COUNT:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2249:9: warning: case value ¡®200¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INVALID_FRAMEID:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2187:9: warning: case value ¡®201¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_NULL_POINTER:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2195:9: warning: case value ¡®202¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_ILLEGAL_ARGUMENT:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2130:9: warning: case value ¡®203¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INVALID_THREAD:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2192:9: warning: case value ¡®204¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INVALID_EVENT_TYPE:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2143:9: warning: case value ¡®205¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_INVALID_OBJECT:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/back/util.c:2156:9: warning: case value ¡®206¡¯ not in enumerated type ¡®jvmtiError {aka enum <anonymous>}¡¯ [-Wswitch]
+         case AGENT_ERROR_NO_MORE_FRAMES:
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/tracing/dtrace/JVM.c: In function ¡®Java_sun_tracing_dtrace_JVM_defineClass0¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/tracing/dtrace/JVM.c:302:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (len >= sizeof(buf)) {
+                 ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/instrument/JarFacade.c: In function ¡®doAttribute¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/instrument/JarFacade.c:61:20: warning: implicit declaration of function ¡®isspace¡¯ [-Wimplicit-function-declaration]
+             while (isspace(*begin)) {
+                    ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c: In function ¡®get_totalticks¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:86:20: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 3 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+     n = fscanf(fh, "cpu " DEC_64 " " DEC_64 " " DEC_64 " " DEC_64 " " DEC_64 " "
+                    ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:86:20: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 4 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:86:20: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 5 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:86:20: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 6 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:86:20: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 7 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:86:20: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 8 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:86:20: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 9 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:98:28: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 3 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+             if (fscanf(fh, "cpu%*d " DEC_64 " " DEC_64 " " DEC_64 " " DEC_64 " "
+                            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:98:28: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 4 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:98:28: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 5 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:98:28: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 6 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:98:28: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 7 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:98:28: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 8 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:98:28: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 9 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:107:24: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 3 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+         n = fscanf(fh, "cpu%*d " DEC_64 " " DEC_64 " " DEC_64 " " DEC_64 " "
+                        ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:107:24: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 4 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:107:24: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 5 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:107:24: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 6 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:107:24: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 7 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:107:24: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 8 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/management/LinuxOperatingSystem.c:107:24: warning: format ¡®%lld¡¯ expects argument of type ¡®long long int *¡¯, but argument 9 has type ¡®uint64_t * {aka long unsigned int *}¡¯ [-Wformat=]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/demo/jvmti/hprof/hprof_init.c: In function ¡®connect_to_socket¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/demo/jvmti/hprof/hprof_init.c:244:27: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+     if (port == 0 || port > 65535) {
+                           ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/loops/TransformHelper.c: In function ¡®Java_sun_java2d_loops_TransformHelper_Transform¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/loops/TransformHelper.c:410:27: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         pEdges = (memsize == ((size_t) memsize))
+                           ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/debug/debug_mem.c:77:33: warning: ¡®DMemStatePtr¡¯ initialized and declared ¡®extern¡¯
+ extern const DMemState *        DMemStatePtr = &DMemGlobalState;
+                                 ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/debug/debug_mem.c: In function ¡®DMem_DumpHeader¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/debug/debug_mem.c:286:5: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+     sprintf(report, reportFormat, header->filename, header->linenumber, header->size, header->order);
+     ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/opengl/OGLBufImgOps.c: In function ¡®OGLBufImgOps_CreateConvolveProgram¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/opengl/OGLBufImgOps.c:154:13: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+             kernelMax, target, edge, target);
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/opengl/OGLBufImgOps.c: In function ¡®OGLBufImgOps_CreateRescaleProgram¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/opengl/OGLBufImgOps.c:364:13: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+             target, target, preRescale, postRescale);
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/opengl/OGLBufImgOps.c: In function ¡®OGLBufImgOps_CreateLookupProgram¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/opengl/OGLBufImgOps.c:596:13: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+             target, target, preLookup, alpha, postLookup);
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/opengl/OGLPaints.c: In function ¡®OGLPaints_CreateMultiGradProgram¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/opengl/OGLPaints.c:581:9: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+         sprintf(cycleCode, noCycleCode, texCoordCalcCode);
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/opengl/OGLPaints.c:583:9: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+         sprintf(cycleCode, reflectCode, texCoordCalcCode);
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/opengl/OGLPaints.c:585:9: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+         sprintf(cycleCode, repeatCode, texCoordCalcCode);
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/opengl/OGLPaints.c:592:13: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+             cycleCode, colorSpaceCode, maskCode);
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/java2d/x11/X11SurfaceData.c: In function ¡®Java_sun_java2d_x11_X11SurfaceData_initSurface¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/java2d/x11/X11SurfaceData.c:525:17: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+     xsdo->xrPic = NULL;
+                 ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XToolkit.c: In function ¡®performPoll¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XToolkit.c:722:16: warning: format ¡®%ld¡¯ expects argument of type ¡®long int¡¯, but argument 2 has type ¡®uint32_t {aka unsigned int}¡¯ [-Wformat=]
+         PRINT2("performPoll(): TIMEOUT_EVENTS curPollTimeout = %ld \n", curPollTimeout);
+                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XlibWrapper.c: In function ¡®Java_sun_awt_X11_XlibWrapper_IsXsunKPBehavior¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XlibWrapper.c:1289:9: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+         long ks2 = XKeycodeToKeysym((Display*)jlong_to_ptr(display), kc7, 2);
+         ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XlibWrapper.c:27:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c: In function ¡®isKPevent¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:836:5: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+     return IsKeypadKey( XKeycodeToKeysym(event->xkey.display, event->xkey.keycode,(bsun && !bxkb ? 2 : 1) ) );
+     ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:34:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:836:5: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+     return IsKeypadKey( XKeycodeToKeysym(event->xkey.display, event->xkey.keycode,(bsun && !bxkb ? 2 : 1) ) );
+     ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:34:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c: In function ¡®dumpKeysymArray¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:840:5: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+     printf("    0x%X\n",XKeycodeToKeysym(event->xkey.display, event->xkey.keycode, 0));
+     ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:34:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:840:12: warning: format ¡®%X¡¯ expects argument of type ¡®unsigned int¡¯, but argument 2 has type ¡®KeySym {aka long unsigned int}¡¯ [-Wformat=]
+     printf("    0x%X\n",XKeycodeToKeysym(event->xkey.display, event->xkey.keycode, 0));
+            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:841:5: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+     printf("    0x%X\n",XKeycodeToKeysym(event->xkey.display, event->xkey.keycode, 1));
+     ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:34:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:841:12: warning: format ¡®%X¡¯ expects argument of type ¡®unsigned int¡¯, but argument 2 has type ¡®KeySym {aka long unsigned int}¡¯ [-Wformat=]
+     printf("    0x%X\n",XKeycodeToKeysym(event->xkey.display, event->xkey.keycode, 1));
+            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:842:5: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+     printf("    0x%X\n",XKeycodeToKeysym(event->xkey.display, event->xkey.keycode, 2));
+     ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:34:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:842:12: warning: format ¡®%X¡¯ expects argument of type ¡®unsigned int¡¯, but argument 2 has type ¡®KeySym {aka long unsigned int}¡¯ [-Wformat=]
+     printf("    0x%X\n",XKeycodeToKeysym(event->xkey.display, event->xkey.keycode, 2));
+            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:843:5: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+     printf("    0x%X\n",XKeycodeToKeysym(event->xkey.display, event->xkey.keycode, 3));
+     ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:34:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:843:12: warning: format ¡®%X¡¯ expects argument of type ¡®unsigned int¡¯, but argument 2 has type ¡®KeySym {aka long unsigned int}¡¯ [-Wformat=]
+     printf("    0x%X\n",XKeycodeToKeysym(event->xkey.display, event->xkey.keycode, 3));
+            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c: In function ¡®handleKeyEventWithNumLockMask_New¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:858:13: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+             *keysym = XKeycodeToKeysym(event->xkey.display,
+             ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:34:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:861:13: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+             *keysym = XKeycodeToKeysym(event->xkey.display,
+             ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:34:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:868:13: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+             *keysym = XKeycodeToKeysym(event->xkey.display,
+             ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:34:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:871:13: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+             *keysym = XKeycodeToKeysym(event->xkey.display,
+             ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XWindow.c:34:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XlibWrapper.c: In function ¡®Java_sun_awt_X11_XlibWrapper_XKeycodeToKeysym¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XlibWrapper.c:1923:5: warning: ¡®XKeycodeToKeysym¡¯ is deprecated [-Wdeprecated-declarations]
+     return XKeycodeToKeysym((Display*) jlong_to_ptr(display), (unsigned int)keycode, (int)index);
+     ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XlibWrapper.c:27:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XlibWrapper.c: In function ¡®Java_sun_awt_X11_XlibWrapper_XSynchronize¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XlibWrapper.c:2214:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     return (jint) XSynchronize((Display*)jlong_to_ptr(display), (onoff == JNI_TRUE ? True : False));
+            ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XlibWrapper.c:41:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XlibWrapper.c: In function ¡®Java_sun_awt_X11_XlibWrapper_SetBitmapShape¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:47:32: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+ #define IS_SAFE_SIZE_T(x) ((x) >= 0 && (unsigned long long)(x) <= SIZE_MAX)
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:50:6: note: in expansion of macro ¡®IS_SAFE_SIZE_T¡¯
+     (IS_SAFE_SIZE_T(m) && IS_SAFE_SIZE_T(n) && ((m) == 0 || (n) == 0 || (size_t)(n) <= (SIZE_MAX / (size_t)(m))))
+      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:73:6: note: in expansion of macro ¡®IS_SAFE_SIZE_MUL¡¯
+     (IS_SAFE_SIZE_MUL((m), (n)) ? ((func)((m) * (n))) : FAILURE_RESULT)
+      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/xawt/XlibWrapper.c:2329:23: note: in expansion of macro ¡®SAFE_SIZE_ARRAY_ALLOC¡¯
+     pRect = (RECT_T *)SAFE_SIZE_ARRAY_ALLOC(malloc, worstBufferSize, sizeof(RECT_T));
+                       ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/awt_Font.c: In function ¡®awtJNI_GetFontData¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/awt_Font.c:505:50: warning: comparison with string literal results in unspecified behavior [-Waddress]
+             if (nativename != NULL && nativename != "")
+                                                  ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/awt_Font.c:635:23: warning: comparison between pointer and integer
+             if (xfont == (Font) NULL || xfont->ascent < 0) {
+                       ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/awt_Robot.c: In function ¡®isXCompositeDisplay¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/awt_Robot.c:151:50: warning: embedded ¡®\0¡¯ in format [-Wformat-contains-nul]
+     snprintf(NET_WM_CM_Sn, sizeof(NET_WM_CM_Sn), "_NET_WM_CM_S%d\0", screenNumber);
+                                                  ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/awt_Robot.c:151:50: warning: embedded ¡®\0¡¯ in format [-Wformat-contains-nul]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/debug/debug_mem.c:77:33: warning: ¡®DMemStatePtr¡¯ initialized and declared ¡®extern¡¯
+ extern const DMemState *        DMemStatePtr = &DMemGlobalState;
+                                 ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/debug/debug_mem.c: In function ¡®DMem_DumpHeader¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/debug/debug_mem.c:286:5: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+     sprintf(report, reportFormat, header->filename, header->linenumber, header->size, header->order);
+     ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/fontpath.c:44:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/fontpath.c: In function ¡®AddFontsToX11FontPath¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:47:32: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+ #define IS_SAFE_SIZE_T(x) ((x) >= 0 && (unsigned long long)(x) <= SIZE_MAX)
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:50:6: note: in expansion of macro ¡®IS_SAFE_SIZE_T¡¯
+     (IS_SAFE_SIZE_T(m) && IS_SAFE_SIZE_T(n) && ((m) == 0 || (n) == 0 || (size_t)(n) <= (SIZE_MAX / (size_t)(m))))
+      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:73:6: note: in expansion of macro ¡®IS_SAFE_SIZE_MUL¡¯
+     (IS_SAFE_SIZE_MUL((m), (n)) ? ((func)((m) * (n))) : FAILURE_RESULT)
+      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/fontpath.c:288:19: note: in expansion of macro ¡®SAFE_SIZE_ARRAY_ALLOC¡¯
+         onePath = SAFE_SIZE_ARRAY_ALLOC(malloc, strlen (fDirP->name[index]) + 2, sizeof( char ) );
+                   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/gtk2_interface.c:69:0: warning: "MIN" redefined
+ #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+ ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/javavm/export/jvm_md.h:35:0,
+                 from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/gtk2_interface.c:33:
+/usr/include/x86_64-linux-gnu/sys/param.h:102:0: note: this is the location of the previous definition
+ #define MIN(a,b) (((a)<(b))?(a):(b))
+ ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/gtk2_interface.c:34:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/gtk2_interface.c: In function ¡®gtk2_load¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:47:32: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+ #define IS_SAFE_SIZE_T(x) ((x) >= 0 && (unsigned long long)(x) <= SIZE_MAX)
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:50:27: note: in expansion of macro ¡®IS_SAFE_SIZE_T¡¯
+     (IS_SAFE_SIZE_T(m) && IS_SAFE_SIZE_T(n) && ((m) == 0 || (n) == 0 || (size_t)(n) <= (SIZE_MAX / (size_t)(m))))
+                           ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:102:7: note: in expansion of macro ¡®IS_SAFE_SIZE_MUL¡¯
+       IS_SAFE_SIZE_MUL((m), (n)) && IS_SAFE_SIZE_ADD((m) * (n), (a)) \
+       ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:114:6: note: in expansion of macro ¡®IS_SAFE_STRUCT_SIZE¡¯
+     (IS_SAFE_STRUCT_SIZE((a), (m), (n)) ? ((func)((a) + (m) * (n))) : FAILURE_RESULT)
+      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/gtk2_interface.c:855:34: note: in expansion of macro ¡®SAFE_SIZE_STRUCT_ALLOC¡¯
+             gchar *s, *new_env = SAFE_SIZE_STRUCT_ALLOC(malloc,
+                                  ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:47:32: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+ #define IS_SAFE_SIZE_T(x) ((x) >= 0 && (unsigned long long)(x) <= SIZE_MAX)
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:53:6: note: in expansion of macro ¡®IS_SAFE_SIZE_T¡¯
+     (IS_SAFE_SIZE_T(a) && IS_SAFE_SIZE_T(b) && (size_t)(b) <= (SIZE_MAX - (size_t)(a)))
+      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:102:37: note: in expansion of macro ¡®IS_SAFE_SIZE_ADD¡¯
+       IS_SAFE_SIZE_MUL((m), (n)) && IS_SAFE_SIZE_ADD((m) * (n), (a)) \
+                                     ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:114:6: note: in expansion of macro ¡®IS_SAFE_STRUCT_SIZE¡¯
+     (IS_SAFE_STRUCT_SIZE((a), (m), (n)) ? ((func)((a) + (m) * (n))) : FAILURE_RESULT)
+      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/gtk2_interface.c:855:34: note: in expansion of macro ¡®SAFE_SIZE_STRUCT_ALLOC¡¯
+             gchar *s, *new_env = SAFE_SIZE_STRUCT_ALLOC(malloc,
+                                  ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/gtk2_interface.c: In function ¡®get_integer_property¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/gtk2_interface.c:2498:19: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+     gint intval = NULL;
+                   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/gtk2_interface.c: In function ¡®get_boolean_property¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/gtk2_interface.c:2505:19: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+     gint intval = NULL;
+                   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c: In function ¡®InSymbol¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c:843:48: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+                         snprintf(it8->id, 127, it8 ->DoubleFormatter, it8->dnum);
+                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c:843:48: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c: In function ¡®GetVal¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c:1020:41: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+     case SDNUM:   snprintf(Buffer, max, it8->DoubleFormatter, it8 -> dnum); break;
+                                         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c:1020:41: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c: In function ¡®cmsIT8SetPropertyDbl¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c:1401:28: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+     snprintf(Buffer, 1023, it8->DoubleFormatter, Val);
+                            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c:1401:28: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c: In function ¡®cmsIT8SetDataRowColDbl¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c:2618:25: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+     snprintf(Buff, 255, it8->DoubleFormatter, Val);
+                         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c:2618:25: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c: In function ¡®cmsIT8SetDataDbl¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c:2708:25: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+     snprintf(Buff, 255, it8->DoubleFormatter, Val);
+                         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/java2d/cmm/lcms/cmscgats.c:2708:25: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c: In function ¡®Java_com_sun_imageio_plugins_jpeg_JPEGImageWriter_writeImage¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2853:19: warning: passing argument 1 of ¡®freeArray¡¯ from incompatible pointer type [-Wincompatible-pointer-types]
+         freeArray(scale, numBands);
+                   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2689:13: note: expected ¡®void **¡¯ but argument is of type ¡®UINT8 ** {aka unsigned char **}¡¯
+ static void freeArray(void** arr, jint size) {
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2860:19: warning: passing argument 1 of ¡®freeArray¡¯ from incompatible pointer type [-Wincompatible-pointer-types]
+         freeArray(scale, numBands);
+                   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2689:13: note: expected ¡®void **¡¯ but argument is of type ¡®UINT8 ** {aka unsigned char **}¡¯
+ static void freeArray(void** arr, jint size) {
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2882:19: warning: passing argument 1 of ¡®freeArray¡¯ from incompatible pointer type [-Wincompatible-pointer-types]
+         freeArray(scale, numBands);
+                   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2689:13: note: expected ¡®void **¡¯ but argument is of type ¡®UINT8 ** {aka unsigned char **}¡¯
+ static void freeArray(void** arr, jint size) {
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2931:19: warning: passing argument 1 of ¡®freeArray¡¯ from incompatible pointer type [-Wincompatible-pointer-types]
+         freeArray(scale, numBands);
+                   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2689:13: note: expected ¡®void **¡¯ but argument is of type ¡®UINT8 ** {aka unsigned char **}¡¯
+ static void freeArray(void** arr, jint size) {
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2952:19: warning: passing argument 1 of ¡®freeArray¡¯ from incompatible pointer type [-Wincompatible-pointer-types]
+         freeArray(scale, numBands);
+                   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2689:13: note: expected ¡®void **¡¯ but argument is of type ¡®UINT8 ** {aka unsigned char **}¡¯
+ static void freeArray(void** arr, jint size) {
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2990:27: warning: passing argument 1 of ¡®freeArray¡¯ from incompatible pointer type [-Wincompatible-pointer-types]
+                 freeArray(scale, numBands);
+                           ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2689:13: note: expected ¡®void **¡¯ but argument is of type ¡®UINT8 ** {aka unsigned char **}¡¯
+ static void freeArray(void** arr, jint size) {
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:3089:15: warning: passing argument 1 of ¡®freeArray¡¯ from incompatible pointer type [-Wincompatible-pointer-types]
+     freeArray(scale, numBands);
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2689:13: note: expected ¡®void **¡¯ but argument is of type ¡®UINT8 ** {aka unsigned char **}¡¯
+ static void freeArray(void** arr, jint size) {
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c: In function ¡®Java_com_sun_imageio_plugins_jpeg_JPEGImageReader_readImage¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:1896:13: warning: variable ¡®orderedBands¡¯ might be clobbered by ¡®longjmp¡¯ or ¡®vfork¡¯ [-Wclobbered]
+     boolean orderedBands = TRUE;
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:1871:11: warning: argument ¡®stepX¡¯ might be clobbered by ¡®longjmp¡¯ or ¡®vfork¡¯ [-Wclobbered]
+      jint stepX,
+           ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:1872:11: warning: argument ¡®stepY¡¯ might be clobbered by ¡®longjmp¡¯ or ¡®vfork¡¯ [-Wclobbered]
+      jint stepY,
+           ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:1877:11: warning: argument ¡®maxProgressivePass¡¯ might be clobbered by ¡®longjmp¡¯ or ¡®vfork¡¯ [-Wclobbered]
+      jint maxProgressivePass,
+           ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c: In function ¡®Java_com_sun_imageio_plugins_jpeg_JPEGImageWriter_writeImage¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2746:13: warning: variable ¡®scale¡¯ might be clobbered by ¡®longjmp¡¯ or ¡®vfork¡¯ [-Wclobbered]
+     UINT8** scale = NULL;
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2747:13: warning: variable ¡®success¡¯ might be clobbered by ¡®longjmp¡¯ or ¡®vfork¡¯ [-Wclobbered]
+     boolean success = TRUE;
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c:2712:11: warning: argument ¡®stepX¡¯ might be clobbered by ¡®longjmp¡¯ or ¡®vfork¡¯ [-Wclobbered]
+      jint stepX, jint stepY,
+           ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/ArabicLayoutEngine.cpp:33:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/ArabicLayoutEngine.cpp: In member function ¡®virtual le_int32 ArabicOpenTypeLayoutEngine::characterProcessing(const LEUnicode*, le_int32, le_int32, le_int32, le_bool, LEUnicode*&, LEGlyphStorage&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/ArabicLayoutEngine.cpp:107:16: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     outChars = LE_NEW_ARRAY(LEUnicode, count);
+                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/ArabicLayoutEngine.cpp: In member function ¡®virtual le_int32 UnicodeArabicOpenTypeLayoutEngine::glyphPostProcessing(LEGlyphStorage&, LEGlyphStorage&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/ArabicLayoutEngine.cpp:183:28: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     LEUnicode *tempChars = LE_NEW_ARRAY(LEUnicode, tempGlyphCount);
+                            ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/CanonShaping.cpp:32:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/CanonShaping.cpp: In static member function ¡®static void CanonShaping::reorderMarks(const LEUnicode*, le_int32, le_bool, LEUnicode*, LEGlyphStorage&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/CanonShaping.cpp:65:34: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     le_int32 *combiningClasses = LE_NEW_ARRAY(le_int32, charCount);
+                                  ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/CanonShaping.cpp:66:25: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     le_int32 *indices = LE_NEW_ARRAY(le_int32, charCount);
+                         ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/HangulLayoutEngine.cpp:32:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/HangulLayoutEngine.cpp: In member function ¡®virtual le_int32 HangulOpenTypeLayoutEngine::characterProcessing(const LEUnicode*, le_int32, le_int32, le_int32, le_bool, LEUnicode*&, LEGlyphStorage&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/HangulLayoutEngine.cpp:248:16: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     outChars = LE_NEW_ARRAY(LEUnicode, worstCase);
+                ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/IndicLayoutEngine.cpp:33:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/IndicLayoutEngine.cpp: In member function ¡®virtual le_int32 IndicOpenTypeLayoutEngine::characterProcessing(const LEUnicode*, le_int32, le_int32, le_int32, le_bool, LEUnicode*&, LEGlyphStorage&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/IndicLayoutEngine.cpp:133:16: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     outChars = LE_NEW_ARRAY(LEUnicode, worstCase);
+                ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/IndicRearrangementProcessor2.cpp:38:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/IndicRearrangementProcessor2.h: In constructor ¡®IndicRearrangementProcessor2::IndicRearrangementProcessor2(const LEReferenceTo<MorphSubtableHeader2>&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/IndicRearrangementProcessor2.h:83:54: warning: ¡®IndicRearrangementProcessor2::indicRearrangementSubtableHeader¡¯ will be initialized after [-Wreorder]
+     LEReferenceTo<IndicRearrangementSubtableHeader2> indicRearrangementSubtableHeader;
+                                                      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/IndicRearrangementProcessor2.h:82:57: warning:   ¡®LEReferenceToArrayOf<IndicRearrangementStateEntry2> IndicRearrangementProcessor2::entryTable¡¯ [-Wreorder]
+     LEReferenceToArrayOf<IndicRearrangementStateEntry2> entryTable;
+                                                         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/IndicRearrangementProcessor2.cpp:46:1: warning:   when initialized here [-Wreorder]
+ IndicRearrangementProcessor2::IndicRearrangementProcessor2(
+ ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/OpenTypeLayoutEngine.h:34:0,
+                 from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/KhmerLayoutEngine.cpp:36:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/KhmerLayoutEngine.cpp: In member function ¡®virtual le_int32 KhmerOpenTypeLayoutEngine::characterProcessing(const LEUnicode*, le_int32, le_int32, le_int32, le_bool, LEUnicode*&, LEGlyphStorage&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/KhmerLayoutEngine.cpp:83:16: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     outChars = LE_NEW_ARRAY(LEUnicode, worstCase);
+                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp: In member function ¡®void LEGlyphStorage::reset()¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp:73:16: warning: deleting object of polymorphic class type ¡®LEInsertionList¡¯ which has non-virtual destructor might cause undefined behaviour [-Wdelete-non-virtual-dtor]
+         delete fInsertionList;
+                ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp:33:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp: In member function ¡®void LEGlyphStorage::allocateGlyphArray(le_int32, le_bool, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp:103:19: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+         fGlyphs = LE_NEW_ARRAY(LEGlyphID, fGlyphCount);
+                   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp:112:24: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+         fCharIndices = LE_NEW_ARRAY(le_int32, fGlyphCount);
+                        ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp: In member function ¡®le_int32 LEGlyphStorage::allocatePositions(LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp:162:18: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     fPositions = LE_NEW_ARRAY(float, 2 * (fGlyphCount + 1));
+                  ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp: In member function ¡®le_int32 LEGlyphStorage::allocateAuxData(LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp:184:16: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     fAuxData = LE_NEW_ARRAY(le_uint32, fGlyphCount);
+                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp: In member function ¡®void LEGlyphStorage::adoptGlyphArray(LEGlyphStorage&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp:491:16: warning: deleting object of polymorphic class type ¡®LEInsertionList¡¯ which has non-virtual destructor might cause undefined behaviour [-Wdelete-non-virtual-dtor]
+         delete fInsertionList;
+                ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LigatureSubstProc2.cpp:38:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LigatureSubstProc2.h: In constructor ¡®LigatureSubstitutionProcessor2::LigatureSubstitutionProcessor2(const LEReferenceTo<MorphSubtableHeader2>&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LigatureSubstProc2.h:92:54: warning: ¡®LigatureSubstitutionProcessor2::ligatureSubstitutionHeader¡¯ will be initialized after [-Wreorder]
+     const LEReferenceTo<LigatureSubstitutionHeader2> ligatureSubstitutionHeader;
+                                                      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LigatureSubstProc2.h:84:15: warning:   ¡®le_uint32 LigatureSubstitutionProcessor2::componentOffset¡¯ [-Wreorder]
+     le_uint32 componentOffset;
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LigatureSubstProc2.cpp:50:1: warning:   when initialized here [-Wreorder]
+ LigatureSubstitutionProcessor2::LigatureSubstitutionProcessor2(const LEReferenceTo<MorphSubtableHeader2> &morphSubtableHeader, LEErrorCode &success)
+ ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LigatureSubstProc2.cpp: In member function ¡®virtual le_uint16 LigatureSubstitutionProcessor2::processStateEntry(LEGlyphStorage&, le_int32&, EntryTableIndex2, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LigatureSubstProc2.cpp:134:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                 if(componentGlyph >= glyphStorage.getGlyphCount()) {
+                                   ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LigatureSubstProc.cpp: In member function ¡®virtual ByteOffset LigatureSubstitutionProcessor::processStateEntry(LEGlyphStorage&, le_int32&, EntryTableIndex, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LigatureSubstProc.cpp:132:33: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+               if(componentGlyph >= glyphStorage.getGlyphCount()) {
+                                 ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LayoutEngine.cpp:33:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LayoutEngine.cpp: In member function ¡®virtual le_int32 LayoutEngine::characterProcessing(const LEUnicode*, le_int32, le_int32, le_int32, le_bool, LEUnicode*&, LEGlyphStorage&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LayoutEngine.cpp:294:23: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+           reordered = LE_NEW_ARRAY(LEUnicode, count);
+                       ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LayoutEngine.cpp:345:20: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+         outChars = LE_NEW_ARRAY(LEUnicode, outCharCount);
+                    ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/MPreFixups.cpp:32:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/MPreFixups.cpp: In constructor ¡®MPreFixups::MPreFixups(le_int32)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/MPreFixups.cpp:47:18: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     fFixupData = LE_NEW_ARRAY(FixupData, charCount);
+                  ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/MPreFixups.cpp: In member function ¡®void MPreFixups::apply(LEGlyphStorage&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/MPreFixups.cpp:95:32: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+         LEGlyphID *mpreSave  = LE_NEW_ARRAY(LEGlyphID, mpreCount);
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/MPreFixups.cpp:96:32: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+         le_int32  *indexSave = LE_NEW_ARRAY(le_int32, mpreCount);
+                                ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/OpenTypeLayoutEngine.cpp:33:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/OpenTypeLayoutEngine.cpp: In member function ¡®virtual le_int32 OpenTypeLayoutEngine::characterProcessing(const LEUnicode*, le_int32, le_int32, le_int32, le_bool, LEUnicode*&, LEGlyphStorage&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/OpenTypeLayoutEngine.cpp:325:20: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+         outChars = LE_NEW_ARRAY(LEUnicode, count);
+                    ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/SingleSubstitutionSubtables.cpp: In member function ¡®le_uint32 SingleSubstitutionFormat2Subtable::process(const LEReferenceTo<SingleSubstitutionFormat2Subtable>&, GlyphIterator*, LEErrorCode&, const LEGlyphFilter*) const¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/SingleSubstitutionSubtables.cpp:99:68: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (coverageIndex >= 0 && LE_SUCCESS(success) && coverageIndex < substituteArrayRef.getCount()) {
+                                                                    ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/StateTableProcessor2.cpp:37:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/StateTableProcessor2.h: In constructor ¡®StateTableProcessor2::StateTableProcessor2(const LEReferenceTo<MorphSubtableHeader2>&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/StateTableProcessor2.h:77:38: warning: ¡®StateTableProcessor2::stHeader¡¯ will be initialized after [-Wreorder]
+     LEReferenceTo<StateTableHeader2> stHeader; // for convenience
+                                      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/StateTableProcessor2.h:69:15: warning:   ¡®le_uint32 StateTableProcessor2::nClasses¡¯ [-Wreorder]
+     le_uint32 nClasses;
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/StateTableProcessor2.cpp:48:1: warning:   when initialized here [-Wreorder]
+ StateTableProcessor2::StateTableProcessor2(const LEReferenceTo<MorphSubtableHeader2> &morphSubtableHeader, LEErrorCode &success)
+ ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/StateTableProcessor2.cpp:37:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/StateTableProcessor2.h:74:32: warning: ¡®StateTableProcessor2::classTable¡¯ will be initialized after [-Wreorder]
+     LEReferenceTo<LookupTable> classTable;
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/StateTableProcessor2.h:68:15: warning:   ¡®le_uint16 StateTableProcessor2::format¡¯ [-Wreorder]
+     le_uint16 format;
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/StateTableProcessor2.cpp:48:1: warning:   when initialized here [-Wreorder]
+ StateTableProcessor2::StateTableProcessor2(const LEReferenceTo<MorphSubtableHeader2> &morphSubtableHeader, LEErrorCode &success)
+ ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/SubtableProcessor2.cpp:34:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/SubtableProcessor2.h: In constructor ¡®SubtableProcessor2::SubtableProcessor2(const LEReferenceTo<MorphSubtableHeader2>&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/SubtableProcessor2.h:61:47: warning: ¡®SubtableProcessor2::subtableHeader¡¯ will be initialized after [-Wreorder]
+     const LEReferenceTo<MorphSubtableHeader2> subtableHeader;
+                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/SubtableProcessor2.h:57:15: warning:   ¡®le_uint32 SubtableProcessor2::length¡¯ [-Wreorder]
+     le_uint32 length;
+               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/SubtableProcessor2.cpp:43:1: warning:   when initialized here [-Wreorder]
+ SubtableProcessor2::SubtableProcessor2(const LEReferenceTo<MorphSubtableHeader2> &morphSubtableHeader, LEErrorCode &success)
+ ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/ThaiLayoutEngine.cpp:33:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/ThaiLayoutEngine.cpp: In member function ¡®virtual le_int32 ThaiLayoutEngine::computeGlyphs(const LEUnicode*, le_int32, le_int32, le_int32, le_bool, LEGlyphStorage&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/ThaiLayoutEngine.cpp:100:16: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     outChars = LE_NEW_ARRAY(LEUnicode, count * 2);
+                ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/OpenTypeLayoutEngine.h:34:0,
+                 from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/TibetanLayoutEngine.cpp:42:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/TibetanLayoutEngine.cpp: In member function ¡®virtual le_int32 TibetanOpenTypeLayoutEngine::characterProcessing(const LEUnicode*, le_int32, le_int32, le_int32, le_bool, LEUnicode*&, LEGlyphStorage&, LEErrorCode&)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:387:79: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define LE_RANGE_CHECK(type, count, ptrfn) (( (LE_UINTPTR_MAX / sizeof(type)) < count ) ? NULL : (ptrfn))
+                                                                               ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/LETypes.h:409:45: note: in expansion of macro ¡®LE_RANGE_CHECK¡¯
+ #define LE_NEW_ARRAY(type, count) (type *)  LE_RANGE_CHECK(type,count,uprv_malloc((count) * sizeof(type)))
+                                             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/layout/TibetanLayoutEngine.cpp:89:16: note: in expansion of macro ¡®LE_NEW_ARRAY¡¯
+     outChars = LE_NEW_ARRAY(LEUnicode, worstCase);
+                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/sunFont.c: In function ¡®Java_sun_font_StrikeCache_freeIntPointer¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/sunFont.c:218:14: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+         free((void*)ptr);
+              ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/sunFont.c: In function ¡®Java_sun_font_StrikeCache_freeIntMemory¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/sunFont.c:256:36: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+                 GlyphInfo *ginfo = (GlyphInfo *)ptrs[i];
+                                    ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/sunFont.c: In function ¡®freeLayoutTableCache¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/sunFont.c:357:37: warning: passing argument 1 of ¡®free¡¯ discards ¡®const¡¯ qualifier from pointer target type [-Wdiscarded-qualifiers]
+       if(ltc->entries[i].ptr) free (ltc->entries[i].ptr);
+                                     ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/sunFont.c:26:0:
+/usr/include/stdlib.h:483:13: note: expected ¡®void *¡¯ but argument is of type ¡®const void *¡¯
+ extern void free (void *__ptr) __THROW;
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/freetypeScaler.c: In function ¡®Java_sun_font_FreetypeFontScaler_getGlyphVectorOutlineNative¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/font/freetypeScaler.c:1320:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (numGlyphs > 0 && 0xffffffffu / sizeof(jint) >= numGlyphs) {
+                                                     ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c: In function ¡®DGifOpenFileHandle¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:145:9: note: in expansion of macro ¡®READ¡¯
+     if (READ(GifFile, (unsigned char *)Buf, GIF_STAMP_LEN) != GIF_STAMP_LEN) {
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c: In function ¡®DGifOpen¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:222:9: note: in expansion of macro ¡®READ¡¯
+     if (READ(GifFile, (unsigned char *)Buf, GIF_STAMP_LEN) != GIF_STAMP_LEN) {
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c: In function ¡®DGifGetScreenDesc¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:279:9: note: in expansion of macro ¡®READ¡¯
+     if (READ(GifFile, Buf, 3) != 3) {
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:303:17: note: in expansion of macro ¡®READ¡¯
+             if (READ(GifFile, Buf, 3) != 3) {
+                 ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c: In function ¡®DGifGetRecordType¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:336:9: note: in expansion of macro ¡®READ¡¯
+     if (READ(GifFile, &Buf, 1) != 1) {
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c: In function ¡®DGifGetImageDesc¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:383:9: note: in expansion of macro ¡®READ¡¯
+     if (READ(GifFile, Buf, 1) != 1) {
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:408:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (i = 0; i < GifFile->Image.ColorMap->ColorCount; i++) {
+                       ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:410:17: note: in expansion of macro ¡®READ¡¯
+             if (READ(GifFile, Buf, 3) != 3) {
+                 ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c: In function ¡®DGifGetExtension¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:560:9: note: in expansion of macro ¡®READ¡¯
+     if (READ(GifFile, &Buf, 1) != 1) {
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c: In function ¡®DGifGetExtensionNext¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:580:9: note: in expansion of macro ¡®READ¡¯
+     if (READ(GifFile, &Buf, 1) != 1) {
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:588:13: note: in expansion of macro ¡®READ¡¯
+         if (READ(GifFile, &((*Extension)[1]), Buf) != Buf) {
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c: In function ¡®DGifGetWord¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:710:9: note: in expansion of macro ¡®READ¡¯
+     if (READ(GifFile, c, 2) != 2) {
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c: In function ¡®DGifGetCodeNext¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:755:9: note: in expansion of macro ¡®READ¡¯
+     if (READ(GifFile, &Buf, 1) != 1) {
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:765:13: note: in expansion of macro ¡®READ¡¯
+         if (READ(GifFile, &((*CodeBlock)[1]), Buf) != Buf) {
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c: In function ¡®DGifSetupDecompress¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:790:9: note: in expansion of macro ¡®READ¡¯
+     if (READ(GifFile, &CodeSize, 1) < 1) {    /* Read Code size from file. */
+         ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c: In function ¡®DGifBufferedInput¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:1072:13: note: in expansion of macro ¡®READ¡¯
+         if (READ(GifFile, Buf, 1) != 1) {
+             ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:57:64: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     ((GifFilePrivateType*)_gif->Private)->Read(_gif,_buf,_len) : \
+                                                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/sun/awt/giflib/dgif_lib.c:1084:13: note: in expansion of macro ¡®READ¡¯
+         if (READ(GifFile, &Buf[1], Buf[0]) != Buf[0]) {
+             ^
+In file included from /home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/splashscreen/splashscreen_sys.c:44:0:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/splashscreen/splashscreen_sys.c: In function ¡®SplashConvertStringAlloc¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:47:32: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+ #define IS_SAFE_SIZE_T(x) ((x) >= 0 && (unsigned long long)(x) <= SIZE_MAX)
+                                ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:50:6: note: in expansion of macro ¡®IS_SAFE_SIZE_T¡¯
+     (IS_SAFE_SIZE_T(m) && IS_SAFE_SIZE_T(n) && ((m) == 0 || (n) == 0 || (size_t)(n) <= (SIZE_MAX / (size_t)(m))))
+      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/common/sizecalc.h:73:6: note: in expansion of macro ¡®IS_SAFE_SIZE_MUL¡¯
+     (IS_SAFE_SIZE_MUL((m), (n)) ? ((func)((m) * (n))) : FAILURE_RESULT)
+      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/solaris/native/sun/awt/splashscreen/splashscreen_sys.c:80:11: note: in expansion of macro ¡®SAFE_SIZE_ARRAY_ALLOC¡¯
+     buf = SAFE_SIZE_ARRAY_ALLOC(malloc, inSize, 2);
+           ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp: In function ¡®void usage(unpacker*, const char*, bool)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp:164:49: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+     fprintf(u->errstrm, usage_lines[i], progname);
+                                                 ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/utils.cpp: In function ¡®int assert_failed(const char*)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/utils.cpp:84:28: warning: format not a string literal and no format arguments [-Wformat-security]
+   fprintf(stdout, 1+message);
+                            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp: In member function ¡®void unpacker::read_file_header()¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp:736:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (archive_size < header_size_1) {
+                      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp: In member function ¡®void cpool::init(unpacker*, int*)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp:988:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0 ; i < maxentries ; i++)
+                      ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp: In member function ¡®char* entry::string()¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp:3719:44: warning: format not a string literal and no format arguments [-Wformat-security]
+       sprintf((char*)buf.ptr, TAG_NAME[tag]);
+                                            ^
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp: In function ¡®void print_cp_entry(int)¡¯:
+/home/zbhuang/OpenJDK/jdk8u/jdk/src/share/native/com/sun/java/util/jar/pack/unpack.cpp:3736:76: warning: format not a string literal, argument types not checked [-Wformat-nonliteral]
+   sprintf(buf, ((uint)e.tag < CONSTANT_Limit)? TAG_NAME[e.tag]: "%d", e.tag);
+                                                                            ^
+Compiling 195 files for BUILD_BOOTSTRAP_RMIC
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+Creating jdk/jce/unsigned/sunec.jar
+Creating jdk/jce/unsigned/sunpkcs11.jar
+Creating jdk/jce/unsigned/sunjce_provider.jar
+Creating jdk/jce/unsigned/jce.jar
+Creating jdk/jce/unsigned/policy/unlimited/US_export_policy.jar
+Creating jdk/jce/unsigned/policy/limited/local_policy.jar
+Creating jdk/jce/unsigned/policy/unlimited/local_policy.jar
+## Finished jdk (build time 00:02:18)
+
+----- Build times -------
+Start 2018-09-02 16:11:46
+End   2018-09-02 16:17:53
+00:00:18 corba
+00:02:31 hotspot
+00:00:12 jaxp
+00:00:19 jaxws
+00:02:18 jdk
+00:00:29 langtools
+00:06:07 TOTAL
+-------------------------
+Finished building OpenJDK for target 'default'
+zbhuang@zbhuang-VirtualBox:~/OpenJDK/jdk8u$ 
