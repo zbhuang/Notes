@@ -1,0 +1,82 @@
+Demo of customizing the console output using Log4J
+
+App.java
+--------
+package log4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
+
+public class App {
+
+    private static Logger logger = LoggerFactory.getLogger(App.class);
+
+    public static void main(String[] args) {
+
+        //Logger logger = LoggerFactory.getLogger(App.class);
+
+        MDC.put("appName", "xxx");
+
+        if(logger.isDebugEnabled()) {
+            logger.debug("enabled in debug mode");
+        } else if(logger.isInfoEnabled()) {
+            logger.info("enabled in info mode");
+        }
+
+        System.out.println("done");
+    }
+}
+
+/*
+dependencies
+------------
+slf4j-api-x.jar
+slf4j-log4jx.jar
+log4j-x.jar
+
+-Dlog4j.configuration=file:X:\myWork\JavaProject\src\log4j\log4j.properties
+---------------------------------------------------------------------------
+# Root logger option INFO/DEBUG
+log4j.rootLogger=DEBUG, file, stdout
+
+# Direct log messages to stdout
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%t] %X{appName} %-5p:: %m%n
+
+# Direct log messages to a log file
+log4j.appender.file=org.apache.log4j.RollingFileAppender
+log4j.appender.file.File=X:/myWork/JavaProject/src/log4j.log
+log4j.appender.file.MaxFileSize=10000KB
+log4j.appender.file.MaxBackupIndex=10
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%t] %X{appName} %-5p:: %m%n
+
+
+-Dlog4j.configuration=file:X:\myWork\JavaProject\src\log4j\log4j.xml
+----------------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="X:/myWork/JavaProject/src/log4j.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d  %-5p %X{appName} [%c{1}] %m %n"/>
+        </layout>
+    </appender>
+    <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d  %-5p %X{appName} [%c{1}] %m %n"/>
+        </layout>
+    </appender>
+    <root>
+        <priority value="DEBUG"/>
+        <appender-ref ref="fileAppender"/>
+        <appender-ref ref="consoleAppender"/>
+    </root>
+</log4j:configuration>
+
+*/
